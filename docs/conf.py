@@ -2,15 +2,13 @@ import sys
 import os
 
 sys.path.insert(0, os.path.abspath(os.path.join("..", "img")))
-
-primary_domain = "index"
+sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
 
 project = "MBO Compute"
 copyright = '2024, Elizabeth R. Miller Brain Observatory (MBO) | The Rockefeller University. All Rights Reserved.'
 
 source_suffix = {
         '.rst': 'restructuredtext',
-        '.txt': 'restructuredtext',
         '.md': 'markdown',
         }
 
