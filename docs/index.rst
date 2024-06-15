@@ -7,7 +7,7 @@ MBO Compute Hub
 A central repository for all Miller Brain Observatory computational resources.
 
 Repositories
-############
+======================
 
 LBM-CaImAn-MATLAB
 *****************
@@ -39,9 +39,9 @@ LBM-CaImAn-Python
 
 
 Branch/Versioning
-###################
+======================
 
-.. image:: ../img/git_flow.svg
+.. image:: _static/_images/git_flow.svg
    :alt: git-flow
 
 
@@ -61,7 +61,7 @@ Branch/Versioning
       :target: https://doi.org/10.1038/s41592-021-01239-8
 
 Contributions
-###################
+======================
 
 We welcome contributions to our repositories. Please check the issues and pull request sections to see where you can help.
 
