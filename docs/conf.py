@@ -21,7 +21,6 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinxcontrib.images",
     "sphinxcontrib.video" ,
-    "sphinxcontrib.matlab",
     "sphinx.ext.intersphinx",
     "sphinx.ext.napoleon",
     "sphinx.ext.autosectionlabel",

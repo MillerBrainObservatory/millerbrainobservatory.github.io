@@ -11,26 +11,9 @@ Contents
 =================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
-    get_started/index
-
-.. toctree::
-    :maxdepth: 2
-    :caption: User Guide
-
-    user_guide/index
-
-.. toctree::
-    :maxdepth: 2
-    :caption: API:
-
-    api/index
-
-
-.. thumbnail:: ./_static/_images/overlays.png
-   :download: true
-   :align: center
+    repositories
 
 Indices and tables
 =====================================
