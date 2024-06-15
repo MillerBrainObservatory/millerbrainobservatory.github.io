@@ -1,11 +1,86 @@
-.. caiman_matlab documentation master file, created by
-   sphinx-quickstart on Mon Apr 22 14:19:35 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 #################
 MBO Compute Hub
 #################
+
+|Docs|
+
+A central repository for all Miller Brain Observatory computational resources.
+
+Repositories
+############
+
+LBM-CaImAn-MATLAB
+*****************
+
+.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-MATLAB
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues
+   :alt: Open Issues
+
+.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-MATLAB
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/pulls
+   :alt: Open Pull Requests
+
+- **Repository**: `LBM-CaImAn-MATLAB <https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB>`_
+- **Documentation**: `LBM-CaImAn-MATLAB Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`_
+
+LBM-CaImAn-Python
+*****************
+
+.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-Python
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/issues
+   :alt: Open Issues
+
+.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-Python
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/pulls
+   :alt: Open Pull Requests
+
+- **Repository**: `LBM-CaImAn-Python <https://github.com/MillerBrainObservatory/LBM-CaImAn-Python>`_
+- **Documentation**: `LBM-CaImAn-Python Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/>`_
+
+
+Branch/Versioning
+###################
+
+.. image:: ../img/git_flow.svg
+   :alt: git-flow
+
+
+.. |Publication| image:: https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg
+      :target: https://doi.org/10.1038/s41592-021-01239-8
+
+.. |issues| image:: https://img.shields.io/github/issues/Naereen/StrapDown.js.svg
+      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues/
+
+.. |release| image:: https://img.shields.io/github/release/Naereen/StrapDown.js.svg
+      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/releases/
+
+.. |Docs| image:: https://img.shields.io/badge/LBM%20Documentation-1f425f.svg
+   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/
+
+.. |DOI| image:: https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg
+      :target: https://doi.org/10.1038/s41592-021-01239-8
+
+Contributions
+###################
+
+We welcome contributions to our repositories. Please check the issues and pull request sections to see where you can help.
+
+.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-MATLAB
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues
+   :alt: Open Issues LBM-CaImAn-MATLAB
+
+.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-Python
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/issues
+   :alt: Open Issues LBM-CaImAn-Python
+
+.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-MATLAB
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/pulls
+   :alt: Open Pull Requests LBM-CaImAn-MATLAB
+
+.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-Python
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/pulls
+   :alt: Open Pull Requests LBM-CaImAn-Python
+
 
 Contents
 =================
@@ -13,7 +88,7 @@ Contents
 .. toctree::
     :maxdepth: 1
 
-    repositories
+    pipelines/index
 
 Indices and tables
 =====================================
