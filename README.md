@@ -1,6 +1,4 @@
-## Miller Brain Observatory Computational Hub
-
-MBOCH !
+## Miller Brain Observatory Computational Hub (MBOCH!)
 
 [![Static Badge](https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions)](https://github.com/orgs/MillerBrainObservatory/discussions)
 [![Static Badge](https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black)](https://mbo.rockefeller.edu/)
