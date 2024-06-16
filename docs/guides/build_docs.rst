@@ -85,3 +85,9 @@ docs/_build/html: this is the golden nugget
 docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging
 
 
+The workflow that manages where our `html` files go is `peaceitis' github action workflow <https://github.com/peaceiris/actions-gh-pages>`_
+
+elected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.
+
+If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
+(Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/*/*.) If you add main as a branch rule, a branch named main can also deploy to the environment`
