@@ -30,8 +30,7 @@ jobs:
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          force_orphan: true
+          publish_dir: docs/build/html
 
       - name: Prepare Deploy Tag
         id: prepare_tag

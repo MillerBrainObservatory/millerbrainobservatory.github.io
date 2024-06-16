@@ -13,6 +13,7 @@ source_suffix = {
         }
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'exclude']
+
 extensions = [
     "sphinx.ext.autodoc",
     "sphinxcontrib.images",
@@ -23,20 +24,20 @@ extensions = [
     "numpydoc"
 ]
 
-images_config = dict(
-    backend='LightBox2',
-    default_image_width='100%',
-    default_show_title='True',
-    default_group='default'
-)
+# images_config = dict(
+#     backend='LightBox2',
+#     default_image_width='100%',
+#     default_show_title='True',
+#     default_group='default'
+# )
 
 templates_path = ["_templates"]
-html_theme = "alabaster"
-html_short_title="MBO Compute Hub"
+html_theme = "sphinx_book_theme"
+html_short_title= "MBO Compute Hub"
 html_static_path = ["_static"]
 
 html_css_files = ['LBM_docs.css']
-html_logo = ""
+html_logo = "MBO_32.png"
 
 # html_theme_options = {
 #   "external_links": [

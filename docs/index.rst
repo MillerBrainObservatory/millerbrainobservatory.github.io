@@ -6,6 +6,17 @@ MBO Compute Hub
 
 A central repository for all Miller Brain Observatory computational resources.
 
+**Disclaimer**
+
+Choosing a technology stack for a project is subjective and dynamic. The technology that works now
+may not work as more pipelines are built and included in the documentation. Maintainability is also a concern; your
+repository is only as maintainable as the team you have to maintain it.
+
+For these reasons, the list of tools used in the MBO is kept as simple as possible while maintaining effective
+documentation and resources. Let `git` handle all tasks and workflows that may have more "mature" alternatives i.e. travisCI, circleCI.
+This is the motivation against using `ReadTheDocs <https://www.ReadTheDocs.org>`_ as `github-pages <https://pages.github.com/>`_ has the same
+functionality, albeit with a few more lines of code and technical expertise required in handling the `github-workflows`.
+
 Contents
 =================
 
@@ -22,7 +33,7 @@ LBM-CaImAn-MATLAB
 *****************
 
 .. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-MATLAB
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues/
    :alt: Open Issues
 
 .. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-MATLAB
