@@ -3,6 +3,13 @@ Pipelines
 
 Current MBO pipelines and resources.
 
+|MBO Discussions|
+|MBO Homepage|
+
+|LCM Issues|
+|LCM Release|
+|LCM Docs|
+
 .. toctree::
     :maxdepth: 1
 
@@ -10,13 +17,23 @@ Current MBO pipelines and resources.
     CaImAn Python <caiman_python>
     scanreader <scanreader>
 
-.. |DIscussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
+.. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
    :target: https://github.com/orgs/MillerBrainObservatory/discussions
    :alt: Discussions
 
 .. |MBO Homepage| image:: https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black
    :target: https://mbo.rockefeller.edu/
    :alt: MBO Homepage
+
+.. |LCM Issues| image:: https://img.shields.io/github/issues/Naereen/StrapDown.js.svg
+      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues/
+
+.. |LCM Release| image:: https://img.shields.io/github/release/Naereen/StrapDown.js.svg
+      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/releases/
+
+.. |LCM Docs| image:: https://img.shields.io/badge/LBM%20Documentation-1f425f.svg
+   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/
+
 
 .. _CNMF: https://github.com/simonsfoundation/NoRMCorre
 .. _CaImAn: https://github.com/flatironinstitute/CaImAn-MATLAB/

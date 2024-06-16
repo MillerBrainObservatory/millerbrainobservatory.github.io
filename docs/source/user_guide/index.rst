@@ -2,7 +2,6 @@
 User Guide
 ********************
 
-
 Guides for MBO users and developers.
 
 Requirements
