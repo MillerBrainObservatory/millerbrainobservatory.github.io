@@ -7,7 +7,9 @@ Current MBO pipelines and resources.
 .. toctree::
     :maxdepth: 1
 
-    repositories
+    CaImAn MATLAB <caiman_matlab>
+    CaImAn Python <caiman_python>
+    scanreader <scanreader>
 
 .. .. image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
 ..    :target: https://github.com/orgs/MillerBrainObservatory/discussions

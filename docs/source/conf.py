@@ -27,9 +27,18 @@ extensions = [
     "numpydoc"
 ]
 
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
+html_title = "MBO Compute Hub"
+html_logo = "MBO_32.png"
+
+html_theme_options = {
+    "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
+     "repository_branch": "master",
+     "path_to_docs": "docs/",
+     "use_repository_button": True,
+     "use_issues_button": True
+}
