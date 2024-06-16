@@ -35,9 +35,9 @@ images_config = dict(
 templates_path = ["_templates"]
 html_theme = "sphinx_book_theme"
 html_short_title="MBO Compute Hub"
-html_static_path = []
+html_static_path = ["_static"]
 
-html_css_files = ['LBM_docs.css']
+html_css_files = ['_static/LBM_docs.css']
 html_logo = "_static/MBO_32.png"
 
 html_theme_options = {
