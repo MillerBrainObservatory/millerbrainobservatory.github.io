@@ -1,5 +1,5 @@
 
-Building Documentation
+Building Docs
 #######################
 
 Documentation for this compute hub and the various pipelines are build using the following tools:
@@ -55,7 +55,7 @@ These are the most common values to change. For a high level overview on the res
 - push the html to a separate `gh-pages` branch
 - trigger gh-pages to deploy our site to its servers with a build-in github workflow
 
-Troubleshooting
+Troubleshooting Docs
 =====================
 
 **Docs look good locally, 404 on site**
@@ -86,26 +86,4 @@ elected branches and tags: Only branches and tags that match your specified name
 
 If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
 (Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/*/*.) If you add main as a branch rule, a branch named main can also deploy to the environment`
-
-Quirks
-===========
-
-.. code-block:: yaml
-
-    - name: Upgrade pip
-      run: |
-          # install pip=>20.1 to use "pip cache dir"
-          python3 -m pip install --upgrade pip
-
-    - name: Get pip cache dir
-      id: pip-cache
-      run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
-
-    - name: Cache dependencies
-      uses: actions/cache@v3
-      with:
-      path: ${{ steps.pip-cache.outputs.dir }}
-      key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-      restore-keys: |
-      ${{ runner.os }}-pip-
 

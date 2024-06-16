@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Building Documentation &#8212; MBO 1.0.0 documentation</title>
+    <title>Building Docs &#8212; MBO 1.0.0 documentation</title>
   
   
   
@@ -43,10 +43,11 @@
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/build_docs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'doc_guides/build_docs';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Guides" href="index.html" />
+    <link rel="next" title="A" href="deploy_docs.html" />
+    <link rel="prev" title="Documentaion Guides" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -136,8 +137,10 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Building Docs</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_docs.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_docs.html">Workflow Details</a></li>
 </ul>
 </li>
 </ul>
@@ -194,7 +197,7 @@
       
       
       
-      <li><a href="../_sources/guides/build_docs.rst" target="_blank"
+      <li><a href="../_sources/doc_guides/build_docs.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +281,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Building Documentation</h1>
+    <h1>Building Docs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -288,9 +291,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-docs">Troubleshooting Docs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quirks">Quirks</a></li>
 </ul>
             </nav>
         </div>
@@ -302,8 +304,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="building-documentation">
-<h1>Building Documentation<a class="headerlink" href="#building-documentation" title="Permalink to this heading">#</a></h1>
+  <section id="building-docs">
+<h1>Building Docs<a class="headerlink" href="#building-docs" title="Permalink to this heading">#</a></h1>
 <p>Documentation for this compute hub and the various pipelines are build using the following tools:</p>
 <ul class="simple">
 <li><p>python</p></li>
@@ -345,8 +347,8 @@ make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&a
 - use <cite>Make</cite> to build the docs
 - push the html to a separate <cite>gh-pages</cite> branch
 - trigger gh-pages to deploy our site to its servers with a build-in github workflow</p>
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
+<section id="troubleshooting-docs">
+<h2>Troubleshooting Docs<a class="headerlink" href="#troubleshooting-docs" title="Permalink to this heading">#</a></h2>
 <p><strong>Docs look good locally, 404 on site</strong>
 when docs look good locally but bad online, there is an issue with the github workflow.
 On <cite>github.com/repository</cite> go to the <cite>Actions</cite> tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
@@ -369,27 +371,6 @@ docs/_build/doctree: you dont need this until you want to preview exactly what o
 <p>If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
 (Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/<em>/</em>.) If you add main as a branch rule, a branch named main can also deploy to the environment`</p>
 </section>
-<section id="quirks">
-<h2>Quirks<a class="headerlink" href="#quirks" title="Permalink to this heading">#</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upgrade pip</span>
-<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">      </span><span class="no"># install pip=&gt;20.1 to use &quot;pip cache dir&quot;</span>
-<span class="w">      </span><span class="no">python3 -m pip install --upgrade pip</span>
-
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get pip cache dir</span>
-<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip-cache</span>
-<span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;dir=$(pip cache dir)&quot; &gt;&gt; $GITHUB_OUTPUT</span>
-
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cache dependencies</span>
-<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/cache@v3</span>
-<span class="w">  </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ steps.pip-cache.outputs.dir }}</span>
-<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-pip-${{ hashFiles(&#39;**/requirements.txt&#39;) }}</span>
-<span class="w">  </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-pip-</span>
-</pre></div>
-</div>
-</section>
 </section>
 
 
@@ -409,8 +390,17 @@ docs/_build/doctree: you dont need this until you want to preview exactly what o
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Guides</p>
+        <p class="prev-next-title">Documentaion Guides</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="deploy_docs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">A</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -427,9 +417,8 @@ docs/_build/doctree: you dont need this until you want to preview exactly what o
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-docs">Troubleshooting Docs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quirks">Quirks</a></li>
 </ul>
   </nav></div>
 
