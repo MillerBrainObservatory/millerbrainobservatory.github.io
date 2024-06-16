@@ -33,7 +33,7 @@ images_config = dict(
 )
 
 templates_path = ["_templates"]
-html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 html_short_title="MBO Compute Hub"
 html_static_path = ["_static"]
 
@@ -52,5 +52,4 @@ html_theme_options = {
     "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io/",
     "use_repository_button": True,
 }
-
 
