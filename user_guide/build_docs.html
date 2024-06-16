@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LBM - CaImAn MATLAB &#8212; MBO Compute Hub</title>
+    <title>Building Docs &#8212; MBO Compute Hub</title>
   
   
   
@@ -41,10 +41,10 @@
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pipelines/caiman_matlab';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/build_docs';</script>
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LBM - CaImAn Python" href="caiman_python.html" />
-    <link rel="prev" title="Pipelines" href="index.html" />
+    <link rel="next" title="Deploying Docs" href="deploy_docs.html" />
+    <link rel="prev" title="User Guide" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -144,15 +144,15 @@
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../user_guide/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Guides
                       </a>
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../pipelines/index.html">
                         Pipelines
                       </a>
                     </li>
@@ -242,15 +242,15 @@ document.write(`
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../user_guide/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Guides
                       </a>
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../pipelines/index.html">
                         Pipelines
                       </a>
                     </li>
@@ -286,9 +286,9 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">CaImAn MATLAB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="caiman_python.html">CaImAn Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scanreader.html">scanreader</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploy_docs.html">Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_docs.html">Workflow Details</a></li>
 </ul>
 </div>
 </nav></div>
@@ -327,9 +327,9 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Pipelines</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">LBM - CaImAn MATLAB</li>
+    <li class="breadcrumb-item active" aria-current="page">Building Docs</li>
   </ul>
 </nav>
 </div>
@@ -346,11 +346,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="lbm-caiman-matlab">
-<h1>LBM - CaImAn MATLAB<a class="headerlink" href="#lbm-caiman-matlab" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues/"><img alt="LCM Issues" src="https://img.shields.io/github/issues/Naereen/StrapDown.js.svg" /></a>
-<a class="reference external" href="https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/releases/"><img alt="LCM Release" src="https://img.shields.io/github/release/Naereen/StrapDown.js.svg" /></a>
-<a class="reference external" href="https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/"><img alt="LCM Docs" src="https://img.shields.io/badge/LBM%20Documentation-1f425f.svg" /></a></p>
+  <section id="building-docs">
+<h1>Building Docs<a class="headerlink" href="#building-docs" title="Permalink to this heading">#</a></h1>
+<p>Documentation for this compute hub and the various pipelines are build using the following tools:</p>
+<ul class="simple">
+<li><p>python</p></li>
+<li><p>pip</p></li>
+<li><p>conda</p></li>
+<li><p>sphinx</p></li>
+<li><p>github actions</p></li>
+</ul>
+<p>Thats it! The first three should be familiar, python with its two most popular package managers (we use <cite>conda</cite> for everything that we can, and fallback to <cite>pip</cite>).</p>
+<p>It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it’s just raw html, and should be accessible from any browser environment on any device.</p>
+<p>The workflow to update documentation is pretty simple.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This assumes you have a working version of <cite>python3</cite>, <cite>conda/miniconda/anaconda</cite>, and <cite>pip</cite>.
+Clone the repository:</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>+git@github.com:millerbrainobservatory/&lt;REPOSITORY&gt;.git
+<span class="nb">cd</span><span class="w"> </span>docs
+make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need to activate the <cite>conda</cite> environment before calling <cite>make clean</cite> or <cite>make html</cite>.</p>
+</div>
+<p>The github action triggers for each <cite>.yml</cite> file within <cite>root/.github/workflows/</cite>. We have <cite>build_and_deploy_docs.yml</cite>, or some similar variation.</p>
+<p>This file is organized into groups <cite>-jobs</cite> that do all of the work for us on github servers.</p>
+<p>The first two lines:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build and deploy docs</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">workflow_dispatch</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p><cite>name</cite> is going to appear on <a class="reference external" href="https://www.github.com">github.com</a> in the <cite>actions</cite> tab, which shows us graphically the code executed from this workflow.`
+<cite>on</cite> controls when the workflow is run.</p>
+<p>These are the most common values to change. For a high level overview on the rest of the worflow:
+- clone our github code,
+- setup dependencies,
+- use <cite>Make</cite> to build the docs
+- push the html to a separate <cite>gh-pages</cite> branch
+- trigger gh-pages to deploy our site to its servers with a build-in github workflow</p>
+<section id="troubleshooting-docs">
+<h2>Troubleshooting Docs<a class="headerlink" href="#troubleshooting-docs" title="Permalink to this heading">#</a></h2>
+<p><strong>Docs look good locally, 404 on site</strong>
+when docs look good locally but bad online, there is an issue with the github workflow.
+On <cite>github.com/repository</cite> go to the <cite>Actions</cite> tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
+This is generally an issue with <cite>docs/requirements.txt</cite>. This document holds the dependencies to build documentation, and since our project builds locally and not
+online, this is the usual suspect. The output of the github actions will tell you:</p>
+</section>
+<section id="directory-structure">
+<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this heading">#</a></h2>
+<p>(WIP) - Adding static-assets repo</p>
+<p>Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow <cite>numpy</cite> and their documentation conventions.
+Youll see tutorials on <cite>sphinx-quickstart</cite> as how to “get started” with sphinx. That is how these docs started.</p>
+<p><cite>make html</cite> produces:
+docs/_build/html: this is the golden nugget
+docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging</p>
+<p>The workflow that manages where our <cite>html</cite> files go is <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceitis’ github action workflow</a></p>
+<p>Selected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.</p>
+<p>If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
+(Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/<em>/</em>.) If you add main as a branch rule, a branch named main can also deploy to the environment`</p>
+</section>
 </section>
 
 
@@ -369,15 +428,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pipelines</p>
+        <p class="prev-next-title">User Guide</p>
       </div>
     </a>
     <a class="right-next"
-       href="caiman_python.html"
+       href="deploy_docs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LBM - CaImAn Python</p>
+        <p class="prev-next-title">Deploying Docs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -392,8 +451,20 @@ document.write(`
 
   <div class="sidebar-secondary-item">
 
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-docs">Troubleshooting Docs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
   <div class="tocsection sourcelink">
-    <a href="../_sources/pipelines/caiman_matlab.rst.txt">
+    <a href="../_sources/user_guide/build_docs.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

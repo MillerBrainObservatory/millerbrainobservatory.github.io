@@ -29,7 +29,6 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -37,16 +36,14 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=902d9fbd"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
-    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Documentaion Guides" href="doc_guides/index.html" />
+    <link rel="next" title="User Guide" href="user_guide/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -90,8 +87,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -101,24 +98,15 @@
   </div>
   
     <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
   
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
   
-  <div class="sidebar-header-items sidebar-primary__section">
+  <div class="col-lg-3 navbar-header-items__start">
     
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
+      <div class="navbar-item">
 
   
 
@@ -128,30 +116,168 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/mbo_icon.ico" class="logo__image only-light" alt="MBO Compute Hub - Home"/>
+    <script>document.write(`<img src="_static/mbo_icon.ico" class="logo__image only-dark" alt="MBO Compute Hub - Home"/>`);</script>
   
-    <p class="title logo__title">MBO Compute Hub</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="doc_guides/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc_guides/build_docs.html">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc_guides/deploy_docs.html">Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doc_guides/workflow_docs.html">Workflow Details</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="pipelines/index.html">Pipelines</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="pipelines/caiman_matlab.html">CaImAn MATLAB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pipelines/caiman_python.html">CaImAn Python</a></li>
-</ul>
-</li>
-</ul>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="user_guide/index.html">
+                        Guides
+                      </a>
+                    </li>
+                
 
-    </div>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="pipelines/index.html">
+                        Pipelines
+                      </a>
+                    </li>
+                
+  </ul>
 </nav></div>
+      
     </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="user_guide/index.html">
+                        Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="pipelines/index.html">
+                        Pipelines
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -165,192 +291,12 @@
       <main id="main-content" class="bd-main">
         
         
-
-<div class="sbt-scroll-pixel-helper"></div>
-
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/index.rst" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.rst</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
+              <div class="bd-header-article"></div>
               
               
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>MBO Compute Hub!</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MBO Compute Hub!</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-
-            </nav>
-        </div>
-    </div>
-</div>
-
               
                 
 <div id="searchbox"></div>
@@ -358,26 +304,140 @@ document.write(`
                   
   <section id="mbo-compute-hub">
 <h1>MBO Compute Hub!<a class="headerlink" href="#mbo-compute-hub" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://github.com/orgs/MillerBrainObservatory/discussions"><img alt="Discussions" src="https://img.shields.io/badge/Discussions-black?style=plastic&amp;logo=github&amp;logoColor=white&amp;link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions" /></a>
+<a class="reference external" href="https://mbo.rockefeller.edu/"><img alt="MBO Homepage" src="https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&amp;logo=mega&amp;logoColor=white&amp;labelColor=black&amp;color=black" /></a></p>
+<p><a class="reference external" href="https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues/"><img alt="LCM Issues" src="https://img.shields.io/github/issues/Naereen/StrapDown.js.svg" /></a>
+<a class="reference external" href="https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/releases/"><img alt="LCM Release" src="https://img.shields.io/github/release/Naereen/StrapDown.js.svg" /></a>
+<a class="reference external" href="https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/"><img alt="LCM Docs" src="https://img.shields.io/badge/LBM%20Documentation-1f425f.svg" /></a></p>
+<p>A central repository for all Miller Brain Observatory computational resources.</p>
+<p><strong>Disclaimer</strong></p>
+<p>Choosing a technology stack for a project is subjective and dynamic. The technology that works now
+may not work as more pipelines are built and included in the documentation. Maintainability is also a concern; your
+repository is only as maintainable as the team you have to maintain it.</p>
+<p>For these reasons, the list of tools used in the MBO is kept as simple as possible while maintaining effective
+documentation and resources. Let <cite>git</cite> handle all tasks and workflows that may have more “mature” alternatives i.e. travisCI, circleCI.
+This is the motivation against using <a class="reference external" href="https://www.ReadTheDocs.org">ReadTheDocs</a> as <a class="reference external" href="https://pages.github.com/">github-pages</a> has the same
+functionality, albeit with a few more lines of code and technical expertise required in handling the <cite>github-workflows</cite>.</p>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Section Navigation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="doc_guides/index.html">Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="doc_guides/index.html#requirements">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="doc_guides/build_docs.html">Building</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_guides/deploy_docs.html">Deployment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="doc_guides/workflow_docs.html">Workflow Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/index.html#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/build_docs.html">Building</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/deploy_docs.html">Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/workflow_docs.html">Workflow Details</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="doc_guides/index.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pipelines/index.html">Pipelines</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pipelines/caiman_matlab.html">CaImAn MATLAB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipelines/caiman_python.html">CaImAn Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipelines/scanreader.html">scanreader</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>python</p></li>
+<li><p>pip</p></li>
+<li><p>conda</p></li>
+<li><p>sphinx</p></li>
+<li><p>github actions</p></li>
+</ul>
+<p>Thats it! The first three should be familiar, python with its two most popular package managers (we use <cite>conda</cite> for everything that we can, and fallback to <cite>pip</cite>).</p>
+<p>It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it’s just raw html, and should be accessible from any browser environment on any device.</p>
+<p>The workflow to update documentation is pretty simple.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This assumes you have a working version of <cite>python3</cite>, <cite>conda/miniconda/anaconda</cite>, and <cite>pip</cite>.
+Clone the repository:</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>+git@github.com:millerbrainobservatory/&lt;REPOSITORY&gt;.git
+<span class="nb">cd</span><span class="w"> </span>docs
+make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need to activate the <cite>conda</cite> environment before calling <cite>make clean</cite> or <cite>make html</cite>.</p>
+</div>
+<p>The github action triggers for each <cite>.yml</cite> file within <cite>root/.github/workflows/</cite>. We have <cite>build_and_deploy_docs.yml</cite>, or some similar variation.</p>
+<p>This file is organized into groups <cite>-jobs</cite> that do all of the work for us on github servers.</p>
+<p>The first two lines:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build and deploy docs</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">workflow_dispatch</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p><cite>name</cite> is going to appear on <a class="reference external" href="https://www.github.com">github.com</a> in the <cite>actions</cite> tab, which shows us graphically the code executed from this workflow.`
+<cite>on</cite> controls when the workflow is run.</p>
+<p>These are the most common values to change. For a high level overview on the rest of the worflow:
+- clone our github code,
+- setup dependencies,
+- use <cite>Make</cite> to build the docs
+- push the html to a separate <cite>gh-pages</cite> branch
+- trigger gh-pages to deploy our site to its servers with a build-in github workflow</p>
+</section>
+</section>
+<section id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h1>
+<p><strong>Docs look good locally, 404 on site</strong>
+when docs look good locally but bad online, there is an issue with the github workflow.
+On <cite>github.com/repository</cite> go to the <cite>Actions</cite> tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
+This is generally an issue with <cite>docs/requirements.txt</cite>. This document holds the dependencies to build documentation, and since our project builds locally and not
+online, this is the usual suspect. The output of the github actions will tell you:</p>
+<a class=""
+               data-lightbox="group-a615815a-c9aa-46a3-a4bb-4368c122db96"
+               href="_images/e090b6be3d0921e241d23ddeb74a72f38deabe6a"
+               title=""
+               data-title=""
+               
+               ><img src="_images/e090b6be3d0921e241d23ddeb74a72f38deabe6a"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><a class=""
+               data-lightbox="group-995eec3f-7fb1-413e-8899-33611aa13da0"
+               href="_images/2fe3b7ab45917be89c4258a4e636079633f95913"
+               title=""
+               data-title=""
+               
+               ><img src="_images/2fe3b7ab45917be89c4258a4e636079633f95913"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><a class=""
+               data-lightbox="group-64065e24-43bd-4e68-a375-6fb1504dd196"
+               href="_images/005b31cd46d4fcb33d4400cadb87b23c62999c6a"
+               title=""
+               data-title=""
+               
+               ><img src="_images/005b31cd46d4fcb33d4400cadb87b23c62999c6a"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></section>
+<section id="directory-structure">
+<h1>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this heading">#</a></h1>
+<p>Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow <cite>numpy</cite> and their documentation conventions.
+Youll see tutorials on <cite>sphinx-quickstart</cite> as how to “get started” with sphinx. That is how these docs started.</p>
+<p>/docs/_static: This is where images, videos, media will go. Along with CSS and logos/icons
+/docs/_static/_images: This is where images go
+/docs/_static/_videos: This is where videos go
+docs/_templates: dont touch this, it makes our website pretty and organized</p>
+<p><cite>make html</cite> produces:
+docs/_build/html: this is the golden nugget
+docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging</p>
+<p>The workflow that manages where our <cite>html</cite> files go is <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceitis’ github action workflow</a></p>
+<p>elected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.</p>
+<p>If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
+(Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/<em>/</em>.) If you add main as a branch rule, a branch named main can also deploy to the environment`</p>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h1>
@@ -391,7 +451,6 @@ document.write(`
 
                 </article>
               
-
               
               
               
@@ -400,11 +459,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="doc_guides/index.html"
+       href="user_guide/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Documentaion Guides</p>
+        <p class="prev-next-title">User Guide</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -418,16 +477,31 @@ document.write(`
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
   <div class="sidebar-secondary-item">
+
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> On this page
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MBO Compute Hub!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MBO Compute Hub!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
   </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
 </div></div>
               
@@ -435,40 +509,8 @@ document.write(`
           </div>
           <footer class="bd-footer-content">
             
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Flynn OConnell
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright 2024, Flynn OConnell.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
           </footer>
         
-
       </main>
     </div>
   </div>
@@ -478,6 +520,43 @@ By Flynn OConnell
 <script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Flynn OConnell.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
   </footer>
   </body>
 </html>

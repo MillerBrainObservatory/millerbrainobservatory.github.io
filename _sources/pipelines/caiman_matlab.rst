@@ -1,4 +1,0 @@
-LBM - CaImAn MATLAB
----------------------
-
-Repository.

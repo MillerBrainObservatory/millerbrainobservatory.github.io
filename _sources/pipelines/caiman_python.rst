@@ -1,5 +1,0 @@
-
-LBM - CaImAn Python
----------------------
-
-Repository.
