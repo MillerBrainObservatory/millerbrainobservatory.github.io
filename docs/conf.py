@@ -37,7 +37,7 @@ html_short_title= "MBO Compute Hub"
 html_static_path = ["_static"]
 
 html_css_files = ['LBM_docs.css']
-html_logo = "MBO_32.png"
+html_logo = "../images/MBO_32.png"
 
 # html_theme_options = {
 #   "external_links": [
