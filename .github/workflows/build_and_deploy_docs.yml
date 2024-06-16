@@ -23,14 +23,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: docs-artifacts
-          path: docs/_build/html/
+          path: docs/build/html/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/html
+          publish_dir: .
           force_orphan: true
 
       - name: Prepare Deploy Tag
