@@ -1,8 +1,8 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath(os.path.join("..", "img")))
-sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
+sys.path.insert(0, os.path.abspath(os.path.join("../", "./")))
+sys.path.insert(0, os.path.abspath(os.path.join("../", "../")))
 
 project = "MBO Compute"
 copyright = '2024, Elizabeth R. Miller Brain Observatory (MBO) | The Rockefeller University. All Rights Reserved.'
@@ -12,9 +12,7 @@ source_suffix = {
         '.md': 'markdown',
         }
 
-templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'exclude']
-
 extensions = [
     "sphinx.ext.autodoc",
     "sphinxcontrib.images",
@@ -38,7 +36,7 @@ html_short_title="MBO Compute Hub"
 html_static_path = ["_static"]
 
 html_css_files = ['LBM_docs.css']
-html_logo = "MBO_32.png"
+html_logo = ""
 
 # html_theme_options = {
 #   "external_links": [
