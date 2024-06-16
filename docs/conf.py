@@ -48,8 +48,8 @@ html_logo = "_static/MBO_32.png"
 #   ]
 # }
 
-html_theme_options = {
-    "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io/",
-    "use_repository_button": True,
-}
+# html_theme_options = {
+#     "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io/",
+#     "use_repository_button": True,
+# }
 
