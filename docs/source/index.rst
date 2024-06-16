@@ -10,7 +10,7 @@ MBO Compute Hub!
    :maxdepth: 3
    :caption: Contents:
 
-   Guides <guides/index>
+   Documentation <doc_guides/index>
 
 
 
