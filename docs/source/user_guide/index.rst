@@ -1,7 +1,7 @@
 
-######################
-Documentaion Guides
-######################
+User Guide
+********************
+
 
 Guides for MBO users and developers.
 
@@ -27,11 +27,4 @@ It is my strong opinion that simpler the better when it comes to documentation t
     Building <build_docs>
     Deployment <deploy_docs>
     Workflow Details <workflow_docs>
-
-Indices and tables
-=====================================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 

@@ -1,6 +1,5 @@
-##########
 Pipelines
-##########
+**********************
 
 Current MBO pipelines and resources.
 
@@ -11,13 +10,13 @@ Current MBO pipelines and resources.
     CaImAn Python <caiman_python>
     scanreader <scanreader>
 
-.. .. image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
-..    :target: https://github.com/orgs/MillerBrainObservatory/discussions
-..    :alt: Discussions
+.. |DIscussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
+   :target: https://github.com/orgs/MillerBrainObservatory/discussions
+   :alt: Discussions
 
-.. .. image:: https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black
-..    :target: https://mbo.rockefeller.edu/
-..    :alt: MBO Homepage
+.. |MBO Homepage| image:: https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black
+   :target: https://mbo.rockefeller.edu/
+   :alt: MBO Homepage
 
 .. _CNMF: https://github.com/simonsfoundation/NoRMCorre
 .. _CaImAn: https://github.com/flatironinstitute/CaImAn-MATLAB/

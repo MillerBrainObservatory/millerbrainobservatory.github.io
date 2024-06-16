@@ -4,16 +4,15 @@
    contain the root `toctree` directive.
 
 MBO Compute Hub!
-===============================
+==================
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
+   :caption: Section Navigation:
+   :hidden:
 
    Documentation <doc_guides/index>
    Pipelines <pipelines/index>
-
-
 
 Indices and tables
 ==================

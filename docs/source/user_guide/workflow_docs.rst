@@ -1,6 +1,6 @@
 
 Github Workflow
-===================
+*********************
 
 Documentaion deployment is handled primarily through a github action workflow. By deployment,
 we really mean the instructions that send our `html` to a public server that can be linked to and

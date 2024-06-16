@@ -1,6 +1,6 @@
 
 Building Docs
-#######################
+*********************
 
 Documentation for this compute hub and the various pipelines are build using the following tools:
 
