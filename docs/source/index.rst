@@ -95,11 +95,11 @@ On `github.com/repository` go to the `Actions` tab. The most recent deployment s
 This is generally an issue with `docs/requirements.txt`. This document holds the dependencies to build documentation, and since our project builds locally and not
 online, this is the usual suspect. The output of the github actions will tell you:
 
-.. thumbnail:: ../_static/_images/general/gh_actions_workflows.png
+.. thumbnail:: https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_action
 
-.. thumbnail:: ../_static/_images/general/gh_docs_success.png
+.. thumbnail:: https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png
 
-.. thumbnail:: ../_static/_images/general/gh_flow.svg
+.. thumbnail:: https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_flow.svg
 
 Directory Structure
 =====================
