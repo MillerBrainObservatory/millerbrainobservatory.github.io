@@ -1,18 +1,7 @@
 
-Building Docs
+Building
 *********************
 
-Documentation for this compute hub and the various pipelines are build using the following tools:
-
-- python
-- pip
-- conda
-- sphinx
-- github actions
-
-Thats it! The first three should be familiar, python with its two most popular package managers (we use `conda` for everything that we can, and fallback to `pip`).
-
-It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it's just raw html, and should be accessible from any browser environment on any device.
 
 The workflow to update documentation is pretty simple.
 

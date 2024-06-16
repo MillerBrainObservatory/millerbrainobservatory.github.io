@@ -1,8 +1,10 @@
 
-User Guide
+User Guides
 ********************
 
-Guides for MBO users and developers.
+Guides for MBO users and developers about topics not directly related to a specific pipeline.
+
+For instance, our light beads microscopy python/matlab pipelines share a large proportion of the documentation.
 
 Requirements
 ==============
@@ -20,10 +22,14 @@ to import our python `modules`, `classes`, `functions`. It does this by looking 
 
 It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it's just raw html, and should be accessible from any browser environment on any device.
 
+Section Navigation
+===================
+
 .. toctree::
     :maxdepth: 1
 
     Building <build_docs>
     Deployment <deploy_docs>
     Workflow Details <workflow_docs>
+    Create a Doc <adding_docs>
 

@@ -75,23 +75,23 @@
 
 
 
-  <meta name="route-pattern" content="/:user_id/:repository/tree/*name(/*path)" data-turbo-transient>
-  <meta name="route-controller" content="files" data-turbo-transient>
-  <meta name="route-action" content="disambiguate" data-turbo-transient>
+  <meta name="route-pattern" content="/:user_id/:repository/blob/*name(/*path)" data-turbo-transient>
+  <meta name="route-controller" content="blob" data-turbo-transient>
+  <meta name="route-action" content="show" data-turbo-transient>
 
     
   <meta name="current-catalog-service-hash" content="82c569b93da5c18ed649ebd4c2c79437db4611a6a1373e805a3cb001c64130b7">
 
 
-  <meta name="request-id" content="BC00:22CE64:BD1F794:C0E940F:666F5E06" data-pjax-transient="true"/><meta name="html-safe-nonce" content="5067b790b42640bf8ad06d5eadaa27b86e0352cefb9021d320de07b00ff7f998" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJCQzAwOjIyQ0U2NDpCRDFGNzk0OkMwRTk0MEY6NjY2RjVFMDYiLCJ2aXNpdG9yX2lkIjoiMjEzMzg3NjQ0MTcwNTU2OTc5OCIsInJlZ2lvbl9lZGdlIjoic2VhIiwicmVnaW9uX3JlbmRlciI6InNlYSJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="50f0e0cc7466b3ed65a6667844d4c36b3d987b0025074b81cd40d3bc68c1c3dc" data-pjax-transient="true"/>
+  <meta name="request-id" content="7440:3DE53F:A302469:D8F1596:666F6415" data-pjax-transient="true"/><meta name="html-safe-nonce" content="c86329579a6df0fc8c8ffce38b5effb5cf28b32077c65d47d208ba06a64eb8fd" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiI3NDQwOjNERTUzRjpBMzAyNDY5OkQ4RjE1OTY6NjY2RjY0MTUiLCJ2aXNpdG9yX2lkIjoiNzk3NzQ3MjA2ODMzMDQxNTEyNSIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-pjax-transient="true"/><meta name="visitor-hmac" content="e1e0aa176fb1b291b3b516ad97d1b8711dc433a6536950e99cc6ef3c98d1de73" data-pjax-transient="true"/>
 
 
 
 
-  <meta name="github-keyboard-shortcuts" content="source-code,file-tree,copilot" data-turbo-transient="true" />
+  <meta name="github-keyboard-shortcuts" content="source-code,file-tree,actions,copilot" data-turbo-transient="true" />
   
 
-  <meta name="selected-link" value="/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png" data-turbo-transient>
+  <meta name="selected-link" value="/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" data-turbo-transient>
   <link rel="assets" href="https://github.githubassets.com/">
 
     <meta name="google-site-verification" content="Apib7-x98H0j5cPqHWwSMm6dNU4GmODRoqxLiDzdx9I">
@@ -119,7 +119,7 @@
 
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
     <meta property="fb:app_id" content="1401488693436528">
-    <meta name="apple-itunes-app" content="app-id=1477376905, app-argument=https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png" />
+    <meta name="apple-itunes-app" content="app-id=1477376905, app-argument=https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" />
 
       <meta property="og:url" content="https://github.com">
   <meta property="og:site_name" content="GitHub">
@@ -173,7 +173,7 @@
 
 
 
-      <link rel="canonical" href="https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png" data-turbo-transient>
+      <link rel="canonical" href="https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" data-turbo-transient>
 
 
     <meta name="turbo-body-classes" content="logged-out env-production page-responsive min-height-full d-flex flex-column">
@@ -254,9 +254,9 @@
       </a>
 
       <div class="flex-1">
-        <a href="/login?return_to=https%3A%2F%2Fgithub.com%2FMillerBrainObservatory%2Fstatic-assets%2Ftree%2Fmaster%2Fimg%2Fgeneral%2Fgh_docs_success.png"
+        <a href="/login?return_to=https%3A%2F%2Fgithub.com%2FMillerBrainObservatory%2Fstatic-assets%2Fblob%2Fmaster%2Fimg%2Fversion_control%2Fgh_actions_workflows.png"
           class="d-inline-block d-lg-none flex-order-1 f5 no-underline border color-border-default rounded-2 px-2 py-1 color-fg-inherit"
-          data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="e4e9194b7962836db1751c055ca44835c945b4b6d842cad0a71086eb9769ae22"
+          data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f8ae3998f7c6ef0d9f7ce4fcac3525401a3f95efa27f6fd2c703ee505cf2d49b"
           data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">
           Sign in
         </a>
@@ -700,7 +700,7 @@
                 
 
 
-<qbsearch-input class="search-input" data-scope="owner:MillerBrainObservatory" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="LUJ_PY4cvKoXPisYxMw7FirdyyBl9rO9P_w71KZvnFqkgKEgZEJL2OJjflrEEI5TYbkLULINFEls4U96tLflbw" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="" data-current-org="" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-blackbird-indexed-repo-csrf="<esi:include src=&quot;/_esi/rails_csrf_token_form_hidden?r=CKvcanMGgVS44bVRH%2FvmOKC9Ci7qBQ53PGg%2FqmmM24yTncTPY3qlVOWJl%2FDUE0ljaXaQDxqMmIGKOO5DDeNbvl20nTcQ2lrJNUUcUDqexm9KR93LpewrqvxNGUJRYuTl38GwLTPJBsJiIFLDpDOT4HMChQhnVRJc2fJMNb19V5riOpd6blFeY5qomPeFsufPpLLijYZOqy0C7wSE1hLeezLWhXfGgs8I%2FXj0bivbGBK7%2BQcvbGR8xrARX0Y%2FizXsXL%2FzwXMARGpqpAJy0ygGayfcLyU1H%2BSPVF6lXfCX5TsdNicKqNYK1t7A4GguamXWFCrEdHWbvsoRJIFhTu4zHKa2o62bCNMTTkxITZ2UygvhV%2BD8l0ESwHYc5pmkbAscBzUDjYVig%2BLXAHdD3RwrNPOVfRjsg9RmqbFVAoBaRXRxYLLGxwUf7VEqm9eZAE48u9EN5YTsElySQ5n6G47cxV8ggCVjN1JTEPJHqVVIaPEcxqsvpQecM3fi3jiloPLBRjYSWyvPjPhwAR7KExblNZ2XDvkXvtChEBh7w1a9nPxZZxSx1%2BYvhFsX84BkYyfRbeEf6VFQfhGvX3iwZR0JnebYRS%2F1fKxa5JiGaYOljCLi5xW9ZkmDTipHt1lmTMcr6Ro%3D--ItzEJ9Gq9DMKQ5Wq--RPb0AkvzXFwDs9i7PlfkIw%3D%3D&quot; />">
+<qbsearch-input class="search-input" data-scope="owner:MillerBrainObservatory" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="rPSBiGgev9m3MfSYvGES4Qa92ATThUrSMRO-eD7KmGsk-S4bnaND8PwQr3zqR3bgJJM2X0YiccDk6CezOR546A" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="" data-current-org="" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-blackbird-indexed-repo-csrf="<esi:include src=&quot;/_esi/rails_csrf_token_form_hidden?r=DmMpEeC%2F54J6valuvD%2BZKn0ZJsz%2FiNpjA7JX8ei1CImaOGtcpU0gYrDr2kMpefGbYB1DI4vLshksCWqFC270d6SMhARvjEByU75uhVdVMPY%2FgRtEKYtsmp7tUtKkaVlwSdqccp9wVgBGLDg9DpHjMnImN0rDrkjhEbgMXqzFT22dzwiYj5DTq%2FPC2CdS4NGt5ZyRr75LGWb%2FulSeqEMC4ieZ7s5wTwxlZuXbDZmLocdF7%2FlfZo3HVy%2BV6ictEH6qGcLxx1jBd2t%2B9VfWnzbSpir2o%2FfSqWOQITPzPphQad6%2FmkiLzSjGlPSt7Uds%2Bhhu3rMJrztHHdXi%2BcRrbiqs8nuFMpjjH9tnVTJCZRzg2tGxidK1svs3yQDy5fLKUdE%2FyT8CRqnhxuFN%2BC0s8d7RCmCVHkeN1JJ%2B38ZwD2bOadNZakvVW2OVwsDAWX9U6u1fHZwDJ1HTKJ1%2FildhKdaDUuAlTYpDySpMdGklGEkoeLxEnYwWW3dlhbYo4KzEfQIiXUEHV%2BwL9IeBda3O6Uyo5q3CKYHzpbh4o1TMLFI3%2Bzsm5iDa9bdWfAGsoWihoKkjfnjeoDu93OIdOHJ8dNPxj%2BXWymU9sVuEEc2G478ZG8Ykno6HninjP1yKp7tpLll4k6jF8BKtIh2m%2Fu6Q3FLqbmND--ZvZRHXMNh5We99La--d6XhVJKfHDxlImwDvAaOkg%3D%3D&quot; />">
   <div
     class="search-input-container search-with-dialog position-relative d-flex flex-row flex-items-center mr-4 rounded"
     data-action="click:qbsearch-input#searchInputContainerClicked"
@@ -762,7 +762,7 @@
           ></div>
           <div class="QueryBuilder-InputWrapper">
             <div aria-hidden="true" class="QueryBuilder-Sizer" data-target="query-builder.sizer"></div>
-            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-215ee37d-f767-4904-9704-11510583a0ed" data-target="query-builder.input" data-action="
+            <input id="query-builder-test" name="query-builder-test" value="" autocomplete="off" type="text" role="combobox" spellcheck="false" aria-expanded="false" aria-describedby="validation-8fd2a9b5-5b24-4d92-89a2-01248b051000" data-target="query-builder.input" data-action="
           input:query-builder#inputChange
           blur:query-builder#inputBlur
           keydown:query-builder#inputKeydown
@@ -993,7 +993,7 @@
                   id="query-builder-test-results"
                 ></ul>
         </div>
-      <div class="FormControl-inlineValidation" id="validation-215ee37d-f767-4904-9704-11510583a0ed" hidden="hidden">
+      <div class="FormControl-inlineValidation" id="validation-8fd2a9b5-5b24-4d92-89a2-01248b051000" hidden="hidden">
         <span class="FormControl-inlineValidation--visual">
           <svg aria-hidden="true" height="12" viewBox="0 0 12 12" version="1.1" width="12" data-view-component="true" class="octicon octicon-alert-fill">
     <path d="M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 0 1-1.146 1.954H1.33A1.313 1.313 0 0 1 .183 9.058ZM7 7V3H5v4Zm-1 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path>
@@ -1036,7 +1036,7 @@
   
 </div>
       <scrollable-region data-labelled-by="feedback-dialog-title">
-        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="7qVKeeLvw+sIhIJYbRL8hM40+edlUujxJpqqTBPy40/9xDKM0ETzjNEBqncWtKUIqAoBkmvhV/aZEGhUUkU71A==" />
+        <div data-view-component="true" class="Overlay-body">        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="code-search-feedback-form" data-turbo="false" action="/search/feedback" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="4qoU8FTQwnARIxxk1h6kf2B5LJAL1aHaiF7IKZDCBcqduJ8qCwOGUEHOUXPR763r+03cOVMh/N86AIfSV6RA3g==" />
           <p>We read every piece of feedback, and take your input very seriously.</p>
           <textarea name="feedback" class="form-control width-full mb-2" style="height: 120px" id="feedback"></textarea>
           <input name="include_email" id="include_email" aria-label="Include my email address so I can be contacted" class="form-control mr-2" type="checkbox">
@@ -1074,7 +1074,7 @@
         <div data-view-component="true" class="Overlay-body">        <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
         <div hidden class="create-custom-scope-form" data-target="custom-scopes.createCustomScopeForm">
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="yYltwoGzLSK1QMrPYVWnwK7R4UomG/7qoFaxBSGPgs0sEc30JjSWNhtyfmGSHhPub4GjrQpscXAygnHaNKHhpA==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form id="custom-scopes-dialog-form" data-turbo="false" action="/search/custom_scopes" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="K4bA2iSN231H6C4rOAiCtX4HPbf3W+pgwVbrEh7VDCrcj2hHGv88vkUUwTG1T/fPhYGhG744qZmu5qvBHdLPHA==" />
           <div data-target="custom-scopes.customScopesModalDialogFlash"></div>
 
           <input type="hidden" id="custom_scope_id" name="custom_scope_id" data-target="custom-scopes.customScopesIdField">
@@ -1092,7 +1092,7 @@
                 placeholder="github-ruby"
                 required
                 maxlength="50">
-              <input type="hidden" data-csrf="true" value="xO55nuF7zxlSFzkYVc7p2dTyaw5dEEuhIHRrN8r4154lQ/CXnl4H9MuhOTixvWmKeN65hN2fYbEIi5IFLHz4rw==" />
+              <input type="hidden" data-csrf="true" value="UuQuLgwYGflkzfrie483mloN+3qIGmQ+deUI5WF/DQbKi/wNZwpOOrmEH/b29t8u9zaAV+NESFLHM+LrSCovKA==" />
             </auto-check>
           </div>
 
@@ -1129,13 +1129,13 @@
 </dialog></dialog-helper>
     </custom-scopes>
   </div>
-</qbsearch-input><input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="F9f/l23ocSTE9dkIW3YGohDbu10sTUJp6VHdqqZhMvkHN3P47XlvnOqwaXkAPsGrJPHeM4S2QB7jxSrXxQlU6g==" />
+</qbsearch-input><input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="PAJXB9DK2OwEFcDF01riljR8ule8yStbtvXmUmykt6zuYiusm7LuAL4e+CGoRpsQ5c0oamfnPB2no90E0nfDeg==" />
 
 
           <div class="position-relative mr-lg-3 d-lg-inline-block">
-            <a href="/login?return_to=https%3A%2F%2Fgithub.com%2FMillerBrainObservatory%2Fstatic-assets%2Ftree%2Fmaster%2Fimg%2Fgeneral%2Fgh_docs_success.png"
+            <a href="/login?return_to=https%3A%2F%2Fgithub.com%2FMillerBrainObservatory%2Fstatic-assets%2Fblob%2Fmaster%2Fimg%2Fversion_control%2Fgh_actions_workflows.png"
               class="HeaderMenu-link HeaderMenu-link--sign-in flex-shrink-0 no-underline d-block d-lg-inline-block border border-lg-0 rounded rounded-lg-0 p-2 p-lg-0"
-              data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="e4e9194b7962836db1751c055ca44835c945b4b6d842cad0a71086eb9769ae22"
+              data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f8ae3998f7c6ef0d9f7ce4fcac3525401a3f95efa27f6fd2c703ee505cf2d49b"
               data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">
               Sign in
             </a>
@@ -1143,7 +1143,7 @@
   <div style="width: 300px" data-view-component="true" class="Popover-message Box Popover-message--top-right color-fg-default p-4 mt-2 mx-auto text-left">
     <h4 data-view-component="true" class="color-fg-default mb-2">                  Sign in to GitHub
 </h4>
-                      <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/session" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="kdNKBl40nzW9WqyA2ppdW7v8mV0UZWSCn7UASMczOYaQ5H3nHjJVrHNbFQkg20U3cInHSZko15cX0y8cvFklTQ==" />    <label for="login_field">
+                      <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-turbo="false" action="/session" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="hL/7Xw3d1VWFHpARceAglQ6C9ES2JX8zcZpJDhqVcMu6/CCbWAdKfWwntjLcJFsVWYbrP7gcyX0ke+/9GTtepQ==" />    <label for="login_field">
       Username or email address
     </label>
     <input type="text" name="login" id="login_field" class="form-control input-block js-login-field" autocapitalize="off" autocorrect="off" autocomplete="username" autofocus="autofocus" required="required" />
@@ -1159,20 +1159,20 @@
 <input type="hidden" class="js-support" name="javascript-support" value="unknown">
 <input type="hidden" class="js-webauthn-support" name="webauthn-support" value="unknown">
 <input type="hidden" class="js-webauthn-iuvpaa-support" name="webauthn-iuvpaa-support" value="unknown">
-<input type="hidden" name="return_to" id="return_to" value="https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png" autocomplete="off" class="form-control" />
+<input type="hidden" name="return_to" id="return_to" value="https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" autocomplete="off" class="form-control" />
 <input type="hidden" name="allow_signup" id="allow_signup" autocomplete="off" class="form-control" />
 <input type="hidden" name="client_id" id="client_id" autocomplete="off" class="form-control" />
 <input type="hidden" name="integration" id="integration" autocomplete="off" class="form-control" />
-<input class="form-control" type="text" name="required_field_5bed" hidden="hidden" />
-<input class="form-control" type="hidden" name="timestamp" value="1718574598657" />
-<input class="form-control" type="hidden" name="timestamp_secret" value="3a286c6c082fe107d996c21395f64a425b8ed451d5c225269354c63d95c8014d" />
+<input class="form-control" type="text" name="required_field_c250" hidden="hidden" />
+<input class="form-control" type="hidden" name="timestamp" value="1718576149759" />
+<input class="form-control" type="hidden" name="timestamp_secret" value="36262e00a4d7325e7f15c29f7bb6f930e4fd61ed87caef2cd5299d1383d790de" />
 
 
     <input type="submit" name="commit" value="Sign in" class="btn btn-primary btn-block js-sign-in-button" data-disable-with="Signing in…" data-signin-label="Sign in" data-sso-label="Sign in with your identity provider" development="false" disable-emu-sso="false" />
   </div>
 </form>  <webauthn-status class="js-webauthn-login-emu-control">
         <div data-target="webauthn-status.partial" class="d-flex flex-justify-between flex-column mt-3 mb-0" hidden>
-          <a href="/login?passkey=true&amp;return_to=https%3A%2F%2Fgithub.com%2FMillerBrainObservatory%2Fstatic-assets%2Ftree%2Fmaster%2Fimg%2Fgeneral%2Fgh_docs_success.png" data-analytics-event="{&quot;category&quot;:&quot;passkey_404_login&quot;,&quot;action&quot;:&quot;clicked&quot;,&quot;label&quot;:null}" data-view-component="true" class="Button--link Button--medium Button">  <span class="Button-content">
+          <a href="/login?passkey=true&amp;return_to=https%3A%2F%2Fgithub.com%2FMillerBrainObservatory%2Fstatic-assets%2Fblob%2Fmaster%2Fimg%2Fversion_control%2Fgh_actions_workflows.png" data-analytics-event="{&quot;category&quot;:&quot;passkey_404_login&quot;,&quot;action&quot;:&quot;clicked&quot;,&quot;label&quot;:null}" data-view-component="true" class="Button--link Button--medium Button">  <span class="Button-content">
     <span class="Button-label">or sign in with a passkey</span>
   </span>
 </a>
@@ -1182,10 +1182,10 @@
 
 </div></div>          </div>
 
-            <a href="/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2FMillerBrainObservatory%2Fstatic-assets%2Ftree%2Fmaster%2Fimg%2Fgeneral%2Fgh_docs_success.png&amp;source=header"
+            <a href="/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2FMillerBrainObservatory%2Fstatic-assets%2Fblob%2Fmaster%2Fimg%2Fversion_control%2Fgh_actions_workflows.png&amp;source=header"
               class="HeaderMenu-link HeaderMenu-link--sign-up flex-shrink-0 d-none d-lg-inline-block no-underline border color-border-default rounded px-2 py-1"
-              data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="e4e9194b7962836db1751c055ca44835c945b4b6d842cad0a71086eb9769ae22"
-              data-analytics-event="{&quot;category&quot;:&quot;Sign up&quot;,&quot;action&quot;:&quot;click to sign up for account&quot;,&quot;label&quot;:&quot;ref_page:/MillerBrainObservatory/static-assets/tree/master/img/general/gh_docs_success.png;ref_cta:Sign up;ref_loc:header logged out&quot;}"
+              data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="f8ae3998f7c6ef0d9f7ce4fcac3525401a3f95efa27f6fd2c703ee505cf2d49b"
+              data-analytics-event="{&quot;category&quot;:&quot;Sign up&quot;,&quot;action&quot;:&quot;click to sign up for account&quot;,&quot;label&quot;:&quot;ref_page:/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png;ref_cta:Sign up;ref_loc:header logged out&quot;}"
             >
               Sign up
             </a>
@@ -1204,10 +1204,10 @@
         <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
         <span class="js-stale-session-flash-switched" hidden>You switched accounts on another tab or window. <a class="Link--inTextBlock" href="">Reload</a> to refresh your session.</span>
 
-    <button id="icon-button-4da374a1-7bc6-43f1-a0f4-de164959c451" aria-labelledby="tooltip-0b1a7b25-f55b-4a52-bf5a-929a69a4f573" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
+    <button id="icon-button-e2a08787-c5e9-404c-86f6-3675cc2c64e7" aria-labelledby="tooltip-c7e9f60e-5649-4111-8ac4-7de2c3e8294a" type="button" data-view-component="true" class="Button Button--iconOnly Button--invisible Button--medium flash-close js-flash-close">  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x Button-visual">
     <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
 </svg>
-</button><tool-tip id="tooltip-0b1a7b25-f55b-4a52-bf5a-929a69a4f573" for="icon-button-4da374a1-7bc6-43f1-a0f4-de164959c451" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
+</button><tool-tip id="tooltip-c7e9f60e-5649-4111-8ac4-7de2c3e8294a" for="icon-button-e2a08787-c5e9-404c-86f6-3675cc2c64e7" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
 
 
   
