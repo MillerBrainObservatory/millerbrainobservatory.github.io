@@ -42,6 +42,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
+        run : cd ${{ github.workspace }} / docs
         run: python3 -m pip install -r ./requirements.txt
 
       - name: Build html
