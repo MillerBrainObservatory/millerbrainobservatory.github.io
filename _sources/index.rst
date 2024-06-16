@@ -11,6 +11,7 @@ MBO Compute Hub!
    :caption: Contents:
 
    Documentation <doc_guides/index>
+   Pipelines <pipelines/index>
 
 
 
