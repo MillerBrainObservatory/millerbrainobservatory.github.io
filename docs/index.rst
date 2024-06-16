@@ -6,6 +6,15 @@ MBO Compute Hub
 
 A central repository for all Miller Brain Observatory computational resources.
 
+Contents
+=================
+
+.. toctree::
+    :maxdepth: 2
+
+    Pipelines <pipelines/index>
+    Guides <guides/index>
+
 Repositories
 ======================
 
@@ -41,9 +50,17 @@ LBM-CaImAn-Python
 Branch/Versioning
 ======================
 
-.. image:: _static/_images/git_flow.svg
+.. image:: _static/_images/general/gh_flow.svg
    :alt: git-flow
 
+.. image:: _static/_images/general/gh_flow.png
+   :alt: git-flow
+
+.. thumbnail:: _static/_images/general/gh_flow.png
+   :alt: git-flow
+
+.. thumbnail:: _static/_images/general/gh_flow.png
+   :alt: git-flow
 
 .. |Publication| image:: https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg
       :target: https://doi.org/10.1038/s41592-021-01239-8
@@ -82,14 +99,6 @@ We welcome contributions to our repositories. Please check the issues and pull r
    :alt: Open Pull Requests LBM-CaImAn-Python
 
 
-Contents
-=================
-
-.. toctree::
-    :maxdepth: 2
-
-    Pipelines <pipelines/index<
-    Guides <guides/index>
 
 Indices and tables
 =====================================
