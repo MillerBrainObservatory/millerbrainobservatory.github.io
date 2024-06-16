@@ -47,3 +47,10 @@ html_logo = "_static/MBO_32.png"
 #       {"name": "CaImAn-Python", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
 #   ]
 # }
+
+html_theme_options = {
+    "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io/",
+    "use_repository_button": True,
+}
+
+
