@@ -8,7 +8,7 @@ Guides for MBO users and developers.
 .. toctree::
     :maxdepth: 1
 
-    Building Documentation <build_docs>
+    Building Docs <build_docs>
 
 Indices and tables
 =====================================
