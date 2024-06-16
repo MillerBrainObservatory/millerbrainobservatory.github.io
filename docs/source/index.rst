@@ -6,13 +6,6 @@
 MBO Compute Hub!
 ==================
 
-|MBO Discussions|
-|MBO Homepage|
-
-|LCM Issues|
-|LCM Release|
-|LCM Docs|
-
 A central repository for all Miller Brain Observatory computational resources.
 
 **Disclaimer**
@@ -25,6 +18,18 @@ For these reasons, the list of tools used in the MBO is kept as simple as possib
 documentation and resources. Let `git` handle all tasks and workflows that may have more "mature" alternatives i.e. travisCI, circleCI.
 This is the motivation against using `ReadTheDocs <https://www.ReadTheDocs.org>`_ as `github-pages <https://pages.github.com/>`_ has the same
 functionality, albeit with a few more lines of code and technical expertise required in handling the `github-workflows`.
+
+CaImAn MATLAB
+------------------
+
+- Repository: |LCM Repo|
+- Documentation: :external:ref:`LBM-CaImAn-MATLAB Documentation`_
+
+CaImAn Python
+----------------
+
+- Repository: |LCP Repo|
+- Documentation: :external:ref:`LBM-CaImAn-Python Documentation`_
 
 .. toctree::
    :maxdepth: 3
@@ -129,6 +134,35 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+
+.. |LCM Docs| image:: https://img.shields.io/badge/LBM%20Documentation-1f425f.svg
+   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/
+
+.. |LCM Docs| image:: https://img.shields.io/badge/Documentation-1f425f.svg
+   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-Python/
+   :alt: Documentation
+
+.. |LCP Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Frepo2%2Fdiscussions
+   :target: https://github.com/orgs/MillerBrainObservatory/LBM-CaImAn-Python/discussions
+   :alt: Discussions
+
+.. |LCP Issues| image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-Python.svg
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/issues
+   :alt: Issues
+
+.. |LCP PRs| image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-Python.svg
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/pulls
+   :alt: Pull Requests
+
+.. |LCP Last Commit| image:: https://img.shields.io/github/last-commit/MillerBrainObservatory/LBM-CaImAn-Python.svg
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/commits
+   :alt: Last Commit
+
+.. |LCP Docs| image:: https://img.shields.io/badge/Documentation-1f425f.svg
+   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-Python/
+   :alt: Documentation
+
+
 .. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
    :target: https://github.com/orgs/MillerBrainObservatory/discussions
    :alt: Discussions
@@ -137,11 +171,3 @@ Indices and tables
    :target: https://mbo.rockefeller.edu/
    :alt: MBO Homepage
 
-.. |LCM Issues| image:: https://img.shields.io/github/issues/Naereen/StrapDown.js.svg
-      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues/
-
-.. |LCM Release| image:: https://img.shields.io/github/release/Naereen/StrapDown.js.svg
-      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/releases/
-
-.. |LCM Docs| image:: https://img.shields.io/badge/LBM%20Documentation-1f425f.svg
-   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/
