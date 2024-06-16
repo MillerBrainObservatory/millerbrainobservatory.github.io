@@ -40,10 +40,10 @@ html_static_path = ["_static"]
 html_css_files = ['_static/LBM_docs.css']
 html_logo = "_static/MBO_32.png"
 
-html_theme_options = {
-  "external_links": [
-      {"name": "MBO", "url": "https://mbo.rockefeller.edu"},
-      {"name": "CaImAn-MATLAB", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
-      {"name": "CaImAn-Python", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
-  ]
-}
+# html_theme_options = {
+#   "external_links": [
+#       {"name": "MBO", "url": "https://mbo.rockefeller.edu"},
+#       {"name": "CaImAn-MATLAB", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
+#       {"name": "CaImAn-Python", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
+#   ]
+# }
