@@ -86,9 +86,10 @@ Contents
 =================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
-    pipelines/index
+    Pipelines <pipelines/index<
+    Guides <guides/index>
 
 Indices and tables
 =====================================
