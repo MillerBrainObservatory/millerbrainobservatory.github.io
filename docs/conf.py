@@ -31,7 +31,7 @@ images_config = dict(
 )
 
 templates_path = ["_templates"]
-html_theme = "sphinx_book_theme"
+html_theme = "alabaster"
 html_short_title="MBO Compute Hub"
 html_static_path = ["_static"]
 
