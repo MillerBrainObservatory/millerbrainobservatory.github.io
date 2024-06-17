@@ -6,7 +6,24 @@
 MBO Compute Hub!
 ==================
 
+Here we can include language-agnostic documentation and tutorials.
+
+Something like:
+
+.. tab-set-code::
+
+    .. literalinclude:: ./imported_code_example.py
+        :language: python
+
+    .. code-block:: MATLAB
+
+        a = 1;
+
 .. modified from Numpydocs index.rst
+
+
+
+These can link places within this doc and to our other repos:
 
 .. grid:: 1 1 2 2
     :gutter: 2 3 4 4
@@ -37,8 +54,7 @@ MBO Compute Hub!
         Guides
         ^^^
 
-        The user guide provides in-depth information on the
-        key concepts of NumPy with useful background information and explanation.
+        The user guides provide walkthroughs on key concepts related to any technology MBO users may enounter. This section should be expanded upon as the MBO progresses.
 
         +++
 
@@ -93,7 +109,8 @@ MBO Compute Hub!
 
 A central repository for all Miller Brain Observatory computational resources.
 
-**Disclaimer**
+MBO Technology Stack
+=======================
 
 Choosing a technology stack for a project is subjective and dynamic. The technology that works now
 may not work as more pipelines are built and included in the documentation. Maintainability is also a concern; your
@@ -103,6 +120,9 @@ For these reasons, the list of tools used in the MBO is kept as simple as possib
 documentation and resources. Let `git` handle all tasks and workflows that may have more "mature" alternatives i.e. travisCI, circleCI.
 This is the motivation against using `ReadTheDocs <https://www.ReadTheDocs.org>`_ as `github-pages <https://pages.github.com/>`_ has the same
 functionality, albeit with a few more lines of code and technical expertise required in handling the `github-workflows`.
+
+Repositories
+==================
 
 CaImAn MATLAB
 ------------------
@@ -121,7 +141,7 @@ CaImAn Python
    :caption: Section Navigation:
 
    Guides <user_guide/index>
-   Pipelines <user_guide/index>
+   Pipelines <pipelines/index>
 
 Requirements
 ----------------
@@ -198,7 +218,6 @@ Youll see tutorials on `sphinx-quickstart` as how to "get started" with sphinx. 
 `make html` produces:
 docs/_build/html: this is the golden nugget
 docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging
-
 
 The workflow that manages where our `html` files go is `peaceitis' github action workflow <https://github.com/peaceiris/actions-gh-pages>`_
 
