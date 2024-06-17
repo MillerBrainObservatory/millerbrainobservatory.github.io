@@ -1,6 +1,5 @@
-
 =========================================
-Building the NumPy API and reference docs
+Building MBO Documentation
 =========================================
 
 Development environments
@@ -10,10 +9,11 @@ Before proceeding further it should be noted that the documentation is built
 with the ``make`` tool, which is not natively available on Windows. MacOS or
 Linux users can jump to :ref:`how-todoc.prerequisites`. It is recommended for
 Windows users to set up their development environment on
-GitHub Codespaces (see :ref:`recommended-development-setup`) or
-`Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
+GitHub Codespaces  or `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
 WSL is a good option for a persistent local set-up.
 
+Update Docs
+------------------
 
 The workflow to update documentation is pretty simple.
 
@@ -31,7 +31,6 @@ The workflow to update documentation is pretty simple.
 .. important::
 
    You need to activate the `conda` environment before calling `make clean` or `make html`.
-
 
 The github action triggers for each `.yml` file within `root/.github/workflows/`. We have `build_and_deploy_docs.yml`, or some similar variation.
 
@@ -88,18 +87,8 @@ online, this is the usual suspect. The output of the github actions will tell yo
 
 
 
-docs/_build/html: this is the golden nugget
-docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging
-
-The workflow that manages where our `html` files go is `peaceitis' github action workflow <https://github.com/peaceiris/actions-gh-pages>`_
-
-Selected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.
-
-If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
-(Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/*/*.) If you add main as a branch rule, a branch named main can also deploy to the environment`
-
-Instructions
-============
+Build Docs Locally
+=========================
 
 Now you are ready to generate the docs, so write::
 
@@ -113,5 +102,9 @@ This will build NumPy from source if you haven't already, and run Sphinx to
 build the ``html`` docs. If all goes well, this will generate a ``build/html``
 subdirectory in the ``/doc`` directory, containing the built documentation.
 
-Sometimes sphinx will cache files unexpectedly
+Sometimes sphinx will cache files unexpectedly. In this case::
+
+    `make clean && make html`
+
+should do the trick.
 
