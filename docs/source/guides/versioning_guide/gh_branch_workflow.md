@@ -42,3 +42,4 @@ PR's name should follow [PR Naming Guide](https://millerbrainobservatory.github.
 - PR's description should include an explanation of what has changed
 - There should be a reviewer with proper knowledge of the codebase to understand the changes being made.
 
+![Doc](https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png)

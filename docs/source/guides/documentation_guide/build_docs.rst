@@ -86,6 +86,17 @@ online, this is the usual suspect. The output of the github actions will tell yo
         -r requirements/doc_requirements.txt
 
 
+Troubleshooting
+=====================
+
+**Docs look good locally, 404 on site**
+when docs look good locally but bad online, there is an issue with the github workflow.
+On `github.com/repository` go to the `Actions` tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
+This is generally an issue with `docs/requirements.txt`. This document holds the dependencies to build documentation, and since our project builds locally and not
+online, this is the usual suspect. The output of the github actions will tell you:
+
+
+.. thumbnail:: https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png
 
 Build Docs Locally
 =========================

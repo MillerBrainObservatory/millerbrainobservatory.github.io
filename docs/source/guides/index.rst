@@ -26,10 +26,9 @@ Contents
 ===================
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 2
+   :caption: Guides:
 
-    Building <build_docs>
-    Deployment <deploy_docs>
-    Workflow Details <workflow_docs>
-    Create a Doc <adding_docs>
+    Documentation <documentation_guide/index>
+    Versioning <versioning_guide/index>
 

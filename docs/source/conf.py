@@ -33,7 +33,6 @@ extensions = [
 #unused_docs = []
 
 # The reST default role (used for this markup: `text`) to use for all documents.
-default_role = "autolink"
 source_suffix = '.rst'
 
 
@@ -45,11 +44,12 @@ html_static_path = ['_static']
 # html_use_index = False
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
+html_title = "Miller Brain Observatory"
 html_short_title = "MBO"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "MBO_32.png"
+html_logo = "https://github.com/MillerBrainObservatory/static-assets/tree/master/img/favicon"
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -103,7 +103,7 @@ html_theme_options = {
     "header_links_before_dropdown": 6,
     "navbar_end": [ "navbar-icon-links" ],
     "navbar_persistent": [],
-    "navbar_align": "center",
+    "navbar_align": "content",
 }
 
 

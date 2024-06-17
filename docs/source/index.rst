@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MBO Compute Hub!
-==================
+.. _mbo_hub:
+
+Miller Brain Observatory: Compute Ecosystem
+==============================================
+
+A central place for the
 
 Here we can include language-agnostic documentation and tutorials.
 
@@ -20,11 +24,11 @@ We can import entire files to show examples for different languages:
         a = 1;
 
 
-
-
 These can link places within this doc and to our other repos:
 
-.. modified from Numpydocs index.rst
+Start
+--------
+
 .. grid:: 1 1 2 2
     :gutter: 2 3 4 4
 
@@ -107,7 +111,6 @@ These can link places within this doc and to our other repos:
             To the contributor's guide
 
 
-A central repository for all Miller Brain Observatory computational resources.
 
 MBO Technology Stack
 =======================
@@ -128,20 +131,20 @@ CaImAn MATLAB
 ------------------
 
 - Repository: |REPO LCM|
-- Documentation: :ref:`lbm_cm`_
+- Documentation: :ref:`assembly`_
 
 CaImAn Python
 ----------------
 
 - Repository: |REPO LCP|
-- Documentation: :external:`lbm_cp`_
+.. - Documentation: :external:`lbm_cp`_
 
 .. toctree::
    :maxdepth: 3
    :caption: Section Navigation:
 
-   Guides <user_guide/index>
-   Pipelines <pipelines/index>
+   Guides <guides/index>
+   Resources <resources/index>
 
 Requirements
 ----------------
@@ -196,35 +199,8 @@ These are the most common values to change. For a high level overview on the res
 - push the html to a separate `gh-pages` branch
 - trigger gh-pages to deploy our site to its servers with a build-in github workflow
 
-Troubleshooting
-=====================
+see :ref:`gh_branch_workflow` for more details about the workflow.
 
-**Docs look good locally, 404 on site**
-when docs look good locally but bad online, there is an issue with the github workflow.
-On `github.com/repository` go to the `Actions` tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
-This is generally an issue with `docs/requirements.txt`. This document holds the dependencies to build documentation, and since our project builds locally and not
-online, this is the usual suspect. The output of the github actions will tell you:
-
-.. image:: https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png
-
-.. thumbnail:: https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png
-
-Directory Structure
-=====================
-
-Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow `numpy` and their documentation conventions.
-Youll see tutorials on `sphinx-quickstart` as how to "get started" with sphinx. That is how these docs started.
-
-`make html` produces:
-docs/_build/html: this is the golden nugget
-docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging
-
-The workflow that manages where our `html` files go is `peaceitis' github action workflow <https://github.com/peaceiris/actions-gh-pages>`_
-
-elected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.
-
-If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
-(Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/*/*.) If you add main as a branch rule, a branch named main can also deploy to the environment`
 
 Indices and tables
 ==================
