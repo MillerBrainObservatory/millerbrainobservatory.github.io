@@ -155,7 +155,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="user_guide/index.html">
+                      <a class="nav-link nav-internal" href="pipelines/index.html">
                         Pipelines
                       </a>
                     </li>
@@ -283,7 +283,7 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="user_guide/index.html">
+                      <a class="nav-link nav-internal" href="pipelines/index.html">
                         Pipelines
                       </a>
                     </li>
@@ -395,6 +395,26 @@ document.write(`
                   
   <section id="mbo-compute-hub">
 <h1>MBO Compute Hub!<a class="headerlink" href="#mbo-compute-hub" title="Permalink to this heading">#</a></h1>
+<p>Here we can include language-agnostic documentation and tutorials.</p>
+<p>Something like:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="tabcode-python" for="sd-tab-item-0">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># imported_code_example.py</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="tabcode-MATLAB" for="sd-tab-item-1">
+MATLAB</label><div class="sd-tab-content docutils">
+<div class="highlight-MATLAB notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These can link places within this doc and to our other repos:</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-3 sd-g-md-4 sd-g-lg-4 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -417,8 +437,7 @@ It contains collections of MBO explinations and resources.</p>
 <p class="sd-card-text">Guides</p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text">The user guide provides in-depth information on the
-key concepts of NumPy with useful background information and explanation.</p>
+<p class="sd-card-text">The user guides provide walkthroughs on key concepts related to any technology MBO users may enounter. This section should be expanded upon as the MBO progresses.</p>
 </div>
 <div class="sd-card-footer docutils">
 <p class="sd-card-text"><span class="sd-d-grid"><span class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-stretched-link">To the user guide</span></span></p>
@@ -459,7 +478,9 @@ process of improving NumPy.</p>
 </div>
 </div>
 <p>A central repository for all Miller Brain Observatory computational resources.</p>
-<p><strong>Disclaimer</strong></p>
+</section>
+<section id="mbo-technology-stack">
+<h1>MBO Technology Stack<a class="headerlink" href="#mbo-technology-stack" title="Permalink to this heading">#</a></h1>
 <p>Choosing a technology stack for a project is subjective and dynamic. The technology that works now
 may not work as more pipelines are built and included in the documentation. Maintainability is also a concern; your
 repository is only as maintainable as the team you have to maintain it.</p>
@@ -467,6 +488,9 @@ repository is only as maintainable as the team you have to maintain it.</p>
 documentation and resources. Let <em class="xref py py-obj">git</em> handle all tasks and workflows that may have more “mature” alternatives i.e. travisCI, circleCI.
 This is the motivation against using <a class="reference external" href="https://www.ReadTheDocs.org">ReadTheDocs</a> as <a class="reference external" href="https://pages.github.com/">github-pages</a> has the same
 functionality, albeit with a few more lines of code and technical expertise required in handling the <em class="xref py py-obj">github-workflows</em>.</p>
+</section>
+<section id="repositories">
+<h1>Repositories<a class="headerlink" href="#repositories" title="Permalink to this heading">#</a></h1>
 <section id="caiman-matlab">
 <h2>CaImAn MATLAB<a class="headerlink" href="#caiman-matlab" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -494,17 +518,7 @@ functionality, albeit with a few more lines of code and technical expertise requ
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide/index.html">Pipelines</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user_guide/index.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide/index.html#contents">Contents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/build_docs.html">Building</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/deploy_docs.html">Deployment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/workflow_docs.html">Workflow Details</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/adding_docs.html">Create a Doc</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines/index.html">Pipelines</a></li>
 </ul>
 </div>
 </section>
@@ -561,7 +575,7 @@ This is generally an issue with <em class="xref py py-obj">docs/requirements.txt
 online, this is the usual suspect. The output of the github actions will tell you:</p>
 <img alt="https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" src="https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" />
 <a class=""
-               data-lightbox="group-3fe76717-a8d1-41f0-ac25-73ff83a8840c"
+               data-lightbox="group-2eb2beb7-1a90-493c-a90b-3ab8018c4053"
                href="_images/59ecfde48cd23041425a7f28e6809434e66eb282"
                title=""
                data-title=""
@@ -628,7 +642,9 @@ docs/_build/doctree: you dont need this until you want to preview exactly what o
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MBO Compute Hub!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MBO Compute Hub!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mbo-technology-stack">MBO Technology Stack</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#repositories">Repositories</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caiman-matlab">CaImAn MATLAB</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caiman-python">CaImAn Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
