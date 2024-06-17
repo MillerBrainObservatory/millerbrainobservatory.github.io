@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contibutors Guide (Docs) &#8212; MBO Compute Hub</title>
+    <title>MBO Guides &#8212; MBO Compute Hub</title>
   
   
   
@@ -319,7 +319,9 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides:</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="documentation_guide/index.html"> Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_guide/index.html">Documentation Guides</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="versioning_guide/index.html"> Versioning</a></li>
 </ul>
 </div>
 </nav></div>
@@ -357,7 +359,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Contibutors...</li>
+    <li class="breadcrumb-item active" aria-current="page">MBO Guides</li>
   </ul>
 </nav>
 </div>
@@ -374,30 +376,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="contibutors-guide-docs">
-<h1>Contibutors Guide (Docs)<a class="headerlink" href="#contibutors-guide-docs" title="Permalink to this heading">#</a></h1>
-<p>Guides for MBO users and developers about topics not directly related to a specific pipeline.</p>
-<p>For instance, our light beads microscopy python/matlab pipelines share a large proportion of the documentation.</p>
-<section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h2>
-<p>Documentation for this compute hub and the various pipelines are build using the following tools:</p>
-<ul class="simple">
-<li><p>python</p></li>
-<li><p>pip</p></li>
-<li><p>conda</p></li>
-<li><p>sphinx</p></li>
-<li><p>github actions</p></li>
-</ul>
-<p>Thats it! The first three should be familiar, python with its two most popular package managers (we use <cite>conda</cite> for everything that we can, and fallback to <cite>pip</cite>). These are needed because <a class="reference external" href="https://www.sphinx-doc.org/en/master/index.html">Sphinx</a> uses a python environment
-to import our python <cite>modules</cite>, <cite>classes</cite>, <cite>functions</cite>. It does this by looking for the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html">directives</a></p>
-<p>It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it’s just raw html, and should be accessible from any browser environment on any device.</p>
-</section>
+  <section id="mbo-guides">
+<h1>MBO Guides<a class="headerlink" href="#mbo-guides" title="Permalink to this heading">#</a></h1>
+<p>Small helper-guides for MBO users and developers about topics not directly related to a specific pipeline.</p>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="documentation_guide/index.html"> Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_guide/index.html">Documentation Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation_guide/index.html#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="documentation_guide/index.html#contents">Contents</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="versioning_guide/index.html"> Versioning</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -447,7 +443,6 @@ to import our python <cite>modules</cite>, <cite>classes</cite>, <cite>functions
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
 </ul>
   </nav></div>
