@@ -29,26 +29,38 @@ extensions = [
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+# html_use_modindex = False
+# html_use_index = False
+
+# A shorter title for the navigation bar.  Default is the same as html_title.
+html_short_title = "MBO"
+
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+html_logo = "MBO_32.png"
+
+# The name of an image file (relative to this directory) to use as a favicon of
+# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# pixels large.
+html_favicon = "mbo_icon.ico"
+
+html_theme = 'pydata_sphinx_theme'
 html_title = "MBO Compute Hub"
-html_logo = "_static/mbo_icon.ico"
 
 # This is a dictionary where the value is a tuple.
 # The first link is a link to our "deployed" documentation URL
 # The second is a path relative to the local build so sphinx can instead
 # map to that location.
+
 intersphinx_mapping = {
-    'LBM-CaImAn-MATLAB':
-        ('https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/',
-            ('../../../LBM-CaImAn-Python/docs/_build/html/objects.inv', None)),
-    'LBM-CaImAn-Python':
-        ('https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/',
-            ('../../../LBM-CaImAn-MATLAB/docs/_build/html/objects.inv', None)),
+    'python': ('https://docs.python.org/3.5', None),
+    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+    'lbm_cm': ('https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/', None),
+    'lbm_cp': ('https://millerbrainobservatory.github.io/LBM-CaImAn-Python/', None)
 }
 
-html_use_modindex = False
-html_use_index = False
+intersphinx_disabled_reftypes = ["*"]
 
 # html_theme_options = {
 #     "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
