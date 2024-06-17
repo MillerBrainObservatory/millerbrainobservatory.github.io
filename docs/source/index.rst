@@ -6,7 +6,7 @@
 MBO Compute Hub!
 ==================
 
-.. thumbnail:: index-images/api.svg
+.. modified from Numpydocs index.rst
 
 .. grid:: 1 1 2 2
     :gutter: 2 3 4 4
@@ -15,11 +15,11 @@ MBO Compute Hub!
         :img-top: index-images/getting_started.svg
         :text-align: center
 
-        Getting started
+        Pipelines
         ^^^
 
-        New to NumPy? Check out the Absolute Beginner's Guide. It contains an
-        introduction to NumPy's main concepts and links to additional tutorials.
+        New to coding? Check out the user guides.
+        It contains collections of MBO explinations and resources.
 
         +++
 
@@ -34,7 +34,7 @@ MBO Compute Hub!
         :img-top: index-images/user_guide.svg
         :text-align: center
 
-        User guide
+        Guides
         ^^^
 
         The user guide provides in-depth information on the
@@ -53,7 +53,7 @@ MBO Compute Hub!
         :img-top: index-images/api.svg
         :text-align: center
 
-        API reference
+        API (WIP)
         ^^^
 
         The reference guide contains a detailed description of the functions,
@@ -68,13 +68,13 @@ MBO Compute Hub!
             :color: secondary
             :click-parent:
 
-            To the reference guide
+            To the API
 
     .. grid-item-card::
         :img-top: index-images/contributor.svg
         :text-align: center
 
-        Contributor's guide
+        Contributors
         ^^^
 
         Want to add to the codebase? Can help add translation or a flowchart to the
@@ -121,7 +121,7 @@ CaImAn Python
    :caption: Section Navigation:
 
    Guides <user_guide/index>
-   Pipelines <pipelines/index>
+   Pipelines <user_guide/index>
 
 Requirements
 ----------------

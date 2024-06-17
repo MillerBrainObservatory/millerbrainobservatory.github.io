@@ -1,6 +1,6 @@
 
-User Guides
-********************
+Contibutors Guide (Docs)
+****************************
 
 Guides for MBO users and developers about topics not directly related to a specific pipeline.
 
@@ -22,7 +22,7 @@ to import our python `modules`, `classes`, `functions`. It does this by looking 
 
 It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it's just raw html, and should be accessible from any browser environment on any device.
 
-Section Navigation
+Contents
 ===================
 
 .. toctree::
