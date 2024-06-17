@@ -1,7 +1,7 @@
 scanreader
 ---------------
 
-|issues|
+test
 
 ..
    comment: perm shielf links
