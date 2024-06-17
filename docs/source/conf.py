@@ -81,18 +81,9 @@ intersphinx_mapping = {
     'numpy-tutorials': ('https://numpy.org/numpy-tutorials', None),
     'lbm_cm': ('https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/', None),
     'lbm_cp': ('https://millerbrainobservatory.github.io/LBM-CaImAn-Python/', None)
-
 }
 
 intersphinx_disabled_reftypes = ["*"]
-
-# html_theme_options = {
-#     "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
-#      "repository_branch": "master",
-#      "path_to_docs": "docs/",
-#      "use_repository_button": True,
-#      "use_issues_button": True
-# }
 
 html_theme_options = {
     "logo": {
@@ -102,16 +93,16 @@ html_theme_options = {
     "github_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
     "collapse_navigation": True,
     "external_links": [
-        {"name": "Homepage", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "MBO.edu", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "LBM.Mat", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "LBM.Py", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "LBM.scanreader", "url": "https://mbo.rockefeller.edu/"},
     ],
+    "navbar_start": [ "search-button", ],
     "header_links_before_dropdown": 6,
-    "navbar_end": [
-        "search-button",
-        "theme-switcher",
-        "version-switcher",
-        "navbar-icon-links"
-    ],
+    "navbar_end": [ "navbar-icon-links" ],
     "navbar_persistent": [],
+    "navbar_align": "center",
 }
 
 
