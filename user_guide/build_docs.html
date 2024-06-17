@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="" data-theme="dark">
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Building &#8212; MBO Compute Hub</title>
+    <title>Building the NumPy API and reference docs &#8212; MBO Compute Hub</title>
   
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
@@ -29,29 +29,34 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="../_static/numpy.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=af2ce170"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=d90b8643"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/build_docs';</script>
+    <link rel="icon" href="../_static/mbo_icon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Deploying Docs" href="deploy_docs.html" />
     <link rel="prev" title="User Guides" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Jun 17, 2024"/>
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
 
   
   
@@ -118,8 +123,12 @@
   
   
   
+    
+    
+    
+    <img src="../_static/mbo.png" class="logo__image only-dark" alt="MBO Compute Hub - Home"/>
+    <script>document.write(`<img src="../_static/mbo.png" class="logo__image only-light" alt="MBO Compute Hub - Home"/>`);</script>
   
-    <p class="title logo__title">MBO Compute Hub</p>
   
 </a></div>
     
@@ -152,6 +161,13 @@
                       </a>
                     </li>
                 
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    Homepage
+                  </a>
+                </li>
+                
   </ul>
 </nav></div>
       
@@ -160,20 +176,16 @@
     
     <div class="navbar-header-items__end">
       
-        <div class="navbar-item navbar-persistent--container">
-          
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
-        </div>
       
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -187,23 +199,50 @@ document.write(`
 `);
 </script></div>
       
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
     </div>
     
   </div>
   
-  
-    <div class="navbar-persistent--mobile">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
-    </div>
   
 
   
@@ -250,6 +289,13 @@ document.write(`
                       </a>
                     </li>
                 
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    Homepage
+                  </a>
+                </li>
+                
   </ul>
 </nav></div>
         
@@ -263,6 +309,16 @@ document.write(`
 
 <script>
 document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
@@ -270,6 +326,46 @@ document.write(`
   </button>
 `);
 </script></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -325,7 +421,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guides</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Building</li>
+    <li class="breadcrumb-item active" aria-current="page">Building...</li>
   </ul>
 </nav>
 </div>
@@ -342,12 +438,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="building">
-<h1>Building<a class="headerlink" href="#building" title="Permalink to this heading">#</a></h1>
+  <section id="building-the-numpy-api-and-reference-docs">
+<h1>Building the NumPy API and reference docs<a class="headerlink" href="#building-the-numpy-api-and-reference-docs" title="Permalink to this heading">#</a></h1>
+<section id="development-environments">
+<h2>Development environments<a class="headerlink" href="#development-environments" title="Permalink to this heading">#</a></h2>
+<p>Before proceeding further it should be noted that the documentation is built
+with the <code class="docutils literal notranslate"><span class="pre">make</span></code> tool, which is not natively available on Windows. MacOS or
+Linux users can jump to <span class="xref std std-ref">how-todoc.prerequisites</span>. It is recommended for
+Windows users to set up their development environment on
+GitHub Codespaces (see <span class="xref std std-ref">recommended-development-setup</span>) or
+<a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>.
+WSL is a good option for a persistent local set-up.</p>
 <p>The workflow to update documentation is pretty simple.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This assumes you have a working version of <cite>python3</cite>, <cite>conda/miniconda/anaconda</cite>, and <cite>pip</cite>.
+<p>This assumes you have a working version of <em class="xref py py-obj">python3</em>, <em class="xref py py-obj">conda/miniconda/anaconda</em>, and <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span></code>.
 Clone the repository:</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>+git@github.com:millerbrainobservatory/&lt;REPOSITORY&gt;.git
@@ -357,44 +462,72 @@ make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&a
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>You need to activate the <cite>conda</cite> environment before calling <cite>make clean</cite> or <cite>make html</cite>.</p>
+<p>You need to activate the <em class="xref py py-obj">conda</em> environment before calling <em class="xref py py-obj">make clean</em> or <em class="xref py py-obj">make html</em>.</p>
 </div>
-<p>The github action triggers for each <cite>.yml</cite> file within <cite>root/.github/workflows/</cite>. We have <cite>build_and_deploy_docs.yml</cite>, or some similar variation.</p>
-<p>This file is organized into groups <cite>-jobs</cite> that do all of the work for us on github servers.</p>
+<p>The github action triggers for each <em class="xref py py-obj">yml</em> file within <em class="xref py py-obj">root/.github/workflows/</em>. We have <em class="xref py py-obj">build_and_deploy_docs.yml</em>, or some similar variation.</p>
+<p>This file is organized into groups <em class="xref py py-obj">-jobs</em> that do all of the work for us on github servers.</p>
 <p>The first two lines:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build and deploy docs</span>
 
 <span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">workflow_dispatch</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p><cite>name</cite> is going to appear on <a class="reference external" href="https://www.github.com">github.com</a> in the <cite>actions</cite> tab, which shows us graphically the code executed from this workflow.`
-<cite>on</cite> controls when the workflow is run.</p>
+<p><em class="xref py py-obj">name</em> is going to appear on <a class="reference external" href="https://www.github.com">github.com</a> in the <em class="xref py py-obj">actions</em> tab, which shows us graphically the code executed from this workflow.`
+<em class="xref py py-obj">on</em> controls when the workflow is run.</p>
 <p>These are the most common values to change. For a high level overview on the rest of the worflow:
 - clone our github code,
 - setup dependencies,
-- use <cite>Make</cite> to build the docs
-- push the html to a separate <cite>gh-pages</cite> branch
+- use <em class="xref py py-obj">Make</em> to build the docs
+- push the html to a separate <em class="xref py py-obj">gh-pages</em> branch
 - trigger gh-pages to deploy our site to its servers with a build-in github workflow</p>
+<section id="submodules">
+<h3>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h3>
+<p>If you used <em class="xref py py-obj">git</em> to install any pipelines, you should also update the git submodules that contain
+additional parts required for building the documentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="troubleshooting-docs">
 <h2>Troubleshooting Docs<a class="headerlink" href="#troubleshooting-docs" title="Permalink to this heading">#</a></h2>
-<p><strong>Docs look good locally, 404 on site</strong>
-when docs look good locally but bad online, there is an issue with the github workflow.
-On <cite>github.com/repository</cite> go to the <cite>Actions</cite> tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
-This is generally an issue with <cite>docs/requirements.txt</cite>. This document holds the dependencies to build documentation, and since our project builds locally and not
+<p><strong>Docs look good locally, 404 on site</strong></p>
+<p>when docs look good locally but bad online, there is an issue with the github workflow.
+On <em class="xref py py-obj">github.com/repository</em> go to the <em class="xref py py-obj">Actions</em> tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
+This is generally an issue with <em class="xref py py-obj">docs/requirements.txt</em>. This document holds the dependencies to build documentation, and since our project builds locally and not
 online, this is the usual suspect. The output of the github actions will tell you:</p>
-</section>
-<section id="directory-structure">
-<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this heading">#</a></h2>
-<p>(WIP) - Adding static-assets repo</p>
-<p>Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow <cite>numpy</cite> and their documentation conventions.
-Youll see tutorials on <cite>sphinx-quickstart</cite> as how to “get started” with sphinx. That is how these docs started.</p>
-<p><cite>make html</cite> produces:
-docs/_build/html: this is the golden nugget
+<p><strong>ANY scientific library conflicts</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To get the latest scientific-python libraries for debugging or to create a new environment
+dependencies to build the docs locally:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">pre</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> \
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">scientific</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">nightly</span><span class="o">-</span><span class="n">wheels</span><span class="o">/</span><span class="n">simple</span> \
+<span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">doc_requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<p>docs/_build/html: this is the golden nugget
 docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging</p>
-<p>The workflow that manages where our <cite>html</cite> files go is <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceitis’ github action workflow</a></p>
+<p>The workflow that manages where our <code class="xref py py-obj docutils literal notranslate"><span class="pre">html</span></code> files go is <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceitis’ github action workflow</a></p>
 <p>Selected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.</p>
 <p>If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
 (Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/<em>/</em>.) If you add main as a branch rule, a branch named main can also deploy to the environment`</p>
+</section>
+<section id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this heading">#</a></h2>
+<p>Now you are ready to generate the docs, so write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most debugging steps happen as a result of <em class="xref py py-obj">make html</em>. This is where the build happens, and errors will display in your command line.</p>
+</div>
+<p>This will build NumPy from source if you haven’t already, and run Sphinx to
+build the <code class="docutils literal notranslate"><span class="pre">html</span></code> docs. If all goes well, this will generate a <code class="docutils literal notranslate"><span class="pre">build/html</span></code>
+subdirectory in the <code class="docutils literal notranslate"><span class="pre">/doc</span></code> directory, containing the built documentation.</p>
+<p>Sometimes sphinx will cache files unexpectedly</p>
 </section>
 </section>
 
@@ -442,19 +575,14 @@ docs/_build/doctree: you dont need this until you want to preview exactly what o
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environments">Development environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-docs">Troubleshooting Docs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a></li>
 </ul>
   </nav></div>
-
-  <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="../_sources/user_guide/build_docs.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
 
 </div></div>
               

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="" data-theme="dark">
 
   <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
@@ -29,28 +29,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="_static/numpy.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=d90b8643"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="icon" href="_static/mbo_icon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="User Guides" href="user_guide/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Jun 17, 2024"/>
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
 
   
   
@@ -117,8 +122,12 @@
   
   
   
+    
+    
+    
+    <img src="_static/mbo.png" class="logo__image only-dark" alt="MBO Compute Hub - Home"/>
+    <script>document.write(`<img src="_static/mbo.png" class="logo__image only-light" alt="MBO Compute Hub - Home"/>`);</script>
   
-    <p class="title logo__title">MBO Compute Hub</p>
   
 </a></div>
     
@@ -151,6 +160,13 @@
                       </a>
                     </li>
                 
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    Homepage
+                  </a>
+                </li>
+                
   </ul>
 </nav></div>
       
@@ -159,20 +175,16 @@
     
     <div class="navbar-header-items__end">
       
-        <div class="navbar-item navbar-persistent--container">
-          
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
-        </div>
       
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script></div>
       
         <div class="navbar-item">
 
@@ -186,23 +198,50 @@ document.write(`
 `);
 </script></div>
       
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
     </div>
     
   </div>
   
-  
-    <div class="navbar-persistent--mobile">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
-    </div>
   
 
   
@@ -249,6 +288,13 @@ document.write(`
                       </a>
                     </li>
                 
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    Homepage
+                  </a>
+                </li>
+                
   </ul>
 </nav></div>
         
@@ -262,6 +308,16 @@ document.write(`
 
 <script>
 document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
     <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
@@ -269,6 +325,46 @@ document.write(`
   </button>
 `);
 </script></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -299,15 +395,89 @@ document.write(`
                   
   <section id="mbo-compute-hub">
 <h1>MBO Compute Hub!<a class="headerlink" href="#mbo-compute-hub" title="Permalink to this heading">#</a></h1>
+<a class=""
+               data-lightbox="group-2c703458-a144-4ce0-b196-c0ce0aca1830"
+               href="_images/api.svg"
+               title=""
+               data-title=""
+               
+               ><img src="_images/api.svg"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-3 sd-g-md-4 sd-g-lg-4 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="" class="sd-card-img-top" src="_images/getting_started.svg" /><div class="sd-card-header docutils">
+<p class="sd-card-text">Getting started</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">New to NumPy? Check out the Absolute Beginner’s Guide. It contains an
+introduction to NumPy’s main concepts and links to additional tutorials.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-d-grid"><span class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-stretched-link">To the absolute beginner’s guide</span></span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="" class="sd-card-img-top" src="_images/user_guide.svg" /><div class="sd-card-header docutils">
+<p class="sd-card-text">User guide</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The user guide provides in-depth information on the
+key concepts of NumPy with useful background information and explanation.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-d-grid"><span class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-stretched-link">To the user guide</span></span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="" class="sd-card-img-top" src="_images/api.svg" /><div class="sd-card-header docutils">
+<p class="sd-card-text">API reference</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The reference guide contains a detailed description of the functions,
+modules, and objects included in NumPy. The reference describes how the
+methods work and which parameters can be used. It assumes that you have an
+understanding of the key concepts.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-d-grid"><span class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-stretched-link">To the reference guide</span></span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="" class="sd-card-img-top" src="_images/contributor.svg" /><div class="sd-card-header docutils">
+<p class="sd-card-text">Contributor’s guide</p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Want to add to the codebase? Can help add translation or a flowchart to the
+documentation? The contributing guidelines will guide you through the
+process of improving NumPy.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-d-grid"><span class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-secondary sd-stretched-link">To the contributor’s guide</span></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>A central repository for all Miller Brain Observatory computational resources.</p>
 <p><strong>Disclaimer</strong></p>
 <p>Choosing a technology stack for a project is subjective and dynamic. The technology that works now
 may not work as more pipelines are built and included in the documentation. Maintainability is also a concern; your
 repository is only as maintainable as the team you have to maintain it.</p>
 <p>For these reasons, the list of tools used in the MBO is kept as simple as possible while maintaining effective
-documentation and resources. Let <cite>git</cite> handle all tasks and workflows that may have more “mature” alternatives i.e. travisCI, circleCI.
+documentation and resources. Let <em class="xref py py-obj">git</em> handle all tasks and workflows that may have more “mature” alternatives i.e. travisCI, circleCI.
 This is the motivation against using <a class="reference external" href="https://www.ReadTheDocs.org">ReadTheDocs</a> as <a class="reference external" href="https://pages.github.com/">github-pages</a> has the same
-functionality, albeit with a few more lines of code and technical expertise required in handling the <cite>github-workflows</cite>.</p>
+functionality, albeit with a few more lines of code and technical expertise required in handling the <em class="xref py py-obj">github-workflows</em>.</p>
 <section id="caiman-matlab">
 <h2>CaImAn MATLAB<a class="headerlink" href="#caiman-matlab" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -351,12 +521,12 @@ functionality, albeit with a few more lines of code and technical expertise requ
 <li><p>sphinx</p></li>
 <li><p>github actions</p></li>
 </ul>
-<p>Thats it! The first three should be familiar, python with its two most popular package managers (we use <cite>conda</cite> for everything that we can, and fallback to <cite>pip</cite>).</p>
+<p>Thats it! The first three should be familiar, python with its two most popular package managers (we use <em class="xref py py-obj">conda</em> for everything that we can, and fallback to <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span></code>).</p>
 <p>It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it’s just raw html, and should be accessible from any browser environment on any device.</p>
 <p>The workflow to update documentation is pretty simple.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This assumes you have a working version of <cite>python3</cite>, <cite>conda/miniconda/anaconda</cite>, and <cite>pip</cite>.
+<p>This assumes you have a working version of <em class="xref py py-obj">python3</em>, <em class="xref py py-obj">conda/miniconda/anaconda</em>, and <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span></code>.
 Clone the repository:</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>+git@github.com:millerbrainobservatory/&lt;REPOSITORY&gt;.git
@@ -366,23 +536,23 @@ make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&a
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>You need to activate the <cite>conda</cite> environment before calling <cite>make clean</cite> or <cite>make html</cite>.</p>
+<p>You need to activate the <em class="xref py py-obj">conda</em> environment before calling <em class="xref py py-obj">make clean</em> or <em class="xref py py-obj">make html</em>.</p>
 </div>
-<p>The github action triggers for each <cite>.yml</cite> file within <cite>root/.github/workflows/</cite>. We have <cite>build_and_deploy_docs.yml</cite>, or some similar variation.</p>
-<p>This file is organized into groups <cite>-jobs</cite> that do all of the work for us on github servers.</p>
+<p>The github action triggers for each <em class="xref py py-obj">yml</em> file within <em class="xref py py-obj">root/.github/workflows/</em>. We have <em class="xref py py-obj">build_and_deploy_docs.yml</em>, or some similar variation.</p>
+<p>This file is organized into groups <em class="xref py py-obj">-jobs</em> that do all of the work for us on github servers.</p>
 <p>The first two lines:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build and deploy docs</span>
 
 <span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">workflow_dispatch</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p><cite>name</cite> is going to appear on <a class="reference external" href="https://www.github.com">github.com</a> in the <cite>actions</cite> tab, which shows us graphically the code executed from this workflow.`
-<cite>on</cite> controls when the workflow is run.</p>
+<p><em class="xref py py-obj">name</em> is going to appear on <a class="reference external" href="https://www.github.com">github.com</a> in the <em class="xref py py-obj">actions</em> tab, which shows us graphically the code executed from this workflow.`
+<em class="xref py py-obj">on</em> controls when the workflow is run.</p>
 <p>These are the most common values to change. For a high level overview on the rest of the worflow:
 - clone our github code,
 - setup dependencies,
-- use <cite>Make</cite> to build the docs
-- push the html to a separate <cite>gh-pages</cite> branch
+- use <em class="xref py py-obj">Make</em> to build the docs
+- push the html to a separate <em class="xref py py-obj">gh-pages</em> branch
 - trigger gh-pages to deploy our site to its servers with a build-in github workflow</p>
 </section>
 </section>
@@ -390,12 +560,12 @@ make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&a
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h1>
 <p><strong>Docs look good locally, 404 on site</strong>
 when docs look good locally but bad online, there is an issue with the github workflow.
-On <cite>github.com/repository</cite> go to the <cite>Actions</cite> tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
-This is generally an issue with <cite>docs/requirements.txt</cite>. This document holds the dependencies to build documentation, and since our project builds locally and not
+On <em class="xref py py-obj">github.com/repository</em> go to the <em class="xref py py-obj">Actions</em> tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
+This is generally an issue with <em class="xref py py-obj">docs/requirements.txt</em>. This document holds the dependencies to build documentation, and since our project builds locally and not
 online, this is the usual suspect. The output of the github actions will tell you:</p>
 <img alt="https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" src="https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png" />
 <a class=""
-               data-lightbox="group-42630639-d3ef-407d-aed4-d65585f89420"
+               data-lightbox="group-d0ba6a05-7b76-4df9-a9ac-c3157c6a3676"
                href="_images/59ecfde48cd23041425a7f28e6809434e66eb282"
                title=""
                data-title=""
@@ -408,16 +578,12 @@ online, this is the usual suspect. The output of the github actions will tell yo
                 </a></section>
 <section id="directory-structure">
 <h1>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this heading">#</a></h1>
-<p>Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow <cite>numpy</cite> and their documentation conventions.
-Youll see tutorials on <cite>sphinx-quickstart</cite> as how to “get started” with sphinx. That is how these docs started.</p>
-<p>/docs/_static: This is where images, videos, media will go. Along with CSS and logos/icons
-/docs/_static/_images: This is where images go
-/docs/_static/_videos: This is where videos go
-docs/_templates: dont touch this, it makes our website pretty and organized</p>
-<p><cite>make html</cite> produces:
+<p>Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow <em class="xref py py-obj">numpy</em> and their documentation conventions.
+Youll see tutorials on <em class="xref py py-obj">sphinx-quickstart</em> as how to “get started” with sphinx. That is how these docs started.</p>
+<p><em class="xref py py-obj">make html</em> produces:
 docs/_build/html: this is the golden nugget
 docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging</p>
-<p>The workflow that manages where our <cite>html</cite> files go is <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceitis’ github action workflow</a></p>
+<p>The workflow that manages where our <code class="xref py py-obj docutils literal notranslate"><span class="pre">html</span></code> files go is <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceitis’ github action workflow</a></p>
 <p>elected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.</p>
 <p>If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
 (Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/<em>/</em>.) If you add main as a branch rule, a branch named main can also deploy to the environment`</p>
@@ -478,15 +644,6 @@ docs/_build/doctree: you dont need this until you want to preview exactly what o
 </ul>
 
   </nav></div>
-
-  <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="_sources/index.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
 
 </div></div>
               
