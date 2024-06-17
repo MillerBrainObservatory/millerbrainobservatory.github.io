@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'MBO'
+project = 'MBO Compute Hub'
 copyright = '2024, Flynn OConnell'
 author = 'Flynn OConnell'
 release = '1.0.0'
@@ -58,6 +58,7 @@ html_favicon = "_static/mbo_icon.ico"
 
 html_theme = 'pydata_sphinx_theme'
 html_title = "MBO Compute Hub"
+html_short_title = "MBO"
 html_static_path = ['_static']
 html_last_updated_fmt = '%b %d, %Y'
 html_css_files = ["numpy.css"]

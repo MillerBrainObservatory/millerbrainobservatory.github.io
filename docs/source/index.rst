@@ -8,7 +8,7 @@ MBO Compute Hub!
 
 Here we can include language-agnostic documentation and tutorials.
 
-Something like:
+We can import entire files to show examples for different languages:
 
 .. tab-set-code::
 
@@ -19,12 +19,12 @@ Something like:
 
         a = 1;
 
-.. modified from Numpydocs index.rst
 
 
 
 These can link places within this doc and to our other repos:
 
+.. modified from Numpydocs index.rst
 .. grid:: 1 1 2 2
     :gutter: 2 3 4 4
 
