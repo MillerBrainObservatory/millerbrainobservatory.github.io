@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Adding Docs &#8212; MBO Compute Hub</title>
+    <title>Resources &#8212; MBO Compute Hub</title>
   
   
   
@@ -44,12 +44,11 @@
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/adding_docs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'resources/index';</script>
     <link rel="icon" href="../_static/mbo_icon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pipelines" href="../pipelines/index.html" />
-    <link rel="prev" title="Github Workflow" href="workflow_docs.html" />
+    <link rel="prev" title="Documentation Guides" href="../guides/documentation_guide/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
     <meta name="docbuild:last-update" content="Jun 17, 2024"/>
@@ -115,22 +114,13 @@
     
       <div class="navbar-item">
 
-  
-
-<a class="navbar-brand logo" href="../index.html">
-  
-  
-  
-  
-  
-    
-    
-    
-    <img src="../_static/mbo.png" class="logo__image only-dark" alt="MBO Compute Hub - Home"/>
-    <script>document.write(`<img src="../_static/mbo.png" class="logo__image only-light" alt="MBO Compute Hub - Home"/>`);</script>
-  
-  
-</a></div>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script></div>
     
   </div>
   
@@ -148,23 +138,44 @@
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guides/index.html">
                         Guides
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../pipelines/index.html">
-                        Pipelines
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Resources
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
-                    Homepage
+                    MBO.edu
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    LBM.Mat
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    LBM.Py
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    LBM.scanreader
                   </a>
                 </li>
                 
@@ -176,52 +187,6 @@
     
     <div class="navbar-header-items__end">
       
-      
-        <div class="navbar-item">
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script></div>
-      
-        <div class="navbar-item">
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
-      
-        <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -246,10 +211,6 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </nav>
@@ -257,7 +218,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -276,23 +237,44 @@ document.write(`
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../guides/index.html">
                         Guides
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../pipelines/index.html">
-                        Pipelines
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Resources
                       </a>
                     </li>
                 
 
                 <li class="nav-item">
                   <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
-                    Homepage
+                    MBO.edu
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    LBM.Mat
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    LBM.Py
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://mbo.rockefeller.edu/">
+                    LBM.scanreader
                   </a>
                 </li>
                 
@@ -304,52 +286,6 @@ document.write(`
     
     
       <div class="sidebar-header-items__end">
-        
-          <div class="navbar-item">
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script></div>
-        
-          <div class="navbar-item">
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
-        
-          <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-3"
-      type="button"
-      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-3"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-3"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-3">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
-  </div>
-`);
-</script></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
     aria-label="Icon Links">
@@ -370,20 +306,6 @@ document.write(`
       </div>
     
   </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-<nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="build_docs.html">Building</a></li>
-<li class="toctree-l1"><a class="reference internal" href="workflow_docs.html">Workflow Details</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Create a Doc</a></li>
-</ul>
-</div>
-</nav></div>
-    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -417,10 +339,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Contibutors Guide (Docs)</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Adding Docs</li>
+    <li class="breadcrumb-item active" aria-current="page">Resources</li>
   </ul>
 </nav>
 </div>
@@ -437,31 +356,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="adding-docs">
-<h1>Adding Docs<a class="headerlink" href="#adding-docs" title="Permalink to this heading">#</a></h1>
-<p>TODO: A quick document to reference for somebody wanting to add a quick document
-page to this repository. I think this will work the best if it is <strong>as easy as humanly possible</strong>
-to add a new page/section/whatever needs to be added to these docs.</p>
-<p>Also TODO: Im a little inconsistent with document titles and subtitles with using # vs * and =.</p>
-<p>This is the convention used for Python docs:</p>
-<section id="title">
-<h2>Title<a class="headerlink" href="#title" title="Permalink to this heading">#</a></h2>
-<p>Titles are underlined (or over- and underlined) with
-a nonalphanumeric character at least as long as the
-text.</p>
-<p>A lone top-level section is lifted up to be the
-document’s title.</p>
-<p>Any non-alphanumeric character can be used, but
-Python convention is:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> with overline, for parts</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> with overline, for chapters</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code>, for sections</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code>, for subsections</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code>, for subsubsections</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, for paragraphs</p></li>
-</ul>
-</section>
+  <section id="resources">
+<h1>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h1>
+<p>A list of helpful resources used within the MBO.</p>
 </section>
 
 
@@ -475,22 +372,13 @@ Python convention is:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="workflow_docs.html"
+       href="../guides/documentation_guide/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Github Workflow</p>
+        <p class="prev-next-title">Documentation Guides</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../pipelines/index.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pipelines</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -498,21 +386,6 @@ Python convention is:</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#title">Title</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
