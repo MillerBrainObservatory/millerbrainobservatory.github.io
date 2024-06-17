@@ -35,8 +35,10 @@ These can link places within this doc and to our other repos:
         Pipelines
         ^^^
 
-        New to coding? Check out the user guides.
-        It contains collections of MBO explinations and resources.
+        Get right into the pipleines. Each pipeline contiains its own
+        self contained documentation. There are a few options to render it here.
+        Two main ones: link to another url, build docs to this branch via github-actions
+        with a token and render them directly here.
 
         +++
 
@@ -45,7 +47,7 @@ These can link places within this doc and to our other repos:
             :color: secondary
             :click-parent:
 
-            To the absolute beginner's guide
+            To the Pipelines
 
     .. grid-item-card::
         :img-top: index-images/user_guide.svg
@@ -54,7 +56,9 @@ These can link places within this doc and to our other repos:
         Guides
         ^^^
 
-        The user guides provide walkthroughs on key concepts related to any technology MBO users may enounter. This section should be expanded upon as the MBO progresses.
+        The user guides provide walkthroughs on key concepts related
+        to any technology MBO users may enounter. This section should
+        be expanded upon as the MBO progresses.
 
         +++
 
@@ -72,10 +76,8 @@ These can link places within this doc and to our other repos:
         API (WIP)
         ^^^
 
-        The reference guide contains a detailed description of the functions,
-        modules, and objects included in NumPy. The reference describes how the
-        methods work and which parameters can be used. It assumes that you have an
-        understanding of the key concepts.
+        The reference guide, api, contains a detailed description of the functions
+        and modules methods work and which parameters can be used.
 
         +++
 
@@ -93,9 +95,7 @@ These can link places within this doc and to our other repos:
         Contributors
         ^^^
 
-        Want to add to the codebase? Can help add translation or a flowchart to the
-        documentation? The contributing guidelines will guide you through the
-        process of improving NumPy.
+        Or developers, or resources
 
         +++
 
