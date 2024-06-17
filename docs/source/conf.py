@@ -23,7 +23,9 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.napoleon",
     "sphinx.ext.autosectionlabel",
-    "numpydoc"
+    "numpydoc",
+    'sphinx.ext.mathjax',
+    'sphinx_design'
 ]
 
 # -- Options for HTML output -------------------------------------------------

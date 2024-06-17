@@ -6,11 +6,13 @@
 MBO Compute Hub!
 ==================
 
+.. thumbnail:: index-images/api.svg
+
 .. grid:: 1 1 2 2
     :gutter: 2 3 4 4
 
     .. grid-item-card::
-        :img-top: ../source/_static/index-images/getting_started.svg
+        :img-top: index-images/getting_started.svg
         :text-align: center
 
         Getting started
@@ -29,7 +31,7 @@ MBO Compute Hub!
             To the absolute beginner's guide
 
     .. grid-item-card::
-        :img-top: ../source/_static/index-images/user_guide.svg
+        :img-top: index-images/user_guide.svg
         :text-align: center
 
         User guide
@@ -48,7 +50,7 @@ MBO Compute Hub!
             To the user guide
 
     .. grid-item-card::
-        :img-top: ../source/_static/index-images/api.svg
+        :img-top: index-images/api.svg
         :text-align: center
 
         API reference
@@ -69,7 +71,7 @@ MBO Compute Hub!
             To the reference guide
 
     .. grid-item-card::
-        :img-top: ../source/_static/index-images/contributor.svg
+        :img-top: index-images/contributor.svg
         :text-align: center
 
         Contributor's guide
@@ -192,11 +194,6 @@ Directory Structure
 
 Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow `numpy` and their documentation conventions.
 Youll see tutorials on `sphinx-quickstart` as how to "get started" with sphinx. That is how these docs started.
-
-/docs/_static: This is where images, videos, media will go. Along with CSS and logos/icons
-/docs/_static/_images: This is where images go
-/docs/_static/_videos: This is where videos go
-docs/_templates: dont touch this, it makes our website pretty and organized
 
 `make html` produces:
 docs/_build/html: this is the golden nugget
