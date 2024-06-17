@@ -28,6 +28,15 @@ extensions = [
     'sphinx_design'
 ]
 
+
+# List of documents that shouldn't be included in the build.
+#unused_docs = []
+
+# The reST default role (used for this markup: `text`) to use for all documents.
+default_role = "autolink"
+source_suffix = '.rst'
+
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
@@ -45,10 +54,18 @@ html_logo = "MBO_32.png"
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = "mbo_icon.ico"
+html_favicon = "_static/mbo_icon.ico"
 
 html_theme = 'pydata_sphinx_theme'
 html_title = "MBO Compute Hub"
+html_static_path = ['_static']
+html_last_updated_fmt = '%b %d, %Y'
+html_css_files = ["numpy.css"]
+html_context = {"default_mode": "dark"}
+html_use_modindex = True
+html_copy_source = False
+html_domain_indices = False
+html_file_suffix = '.html'
 
 # This is a dictionary where the value is a tuple.
 # The first link is a link to our "deployed" documentation URL
@@ -58,8 +75,13 @@ html_title = "MBO Compute Hub"
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3.5', None),
     'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
+    'scipy': ('https://docs.scipy.org/doc/scipy', None),
+    'matplotlib': ('https://matplotlib.org/stable', None),
+    'numpydoc': ('https://numpydoc.readthedocs.io/en/latest', None),
+    'numpy-tutorials': ('https://numpy.org/numpy-tutorials', None),
     'lbm_cm': ('https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/', None),
     'lbm_cp': ('https://millerbrainobservatory.github.io/LBM-CaImAn-Python/', None)
+
 }
 
 intersphinx_disabled_reftypes = ["*"]
@@ -71,6 +93,27 @@ intersphinx_disabled_reftypes = ["*"]
 #      "use_repository_button": True,
 #      "use_issues_button": True
 # }
+
+html_theme_options = {
+    "logo": {
+        "image_light": "_static/mbo.png",
+        "image_dark": "_static/mbo.png",
+    },
+    "github_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
+    "collapse_navigation": True,
+    "external_links": [
+        {"name": "Homepage", "url": "https://mbo.rockefeller.edu/"},
+    ],
+    "header_links_before_dropdown": 6,
+    "navbar_end": [
+        "search-button",
+        "theme-switcher",
+        "version-switcher",
+        "navbar-icon-links"
+    ],
+    "navbar_persistent": [],
+}
+
 
 # html_theme_options = {
 #     "external_links": [
