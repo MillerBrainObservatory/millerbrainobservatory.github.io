@@ -1,6 +1,18 @@
 
-Building
-*********************
+=========================================
+Building the NumPy API and reference docs
+=========================================
+
+Development environments
+========================
+
+Before proceeding further it should be noted that the documentation is built
+with the ``make`` tool, which is not natively available on Windows. MacOS or
+Linux users can jump to :ref:`how-todoc.prerequisites`. It is recommended for
+Windows users to set up their development environment on
+GitHub Codespaces (see :ref:`recommended-development-setup`) or
+`Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
+WSL is a good option for a persistent local set-up.
 
 
 The workflow to update documentation is pretty simple.
@@ -44,24 +56,38 @@ These are the most common values to change. For a high level overview on the res
 - push the html to a separate `gh-pages` branch
 - trigger gh-pages to deploy our site to its servers with a build-in github workflow
 
+Submodules
+~~~~~~~~~~
+
+If you used `git` to install any pipelines, you should also update the git submodules that contain
+additional parts required for building the documentation::
+
+    git submodule update --init
+
+
 Troubleshooting Docs
 =====================
 
 **Docs look good locally, 404 on site**
+
 when docs look good locally but bad online, there is an issue with the github workflow.
 On `github.com/repository` go to the `Actions` tab. The most recent deployment should be shown with a red X. Click on this X to see the error logs.
 This is generally an issue with `docs/requirements.txt`. This document holds the dependencies to build documentation, and since our project builds locally and not
 online, this is the usual suspect. The output of the github actions will tell you:
 
-Directory Structure
-=====================
+**ANY scientific library conflicts**
 
-(WIP) - Adding static-assets repo
+.. note::
 
-Various self-documenting repositories have wildly variable structures to how their documentation is organized. We keep it simple and follow `numpy` and their documentation conventions.
-Youll see tutorials on `sphinx-quickstart` as how to "get started" with sphinx. That is how these docs started.
+    To get the latest scientific-python libraries for debugging or to create a new environment
+    dependencies to build the docs locally::
 
-`make html` produces:
+        pip install --pre --force-reinstall --extra-index-url \
+        https://pypi.anaconda.org/scientific-python-nightly-wheels/simple \
+        -r requirements/doc_requirements.txt
+
+
+
 docs/_build/html: this is the golden nugget
 docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging
 
@@ -71,4 +97,21 @@ Selected branches and tags: Only branches and tags that match your specified nam
 
 If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
 (Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/*/*.) If you add main as a branch rule, a branch named main can also deploy to the environment`
+
+Instructions
+============
+
+Now you are ready to generate the docs, so write::
+
+    make html
+
+.. note::
+
+   Most debugging steps happen as a result of `make html`. This is where the build happens, and errors will display in your command line.
+
+This will build NumPy from source if you haven't already, and run Sphinx to
+build the ``html`` docs. If all goes well, this will generate a ``build/html``
+subdirectory in the ``/doc`` directory, containing the built documentation.
+
+Sometimes sphinx will cache files unexpectedly
 
