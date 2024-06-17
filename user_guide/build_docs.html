@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Building the NumPy API and reference docs &#8212; MBO Compute Hub</title>
+    <title>Building MBO Documentation &#8212; MBO Compute Hub</title>
   
   
   
@@ -48,7 +48,7 @@
     <link rel="icon" href="../_static/mbo_icon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Deploying Docs" href="deploy_docs.html" />
+    <link rel="next" title="Github Workflow" href="workflow_docs.html" />
     <link rel="prev" title="Contibutors Guide (Docs)" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -378,7 +378,6 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Building</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deploy_docs.html">Deployment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow_docs.html">Workflow Details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adding_docs.html">Create a Doc</a></li>
 </ul>
@@ -438,17 +437,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="building-the-numpy-api-and-reference-docs">
-<h1>Building the NumPy API and reference docs<a class="headerlink" href="#building-the-numpy-api-and-reference-docs" title="Permalink to this heading">#</a></h1>
+  <section id="building-mbo-documentation">
+<h1>Building MBO Documentation<a class="headerlink" href="#building-mbo-documentation" title="Permalink to this heading">#</a></h1>
 <section id="development-environments">
 <h2>Development environments<a class="headerlink" href="#development-environments" title="Permalink to this heading">#</a></h2>
 <p>Before proceeding further it should be noted that the documentation is built
 with the <code class="docutils literal notranslate"><span class="pre">make</span></code> tool, which is not natively available on Windows. MacOS or
 Linux users can jump to <span class="xref std std-ref">how-todoc.prerequisites</span>. It is recommended for
 Windows users to set up their development environment on
-GitHub Codespaces (see <span class="xref std std-ref">recommended-development-setup</span>) or
-<a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>.
+GitHub Codespaces  or <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>.
 WSL is a good option for a persistent local set-up.</p>
+<section id="update-docs">
+<h3>Update Docs<a class="headerlink" href="#update-docs" title="Permalink to this heading">#</a></h3>
 <p>The workflow to update documentation is pretty simple.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -481,12 +481,13 @@ make<span class="w"> </span>clean<span class="w"> </span><span class="o">&amp;&a
 - push the html to a separate <em class="xref py py-obj">gh-pages</em> branch
 - trigger gh-pages to deploy our site to its servers with a build-in github workflow</p>
 <section id="submodules">
-<h3>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h3>
+<h4>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h4>
 <p>If you used <em class="xref py py-obj">git</em> to install any pipelines, you should also update the git submodules that contain
 additional parts required for building the documentation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 <section id="troubleshooting-docs">
@@ -507,15 +508,9 @@ dependencies to build the docs locally:</p>
 </pre></div>
 </div>
 </div>
-<p>docs/_build/html: this is the golden nugget
-docs/_build/doctree: you dont need this until you want to preview exactly what objects are created for debugging</p>
-<p>The workflow that manages where our <code class="xref py py-obj docutils literal notranslate"><span class="pre">html</span></code> files go is <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceitis’ github action workflow</a></p>
-<p>Selected branches and tags: Only branches and tags that match your specified name patterns can deploy to the environment.</p>
-<p>If you specify releases/* as a deployment branch or tag rule, only a branch or tag whose name begins with releases/ can deploy to the environment.
-(Wildcard characters will not match /. To match branches or tags that begin with release/ and contain an additional single slash, use release/<em>/</em>.) If you add main as a branch rule, a branch named main can also deploy to the environment`</p>
 </section>
-<section id="instructions">
-<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this heading">#</a></h2>
+<section id="build-docs-locally">
+<h2>Build Docs Locally<a class="headerlink" href="#build-docs-locally" title="Permalink to this heading">#</a></h2>
 <p>Now you are ready to generate the docs, so write:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
 </pre></div>
@@ -527,7 +522,11 @@ docs/_build/doctree: you dont need this until you want to preview exactly what o
 <p>This will build NumPy from source if you haven’t already, and run Sphinx to
 build the <code class="docutils literal notranslate"><span class="pre">html</span></code> docs. If all goes well, this will generate a <code class="docutils literal notranslate"><span class="pre">build/html</span></code>
 subdirectory in the <code class="docutils literal notranslate"><span class="pre">/doc</span></code> directory, containing the built documentation.</p>
-<p>Sometimes sphinx will cache files unexpectedly</p>
+<p>Sometimes sphinx will cache files unexpectedly. In this case:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`make clean &amp;&amp; make html`
+</pre></div>
+</div>
+<p>should do the trick.</p>
 </section>
 </section>
 
@@ -551,11 +550,11 @@ subdirectory in the <code class="docutils literal notranslate"><span class="pre"
       </div>
     </a>
     <a class="right-next"
-       href="deploy_docs.html"
+       href="workflow_docs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Deploying Docs</p>
+        <p class="prev-next-title">Github Workflow</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -576,11 +575,14 @@ subdirectory in the <code class="docutils literal notranslate"><span class="pre"
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environments">Development environments</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-docs">Update Docs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-docs">Troubleshooting Docs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-docs-locally">Build Docs Locally</a></li>
 </ul>
   </nav></div>
 
