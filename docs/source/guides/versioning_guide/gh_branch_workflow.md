@@ -42,4 +42,37 @@ PR's name should follow [PR Naming Guide](https://millerbrainobservatory.github.
 - PR's description should include an explanation of what has changed
 - There should be a reviewer with proper knowledge of the codebase to understand the changes being made.
 
+Here is a full example workflow:
+
+.. code-block::
+
+.. tab-set-code::
+
+    .. code-block:: bash
+
+        # Create and switch to the feature branch
+        git checkout -b feature/new-feature-branch
+
+        # Push the feature branch to the remote
+        git push origin feature/new-feature-branch
+
+        # Merge the feature branch into dev
+        git checkout dev
+        git pull origin dev
+        git merge feature/new-feature-branch
+        git push origin dev
+
+        # Merge the feature branch into master
+        git checkout master
+        git pull origin master
+        git merge feature/new-feature-branch
+        git push origin master
+
+        # Clean up branches
+        git branch -d bugfix/bugfix-branch
+        git push origin --delete bugfix/bugfix-branch
+        git branch -d feature/new-feature-branch
+        git push origin --delete feature/new-feature-branch
+
+
 ![Doc](https://github.com/MillerBrainObservatory/static-assets/blob/master/img/version_control/gh_actions_workflows.png)
