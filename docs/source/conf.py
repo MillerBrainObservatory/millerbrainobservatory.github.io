@@ -35,7 +35,6 @@ extensions = [
 # The reST default role (used for this markup: `text`) to use for all documents.
 source_suffix = '.rst'
 
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
@@ -93,10 +92,10 @@ html_theme_options = {
     "github_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
     "collapse_navigation": True,
     "external_links": [
-        {"name": "MBO.edu", "url": "https://mbo.rockefeller.edu/"},
-        {"name": "LBM.Mat", "url": "https://mbo.rockefeller.edu/"},
-        {"name": "LBM.Py", "url": "https://mbo.rockefeller.edu/"},
-        {"name": "LBM.scanreader", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "MBO", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "LBM (Mat)", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
+        {"name": "LBM (Py)", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
+        {"name": "scanreader", "url": "https://github.com/MillerBrainObservatory/scanreader/"},
     ],
     "navbar_start": [ "search-button", ],
     "header_links_before_dropdown": 6,

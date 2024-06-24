@@ -73,44 +73,6 @@ Start
 
             To the user guide
 
-    .. grid-item-card::
-        :img-top: index-images/api.svg
-        :text-align: center
-
-        API (WIP)
-        ^^^
-
-        The reference guide, api, contains a detailed description of the functions
-        and modules methods work and which parameters can be used.
-
-        +++
-
-        .. button-ref:: reference
-            :expand:
-            :color: secondary
-            :click-parent:
-
-            To the API
-
-    .. grid-item-card::
-        :img-top: index-images/contributor.svg
-        :text-align: center
-
-        Contributors
-        ^^^
-
-        Or developers, or resources
-
-        +++
-
-        .. button-ref:: devindex
-            :expand:
-            :color: secondary
-            :click-parent:
-
-            To the contributor's guide
-
-
 
 MBO Technology Stack
 =======================
@@ -124,27 +86,13 @@ documentation and resources. Let `git` handle all tasks and workflows that may h
 This is the motivation against using `ReadTheDocs <https://www.ReadTheDocs.org>`_ as `github-pages <https://pages.github.com/>`_ has the same
 functionality, albeit with a few more lines of code and technical expertise required in handling the `github-workflows`.
 
-Repositories
-==================
-
-CaImAn MATLAB
-------------------
-
-- Repository: |REPO LCM|
-- Documentation: :ref:`assembly`_
-
-CaImAn Python
-----------------
-
-- Repository: |REPO LCP|
-.. - Documentation: :external:`lbm_cp`_
-
 .. toctree::
-   :maxdepth: 3
-   :caption: Section Navigation:
+    :maxdepth: 3
+    :caption: Section Navigation:
+    :glob:
 
-   Guides <guides/index>
-   Resources <resources/index>
+    Guides <guides/*>
+    Resources <resources/index>
 
 Requirements
 ----------------
