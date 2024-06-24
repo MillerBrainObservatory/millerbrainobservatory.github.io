@@ -56,6 +56,7 @@ html_favicon = "_static/mbo_icon.ico"
 
 html_theme = 'pydata_sphinx_theme'
 html_title = "MBO Compute Hub"
+html_logo = "_static/MillerBrainObservatory_logo.png"
 html_short_title = "MBO"
 html_static_path = ['_static']
 html_last_updated_fmt = '%b %d, %Y'
@@ -85,45 +86,32 @@ intersphinx_mapping = {
 intersphinx_disabled_reftypes = ["*"]
 
 html_theme_options = {
-    "logo": {
-        "image_light": "_static/mbo.png",
-        "image_dark": "_static/mbo.png",
-    },
+    "path_to_docs": "docs",
     "github_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
-    "collapse_navigation": True,
     "external_links": [
         {"name": "MBO", "url": "https://mbo.rockefeller.edu/"},
         {"name": "LBM (Mat)", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
         {"name": "LBM (Py)", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
         {"name": "scanreader", "url": "https://github.com/MillerBrainObservatory/scanreader/"},
     ],
-    "navbar_start": [ "search-button", ],
-    "header_links_before_dropdown": 6,
     "navbar_end": [ "navbar-icon-links" ],
     "navbar_persistent": [],
-    "navbar_align": "content",
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        "colab_url": "https://colab.research.google.com/",
+        "notebook_interface": "jupyterlab",
+        # "jupyterhub_url": "", TODO
+    },
+    "use_edit_page_button": True,
+    "use_source_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+    "use_download_button": True,
+    "use_sidenotes": True,
+    "show_toc_level": 3,
+    "use_fullscreen_button": True,
+    "show_nav_level": 0,
+    "navigation_depth": 4
 }
-
-
-# html_theme_options = {
-#     "external_links": [
-#         {"name": "MBO",  "url": "https://mbo.rockefeller.edu"},
-#     ],
-#     "github_url": "https://github.com/MillerBrainObservatory",
-#     "navbar_align": "left",
-#     "navbar_end": ["navbar-icon-links"],
-#     "navbar_start": ["navbar-logo"],
-#     "show_nav_level": 2,
-#     "show_toc_level": 1,
-#     "use_edit_page_button": False,
-#     "header_links_before_dropdown": 8,
-# }
-
-# html_sidebars = {
-#     "index": [],
-#     "pipelines/**": ["search-field.html", "sidebar-nav-bs.html"],
-#     "user_guide/**": ["search-field.html", "sidebar-nav-bs.html"],
-# }
-
 
 templates_path = ["_templates"]
