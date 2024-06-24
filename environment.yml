@@ -1,0 +1,22 @@
+#To use:
+#    $ conda env create -n mbo-docs --file /path/to/repo/environment.yml
+#    $ conda activate mbo-caiman
+name: mbo-caiman
+channels:
+- defaults
+- conda-forge
+dependencies:
+- pip
+- python
+- ipython
+- sphinx>=6.0
+- sphinxcontrib-video
+- numpydoc
+- sphinx-book-theme
+- pydata-sphinx-theme
+- pip:
+  - sphinxcontrib-matlabdomain
+  - sphinxcontrib-images
+  - myst_nb
+  - sphinx-copybutton
+  - sphinx-togglebutton
