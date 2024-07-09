@@ -91,8 +91,8 @@ functionality, albeit with a few more lines of code and technical expertise requ
     :caption: Section Navigation:
     :glob:
 
-    Guides <guides/*>
-    Resources <resources/index>
+    guides/*
+    resources/*
 
 Requirements
 ----------------
@@ -156,9 +156,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-
-.. MBO ---------------
 
 .. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
    :target: https://github.com/orgs/MillerBrainObservatory/discussions
