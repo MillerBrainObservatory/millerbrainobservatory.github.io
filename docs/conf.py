@@ -32,22 +32,16 @@ images_config = dict(
 
 templates_path = ["_templates"]
 html_theme = "sphinx_book_theme"
-html_short_title="MBO Compute Hub"
 html_static_path = ["_static"]
 
 html_css_files = ['LBM_docs.css']
 html_logo = ""
 
-# html_theme_options = {
-#   "external_links": [
-#       {"name": "MBO", "url": "https://mbo.rockefeller.edu"},
-#       {"name": "CaImAn-MATLAB", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
-#       {"name": "CaImAn-Python", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
-#   ]
-# }
-
-# html_theme_options = {
-#     "repository_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io/",
-#     "use_repository_button": True,
-# }
+html_theme_options = {
+  "external_links": [
+      {"name": "MBO", "url": "https://mbo.rockefeller.edu"},
+      {"name": "CaImAn-MATLAB", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
+      {"name": "CaImAn-Python", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
+  ]
+}
 
