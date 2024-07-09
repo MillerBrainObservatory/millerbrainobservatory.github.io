@@ -1,6 +1,5 @@
 sphinx>=6.1.3
 docutils>=0.19
-furo==2021.11.16
 nbsphinx
 sphinx_gallery
 sphinx-togglebutton
@@ -9,4 +8,7 @@ sphinxcontrib-images
 sphinxcontrib-video
 numpydoc
 pydata_sphinx_theme
-sphinx_book_theme
+myst_parser
+sphinx-copybutton
+sphinx-inline-tabs
+sphinx_design
