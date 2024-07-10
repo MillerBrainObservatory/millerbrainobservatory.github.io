@@ -5,8 +5,9 @@
 
 .. _mbo_hub:
 
+############################################
 Miller Brain Observatory: Compute Ecosystem
-==============================================
+############################################
 
 A hub for tutorials, guides and resources for computational image processing.
 
@@ -17,6 +18,9 @@ A hub for tutorials, guides and resources for computational image processing.
 
     guides/index
     dev/index
+
+Pipelines
+================
 
 LBM-CaImAn-MATLAB
 ------------------
@@ -34,6 +38,29 @@ scanreader
 - **Repository**: `scanreader repository <https://github.com/MillerBrainObservatory/LBM-CaImAn-Python>`_
 - **Documentation**: `scanreader Docs <https://millerbrainobservatory.github.io/scanreader/>`_
 
+External Resources
+=======================
+
+Software
+--------------
+
+- `flatironinstitute/CaImAn (MATLAB) github <https://github.com/flatironinstitute/CaImAn-MATLAB>`_ | `Wiki <https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline>`_
+
+- `flatironinstitute/CaImAn (python) github <https://github.com/flatironinstitute/CaImAn>`_ | `Docs <https://caiman.readthedocs.io/en/latest/>`_
+
+- `Suite2p github <https://github.com/mouseland/suite2p>`_ | `Docs <https://suite2p.readthedocs.io/en/latest/>`_
+
+Blogs and Posts
+--------------------
+
+- `What is deconvolution? (Suite2p docs) <https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what>`_
+
+- `Why your two-photon images are noisier than you expect <https://gcamp6f.com/2024/04/24/why-your-two-photon-images-are-noisier-than-you-expect/>`_
+
+- `Interpreting Results of Calcium Denoising <https://gcamp6f.com/2022/08/23/self-supervised-denoising-of-calcium-imaging-data/>`_
+
+- `Image.sc Forum <https://forum.image.sc/>`_
+
 MBO Technology Stack
 =======================
 
@@ -45,7 +72,6 @@ For these reasons, the list of tools used in the MBO is kept as simple as possib
 documentation and resources. Let `git` handle all tasks and workflows that may have more "mature" alternatives i.e. travisCI, circleCI.
 This is the motivation against using `ReadTheDocs <https://www.ReadTheDocs.org>`_ as `github-pages <https://pages.github.com/>`_ has the same
 functionality, albeit with a few more lines of code and technical expertise required in handling the `github-workflows`.
-
 
 Indices and tables
 ==================
@@ -71,14 +97,4 @@ Indices and tables
 .. |REPO LCP| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto
    :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python
    :alt: Lbm-CaImAn-Python Repository
-
-.. Docs ----------------
-
-.. |DOCS LCM| image:: https://img.shields.io/badge/LBM-CaImAn-MATLAB%Repo-1f425f.svg
-   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/
-   :alt: Lbm-CaImAn-MATLAB Documentation
-
-.. |DOCS LCP| image:: https://img.shields.io/badge/LBM%20Documentation-1f425f.svg
-   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-Pthon/
-   :alt: Lbm-CaImAn-Python Documentation
 
