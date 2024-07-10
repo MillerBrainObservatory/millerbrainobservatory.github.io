@@ -1,122 +1,84 @@
-#################
-MBO Compute Hub
-#################
+.. MBO documentation master file, created by
+   sphinx-quickstart on Sun Jun 16 12:54:05 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-|Docs|
+.. _mbo_hub:
 
-A central repository for all Miller Brain Observatory computational resources.
+Miller Brain Observatory: Compute Ecosystem
+==============================================
 
-Contents
-=================
+A hub for tutorials, guides and resources for computational image processing.
 
 .. toctree::
     :maxdepth: 2
+    :caption: Contents:
+    :glob:
 
-    Pipelines <pipelines/index>
-    Guides <guides/index>
-
-Repositories
-======================
+    guides/index
+    dev/index
 
 LBM-CaImAn-MATLAB
-*****************
+------------------
 
-.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-MATLAB
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues
-   :alt: Open Issues
-
-.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-MATLAB
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/pulls
-   :alt: Open Pull Requests
-
-- **Repository**: `LBM-CaImAn-MATLAB <https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB>`_
-- **Documentation**: `LBM-CaImAn-MATLAB Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`_
+|REPO LCM| | `LBM-Matlab Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`_
 
 LBM-CaImAn-Python
-*****************
+------------------
 
-.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-Python
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/issues
-   :alt: Open Issues
+|REPO LCP| | `LBM-Python Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/>`_
 
-.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-Python
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/pulls
-   :alt: Open Pull Requests
+scanreader
+------------------
 
-- **Repository**: `LBM-CaImAn-Python <https://github.com/MillerBrainObservatory/LBM-CaImAn-Python>`_
-- **Documentation**: `LBM-CaImAn-Python Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/>`_
+- **Repository**: `scanreader repository <https://github.com/MillerBrainObservatory/LBM-CaImAn-Python>`_
+- **Documentation**: `scanreader Docs <https://millerbrainobservatory.github.io/scanreader/>`_
 
+MBO Technology Stack
+=======================
 
-Branch/Versioning
-======================
+Choosing a technology stack for a project is subjective and dynamic. The technology that works now
+may not work as more pipelines are built and included in the documentation. Maintainability is also a concern; your
+repository is only as maintainable as the team you have to maintain it.
 
-.. image:: _static/_images/general/gh_flow.svg
-   :alt: git-flow
-
-.. image:: _static/_images/general/gh_flow.png
-   :alt: git-flow
-
-.. thumbnail:: _static/_images/general/gh_flow.png
-   :alt: git-flow
-
-.. thumbnail:: _static/_images/general/gh_flow.png
-   :alt: git-flow
-
-.. |Publication| image:: https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg
-      :target: https://doi.org/10.1038/s41592-021-01239-8
-
-.. |issues| image:: https://img.shields.io/github/issues/Naereen/StrapDown.js.svg
-      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues/
-
-.. |release| image:: https://img.shields.io/github/release/Naereen/StrapDown.js.svg
-      :target: https://GitHub.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/releases/
-
-.. |Docs| image:: https://img.shields.io/badge/LBM%20Documentation-1f425f.svg
-   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/
-
-.. |DOI| image:: https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg
-      :target: https://doi.org/10.1038/s41592-021-01239-8
-
-Contributions
-======================
-
-We welcome contributions to our repositories. Please check the issues and pull request sections to see where you can help.
-
-.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-MATLAB
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/issues
-   :alt: Open Issues LBM-CaImAn-MATLAB
-
-.. image:: https://img.shields.io/github/issues/MillerBrainObservatory/LBM-CaImAn-Python
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/issues
-   :alt: Open Issues LBM-CaImAn-Python
-
-.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-MATLAB
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/pulls
-   :alt: Open Pull Requests LBM-CaImAn-MATLAB
-
-.. image:: https://img.shields.io/github/issues-pr/MillerBrainObservatory/LBM-CaImAn-Python
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/pulls
-   :alt: Open Pull Requests LBM-CaImAn-Python
-
+For these reasons, the list of tools used in the MBO is kept as simple as possible while maintaining effective
+documentation and resources. Let `git` handle all tasks and workflows that may have more "mature" alternatives i.e. travisCI, circleCI.
+This is the motivation against using `ReadTheDocs <https://www.ReadTheDocs.org>`_ as `github-pages <https://pages.github.com/>`_ has the same
+functionality, albeit with a few more lines of code and technical expertise required in handling the `github-workflows`.
 
 
 Indices and tables
-=====================================
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
 
-.. _CNMF: https://github.com/simonsfoundation/NoRMCorre
-.. _CaImAn: https://github.com/flatironinstitute/CaImAn-MATLAB/
-.. _ScanImage: https://www.mbfbioscience.com/products/scanimage/
-.. _publication: https://www.nature.com/articles/s41592-021-01239-8/
-.. _MROI: https://docs.scanimage.org/Premium%2BFeatures/Multiple%2BRegion%2Bof%2BInterest%2B%28MROI%29.html#multiple-region-of-interest-mroi-imaging/
-.. _DataSheet: https://docs.google.com/spreadsheets/d/13Vfz0NTKGSZjDezEIJYxymiIZtKIE239BtaqeqnaK-0/edit#gid=1933707095/
-.. _MBO: https://mbo.rockefeller.edu/
-.. _Slides: https://docs.google.com/presentation/d/1A2aytY5kBhnfDHIzNcO6uzFuV0OJFq22b7uCKJG_m0g/edit#slide=id.g2bd33d5af40_1_0/
-.. _NoRMCorre: https://github.com/flatironinstitute/NoRMCorre/
-.. _constrained-foopsi: https://github.com/epnev/constrained-foopsi/
-.. _startup.m: https://www.mathworks.com/help/matlab/matlab_env/matlab-startup-folder.html
-.. _startup: https://www.mathworks.com/help/matlab/matlab_env/matlab-startup-folder.html
-.. _BigTiffSpec: _https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification
+.. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
+   :target: https://github.com/orgs/MillerBrainObservatory/discussions
+   :alt: Discussions
+
+.. |MBO Homepage| image:: https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black
+   :target: https://mbo.rockefeller.edu/
+   :alt: MBO Homepage
+
+.. Repos ---------------
+
+.. |REPO LCM| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB
+   :alt: Lbm-CaImAn-MATLAB Repository
+
+.. |REPO LCP| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python
+   :alt: Lbm-CaImAn-Python Repository
+
+.. Docs ----------------
+
+.. |DOCS LCM| image:: https://img.shields.io/badge/LBM-CaImAn-MATLAB%Repo-1f425f.svg
+   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/
+   :alt: Lbm-CaImAn-MATLAB Documentation
+
+.. |DOCS LCP| image:: https://img.shields.io/badge/LBM%20Documentation-1f425f.svg
+   :target: https://millerbrainobservatory.github.io/LBM-CaImAn-Pthon/
+   :alt: Lbm-CaImAn-Python Documentation
+
