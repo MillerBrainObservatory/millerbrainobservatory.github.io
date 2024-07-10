@@ -7,7 +7,7 @@ pydata_sphinx_theme
 sphinxcontrib-images
 sphinxcontrib-video
 numpydoc
-pydata_sphinx_theme
+sphinx_book_theme
 myst_parser
 sphinx-copybutton
 sphinx-inline-tabs
