@@ -11,19 +11,6 @@ copyright = '2024, Flynn OConnell'
 author = 'Flynn OConnell'
 release = '1.0.0'
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-exclude_patterns = ['Thumbs.db', '.DS_Store']
-myst_enable_extensions = [
-    "amsmath",
-    "colon_fence",
-    "deflist",
-    "dollarmath",
-    "html_image",
-]
-myst_url_schemes = ("http", "https", "mailto")
-
 extensions = [
     "sphinx.ext.autodoc",
     "sphinxcontrib.images",
@@ -34,8 +21,13 @@ extensions = [
     "numpydoc",
     'sphinx.ext.mathjax',
     'sphinx_design',
-    'myst_parser'
+    "sphinx_inline_tabs",
+    "myst_parser"
 ]
+
+exclude_patterns = ['Thumbs.db', '.DS_Store', '.git', 'exclude']
+myst_enable_extensions = [ "colon_fence", "html_image"]
+sphinx_tabs_disable_tab_closing = True
 
 source_suffix = {
         '.rst': 'restructuredtext',
