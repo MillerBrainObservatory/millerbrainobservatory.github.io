@@ -50,7 +50,7 @@
     <link rel="icon" href="../_static/mbo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ScanImage Metadata" href="scanimage.html" />
+    <link rel="next" title="LBM Datasets" href="scanimage.html" />
     <link rel="prev" title="User Guides" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -340,7 +340,7 @@ document.write(`
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">User Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">ImageJ / FIJI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scanimage.html">ScanImage Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scanimage.html">LBM Datasets</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dev/index.html">Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -518,7 +518,7 @@ document.write(`
 <p>Although our data is in <cite>.tiff</cite> format, loading it in Fiji may seem abnormal because ImageJ has no knowledge of the dimensionality of our dataset.
 Without metadata describing the dimensionality of your recording, Fiji This dataset sized <cite>[1 x 1 x zT]</cite>, where zT is the number of z-planes (for LBM, typically 15-28) interleaved with each other.</p>
 <a class=""
-               data-lightbox="group-f7816696-4cd0-47df-867c-242ddb7cb922"
+               data-lightbox="group-ec330cc7-0ac7-4eeb-82cc-0d5f00caab4f"
                href="../_images/ij-stack-slice-manipulations1.png"
                title=""
                data-title=""
@@ -535,7 +535,7 @@ Without metadata describing the dimensionality of your recording, Fiji This data
 <li><p>File &gt; Open &gt; <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">.tiff</span> <span class="pre">file</span></code> &gt; Open as Hyperstacks</p></li>
 </ul>
 <a class=""
-               data-lightbox="group-467c8467-e1a1-43f7-a118-af820809a7ab"
+               data-lightbox="group-a9d5ec68-d5b9-4002-b053-70c2e53d0018"
                href="../_images/ij-open1.png"
                title=""
                data-title=""
@@ -551,7 +551,18 @@ Without metadata describing the dimensionality of your recording, Fiji This data
 </div>
 <img alt="../_images/ij-raw.gif" src="../_images/ij-raw.gif" />
 <p>Notice how the images don’t display a timeseries, but sets z-stacks that get darker.</p>
-<ul class="simple">
+<a class=""
+               data-lightbox="group-85550d18-3eb8-4e40-95d7-42f2d624e556"
+               href="../_images/ij-intensity1.png"
+               title=""
+               data-title=""
+               
+               ><img src="../_images/ij-intensity1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><ul class="simple">
 <li><p>Image &gt; Stacks &gt; Tools &gt; Stack Splitter</p></li>
 <li><p>Number of Substacks: [enter the number of z-planes, 30 here]</p></li>
 </ul>
@@ -600,7 +611,7 @@ Without metadata describing the dimensionality of your recording, Fiji This data
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ScanImage Metadata</p>
+        <p class="prev-next-title">LBM Datasets</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

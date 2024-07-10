@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ScanImage Metadata &#8212; MBO Compute Hub</title>
+    <title>LBM Datasets &#8212; MBO Compute Hub</title>
   
   
   
@@ -46,8 +46,6 @@
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/scanimage';</script>
     <link rel="icon" href="../_static/mbo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -204,6 +202,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -338,7 +340,7 @@ document.write(`
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">User Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="imagej.html">ImageJ / FIJI</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">ScanImage Metadata</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">LBM Datasets</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../dev/index.html">Developer Guide</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -403,7 +405,7 @@ document.write(`
       
       
       
-      <li><a href="../_sources/guides/scanimage.rst" target="_blank"
+      <li><a href="../_sources/guides/scanimage.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -413,7 +415,7 @@ document.write(`
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -474,7 +476,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -485,11 +489,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ScanImage Metadata</h1>
+    <h1>LBM Datasets</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-multi-roi">ScanImage multi-ROI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-metadata">ScanImage metadata</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lbm-dimensionality-semantics">LBM Dimensionality Semantics</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -499,21 +518,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="scanimage-metadata">
-<h1>ScanImage Metadata<a class="headerlink" href="#scanimage-metadata" title="Permalink to this heading">#</a></h1>
-<p>ScanImage <a class="reference external" href="https://docs.scanimage.org/Premium%2BFeatures/Multiple%2BRegion%2Bof%2BInterest%2B%28MROI%29.html#multiple-region-of-interest-mroi-imaging/">Multi Region Of Interest</a> (mROI) .tiff outputs are made up of individual sections called <cite>ROIs</cite>.
-These <cite>ROIs</cite> collectively form a ScanImage <cite>ScanField</cite>. This scanfield is really just a set of metadata describing the size and location of our images.
-The term ROI refers to a “subsection” of the 2D image in which the scanner momentarily stopped acquisition.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lbm-datasets">
+<h1>LBM Datasets<a class="headerlink" href="#lbm-datasets" title="Permalink to this heading">#</a></h1>
+<section id="terms">
+<h2>Terms<a class="headerlink" href="#terms" title="Permalink to this heading">#</a></h2>
+<p>Light-beads microscopy is a 2-photon imaging paradigm based on <a class="reference external" href="https://docs.scanimage.org/index.html">ScanImage</a> acquisition software.</p>
+<p>In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.</p>
+</section>
+<section id="frame-ordering">
+<h2>Frame Ordering<a class="headerlink" href="#frame-ordering" title="Permalink to this heading">#</a></h2>
+<p>ScanImage saves the 4D volume with each plane interleaved, e.g.</p>
 <ul class="simple">
-<li><p><cite>num_pixel_xy</cite> are the number of pixels in each <cite>ROI</cite>.</p></li>
-<li><p>With there being 9 ROIs, we know our image is <span class="math notranslate nohighlight">\(144x8=1296\)</span> pixels wide.</p></li>
+<li><p>frame0 = time0_plane1</p></li>
+<li><p>frame1 = time0_plane2</p></li>
+<li><p>frame2 = time0_plane3</p></li>
+<li><p>frame3 = time1_plane1</p></li>
+<li><p>frame4 = time1_plane2</p></li>
 </ul>
-<p>So that explains why is our <cite>image_length</cite> is so high compared to our <cite>image_width</cite>.</p>
-<p>However, you’ll notice <span class="math notranslate nohighlight">\(1200x9=10800\)</span> is significanly less than our <cite>image_height</cite>.</p>
-<p>This is because the scanner is actually moving to the next ROI, so we stop collecting data for that period of time.
-<cite>num_lines_between_scanfields</cite> is calculated using this amount of time and is stripped during the horizontal concatenation.</p>
-<table class="table" id="id1">
-<caption><span class="caption-text">LBM Dimensionality Semantics</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<p>… and so on.</p>
+</section>
+<section id="scanimage-multi-roi">
+<h2>ScanImage multi-ROI<a class="headerlink" href="#scanimage-multi-roi" title="Permalink to this heading">#</a></h2>
+<p>ScanImage <a class="reference external" href="https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html">mROI (Multi Region Of Interest)</a> tiff outputs are made up of individual strips called <code class="docutils literal notranslate"><span class="pre">ROIs</span></code>. These <code class="docutils literal notranslate"><span class="pre">ROIs</span></code> collectively form a ScanImage <code class="docutils literal notranslate"><span class="pre">ScanField</span></code>. This scanfield is really just a set of metadata describing the size and location of our images. The term ROI refers to a “subsection” of the 2D image in which the scanner momentarily stopped acquisition.</p>
+</section>
+<section id="scanimage-metadata">
+<h2>ScanImage metadata<a class="headerlink" href="#scanimage-metadata" title="Permalink to this heading">#</a></h2>
+<p>Each pipeline comes stocked with methods to retrieve imaging metadata.</p>
+<section id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">objective_resolution</span><span class="p">:</span> <span class="mf">157.5000</span>
+<span class="n">center_xy</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">15.2381</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">size_xy</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.8095</span> <span class="mf">38.0952</span><span class="p">]</span>
+<span class="n">num_pixel_xy</span><span class="p">:</span> <span class="p">[</span><span class="mi">144</span> <span class="mi">1200</span><span class="p">]</span>
+<span class="n">image_length</span><span class="p">:</span> <span class="mi">11008</span>
+<span class="n">image_width</span><span class="p">:</span> <span class="mi">145</span>
+<span class="n">num_planes</span><span class="p">:</span> <span class="mi">30</span>
+<span class="n">num_rois</span><span class="p">:</span> <span class="mi">9</span>
+<span class="n">num_frames</span><span class="p">:</span> <span class="mi">1176</span>
+<span class="n">frame_rate</span><span class="p">:</span> <span class="mf">2.1797</span>
+<span class="n">fov</span><span class="p">:</span> <span class="p">[</span><span class="mi">600</span> <span class="mi">6000</span><span class="p">]</span>
+<span class="n">pixel_resolution</span><span class="p">:</span> <span class="mf">4.5833</span>
+<span class="n">sample_format</span><span class="p">:</span> <span class="s1">&#39;int16&#39;</span>
+</pre></div>
+</div>
+<dl class="simple myst">
+<dt>num_pixel_xy</dt><dd><p>The number of pixels in each <code class="docutils literal notranslate"><span class="pre">ROI</span></code>. This can very from the actual tiff image size.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fov</span></code></dt><dd><p>The total image size, in micron (<code class="docutils literal notranslate"><span class="pre">um</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">image_length</span></code>/<code class="docutils literal notranslate"><span class="pre">image_width</span></code></dt><dd><p>The total <strong>tiff</strong> size, in pixels (<code class="docutils literal notranslate"><span class="pre">px</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pixel_resolution</span></code></dt><dd><p>The size, in micron, of each pixel.</p>
+</dd>
+</dl>
+<blockquote>
+<div><p><strong>Note:</strong>
+With multi-ROI tiffs, the size of your tiff given by <code class="docutils literal notranslate"><span class="pre">image_size</span></code> is likely different from the number of pixels in x and y. This is due to the time it takes the scanner to move onto subsequent ROI’s not being accounted for in <code class="docutils literal notranslate"><span class="pre">num_pixel_xy</span></code>. Internally, each pipeline checks for these metadata attributes and adjusts the final image accordingly.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="lbm-dimensionality-semantics">
+<h2>LBM Dimensionality Semantics<a class="headerlink" href="#lbm-dimensionality-semantics" title="Permalink to this heading">#</a></h2>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Dimension</p></th>
 <th class="head"><p>Description</p></th>
@@ -534,20 +600,12 @@ The term ROI refers to a “subsection” of the 2D image in which the scanner m
 </tr>
 </tbody>
 </table>
-<p>Before the beginning the recording session, users have the options to split frames in the recording accross multiple <cite>.tiff</cite> files. This option is helpful
-as it requires less work in post-processing to ensure there isn’t too much computer memory being used.</p>
-<a class=""
-               data-lightbox="group-7e2b2ec0-cd40-4973-aecb-c65352745291"
-               href="guides/_images/data_log_gui.png"
-               title=""
-               data-title=""
-               
-               ><img src="guides/_images/data_log_gui.png"
-                     class=""
-                     width="100%"
-                     height="auto"
-                     alt=""/>
-                </a></section>
+<p>Before beginning the recording session, users have the option to split frames in the recording across multiple <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files. This option is helpful as it requires less work in post-processing to ensure there isn’t too much computer memory being used.</p>
+<p><img alt="ScanImage Data Log GUI" src="_images/si-data-log-gui.png" /></p>
+<p><a class="reference external" href="https://docs.scanimage.org/index.html">ScanImage</a>
+<a class="reference external" href="https://docs.scanimage.org/Premium%2BFeatures/Multiple%2BRegion%2Bof%2BInterest%2B%28MROI%29.html#multiple-region-of-interest">multi Region of Interest</a></p>
+</section>
+</section>
 
 
                 </article>
@@ -584,6 +642,27 @@ as it requires less work in post-processing to ensure there isn’t too much com
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-multi-roi">ScanImage multi-ROI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-metadata">ScanImage metadata</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lbm-dimensionality-semantics">LBM Dimensionality Semantics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

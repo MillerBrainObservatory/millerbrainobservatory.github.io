@@ -27,6 +27,8 @@ To open your dataset:
 
 Notice how the images don't display a timeseries, but sets z-stacks that get darker.
 
+.. thumbnail:: ../_images/ij-intensity.png
+
 - Image > Stacks > Tools > Stack Splitter
 - Number of Substacks: [enter the number of z-planes, 30 here]
 
