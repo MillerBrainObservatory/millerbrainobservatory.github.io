@@ -513,7 +513,7 @@ The term ROI refers to a “subsection” of the 2D image in which the scanner m
 <p>This is because the scanner is actually moving to the next ROI, so we stop collecting data for that period of time.
 <cite>num_lines_between_scanfields</cite> is calculated using this amount of time and is stripped during the horizontal concatenation.</p>
 <table class="table" id="id1">
-<caption><span class="caption-text">LBM Semantics</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-text">LBM Dimensionality Semantics</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Dimension</p></th>
 <th class="head"><p>Description</p></th>
@@ -521,22 +521,33 @@ The term ROI refers to a “subsection” of the 2D image in which the scanner m
 </thead>
 <tbody>
 <tr class="row-even"><td><p>[X, Y]</p></td>
-<td><p>Image / Plane / Frame / Field / ScanField</p></td>
+<td><p>Image / 2D Plane / Frame / Field / ScanField</p></td>
 </tr>
 <tr class="row-odd"><td><p>[X, Y, Z]</p></td>
-<td><p>Volume, 3D-Stack, Z-Stack, Planar-timeseries</p></td>
+<td><p>3D-Stack, Z-Stack</p></td>
 </tr>
-<tr class="row-even"><td><p>[X, Y, Z, T]</p></td>
-<td><p>Volumetric Timeseries</p></td>
+<tr class="row-even"><td><p>[X, Y, T]</p></td>
+<td><p>Time-Series of a 2D Plane, Planar-timeseries, Movie</p></td>
 </tr>
-<tr class="row-odd"><td><p>[X, Y, T]</p></td>
-<td><p>Time-Series of a 2D Plane</p></td>
+<tr class="row-odd"><td><p>[X, Y, Z, T]</p></td>
+<td><p>Volumetric Timeseries, Volume</p></td>
 </tr>
 </tbody>
 </table>
-<p>Within an image, we are dealing with ScanImage <a class="reference external" href="https://docs.scanimage.org/Premium%2BFeatures/Multiple%2BRegion%2Bof%2BInterest%2B%28MROI%29.html#multiple-region-of-interest-mroi-imaging/">mROI</a> scans.</p>
-<p>During aquisition, the user choses the “number of pixels in X/Y</p>
-</section>
+<p>Before the beginning the recording session, users have the options to split frames in the recording accross multiple <cite>.tiff</cite> files. This option is helpful
+as it requires less work in post-processing to ensure there isn’t too much computer memory being used.</p>
+<a class=""
+               data-lightbox="group-7e2b2ec0-cd40-4973-aecb-c65352745291"
+               href="guides/_images/data_log_gui.png"
+               title=""
+               data-title=""
+               
+               ><img src="guides/_images/data_log_gui.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></section>
 
 
                 </article>
