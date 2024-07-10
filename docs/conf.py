@@ -15,6 +15,14 @@ release = '1.0.0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 exclude_patterns = ['Thumbs.db', '.DS_Store']
+myst_enable_extensions = [
+    "amsmath",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "html_image",
+]
+myst_url_schemes = ("http", "https", "mailto")
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -25,15 +33,18 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "numpydoc",
     'sphinx.ext.mathjax',
-    'sphinx_design'
+    'sphinx_design',
+    'myst_parser'
 ]
 
+source_suffix = {
+        '.rst': 'restructuredtext',
+        '.md': 'markdown',
+        }
 
 # List of documents that shouldn't be included in the build.
 #unused_docs = []
 
-# The reST default role (used for this markup: `text`) to use for all documents.
-source_suffix = '.rst'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -53,18 +64,17 @@ html_logo = "_images/MillerBrainObservatory_logo.svg"
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 html_favicon = "_static/mbo.png"
-
 html_theme = 'sphinx_book_theme'
 html_title = "MBO Compute Hub"
 html_logo = "_static/MillerBrainObservatory_logo.png"
 html_short_title = "MBO"
 html_static_path = ['_static']
 html_last_updated_fmt = '%b %d, %Y'
-html_css_files = ["numpy.css"]
+html_css_files = ["custom.css"]
 html_context = {"default_mode": "dark"}
-html_use_modindex = True
-html_copy_source = False
-html_domain_indices = False
+html_sidebars = {
+    "**": ["icon-links.html"]
+}
 html_file_suffix = '.html'
 
 # This is a dictionary where the value is a tuple.
@@ -74,16 +84,13 @@ html_file_suffix = '.html'
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3.5', None),
-    'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
     'scipy': ('https://docs.scipy.org/doc/scipy', None),
     'matplotlib': ('https://matplotlib.org/stable', None),
-    'numpydoc': ('https://numpydoc.readthedocs.io/en/latest', None),
-    'numpy-tutorials': ('https://numpy.org/numpy-tutorials', None),
-    'LBMmat': ('https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/', None),
+    'LBMmat': ('https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/',None),
     'LBMpy': ('https://millerbrainobservatory.github.io/LBM-CaImAn-Python/', None)
 }
 
-intersphinx_disabled_reftypes = ["*"]
+# intersphinx_disabled_reftypes = ["*"]
 
 html_theme_options = {
     # "path_to_docs": "docs",
@@ -94,23 +101,8 @@ html_theme_options = {
         {"name": "Py", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
         {"name": "scanreader", "url": "https://github.com/MillerBrainObservatory/scanreader/"},
     ],
-    "navbar_end": [ "navbar-icon-links" ],
-    "navbar_persistent": [],
-    # "launch_buttons": {
-    #     "binderhub_url": "https://mybinder.org",
-    #     "colab_url": "https://colab.research.google.com/",
-    #     "notebook_interface": "jupyterlab",
-    #     # "jupyterhub_url": "", TODO
-    # },
-    # "use_edit_page_button": True,
-    # "use_source_button": True,
-    # "use_issues_button": True,
-    # "use_repository_button": True,
-    # "use_download_button": True,
-    "use_sidenotes": True,
     "show_toc_level": 3,
-    "use_fullscreen_button": True,
-    "show_nav_level": 0,
+    "show_nav_level": 2,
     "navigation_depth": 4
 }
 

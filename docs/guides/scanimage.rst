@@ -31,9 +31,7 @@ This is because the scanner is actually moving to the next ROI, so we stop colle
 
 Within an image, we are dealing with ScanImage `mROI`_ scans.
 
-During aquisition, the user choses the "number of pixels in X/Y (see :ref:`image size` in :ref:`metadata`)
-
-Each ROI can be trimmed and smoothed to blend with adjacent ROI's.
+During aquisition, the user choses the "number of pixels in X/Y
 
 .. _multi Region of Interest: https://docs.scanimage.org/Premium%2BFeatures/Multiple%2BRegion%2Bof%2BInterest%2B%28MROI%29.html#multiple-region-of-interest-mroi-imaging/
 .. _mROI: `multi Region of Interest`_

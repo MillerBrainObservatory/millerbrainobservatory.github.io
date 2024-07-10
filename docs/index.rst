@@ -11,12 +11,28 @@ Miller Brain Observatory: Compute Ecosystem
 A hub for tutorials, guides and resources for computational image processing.
 
 .. toctree::
-    :maxdepth: 3
-    :caption: Section Navigation:
+    :maxdepth: 2
+    :caption: Contents:
     :glob:
 
-    guides/*
-    dev/*
+    guides/index
+    dev/index
+
+LBM-CaImAn-MATLAB
+------------------
+
+|REPO LCM| | `LBM-Matlab Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`_
+
+LBM-CaImAn-Python
+------------------
+
+|REPO LCP| | `LBM-Python Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/>`_
+
+scanreader
+------------------
+
+- **Repository**: `scanreader repository <https://github.com/MillerBrainObservatory/LBM-CaImAn-Python>`_
+- **Documentation**: `scanreader Docs <https://millerbrainobservatory.github.io/scanreader/>`_
 
 MBO Technology Stack
 =======================
@@ -29,62 +45,6 @@ For these reasons, the list of tools used in the MBO is kept as simple as possib
 documentation and resources. Let `git` handle all tasks and workflows that may have more "mature" alternatives i.e. travisCI, circleCI.
 This is the motivation against using `ReadTheDocs <https://www.ReadTheDocs.org>`_ as `github-pages <https://pages.github.com/>`_ has the same
 functionality, albeit with a few more lines of code and technical expertise required in handling the `github-workflows`.
-
-
-Requirements
-----------------
-
-- python
-- pip
-- conda
-- sphinx
-- github actions
-
-Thats it! The first three should be familiar, python with its two most popular package managers (we use `conda` for everything that we can, and fallback to `pip`).
-
-It is my strong opinion that simpler the better when it comes to documentation tools. At the end of the day, it's just raw html, and should be accessible from any browser environment on any device.
-
-The workflow to update documentation is pretty simple.
-
-.. note::
-
-    This assumes you have a working version of `python3`, `conda/miniconda/anaconda`, and `pip`.
-    Clone the repository:
-
-.. code-block:: bash
-
-   git clone +git@github.com:millerbrainobservatory/<REPOSITORY>.git
-   cd docs
-   make clean && make html
-
-.. important::
-
-   You need to activate the `conda` environment before calling `make clean` or `make html`.
-
-The github action triggers for each `.yml` file within `root/.github/workflows/`. We have `build_and_deploy_docs.yml`, or some similar variation.
-
-This file is organized into groups `-jobs` that do all of the work for us on github servers.
-
-The first two lines:
-
-.. code-block:: yaml
-
-    name: build and deploy docs
-
-    on: [push, pull_request, workflow_dispatch]
-
-
-`name` is going to appear on `github.com <https://www.github.com>`_ in the `actions` tab, which shows us graphically the code executed from this workflow.`
-`on` controls when the workflow is run.
-
-These are the most common values to change. For a high level overview on the rest of the worflow:
-- clone our github code,
-- setup dependencies,
-- use `Make` to build the docs
-- push the html to a separate `gh-pages` branch
-- trigger gh-pages to deploy our site to its servers with a build-in github workflow
-
-see :ref:`gh_branch_workflow` for more details about the workflow.
 
 
 Indices and tables

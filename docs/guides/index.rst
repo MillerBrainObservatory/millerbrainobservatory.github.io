@@ -1,15 +1,13 @@
-Guides and Tutorials
-#####################
+User Guides
+################
 
-Documentation Guides
------------------------
-
-Guides for building, maintaining and improving MBO documentation.
-
+Guides for users analyzing microscopy data.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Guides
+    :maxdepth: 2
+    :caption: User Guides:
 
     imagej
     scanimage
+
+

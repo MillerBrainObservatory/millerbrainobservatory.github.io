@@ -1,4 +1,4 @@
-## Dev Branches: What, Why, and When?
+# Dev Branches: What, Why, and When?
 
 *adapted from firefox open source contribution guide*
 
