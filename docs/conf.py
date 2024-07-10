@@ -45,24 +45,11 @@ source_suffix = {
 # List of documents that shouldn't be included in the build.
 #unused_docs = []
 
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-html_static_path = ['_static']
-# html_use_modindex = False
-# html_use_index = False
+templates_path = ["_templates"]
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_title = "Miller Brain Observatory"
-
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
-html_logo = "_images/MillerBrainObservatory_logo.svg"
-
-# The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
 html_favicon = "_static/mbo.png"
 html_theme = 'sphinx_book_theme'
 html_title = "MBO Compute Hub"
@@ -72,15 +59,7 @@ html_static_path = ['_static']
 html_last_updated_fmt = '%b %d, %Y'
 html_css_files = ["custom.css"]
 html_context = {"default_mode": "dark"}
-html_sidebars = {
-    "**": ["icon-links.html"]
-}
 html_file_suffix = '.html'
-
-# This is a dictionary where the value is a tuple.
-# The first link is a link to our "deployed" documentation URL
-# The second is a path relative to the local build so sphinx can instead
-# map to that location.
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3.5', None),
@@ -93,17 +72,34 @@ intersphinx_mapping = {
 # intersphinx_disabled_reftypes = ["*"]
 
 html_theme_options = {
-    # "path_to_docs": "docs",
-    "github_url": "https://github.com/MillerBrainObservatory/millerbrainobservatory.github.io",
+    "path_to_docs": "docs",
     "external_links": [
-        {"name": "MBO", "url": "https://mbo.rockefeller.edu/"},
-        {"name": "LBM (Mat)", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
-        {"name": "Py", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
+        {"name": "MBO.edu", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "LBM.Mat", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
+        {"name": "LBM.Py", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
         {"name": "scanreader", "url": "https://github.com/MillerBrainObservatory/scanreader/"},
     ],
+    "icon_links": [
+        {
+            "name": "Pandas",
+            "url": "https://pandas.pydata.org",
+            "icon": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg",
+            "type": "url",
+        },
+        {
+            "name": "Pandas",
+            "url": "https://pandas.pydata.org",
+            "icon": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg",
+            "type": "url",
+        },
+    ],
+    "navbar_start": ["search-button"],
+    "navbar_end": ["navbar-nav"],
+    "navbar_align": "right",
+    "header_links_before_dropdown": 2,
+    # "navbar_persistent": ["search-button", "navbar-icon-links"],
     "show_toc_level": 3,
     "show_nav_level": 2,
     "navigation_depth": 4
 }
 
-templates_path = ["_templates"]
