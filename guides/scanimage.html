@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=851706fb" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
@@ -42,6 +43,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=902d9fbd"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
@@ -518,7 +520,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lbm-datasets">
+  <section id="lbm-datasets">
 <h1>LBM Datasets<a class="headerlink" href="#lbm-datasets" title="Permalink to this heading">#</a></h1>
 <section id="terms">
 <h2>Terms<a class="headerlink" href="#terms" title="Permalink to this heading">#</a></h2>
@@ -561,16 +563,14 @@ document.write(`
 <span class="n">sample_format</span><span class="p">:</span> <span class="s1">&#39;int16&#39;</span>
 </pre></div>
 </div>
-<dl class="simple myst">
-<dt>num_pixel_xy</dt><dd><p>The number of pixels in each <code class="docutils literal notranslate"><span class="pre">ROI</span></code>. This can very from the actual tiff image size.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">fov</span></code></dt><dd><p>The total image size, in micron (<code class="docutils literal notranslate"><span class="pre">um</span></code>).</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">image_length</span></code>/<code class="docutils literal notranslate"><span class="pre">image_width</span></code></dt><dd><p>The total <strong>tiff</strong> size, in pixels (<code class="docutils literal notranslate"><span class="pre">px</span></code>).</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">pixel_resolution</span></code></dt><dd><p>The size, in micron, of each pixel.</p>
-</dd>
-</dl>
+<p>num_pixel_xy
+: The number of pixels in each <code class="docutils literal notranslate"><span class="pre">ROI</span></code>. This can very from the actual tiff image size.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fov</span></code>
+: The total image size, in micron (<code class="docutils literal notranslate"><span class="pre">um</span></code>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">image_length</span></code>/<code class="docutils literal notranslate"><span class="pre">image_width</span></code>
+: The total <strong>tiff</strong> size, in pixels (<code class="docutils literal notranslate"><span class="pre">px</span></code>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">pixel_resolution</span></code>
+: The size, in micron, of each pixel.</p>
 <blockquote>
 <div><p><strong>Note:</strong>
 With multi-ROI tiffs, the size of your tiff given by <code class="docutils literal notranslate"><span class="pre">image_size</span></code> is likely different from the number of pixels in x and y. This is due to the time it takes the scanner to move onto subsequent ROI’s not being accounted for in <code class="docutils literal notranslate"><span class="pre">num_pixel_xy</span></code>. Internally, each pipeline checks for these metadata attributes and adjusts the final image accordingly.</p>
@@ -601,7 +601,7 @@ With multi-ROI tiffs, the size of your tiff given by <code class="docutils liter
 </tbody>
 </table>
 <p>Before beginning the recording session, users have the option to split frames in the recording across multiple <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files. This option is helpful as it requires less work in post-processing to ensure there isn’t too much computer memory being used.</p>
-<p><img alt="ScanImage Data Log GUI" src="_images/si-data-log-gui.png" /></p>
+<p><img alt="ScanImage Data Log GUI" src="../_images/si-data-log-gui.png" /></p>
 <p><a class="reference external" href="https://docs.scanimage.org/index.html">ScanImage</a>
 <a class="reference external" href="https://docs.scanimage.org/Premium%2BFeatures/Multiple%2BRegion%2Bof%2BInterest%2B%28MROI%29.html#multiple-region-of-interest">multi Region of Interest</a></p>
 </section>
