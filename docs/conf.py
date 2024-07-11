@@ -30,9 +30,12 @@ myst_enable_extensions = [ "colon_fence", "html_image"]
 sphinx_tabs_disable_tab_closing = True
 
 source_suffix = {
-        '.rst': 'restructuredtext',
-        '.md': 'markdown',
-        }
+    '.rst': 'restructuredtext',
+    '.ipynb': 'myst-nb',
+    '.myst': 'myst-nb',
+}
+
+images_config = { "default_show_title": True }
 
 # List of documents that shouldn't be included in the build.
 #unused_docs = []
@@ -54,11 +57,9 @@ html_context = {"default_mode": "dark"}
 html_file_suffix = '.html'
 
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3.5', None),
-    'scipy': ('https://docs.scipy.org/doc/scipy', None),
-    'matplotlib': ('https://matplotlib.org/stable', None),
-    'LBMmat': ('https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/',None),
-    'LBMpy': ('https://millerbrainobservatory.github.io/LBM-CaImAn-Python/', None)
+    'MBO': ('https://millerbrainobservatory.github.io/index.html/', None),
+    'LBMmat': ('https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html',None),
+    'LBMpy': ('https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html', None),
 }
 
 # intersphinx_disabled_reftypes = ["*"]
@@ -66,32 +67,27 @@ intersphinx_mapping = {
 html_theme_options = {
     "path_to_docs": "docs",
     "external_links": [
-        {"name": "MBO.edu", "url": "https://mbo.rockefeller.edu/"},
-        {"name": "LBM.Mat", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/"},
-        {"name": "LBM.Py", "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/"},
-        {"name": "scanreader", "url": "https://github.com/MillerBrainObservatory/scanreader/"},
+        {"name": "MBO Team", "url": "https://mbo.rockefeller.edu/"},
+        {"name": "LBM - CaImAn.Mat", "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html"},
+        {"name": "LBM - CaImAn.Py", "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html"},
     ],
-    "icon_links": [
-        {
-            "name": "Pandas",
-            "url": "https://pandas.pydata.org",
-            "icon": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg",
-            "type": "url",
-        },
-        {
-            "name": "Pandas",
-            "url": "https://pandas.pydata.org",
-            "icon": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg",
-            "type": "url",
-        },
-    ],
+    # "icon_links": [
+    #     {
+    #         "name": "MBO",
+    #         "url": "https://mbo.rockefeller.edu",
+    #         "icon": "_static/mbo.png",
+    #         "type": "local",
+    #     },
+    #     {
+    #         "name": ".mat",
+    #         "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/",
+    #         "icon": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg",
+    #         "type": "local",
+    #     },
+    # ],
     "navbar_start": ["search-button"],
     "navbar_end": ["navbar-nav"],
     "navbar_align": "right",
-    "header_links_before_dropdown": 2,
-    # "navbar_persistent": ["search-button", "navbar-icon-links"],
-    "show_toc_level": 3,
-    "show_nav_level": 2,
-    "navigation_depth": 4
+    "header_links_before_dropdown": 2
 }
 
