@@ -56,7 +56,7 @@
     <link rel="prev" title="User Guides" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jul 10, 2024"/>
+    <meta name="docbuild:last-update" content="Jul 11, 2024"/>
   </head>
   
   
@@ -166,28 +166,21 @@ document.write(`
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://mbo.rockefeller.edu/">
-                    MBO.edu
+                    MBO Team
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/">
-                    LBM.Mat
+                  <a class="nav-link dropdown-item nav-external" href="https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html">
+                    LBM - CaImAn.Mat
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/">
-                    LBM.Py
-                  </a>
-                </li>
-                
-
-                <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://github.com/MillerBrainObservatory/scanreader/">
-                    scanreader
+                  <a class="nav-link dropdown-item nav-external" href="https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html">
+                    LBM - CaImAn.Py
                   </a>
                 </li>
                 
@@ -257,28 +250,21 @@ document.write(`
                     
                 <li class="nav-item">
                   <a class="nav-link dropdown-item nav-external" href="https://mbo.rockefeller.edu/">
-                    MBO.edu
+                    MBO Team
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/">
-                    LBM.Mat
+                  <a class="nav-link dropdown-item nav-external" href="https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html">
+                    LBM - CaImAn.Mat
                   </a>
                 </li>
                 
 
                 <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://github.com/MillerBrainObservatory/LBM-CaImAn-Python/">
-                    LBM.Py
-                  </a>
-                </li>
-                
-
-                <li class="nav-item">
-                  <a class="nav-link dropdown-item nav-external" href="https://github.com/MillerBrainObservatory/scanreader/">
-                    scanreader
+                  <a class="nav-link dropdown-item nav-external" href="https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html">
+                    LBM - CaImAn.Py
                   </a>
                 </li>
                 
@@ -311,31 +297,6 @@ document.write(`
   
   
 </a></div>
-        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
-    aria-label="Icon Links">
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://pandas.pydata.org" title="Pandas" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg" class="icon-link-image" alt="Pandas"/></a>
-        </li>
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://pandas.pydata.org" title="Pandas" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg" class="icon-link-image" alt="Pandas"/></a>
-        </li>
-</ul></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
@@ -502,6 +463,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-lbm-data">Load LBM data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-tips">More Tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity">Intensity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks-slice-manipulation">Stacks/Slice Manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins">Plugins</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -515,12 +482,109 @@ document.write(`
                   
   <section id="imagej-fiji">
 <h1>ImageJ / FIJI<a class="headerlink" href="#imagej-fiji" title="Permalink to this heading">#</a></h1>
+<aside class="sidebar">
+<blockquote>
+<div><p>Open up the properties for this dataset by going to Image -&gt; Properties.</p>
+</div></blockquote>
+<a class=""
+               data-lightbox="group-1d3be4fa-55f7-45f9-88d1-4f2a4921625d"
+               href="../_images/ij-props1.png"
+               title=""
+               data-title=""
+               
+               ><img src="../_images/ij-props1.png"
+                     class="align-center"
+                     width="200px"
+                     height="auto"
+                     alt=""/>
+                </a></aside>
 <p>Fiji is a version of ImageJ with “batteries included”. To us, this includes several HDF5/Bioformat libraries that will help load our <cite>.tiff</cite> files.</p>
 <p>Download Fiji for your platform <a class="reference external" href="https://imagej.net/software/fiji/downloads">here</a>.</p>
-<p>Although our data is in <cite>.tiff</cite> format, loading it in Fiji may seem abnormal because ImageJ has no knowledge of the dimensionality of our dataset.
-Without metadata describing the dimensionality of your recording, Fiji This dataset sized <cite>[1 x 1 x zT]</cite>, where zT is the number of z-planes (for LBM, typically 15-28) interleaved with each other.</p>
+<p>Although our data is in <cite>.tiff</cite> format, loading it in Fiji may seem abnormal because ImageJ has no knowledge of the dimensionality of our dataset.</p>
+<p>Without metadata describing the dimensionality of your recording, Fiji This dataset sized <cite>[1 x 1 x zT]</cite>, where zT is the number of z-planes (for LBM, typically 15-28) interleaved with each other.</p>
+<p>Shown in the image below is a graphical representation of this reconstruction.</p>
+<p>In its raw form (see A in the below figure), ScanImage tiff files are multipage tiffs - like a book.</p>
+<section id="load-lbm-data">
+<h2>Load LBM data<a class="headerlink" href="#load-lbm-data" title="Permalink to this heading">#</a></h2>
+<p>To open your dataset:</p>
+<ul class="simple">
+<li><p>File &gt; Open &gt; <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">.tiff</span> <span class="pre">file</span></code> &gt; Open as Hyperstacks</p></li>
+</ul>
 <a class=""
-               data-lightbox="group-169dfa64-df44-49db-852e-6ae2888a4c87"
+               data-lightbox="group-d845ba9b-8efc-43c8-8297-dba2865201e5"
+               href="../_images/ij-open1.png"
+               title="Screenshot of Open File"
+               data-title="Screenshot of Open File"
+               
+               ><img src="../_images/ij-open1.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><cite>virtual Hyperstacks</cite> will only load frames as you need them and will significanly reduce the memory needed to load these files.</p>
+</div>
+<p>If you play the raw video, what you see will not look like a movie. You will see changing z-planes at ascending (or descending, depending on paradigm) depths of tissue. This is due to the interleaved z-planes in time:</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Click on the below gif to open a popup.</p>
+</div>
+<a class=""
+               data-lightbox="group-8ce208e0-0103-4f23-8185-2e4a40638dcb"
+               href="../_images/ij-raw1.gif"
+               title="Frames 1-60 of 30 z-plane recording"
+               data-title="Frames 1-60 of 30 z-plane recording"
+               
+               ><img src="../_images/ij-raw1.gif"
+                     class="align-center"
+                     width="200px"
+                     height="400px"
+                     alt=""/>
+                </a><a class=""
+               data-lightbox="group-28584a6d-9bb4-449b-9408-cacfbc406f6d"
+               href="../_images/ex_deinterleave_nobg1.svg"
+               title="Diagram of Raw Data Order"
+               data-title="Diagram of Raw Data Order"
+               
+               ><img src="../_images/ex_deinterleave_nobg1.svg"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>This same process can be done in ImageJ:</p>
+<ul class="simple">
+<li><p>Image &gt; Stacks &gt; Tools &gt; Stack Splitter</p></li>
+<li><p>Number of Substacks: [enter the number of z-planes, 30 here]</p></li>
+</ul>
+<p>This will split the original file into num_zplane separate <code class="code docutils literal notranslate"><span class="pre">[Y,</span> <span class="pre">X,</span> <span class="pre">T]</span></code> stacks.</p>
+</section>
+<section id="more-tips">
+<h2>More Tips<a class="headerlink" href="#more-tips" title="Permalink to this heading">#</a></h2>
+<section id="intensity">
+<h3>Intensity<a class="headerlink" href="#intensity" title="Permalink to this heading">#</a></h3>
+<aside class="sidebar">
+<p>Intensity toolbar.</p>
+<a class=""
+               data-lightbox="group-54e2de18-04a4-47e9-8407-5b546ecb7fae"
+               href="../_images/ij-intensity1.png"
+               title="Intensity Toolbar"
+               data-title="Intensity Toolbar"
+               
+               ><img src="../_images/ij-intensity1.png"
+                     class="align-center"
+                     width="200px"
+                     height="auto"
+                     alt=""/>
+                </a></aside>
+<p>You may also notice that the</p>
+<p>The brightness differences between these planes can be auto-scaled via Image&gt;Process&gt;Scale (or control-shift-x) to bring up the intensity toolbar</p>
+</section>
+<section id="stacks-slice-manipulation">
+<h3>Stacks/Slice Manipulation<a class="headerlink" href="#stacks-slice-manipulation" title="Permalink to this heading">#</a></h3>
+<p>There are a host of other manipulations you can do to Z-stacks. Below is a general diagram illustrating the main core features without needing additional plugins.</p>
+<a class=""
+               data-lightbox="group-b7690066-43ec-4a80-9cc3-863b7de2bee0"
                href="../_images/ij-stack-slice-manipulations1.png"
                title=""
                data-title=""
@@ -530,61 +594,11 @@ Without metadata describing the dimensionality of your recording, Fiji This data
                      width="100%"
                      height="auto"
                      alt=""/>
-                </a><section id="load-lbm-data">
-<h2>Load LBM data<a class="headerlink" href="#load-lbm-data" title="Permalink to this heading">#</a></h2>
-<p>To open your dataset:</p>
-<ul class="simple">
-<li><p>File &gt; Open &gt; <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">.tiff</span> <span class="pre">file</span></code> &gt; Open as Hyperstacks</p></li>
-</ul>
-<a class=""
-               data-lightbox="group-84c72ba1-6595-4baf-bbb2-7878de21fd94"
-               href="../_images/ij-open1.png"
-               title=""
-               data-title=""
-               
-               ><img src="../_images/ij-open1.png"
-                     class=""
-                     width="100%"
-                     height="auto"
-                     alt=""/>
-                </a><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><cite>virtual Hyperstacks</cite> will only load frames as you need them and will significanly reduce the memory needed to load these files.</p>
-</div>
-<img alt="../_images/ij-raw.gif" src="../_images/ij-raw.gif" />
-<p>Notice how the images don’t display a timeseries, but sets z-stacks that get darker.</p>
-<a class=""
-               data-lightbox="group-cfd5248e-7c9a-4ee6-8a61-7924907a013e"
-               href="../_images/ij-intensity1.png"
-               title=""
-               data-title=""
-               
-               ><img src="../_images/ij-intensity1.png"
-                     class=""
-                     width="100%"
-                     height="auto"
-                     alt=""/>
-                </a><ul class="simple">
-<li><p>Image &gt; Stacks &gt; Tools &gt; Stack Splitter</p></li>
-<li><p>Number of Substacks: [enter the number of z-planes, 30 here]</p></li>
-</ul>
-<p>This will give you num_plane separate [Y, X, T] stacks.</p>
-<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">ImageJ</span><span class="w"> </span><span class="nx">Metadata</span><span class="o">:</span>
-
-<span class="nx">BitsPerPixel</span><span class="w">        </span><span class="mf">16</span>
-<span class="nx">DimensionOrder</span><span class="w">      </span><span class="nx">XYCZT</span>
-<span class="nx">IsInterleaved</span><span class="w">       </span><span class="kc">false</span>
-<span class="nx">IsRGB</span><span class="w">       </span><span class="kc">false</span>
-<span class="nx">LittleEndian</span><span class="w">        </span><span class="kc">true</span>
-<span class="nx">PixelType</span><span class="w">   </span><span class="sb">`int16`</span>
-<span class="nx">Series</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="nx">Name</span><span class="w">       </span><span class="nx">MH70_0p6mm_FOV_50_550um_depth_som_stim_199mW_3min_M1_00001_00001</span><span class="p">.</span><span class="nx">tif</span>
-<span class="nx">SizeC</span><span class="w">       </span><span class="mf">1</span>
-<span class="nx">SizeT</span><span class="w">       </span><span class="mf">51900</span>
-<span class="nx">SizeX</span><span class="w">       </span><span class="mf">145</span>
-<span class="nx">SizeY</span><span class="w">       </span><span class="mf">2478</span>
-<span class="nx">SizeZ</span><span class="w">       </span><span class="mf">1</span>
-</pre></div>
-</div>
+                </a></section>
+<section id="plugins">
+<h3>Plugins<a class="headerlink" href="#plugins" title="Permalink to this heading">#</a></h3>
+<p>TODO!</p>
+</section>
 </section>
 </section>
 
@@ -633,6 +647,12 @@ Without metadata describing the dimensionality of your recording, Fiji This data
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-lbm-data">Load LBM data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-tips">More Tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intensity">Intensity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks-slice-manipulation">Stacks/Slice Manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins">Plugins</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -666,7 +686,7 @@ By Flynn OConnell
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jul 10, 2024.
+  Last updated on Jul 11, 2024.
   <br/>
 </p>
   </div>

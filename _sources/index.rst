@@ -46,9 +46,9 @@ Software
 
 - `flatironinstitute/CaImAn (MATLAB) github <https://github.com/flatironinstitute/CaImAn-MATLAB>`_ | `Wiki <https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline>`_
 
-- `flatironinstitute/CaImAn (python) github <https://github.com/flatironinstitute/CaImAn>`_ | `Docs <https://caiman.readthedocs.io/en/latest/>`_
+- `flatironinstitute/CaImAn (python) github <https://github.com/flatironinstitute/CaImAn>`_ | `caimain Docs <https://caiman.readthedocs.io/en/latest/>`_
 
-- `Suite2p github <https://github.com/mouseland/suite2p>`_ | `Docs <https://suite2p.readthedocs.io/en/latest/>`_
+- `suite2p github <https://github.com/mouseland/suite2p>`_ | `suite2p Docs <https://suite2p.readthedocs.io/en/latest/>`_
 
 Blogs and Posts
 --------------------
