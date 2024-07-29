@@ -37,12 +37,6 @@ source_suffix = {
 }
 
 images_config = {"default_show_title": True}
-tippy_rtd_urls = [
-    "https://millerbrainobservatory.github.io/",
-    "https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/",
-    "https://millerbrainobservatory.github.io/LBM-CaImAn-Python/",
-    "https://millerbrainobservatory.github.io/scanreader/",
-]
 
 # List of documents that shouldn't be included in the build.
 # unused_docs = []
