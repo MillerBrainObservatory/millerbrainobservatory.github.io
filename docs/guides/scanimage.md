@@ -8,37 +8,49 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 ## Metadata
 
-:::{table} Demo Metadata
-:widths: auto
-:align: center
-:name: relevant_metadata
+```{dropdown} Demo Metadata
+:chevron: down-up
+:animate: fade-in-slide-down
+:name: Demo_Metadata
+
+These are the critical metadata needed to interpret results:
 
 | Name                  | Value            | Unit   | Description                                       |
 |-----------------------|------------------|--------|---------------------------------------------------|
 | num_pixel_xy          | [144, 1200]      | px^2   | Number of pixels in the *each scanimage ROI*      |
-| image_length          | 11008            | px     | Width of the raw-scanimage tiff.                  |
-| image_width           | 145              | px     | Width of the raw-scanimage tiff.                  |
+| tiff_length           | 2478             | px     | Width of the raw-scanimage tiff.                  |
+| tiff_width            | 145              | px     | Width of the raw-scanimage tiff.                  |
+| roi_width_px          | 144              | px     | Width of the region of interest (ROI)             |
+| roi_height_px         | 600              | px     | Height of the region of interest (ROI)            |
 | num_planes            | 30               | -      | Total number of recording z-planes.               |
 | num_rois              | 4                | -      | Number of ScanImage regions of interest (ROIs).   |
-| num_frames            | 1176             | -      | Total number of recorded frames.                  |
-| frame_rate            | 2.1797           | Hz     | How many frames recorded / second.                |
-| fov                   | [600, 6000]      | um^2   | Area of full field of view.                       |
-| pixel_resolution      | 4.5833           | um/px  | Distance that each pixel represents.              |
-| sample_format         | 'int16'          | -      | Data type holding the nubmer of bits per sample.  |
+| frame_rate            | 9.608            | Hz     | How many frames recorded / second.                |
+| fov                   | [600, 600]       | um^2   | Area of full field of view.                       |
+| pixel_resolution      | 1.0208           | um/px  | Pixel resolution                                      |
 
-:::
+```
 
-(nonrelevant_metadata)=
+---
+
 :::{dropdown} Additional Metadata
 :chevron: down-up
 :animate: fade-in-slide-down
+:name: additional_metadata
 
 There are additional metadata values used internally to calculate the above values:
+
 | Name                  | Value            | Unit     | Description                                       |
 |-----------------------|------------------|----------|---------------------------------------------------|
+| raw_filename          | 'high_res'       | -      | Raw data filename                                 |
+| raw_filepath          | 'C:\Users\RBO\caiman_data' | -      | Raw data file path                          |
+| raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file                             |
+| dataset_name          | '/Y'                      | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset.                                           |
 | objective_resolution  | 157.5000         | degree/px| Scale factor to convert pixels to microns.        |
 | center_xy             | [-15.2381, 0]    | um^2     | Center coordinates for each ROI in the XY plane.  |
 | size_xy               | [3.8095, 38.0952]| degree^2 | Size of each ROI.                             |
+| line_period           | 4.1565e-05       | s        | Time period for each scan line                                 |
+| scan_frame_period     | 0.1041           | s        | Time period for each scan frame                                |
+| sample_format         | 'int16'          | -        | Data type holding the nubmer of bits per sample.  |
 
 :::
 
@@ -84,8 +96,6 @@ Before beginning the recording session, users have the option to split frames in
 ## ScanImage metadata
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
-
-{ref}`RawGIF` example.
 
 ::::{tab-set}
 
@@ -165,4 +175,4 @@ MATLAB metadata can be retrieved with the {ref} get_metadata() utility funciton.
 : The size, in micron, of each pixel.
 
 
-{ref}`metadata relevant_metadata`
+{ref}`Demo_Metadata`
