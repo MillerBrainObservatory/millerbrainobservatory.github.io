@@ -43,17 +43,6 @@ If you play the raw video, what you see will not look like a movie. You will see
 
     Click on the below gif to open a popup.
 
-.. .. ref:: ../_images/ij-raw.gif
-..     :width: 200px
-..     :height: 400px
-..     :align: center
-..     :title: Frames 1-60 of 30 z-plane recording
-
-:ref: ../_images/ij-raw.gif
-
-:ref: ../_images/ex_deinterleave_nobg.svg
-
-
 This same process can be done in ImageJ:
 
 - Image > Stacks > Tools > Stack Splitter

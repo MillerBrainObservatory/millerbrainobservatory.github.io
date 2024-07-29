@@ -6,10 +6,10 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 ## Metadata
 
-```{dropdown} Demo Metadata
+:::{dropdown} Metadata (primary)
 :chevron: down-up
 :animate: fade-in-slide-down
-:name: Demo_Metadata
+:name: primary_metadata
 
 These are the critical metadata needed to interpret results:
 
@@ -26,12 +26,12 @@ These are the critical metadata needed to interpret results:
 | fov                   | [600, 600]       | um^2   | Area of full field of view.                       |
 | pixel_resolution      | 1.0208           | um/px  | Pixel resolution                                      |
 
-```
+:::
 
 :::{dropdown} Additional Metadata
 :chevron: down-up
 :animate: fade-in-slide-down
-:name: additional_metadata
+:name: secondary_metadata
 
 There are additional metadata values used internally to calculate the above values:
 
@@ -171,4 +171,4 @@ MATLAB metadata can be retrieved with the {ref} get_metadata() utility funciton.
 : The size, in micron, of each pixel.
 
 
-{ref}`Demo_Metadata`
+
