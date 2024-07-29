@@ -61,7 +61,6 @@ intersphinx_mapping = {
     "lbmmat": ("https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/", None),
     "lbmpy": ("https://millerbrainobservatory.github.io/LBM-CaImAn-Python/", None),
     "scanreader": ("https://millerbrainobservatory.github.io/scanreader/", None),
-    # "wikipedia": ("https://wikipedia.com/wiki/", None),
 }
 
 intersphinx_disabled_reftypes = ["*"]

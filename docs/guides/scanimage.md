@@ -1,5 +1,9 @@
 # Exploring LBM Datasets
 
+Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org) acquisition software.
+
+---
+
 ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
 In the raw output, these `ROIs` are vertically concatenated independent of their actual scan locations.
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
@@ -15,37 +19,37 @@ These are the critical metadata needed to interpret results:
 
 | Name                  | Value            | Unit   | Description                                       |
 |-----------------------|------------------|--------|---------------------------------------------------|
-| num_pixel_xy          | [144, 1200]      | px^2   | Number of pixels in the *each scanimage ROI*      |
+| num_pixel_xy          | [144, 1200]      | px^2   | Number of pixels in the *each scanimage ROI*.     |
 | tiff_length           | 2478             | px     | Width of the raw-scanimage tiff.                  |
 | tiff_width            | 145              | px     | Width of the raw-scanimage tiff.                  |
-| roi_width_px          | 144              | px     | Width of the region of interest (ROI)             |
-| roi_height_px         | 600              | px     | Height of the region of interest (ROI)            |
+| roi_width_px          | 144              | px     | Width of the region of interest (ROI).            |
+| roi_height_px         | 600              | px     | Height of the region of interest (ROI).           |
 | num_planes            | 30               | -      | Total number of recording z-planes.               |
 | num_rois              | 4                | -      | Number of ScanImage regions of interest (ROIs).   |
 | frame_rate            | 9.608            | Hz     | How many frames recorded / second.                |
 | fov                   | [600, 600]       | um^2   | Area of full field of view.                       |
-| pixel_resolution      | 1.0208           | um/px  | Pixel resolution                                      |
+| pixel_resolution      | 1.0208           | um/px  | Each pixel corresponds to this many microns.      |
 
 :::
 
-:::{dropdown} Additional Metadata
+:::{dropdown} Metadata (secondary)
 :chevron: down-up
 :animate: fade-in-slide-down
 :name: secondary_metadata
 
-There are additional metadata values used internally to calculate the above values:
+There are additional metadata values used internally to locate files and to calculate the above values:
 
 | Name                  | Value            | Unit     | Description                                       |
 |-----------------------|------------------|----------|---------------------------------------------------|
-| raw_filename          | 'high_res'       | -      | Raw data filename                                 |
-| raw_filepath          | 'C:\Users\RBO\caiman_data' | -      | Raw data file path                          |
-| raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file                             |
-| dataset_name          | '/Y'                      | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset.                                           |
+| raw_filename          | 'high_res'       | -      | Raw data filename, without the extension.           |
+| raw_filepath          | 'C:\Users\RBO\caiman_data' | -      | Raw data directory.                       |
+| raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file |
+| dataset_name          | '/Y'                      | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset. |
 | objective_resolution  | 157.5000         | degree/px| Scale factor to convert pixels to microns.        |
-| center_xy             | [-15.2381, 0]    | um^2     | Center coordinates for each ROI in the XY plane.  |
-| size_xy               | [3.8095, 38.0952]| degree^2 | Size of each ROI.                             |
-| line_period           | 4.1565e-05       | s        | Time period for each scan line                                 |
-| scan_frame_period     | 0.1041           | s        | Time period for each scan frame                                |
+| center_xy             | [-15.2381, 0]    | deg^2     | Center coordinates for each ROI in the XY plane.  |
+| size_xy               | [3.8095, 38.0952]| deg^2 | Size of each ROI, in units of resonant scan angle.|
+| line_period           | 4.1565e-05       | s        | Time period for resonant scanner to scan a full line (row). |
+| scan_frame_period     | 0.1041           | s        | Time period for resonant scanner to scan a full frame/image              |
 | sample_format         | 'int16'          | -        | Data type holding the nubmer of bits per sample.  |
 
 :::
@@ -57,7 +61,6 @@ There are additional metadata values used internally to calculate the above valu
 
 ## Terms
 
-Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
 
 In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.
 
