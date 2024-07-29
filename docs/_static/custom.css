@@ -22,6 +22,12 @@ body {
   width: 15%;
 }
 
+.tippy-box {
+    background-color:var(--pst-color-surface);
+    color:var(--pst-color-text-base);
+    border: 1px solid var(--pst-color-border);
+}
+
 /* Version switcher colors from PyData Sphinx Theme */
 
 /* .version-switcher__button[data-active-version-name*="devdocs"] { */
