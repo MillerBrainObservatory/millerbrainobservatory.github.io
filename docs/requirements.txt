@@ -12,3 +12,4 @@ myst_parser
 sphinx-copybutton
 sphinx-inline-tabs
 sphinx_design
+sphinx_tippy

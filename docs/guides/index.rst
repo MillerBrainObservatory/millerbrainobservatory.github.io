@@ -10,4 +10,3 @@ Guides for users analyzing microscopy data.
     imagej
     scanimage
 
-
