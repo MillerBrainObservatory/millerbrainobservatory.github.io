@@ -1,6 +1,8 @@
 ImageJ / FIJI
 ################
 
+:ref:`Demo_Metadata`
+
 .. sidebar::
 
     Open up the properties for this dataset by going to Image -> Properties.
