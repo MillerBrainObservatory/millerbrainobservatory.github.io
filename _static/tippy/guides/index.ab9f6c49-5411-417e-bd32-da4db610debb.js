@@ -1,0 +1,22 @@
+selector_to_html = {"a[href=\"scanimage.html#terms\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Terms<a class=\"headerlink\" href=\"#terms\" title=\"Permalink to this heading\">#</a></h2><p>Light-beads microscopy is a 2-photon imaging paradigm based on <a class=\"reference external\" href=\"https://docs.scanimage.org/index.html\">ScanImage</a> acquisition software.</p><p>In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.</p>", "a[href=\"#user-guides\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">User Guides<a class=\"headerlink\" href=\"#user-guides\" title=\"Permalink to this heading\">#</a></h1><p>Guides for users analyzing microscopy data.</p>", "a[href=\"imagej.html#load-lbm-data\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Load LBM data<a class=\"headerlink\" href=\"#load-lbm-data\" title=\"Permalink to this heading\">#</a></h2><p>To open your dataset:</p>", "a[href=\"scanimage.html#frame-ordering\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Frame Ordering<a class=\"headerlink\" href=\"#frame-ordering\" title=\"Permalink to this heading\">#</a></h2><p>ScanImage saves the 4D volume with each plane interleaved, e.g.</p>", "a[href=\"scanimage.html#metadata\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Metadata<a class=\"headerlink\" href=\"#metadata\" title=\"Permalink to this heading\">#</a></h2>", "a[href=\"scanimage.html#scanimage-metadata\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">ScanImage metadata<a class=\"headerlink\" href=\"#scanimage-metadata\" title=\"Permalink to this heading\">#</a></h2><p>Each pipeline comes stocked with methods to retrieve imaging metadata.</p>", "a[href=\"imagej.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">ImageJ / FIJI<a class=\"headerlink\" href=\"#imagej-fiji\" title=\"Permalink to this heading\">#</a></h1><p>Fiji is a version of ImageJ with \u201cbatteries included\u201d. To us, this includes several HDF5/Bioformat libraries that will help load our <cite>.tiff</cite> files.</p><p>Download Fiji for your platform <a class=\"reference external\" href=\"https://imagej.net/software/fiji/downloads\">here</a>.</p>", "a[href=\"imagej.html#more-tips\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">More Tips<a class=\"headerlink\" href=\"#more-tips\" title=\"Permalink to this heading\">#</a></h2><h3>Intensity<a class=\"headerlink\" href=\"#intensity\" title=\"Permalink to this heading\">#</a></h3><p>You may also notice that the</p><p>The brightness differences between these planes can be auto-scaled via Image&gt;Process&gt;Scale (or control-shift-x) to bring up the intensity toolbar</p>", "a[href=\"scanimage.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Exploring LBM Datasets<a class=\"headerlink\" href=\"#exploring-lbm-datasets\" title=\"Permalink to this heading\">#</a></h1><p>ScanImage <a class=\"reference external\" href=\"https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html\">mROI (Multi Region Of Interest)</a> outputs raw <code class=\"docutils literal notranslate\"><span class=\"pre\">.tiff</span></code> files made up of individual <code class=\"docutils literal notranslate\"><span class=\"pre\">Regions</span> <span class=\"pre\">of</span> <span class=\"pre\">Interest</span> <span class=\"pre\">(ROI's)</span></code>.\nIn the raw output, these <code class=\"docutils literal notranslate\"><span class=\"pre\">ROIs</span></code> are vertically concatenated independent of their actual scan locations.\nThe location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.</p>"}
+skip_classes = ["headerlink", "sd-stretched-link"]
+
+window.onload = function () {
+    for (const [select, tip_html] of Object.entries(selector_to_html)) {
+        const links = document.querySelectorAll(` ${select}`);
+        for (const link of links) {
+            if (skip_classes.some(c => link.classList.contains(c))) {
+                continue;
+            }
+
+            tippy(link, {
+                content: tip_html,
+                allowHTML: true,
+                arrow: true,
+                placement: 'auto-start', maxWidth: 500, interactive: false,
+
+            });
+        };
+    };
+    console.log("tippy tips loaded!");
+};
