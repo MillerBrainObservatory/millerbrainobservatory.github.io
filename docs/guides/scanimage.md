@@ -1,10 +1,8 @@
-# LBM Dataset
+# Exploring LBM Datasets
 
 ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
 In the raw output, these `ROIs` are vertically concatenated independent of their actual scan locations.
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
-
-
 
 ## Metadata
 
@@ -29,8 +27,6 @@ These are the critical metadata needed to interpret results:
 | pixel_resolution      | 1.0208           | um/px  | Pixel resolution                                      |
 
 ```
-
----
 
 :::{dropdown} Additional Metadata
 :chevron: down-up
