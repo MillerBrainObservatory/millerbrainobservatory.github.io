@@ -1,5 +1,11 @@
 # LBM Datasets
 
+## ScanImage multi-ROI Recordings
+
+ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
+In the raw output, these `ROIs` are vertically concatenated independent of their actual scan locations.
+The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
+
 ## Terms
 
 Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
@@ -18,15 +24,15 @@ ScanImage saves the 4D volume with each plane interleaved, e.g.
 
 ... and so on.
 
-## ScanImage multi-ROI
-
-ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) tiff outputs are made up of individual strips called `ROIs`. These `ROIs` collectively form a ScanImage `ScanField`. This scanfield is really just a set of metadata describing the size and location of our images. The term ROI refers to a "subsection" of the 2D image in which the scanner momentarily stopped acquisition.
 
 ## ScanImage metadata
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
 
-### Python
+::::{tab-set}
+
+:::{tab-item} Python Metadata
+Python metadata is stored in the {ref}`scanreader` class.
 
 ```python
 objective_resolution: 157.5000
@@ -43,6 +49,54 @@ fov: [600 6000]
 pixel_resolution: 4.5833
 sample_format: 'int16'
 ```
+
+:::
+
+:::{tab-item} MATLAB Metadata
+
+MATLAB metadata can be retrieved with the {ref}`core.utils.get_metadata()` utility funciton.
+
+```MATLAB
+
+   >> get_metadata(fullfile(extract_path, "MH184_both_6mm_FOV_150_600um_depth_410mW_9min_no_stimuli_00001_00001.tiff"))
+
+    ans =
+
+      metadata contents:
+             tiff_length = 2478
+             tiff_width = 145
+             roi_width_px = 144
+             roi_height_px = 600
+             num_rois = 4
+             num_frames = 1730
+             num_planes = 30A  % stored as scanimage channels
+             num_files = 1
+             frame_rate = 9.60806
+             fov = [600;600]
+             pixel_resolution = 1.02083
+             sample_format = int16
+             raw_filename = high_res
+             raw_filepath = C:\Users\RBO\caiman_data
+             raw_fullfile = C:\Users\RBO\caiman_data\high_res.tif
+             dataset_name = /Y
+             trim_pixels = [6;6;17;0]
+             % below used internally
+             num_pixel_xy = [144;600]
+             center_xy = [-1.428571429;0]
+             line_period = 4.15652e-05
+             scan_frame_period = 0.104079
+             size_xy = [0.9523809524;3.80952381]
+             objective_resolution = 157.5
+             num_lines_between_scanfields = 24
+```
+:::
+
+::::
+
+
+<!-- .. code-block:: MATLAB -->
+
+
 
 num_pixel_xy
 : The number of pixels in each `ROI`. This can very from the actual tiff image size.

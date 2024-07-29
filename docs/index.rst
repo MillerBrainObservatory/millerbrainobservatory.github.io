@@ -11,6 +11,12 @@ Miller Brain Observatory: Compute Ecosystem
 
 A hub for tutorials, guides and resources for computational image processing.
 
+.. note::
+
+   All examples used throughout this tutorial will be in reference to a demo dataset termed the 'high-resolution' dataset.
+   This dataset contains 4 ROI's recorded at 9.6hz for 1730 frames over a 600x600um FOV.
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
