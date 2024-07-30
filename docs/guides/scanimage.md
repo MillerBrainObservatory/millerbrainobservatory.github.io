@@ -8,14 +8,16 @@ ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+F
 In the raw output, these `ROIs` are vertically concatenated independent of their actual scan locations.
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
-## Metadata
+## Understanding Metadata
+
+ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw `.tiff` file. Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.
+
+There is primary metadata, intended for use in a typical processing run. Many of these values are derived from less-pertinent (secondary) metadata.
 
 :::{dropdown} Metadata (primary)
 :chevron: down-up
 :animate: fade-in-slide-down
 :name: primary_metadata
-
-These are the critical metadata needed to interpret results:
 
 | Name                  | Value            | Unit   | Description                                       |
 |-----------------------|------------------|--------|---------------------------------------------------|
@@ -29,6 +31,8 @@ These are the critical metadata needed to interpret results:
 | frame_rate            | 9.608            | Hz     | How many frames recorded / second.                |
 | fov                   | [600, 600]       | um^2   | Area of full field of view.                       |
 | pixel_resolution      | 1.0208           | um/px  | Each pixel corresponds to this many microns.      |
+| raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file |
+| dataset_name          | '/Y'                      | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset. |
 
 :::
 
@@ -43,8 +47,6 @@ There are additional metadata values used internally to locate files and to calc
 |-----------------------|------------------|----------|---------------------------------------------------|
 | raw_filename          | 'high_res'       | -      | Raw data filename, without the extension.           |
 | raw_filepath          | 'C:\Users\RBO\caiman_data' | -      | Raw data directory.                       |
-| raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file |
-| dataset_name          | '/Y'                      | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset. |
 | objective_resolution  | 157.5000         | degree/px| Scale factor to convert pixels to microns.        |
 | center_xy             | [-15.2381, 0]    | deg^2     | Center coordinates for each ROI in the XY plane.  |
 | size_xy               | [3.8095, 38.0952]| deg^2 | Size of each ROI, in units of resonant scan angle.|
@@ -55,55 +57,11 @@ There are additional metadata values used internally to locate files and to calc
 :::
 
 > **Note:**
-> With multi-ROI tiffs, the size of your tiff given by `image_size` will be dfferent from the number of pixels in x and y.
+> With multi-ROI tiffs, the size of your tiff given by `image_size` will be different from the number of pixels in x and y.
 > This is due to the time it takes the scanner to move onto subsequent ROI's not being accounted for in `num_pixel_xy`.
 > Internally, each pipeline checks for these metadata attributes and adjusts the final image accordingly.
 
-## Terms
-
-.. _timeseries:
-
-.. _3D_timeseries:
-
-.. _z_stack:
-
-.. _volumetric:
-
-.. _planar:
-
-Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
-
-In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.
-
-| Dimension | Description |
-|-----------|-------------|
-| [X, Y] | Image / 2D Plane / Frame |
-| [X, Y, Z] | 3D-Stack, Z-Stack |
-| [X, Y, T] | Time-Series of a 2D Plane, Planar-timeseries, Movie |
-| [X, Y, Z, T] | Volumetric Timeseries, Volume |
-
-## Frame Ordering
-
-ScanImage saves the 4D volume with each plane interleaved, e.g.
-
-- frame0 = time0_plane1
-- frame1 = time0_plane2
-- frame2 = time0_plane3
-- frame3 = time1_plane1
-- frame4 = time1_plane2
-
-... and so on.
-
-```{admonition} Note on Frames
-:class: tip
-
-Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files. This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
-
-![ScanImage Data Log GUI](../_images/si-data-log-gui.png)
-
-```
-
-## ScanImage metadata
+## Using Metadata
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
 
@@ -133,7 +91,7 @@ sample_format: 'int16'
 
 :::{tab-item} MATLAB Metadata
 
-MATLAB metadata can be retrieved with the {ref} get_metadata() utility funciton.
+MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/api/utility.html#get_metadata) utility funciton.
 
 ```MATLAB
 
@@ -182,8 +140,41 @@ MATLAB metadata can be retrieved with the {ref} get_metadata() utility funciton.
 `image_length`/`image_width`
 : The total **tiff** size, in pixels (`px`).
 
+(pixel_resolution)=
 `pixel_resolution`
 : The size, in micron, of each pixel.
 
 
+## Terms
 
+Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
+
+In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.
+
+| Dimension | Description |
+|-----------|-------------|
+| [X, Y] | image, 2D plane, frame |
+| [X, Y, Z] | z-stack |
+| [X, Y, T] | timeseries, 3D timeseries, planar-timeseries, movie |
+| [X, Y, Z, T] | volumetric timeseries, volume |
+
+## Frame Ordering
+
+ScanImage saves the 4D volume with each plane interleaved, e.g.
+
+- frame0 = time0_plane1
+- frame1 = time0_plane2
+- frame2 = time0_plane3
+- frame3 = time1_plane1
+- frame4 = time1_plane2
+
+... and so on.
+
+```{admonition} Note on Frames
+:class: tip
+
+Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files. This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
+
+![ScanImage Data Log GUI](../_images/si-data-log-gui.png)
+
+```
