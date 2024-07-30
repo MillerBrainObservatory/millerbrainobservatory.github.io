@@ -61,6 +61,17 @@ There are additional metadata values used internally to locate files and to calc
 
 ## Terms
 
+.. _timeseries:
+
+.. _3D_timeseries:
+
+.. _z_stack:
+
+.. _volumetric:
+
+.. _planar:
+
+Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
 
 In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.
 
@@ -96,6 +107,7 @@ Before beginning the recording session, users have the option to split frames in
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
 
+(advanced_metadata)=
 ::::{tab-set}
 
 :::{tab-item} Python Metadata
