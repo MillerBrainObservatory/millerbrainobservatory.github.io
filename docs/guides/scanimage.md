@@ -1,8 +1,5 @@
 # LBM Metadata
 
-Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org) acquisition software.
-
----
 
 ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
 
@@ -11,6 +8,8 @@ Each image within this tiff file represents a page of the original document.
 
 In the raw output, these `ROIs` are vertically concatenated independent of their actual scan locations.
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
+
+---
 
 ## Understanding Metadata
 
@@ -148,6 +147,7 @@ MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainob
 `pixel_resolution`
 : The size, in micron, of each pixel.
 
+(mbo_terms)=
 ## Terms
 
 Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
