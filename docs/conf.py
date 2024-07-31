@@ -7,7 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "MBO Compute Hub"
-copyright = "2024, Flynn OConnell"
+copyright = "2024, Elizabeth R. Miller Brain Observatory | The Rockefeller University. All Rights Reserved."
+
 author = "Flynn OConnell"
 release = "1.0.0"
 
@@ -47,15 +48,21 @@ templates_path = ["_templates"]
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 html_favicon = "_static/mbo.png"
-html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 html_title = "MBO Compute Hub"
 html_logo = "_static/MillerBrainObservatory_logo.png"
-html_short_title = "MBO"
+html_short_title = "MBO Hub"
 html_static_path = ["_static"]
 html_last_updated_fmt = "%b %d, %Y"
 html_css_files = ["custom.css"]
 html_context = {"default_mode": "dark"}
 html_file_suffix = ".html"
+
+
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
+html_favicon = "_static/mbo_icon_dark.ico"
+html_copy_source = True
 
 intersphinx_mapping = {
     "lbmmat": ("https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/", None),
@@ -82,20 +89,6 @@ html_theme_options = {
             "url": "https://millerbrainobservatory.github.io/scanreader/index.html",
         },
     ],
-    # "icon_links": [
-    #     {
-    #         "name": "MBO",
-    #         "url": "https://mbo.rockefeller.edu",
-    #         "icon": "_static/mbo.png",
-    #         "type": "local",
-    #     },
-    #     {
-    #         "name": ".mat",
-    #         "url": "https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB/",
-    #         "icon": "https://raw.githubusercontent.com/pydata/pydata-sphinx-theme/main/docs/_static/pandas-square.svg",
-    #         "type": "local",
-    #     },
-    # ],
     "navbar_start": ["search-button"],
     "navbar_end": ["navbar-nav"],
     "navbar_align": "right",

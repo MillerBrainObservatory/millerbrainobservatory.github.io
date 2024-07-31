@@ -1,10 +1,14 @@
-# Exploring LBM Datasets
+# LBM Metadata
 
 Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org) acquisition software.
 
 ---
 
 ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
+
+In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>`.
+Each image within this tiff file represents a page of the original document.
+
 In the raw output, these `ROIs` are vertically concatenated independent of their actual scan locations.
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
@@ -21,15 +25,15 @@ There is primary metadata, intended for use in a typical processing run. Many of
 
 | Name                  | Value            | Unit   | Description                                       |
 |-----------------------|------------------|--------|---------------------------------------------------|
-| num_pixel_xy          | [144, 1200]      | px^2   | Number of pixels in the *each scanimage ROI*.     |
-| tiff_length           | 2478             | px     | Width of the raw-scanimage tiff.                  |
-| tiff_width            | 145              | px     | Width of the raw-scanimage tiff.                  |
+| num_pixel_xy          | [144, 1200]      | px     | Number of pixels in the *each ROI*.               |
+| tiff_length           | 2478             | px     | Height of the raw scanimage tiff.                 |
+| tiff_width            | 145              | px     | Width of the raw scanimage tiff.                  |
 | roi_width_px          | 144              | px     | Width of the region of interest (ROI).            |
 | roi_height_px         | 600              | px     | Height of the region of interest (ROI).           |
 | num_planes            | 30               | -      | Total number of recording z-planes.               |
 | num_rois              | 4                | -      | Number of ScanImage regions of interest (ROIs).   |
 | frame_rate            | 9.608            | Hz     | How many frames recorded / second.                |
-| fov                   | [600, 600]       | um^2   | Area of full field of view.                       |
+| fov                   | [600, 600]       | um     | Area of full field of view.                       |
 | pixel_resolution      | 1.0208           | um/px  | Each pixel corresponds to this many microns.      |
 | raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file |
 | dataset_name          | '/Y'                      | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset. |
@@ -47,12 +51,12 @@ There are additional metadata values used internally to locate files and to calc
 |-----------------------|------------------|----------|---------------------------------------------------|
 | raw_filename          | 'high_res'       | -      | Raw data filename, without the extension.           |
 | raw_filepath          | 'C:\Users\RBO\caiman_data' | -      | Raw data directory.                       |
-| objective_resolution  | 157.5000         | degree/px| Scale factor to convert pixels to microns.        |
-| center_xy             | [-15.2381, 0]    | deg^2     | Center coordinates for each ROI in the XY plane.  |
-| size_xy               | [3.8095, 38.0952]| deg^2 | Size of each ROI, in units of resonant scan angle.|
-| line_period           | 4.1565e-05       | s        | Time period for resonant scanner to scan a full line (row). |
-| scan_frame_period     | 0.1041           | s        | Time period for resonant scanner to scan a full frame/image              |
-| sample_format         | 'int16'          | -        | Data type holding the nubmer of bits per sample.  |
+| objective_resolution  | 157.5000         | px/deg    | Scale factor to convert pixels to microns.        |
+| center_xy             | [-15.2381, 0]    | deg       | Center coordinates for each ROI in the XY plane.  |
+| size_xy               | [3.8095, 38.0952]| deg       | Size of each ROI, in units of resonant scan angle.|
+| line_period           | 4.1565e-05       | s         | Time period for resonant scanner to scan a full line (row). |
+| scan_frame_period     | 0.1041           | s         | Time period for resonant scanner to scan a full frame/image              |
+| sample_format         | 'int16'          | -         | Data type holding the nubmer of bits per sample.  |
 
 :::
 
@@ -76,14 +80,14 @@ objective_resolution: 157.5000
 center_xy: [-15.2381 0]
 size_xy: [3.8095 38.0952]
 num_pixel_xy: [144 1200]
-image_length: 11008
+image_length: 2478
 image_width: 145
 num_planes: 30
-num_rois: 9
-num_frames: 1176
-frame_rate: 2.1797
-fov: [600 6000]
-pixel_resolution: 4.5833
+num_rois: 4
+num_frames: 1730
+frame_rate: 9.608
+fov: [600 600]
+pixel_resolution: 1.0208
 sample_format: 'int16'
 ```
 
@@ -106,7 +110,7 @@ MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainob
              roi_height_px = 600
              num_rois = 4
              num_frames = 1730
-             num_planes = 30A  % stored as scanimage channels
+             num_planes = 30  % stored in scanimage as channels 
              num_files = 1
              frame_rate = 9.60806
              fov = [600;600]
@@ -144,23 +148,21 @@ MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainob
 `pixel_resolution`
 : The size, in micron, of each pixel.
 
-
 ## Terms
 
 Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
 
-In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.
 
 | Dimension | Description |
 |-----------|-------------|
-| [X, Y] | image, 2D plane, frame |
-| [X, Y, Z] | z-stack |
-| [X, Y, T] | timeseries, 3D timeseries, planar-timeseries, movie |
-| [X, Y, Z, T] | volumetric timeseries, volume |
+| [X, Y]    | 2D plane    |
+| [X, Y, Z] | z-stack     |
+| [X, Y, T] | 3D volume, timeseries |
+| [X, Y, Z, T] | 4D volumetric timeseries|
 
 ## Frame Ordering
 
-ScanImage saves the 4D volume with each plane interleaved, e.g.
+ScanImage saves the 4D volume with each plane {ref}`ex_deinterleave`, e.g.
 
 - frame0 = time0_plane1
 - frame1 = time0_plane2
