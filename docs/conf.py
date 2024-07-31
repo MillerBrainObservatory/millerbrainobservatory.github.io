@@ -45,24 +45,16 @@ images_config = {"default_show_title": True}
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 templates_path = ["_templates"]
-
-# A shorter title for the navigation bar.  Default is the same as html_title.
+#
+# # A shorter title for the navigation bar.  Default is the same as html_title.
 html_favicon = "_static/mbo.png"
 html_theme = "pydata_sphinx_theme"
-html_title = "MBO Compute Hub"
-html_logo = "_static/MillerBrainObservatory_logo.png"
+html_logo = "_static/logo_mbo_compute.svg"
 html_short_title = "MBO Hub"
 html_static_path = ["_static"]
-html_last_updated_fmt = "%b %d, %Y"
 html_css_files = ["custom.css"]
 html_context = {"default_mode": "dark"}
 html_file_suffix = ".html"
-
-
-html_static_path = ["_static"]
-html_css_files = ["custom.css"]
-html_favicon = "_static/mbo_icon_dark.ico"
-html_copy_source = True
 
 intersphinx_mapping = {
     "lbmmat": ("https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/", None),
@@ -71,11 +63,8 @@ intersphinx_mapping = {
 }
 
 intersphinx_disabled_reftypes = ["*"]
-
 html_theme_options = {
-    "path_to_docs": "docs",
     "external_links": [
-        {"name": "MBO Team", "url": "https://mbo.rockefeller.edu/"},
         {
             "name": "CaImAn [matlab]",
             "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html",
@@ -89,9 +78,6 @@ html_theme_options = {
             "url": "https://millerbrainobservatory.github.io/scanreader/index.html",
         },
     ],
-    "navbar_start": ["search-button"],
-    "navbar_end": ["navbar-nav"],
-    "navbar_align": "right",
-    "header_links_before_dropdown": 2,
-    "collapse_navbar": True,
+    "navbar_persistent": ["search-button"],
+    # "header_links_before_dropdown": 1,
 }
