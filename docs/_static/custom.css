@@ -53,4 +53,11 @@ body {
 /* html[data-theme=dark] .sd-card img[src*='.svg'] { */
 /*   filter: invert(0.82) brightness(0.8) contrast(1.2); */
 /* } */
+/* font-size { */
+/*  var(--pst-sidebar-font-size); */
+/* } */
+
+pre {
+  background-color: #090B10;
+}
 
