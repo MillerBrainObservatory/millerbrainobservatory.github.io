@@ -1,14 +1,14 @@
-(mbo_hub)=
 # Miller Brain Observatory: Compute Ecosystem
 
 A hub for tutorials, guides and resources for computational image processing.
 
 ```{note} Reference Dataset
 
-   All examples used throughout this tutorial will be in reference to the demo dataset located 
-   at the root of this project {code}/demo_data termed the 'high-resolution' dataset.
-   This dataset contains 4 ROI's recorded at 9.6hz for 1730 frames over a 600x600um FOV.
+   All examples used throughout this tutorial will be in reference to the demo dataset referred to as the 'high-resolution' dataset.
+   This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
 ```
+
+--------
 
 ## Light Beads Microscopy Data
 
@@ -22,7 +22,7 @@ Each 2D image within this tiff file represents a page of the original document.
 
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
----
+-----
 
 ## Understanding Metadata
 
@@ -76,6 +76,8 @@ There are additional metadata values used internally to locate files and to calc
 > With multi-ROI tiffs, the size of your tiff given by `image_size` will be different from the number of pixels in x and y.
 > This is due to the time it takes the scanner to move onto subsequent ROI's not being accounted for in `num_pixel_xy`.
 > Internally, each pipeline checks for these metadata attributes and adjusts the final image accordingly.
+
+--------
 
 ## Using Metadata
 
@@ -160,11 +162,13 @@ MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainob
 `pixel_resolution`
 : The size, in micron, of each pixel.
 
+--------
+
 (mbo_terms)=
+
 ## Terms
 
 Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
-
 
 | Dimension | Description |
 |-----------|-------------|
@@ -175,7 +179,7 @@ Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https
 
 ## Frame Ordering
 
-ScanImage saves the 4D data with each plane {ref}`ex_deinterleave`, e.g.
+ScanImage saves the 4D data with each plane {ref}`ex_deinterleave`, e.g:
 
 - frame0 = time0_plane1
 - frame1 = time0_plane2
@@ -190,81 +194,77 @@ ScanImage saves the 4D data with each plane {ref}`ex_deinterleave`, e.g.
 
 Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files. This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
 
-![ScanImage Data Log GUI](../_images/si-data-log-gui.png)
+![ScanImage Data Log GUI](./_images/si-data-log-gui.png)
 
 ```
-..
-.. .. toctree::
-..     :maxdepth: 2
-..
-..     scanimage
+<!-- .. TODO:: Guide users to the correct spot.  Move scanreader to python.  -->
 
-.. TODO:: Guide users to the correct spot.  Move scanreader to python. 
+--------
 
-Pipelines
-================
+## Pipelines
 
-LBM-CaImAn-MATLAB
-------------------
+::::{grid} 2
+:gutter: 2
 
-|REPO LCM| | `LBM-Matlab Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`_
+:::{grid-item-card} LBM-CaImAn-MATLAB
 
-LBM-CaImAn-Python
-------------------
+{bdg-link-primary-line}`To the Documentation <https://example.com>`
 
-|REPO LCP| | `LBM-Python Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/>`_
++++
 
-scanreader
-------------------
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB "Lbm-CaImAn-MATLAB Repository")
 
-- **Repository**: `scanreader repository <https://github.com/MillerBrainObservatory/LBM-CaImAn-Python>`_
-- **Documentation**: `scanreader Docs <https://millerbrainobservatory.github.io/scanreader/>`_
+:::
+:::{grid-item-card} LBM-CaImAn-MATLAB
 
-External Resources
-=======================
+{bdg-link-primary-line}`To the Documentation <https://example.com>`
 
-Software
---------------
++++
 
-- `flatironinstitute/CaImAn (MATLAB) github <https://github.com/flatironinstitute/CaImAn-MATLAB>`_ | `Wiki <https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline>`_
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-Python "Lbm-CaImAn-Python Repository")
 
-- `flatironinstitute/CaImAn (python) github <https://github.com/flatironinstitute/CaImAn>`_ | `caimain Docs <https://caiman.readthedocs.io/en/latest/>`_
+:::
+::::
 
-- `suite2p github <https://github.com/mouseland/suite2p>`_ | `suite2p Docs <https://suite2p.readthedocs.io/en/latest/>`_
+## External Resources
 
-Blogs and Posts
---------------------
+### Software
 
-- `What is deconvolution? (Suite2p docs) <https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what>`_
+- [flatironinstitute/CaImAn (MATLAB) github](https://github.com/flatironinstitute/CaImAn-MATLAB) | [Wiki](https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline)
 
-- `Why your two-photon images are noisier than you expect <https://gcamp6f.com/2024/04/24/why-your-two-photon-images-are-noisier-than-you-expect/>`_
+- [flatironinstitute/CaImAn (python) github](https://github.com/flatironinstitute/CaImAn)| [caimain Docs](https://caiman.readthedocs.io/en/latest/)
 
-- `Interpreting Results of Calcium Denoising <https://gcamp6f.com/2022/08/23/self-supervised-denoising-of-calcium-imaging-data/>`_
+- [suite2p github](https://github.com/mouseland/suite2p) | [suite2p Docs](https://suite2p.readthedocs.io/en/latest/)
 
-- `Image.sc Forum <https://forum.image.sc/>`_
+### Blogs and Posts
 
-Indices and tables
-==================
+- [What is deconvolution? (Suite2p docs)](https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what)
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+- [Why your two-photon images are noisier than you expect](https://gcamp6f.com/2024/04/24/why-your-two-photon-images-are-noisier-than-you-expect/)
 
-.. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
-   :target: https://github.com/orgs/MillerBrainObservatory/discussions
-   :alt: Discussions
+- [Interpreting Results of Calcium Denoising](https://gcamp6f.com/2022/08/23/self-supervised-denoising-of-calcium-imaging-data/)
 
-.. |MBO Homepage| image:: https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black
-   :target: https://mbo.rockefeller.edu/
-   :alt: MBO Homepage
+- [Image.sc Forum](https://forum.image.sc/)
 
-.. Repos ---------------
+```{include} ./ref.md
+```
 
-.. |REPO LCM| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB
-   :alt: Lbm-CaImAn-MATLAB Repository
-
-.. |REPO LCP| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto
-   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python
-   :alt: Lbm-CaImAn-Python Repository
-
+<!---->
+<!-- .. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions -->
+<!--    :target: https://github.com/orgs/MillerBrainObservatory/discussions -->
+<!--    :alt: Discussions -->
+<!---->
+<!-- .. |MBO Homepage| image:: https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black -->
+<!--    :target: https://mbo.rockefeller.edu/ -->
+<!--    :alt: MBO Homepage -->
+<!---->
+<!-- .. Repos --------------- -->
+<!---->
+<!-- .. |REPO LCM| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto -->
+<!--    :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB -->
+<!--    :alt: Lbm-CaImAn-MATLAB Repository -->
+<!---->
+<!-- .. |REPO LCP| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto -->
+<!--    :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python -->
+<!--    :alt: Lbm-CaImAn-Python Repository -->
+<!---->
