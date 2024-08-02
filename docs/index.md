@@ -1,12 +1,29 @@
-# LBM Metadata
+(mbo_hub)=
+# Miller Brain Observatory: Compute Ecosystem
 
+A hub for tutorials, guides and resources for computational image processing.
 
-ScanImage [mROI (Multi Region Of Interest)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
+```{note} Reference Dataset
 
-In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>`.
-Each image within this tiff file represents a page of the original document.
+   All examples used throughout this tutorial will be in reference to the demo dataset located 
+   at the root of this project {code}/demo_data termed the 'high-resolution' dataset.
+   This dataset contains 4 ROI's recorded at 9.6hz for 1730 frames over a 600x600um FOV.
+```
 
-In the raw output, these `ROIs` are vertically concatenated independent of their actual scan locations.
+## User Guides
+
+Guides for users analyzing microscopy data.
+
+# Light Beads Microscopy Data
+
+Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
+
+ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
+
+In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>` with each ROI stacked vertically relative to the fast-galvo scan direction.
+
+Each 2D image within this tiff file represents a page of the original document.
+
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
 ---
@@ -35,7 +52,7 @@ There is primary metadata, intended for use in a typical processing run. Many of
 | fov                   | [600, 600]       | um     | Area of full field of view.                       |
 | pixel_resolution      | 1.0208           | um/px  | Each pixel corresponds to this many microns.      |
 | raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file |
-| dataset_name          | '/Y'                      | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset. |
+| dataset_name          | '/Y'                   | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset. |
 
 :::
 
@@ -180,3 +197,78 @@ Before beginning the recording session, users have the option to split frames in
 ![ScanImage Data Log GUI](../_images/si-data-log-gui.png)
 
 ```
+..
+.. .. toctree::
+..     :maxdepth: 2
+..
+..     scanimage
+
+.. TODO:: Guide users to the correct spot.  Move scanreader to python. 
+
+Pipelines
+================
+
+LBM-CaImAn-MATLAB
+------------------
+
+|REPO LCM| | `LBM-Matlab Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`_
+
+LBM-CaImAn-Python
+------------------
+
+|REPO LCP| | `LBM-Python Docs <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/>`_
+
+scanreader
+------------------
+
+- **Repository**: `scanreader repository <https://github.com/MillerBrainObservatory/LBM-CaImAn-Python>`_
+- **Documentation**: `scanreader Docs <https://millerbrainobservatory.github.io/scanreader/>`_
+
+External Resources
+=======================
+
+Software
+--------------
+
+- `flatironinstitute/CaImAn (MATLAB) github <https://github.com/flatironinstitute/CaImAn-MATLAB>`_ | `Wiki <https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline>`_
+
+- `flatironinstitute/CaImAn (python) github <https://github.com/flatironinstitute/CaImAn>`_ | `caimain Docs <https://caiman.readthedocs.io/en/latest/>`_
+
+- `suite2p github <https://github.com/mouseland/suite2p>`_ | `suite2p Docs <https://suite2p.readthedocs.io/en/latest/>`_
+
+Blogs and Posts
+--------------------
+
+- `What is deconvolution? (Suite2p docs) <https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what>`_
+
+- `Why your two-photon images are noisier than you expect <https://gcamp6f.com/2024/04/24/why-your-two-photon-images-are-noisier-than-you-expect/>`_
+
+- `Interpreting Results of Calcium Denoising <https://gcamp6f.com/2022/08/23/self-supervised-denoising-of-calcium-imaging-data/>`_
+
+- `Image.sc Forum <https://forum.image.sc/>`_
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+.. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions
+   :target: https://github.com/orgs/MillerBrainObservatory/discussions
+   :alt: Discussions
+
+.. |MBO Homepage| image:: https://img.shields.io/badge/MBO--Homepage-black?style=flat-square&logo=mega&logoColor=white&labelColor=black&color=black
+   :target: https://mbo.rockefeller.edu/
+   :alt: MBO Homepage
+
+.. Repos ---------------
+
+.. |REPO LCM| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB
+   :alt: Lbm-CaImAn-MATLAB Repository
+
+.. |REPO LCP| image:: https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto
+   :target: https://github.com/MillerBrainObservatory/LBM-CaImAn-Python
+   :alt: Lbm-CaImAn-Python Repository
+
