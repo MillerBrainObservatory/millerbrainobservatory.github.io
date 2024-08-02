@@ -10,11 +10,7 @@ A hub for tutorials, guides and resources for computational image processing.
    This dataset contains 4 ROI's recorded at 9.6hz for 1730 frames over a 600x600um FOV.
 ```
 
-## User Guides
-
-Guides for users analyzing microscopy data.
-
-# Light Beads Microscopy Data
+## Light Beads Microscopy Data
 
 Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
 
