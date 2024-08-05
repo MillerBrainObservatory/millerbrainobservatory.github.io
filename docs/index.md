@@ -1,15 +1,17 @@
+(mbo_hub)=
 # Miller Brain Observatory: Compute Ecosystem
 
 A hub for tutorials, guides and resources for computational image processing.
 
+(reference_dataset)=
 ```{note} Reference Dataset
-
-   All examples used throughout this tutorial will be in reference to the demo dataset referred to as the 'high-resolution' dataset.
-   This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
+All examples used throughout this tutorial will be in reference to the demo dataset referred to as the 'high-resolution' dataset.
+This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
 ```
 
 --------
 
+(lbm_data)=
 ## Light Beads Microscopy Data
 
 Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
@@ -26,7 +28,8 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 ## Understanding Metadata
 
-ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw `.tiff` file. Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.
+(scanimage_metadata)=
+ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw {code}`.tiff` file. Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.
 
 There is primary metadata, intended for use in a typical processing run. Many of these values are derived from less-pertinent (secondary) metadata.
 
@@ -72,6 +75,7 @@ There are additional metadata values used internally to locate files and to calc
 
 :::
 
+(scanner_note)=
 > **Note:**
 > With multi-ROI tiffs, the size of your tiff given by `image_size` will be different from the number of pixels in x and y.
 > This is due to the time it takes the scanner to move onto subsequent ROI's not being accounted for in `num_pixel_xy`.
@@ -79,11 +83,11 @@ There are additional metadata values used internally to locate files and to calc
 
 --------
 
+(using_metadata)=
 ## Using Metadata
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
 
-(advanced_metadata)=
 ::::{tab-set}
 
 :::{tab-item} Python Metadata
@@ -149,23 +153,37 @@ MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainob
 
 ::::
 
-`num_pixel_xy`
-: The number of pixels in each `ROI`. This can very from the actual tiff image size.
+```{glossary}
 
-`fov`
-: The total image size, in micron (`um`).
+region-of-interest
+  A set of 1 or more 2D planes which are stitched together to form the full image.
 
-`image_length`/`image_width`
-: The total **tiff** size, in pixels (`px`).
+num_pixel_xy
+  The number of pixels [X, Y] in each {term}`region-of-interest`.
 
-(pixel_resolution)=
-`pixel_resolution`
-: The size, in micron, of each pixel.
+roi_width_px
+  The size of the {term}`region-of-interest` on its shortest dimension.
+
+roi_height_px
+  The size of the {term}`region-of-interest` on its longest dimension.
+
+Field-of-view
+  The total size (um) of the raw stitched image with no trimming operations.
+
+image-length
+  The number of pixels on the long axis of the raw {code}`.tiff` file.
+
+image-width
+  The number of pixels on the short, slow-galvo axis of the raw {code}`.tiff` file.
+
+pixel-resolution
+  The size, in micron, of each pixel.
+
+```
 
 --------
 
 (mbo_terms)=
-
 ## Terms
 
 Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
@@ -246,7 +264,8 @@ Before beginning the recording session, users have the option to split frames in
 
 - [Image.sc Forum](https://forum.image.sc/)
 
-```{include} ./ref.md
+```{toctree} 
+./ref.md
 ```
 
 <!---->

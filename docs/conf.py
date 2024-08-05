@@ -27,7 +27,7 @@ extensions = [
     "sphinx_tippy",
 ]
 
-exclude_patterns = ["Thumbs.db", ".DS_Store", ".git", "exclude"]
+exclude_patterns = ["Thumbs.db", ".DS_Store", ".git", "exclude", "dev/*", "guides/*"]
 myst_enable_extensions = ["colon_fence", "html_image"]
 sphinx_tabs_disable_tab_closing = True
 
