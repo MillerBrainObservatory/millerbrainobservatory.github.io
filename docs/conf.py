@@ -47,9 +47,9 @@ images_config = {"default_show_title": True}
 templates_path = ["_templates"]
 #
 # # A shorter title for the navigation bar.  Default is the same as html_title.
-html_favicon = "_static/mbo.png"
+html_favicon = "./_static/mbo_hub_saph.svg/"
 html_theme = "pydata_sphinx_theme"
-html_logo = "_static/logo_mbo_compute.svg"
+html_logo = "./_static/logo_mbo_compute.svg"
 html_short_title = "MBO Hub"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
