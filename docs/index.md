@@ -26,6 +26,33 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 -----
 
+## Pipelines
+
+::::{grid} 2
+:gutter: 2
+
+:::{grid-item-card} LBM-CaImAn-MATLAB 
+
+{bdg-link-primary-line}`To the Documentation <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`
+
++++
+
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB "Lbm-CaImAn-MATLAB Repository")
+
+:::
+:::{grid-item-card} LBM-CaImAn-Python
+
+{bdg-link-primary-line}`To the Documentation <https://example.com>`
+
++++
+
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-Python "Lbm-CaImAn-Python Repository")
+
+:::
+::::
+
+-----
+
 ## Understanding Metadata
 
 (scanimage_metadata)=
@@ -219,30 +246,6 @@ Before beginning the recording session, users have the option to split frames in
 
 --------
 
-## Pipelines
-
-::::{grid} 2
-:gutter: 2
-
-:::{grid-item-card} LBM-CaImAn-MATLAB
-
-{bdg-link-primary-line}`To the Documentation <https://example.com>`
-
-+++
-
-[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB "Lbm-CaImAn-MATLAB Repository")
-
-:::
-:::{grid-item-card} LBM-CaImAn-MATLAB
-
-{bdg-link-primary-line}`To the Documentation <https://example.com>`
-
-+++
-
-[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-Python "Lbm-CaImAn-Python Repository")
-
-:::
-::::
 
 ## External Resources
 
