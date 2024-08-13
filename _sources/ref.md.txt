@@ -1,4 +1,4 @@
-## Image Gallery
+# Image Gallery
 
 A place to put rendered content to allow tooltips to render images within the tooltip.
 
