@@ -60,6 +60,10 @@ intersphinx_mapping = {
     "lbmmat": ("https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/", None),
     "lbmpy": ("https://millerbrainobservatory.github.io/LBM-CaImAn-Python/", None),
     "scanreader": ("https://millerbrainobservatory.github.io/scanreader/", None),
+    "mbo": (
+        "https://millerbrainobservatory.github.io/",
+        None,
+    ),
 }
 
 intersphinx_disabled_reftypes = ["*"]
@@ -76,6 +80,18 @@ html_theme_options = {
         {
             "name": "scanreader [python]",
             "url": "https://millerbrainobservatory.github.io/scanreader/index.html",
+        },
+    ],
+    "icon_links": [
+        {
+            "name": "Home",
+            "url": "https://millerbrainobservatory.github.io/",
+            "icon": "fa fa-home",
+        },
+        {
+            "name": "MBO Github",
+            "url": "https://github.com/MillerBrainObservatory/",
+            "icon": "fa-brands fa-github",
         },
     ],
     "navbar_persistent": ["search-button"],
