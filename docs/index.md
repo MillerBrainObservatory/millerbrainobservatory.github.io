@@ -9,21 +9,6 @@ All examples used throughout this tutorial will be in reference to the demo data
 This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
 ```
 
---------
-
-(lbm_data)=
-## Light Beads Microscopy Data
-
-Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
-
-ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
-
-In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>` with each ROI stacked vertically relative to the fast-galvo scan direction.
-
-Each 2D image within this tiff file represents a page of the original document.
-
-The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
-
 -----
 
 ## Pipelines
@@ -42,7 +27,7 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 :::
 :::{grid-item-card} LBM-CaImAn-Python
 
-{bdg-link-primary-line}`To the Documentation <https://example.com>`
+{bdg-link-primary-line}`To the Documentation <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html>`
 
 +++
 
@@ -50,6 +35,24 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 :::
 ::::
+
+<!-- ### Differences between the Pipelines -->
+<!-- TODO -->
+
+--------
+
+(lbm_data)=
+## Light Beads Microscopy Data
+
+Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
+
+ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
+
+In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>` with each ROI stacked vertically relative to the fast-galvo scan direction.
+
+Each 2D image within this tiff file represents a page of the original document.
+
+The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
 -----
 
@@ -267,9 +270,9 @@ Before beginning the recording session, users have the option to split frames in
 
 - [Image.sc Forum](https://forum.image.sc/)
 
-```{toctree} ./ref.md
-:hidden:
-```
+<!-- ```{toctree} ./ref.md -->
+<!-- :hidden: -->
+<!-- ``` -->
 
 <!---->
 <!-- .. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions -->
