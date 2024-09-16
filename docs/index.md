@@ -94,14 +94,14 @@ There are additional metadata values used internally to locate files and to calc
 
 | Name                  | Value            | Unit     | Description                                       |
 |-----------------------|------------------|----------|---------------------------------------------------|
-| raw_filename          | 'high_res'       | -      | Raw data filename, without the extension.           |
-| raw_filepath          | 'C:\Users\RBO\caiman_data' | -      | Raw data directory.                       |
-| objective_resolution  | 157.5000         | px/deg    | Scale factor to convert pixels to microns.        |
-| center_xy             | [-15.2381, 0]    | deg       | Center coordinates for each ROI in the XY plane.  |
-| size_xy               | [3.8095, 38.0952]| deg       | Size of each ROI, in units of resonant scan angle.|
-| line_period           | 4.1565e-05       | s         | Time period for resonant scanner to scan a full line (row). |
-| scan_frame_period     | 0.1041           | s         | Time period for resonant scanner to scan a full frame/image              |
-| sample_format         | 'int16'          | -         | Data type holding the nubmer of bits per sample.  |
+| raw_filename          | 'high_res'       | -        | Raw data filename, without the extension.         |
+| raw_filepath          | 'C:\Users\RBO\caiman_data'  | -         | Raw data directory.                   |
+| objective_resolution  | 157.5000         | um/deg   | Resolution of the objective in microns/degree of the scan angle.        |
+| center_xy             | [-15.2381, 0]    | deg      | Center coordinates for each ROI in the XY plane.  |
+| size_xy               | [3.8095, 38.0952]| deg      | Size of each ROI, in units of resonant scan angle.|
+| line_period           | 4.1565e-05       | s        | Time period for resonant scanner to scan a full line (row). |
+| scan_frame_period     | 0.1041           | s        | Time period for resonant scanner to scan a full frame/image              |
+| sample_format         | 'int16'          | -        | Data type holding the nubmer of bits per sample.  |
 
 :::
 
