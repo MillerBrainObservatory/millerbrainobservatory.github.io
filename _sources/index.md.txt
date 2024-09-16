@@ -9,21 +9,6 @@ All examples used throughout this tutorial will be in reference to the demo data
 This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
 ```
 
---------
-
-(lbm_data)=
-## Light Beads Microscopy Data
-
-Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
-
-ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
-
-In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>` with each ROI stacked vertically relative to the fast-galvo scan direction.
-
-Each 2D image within this tiff file represents a page of the original document.
-
-The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
-
 -----
 
 ## Pipelines
@@ -42,7 +27,7 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 :::
 :::{grid-item-card} LBM-CaImAn-Python
 
-{bdg-link-primary-line}`To the Documentation <https://example.com>`
+{bdg-link-primary-line}`To the Documentation <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html>`
 
 +++
 
@@ -50,6 +35,24 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 :::
 ::::
+
+<!-- ### Differences between the Pipelines -->
+<!-- TODO -->
+
+--------
+
+(lbm_data)=
+## Light Beads Microscopy Data
+
+Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
+
+ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
+
+In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>` with each ROI stacked vertically relative to the fast-galvo scan direction.
+
+Each 2D image within this tiff file represents a page of the original document.
+
+The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
 -----
 
@@ -91,14 +94,14 @@ There are additional metadata values used internally to locate files and to calc
 
 | Name                  | Value            | Unit     | Description                                       |
 |-----------------------|------------------|----------|---------------------------------------------------|
-| raw_filename          | 'high_res'       | -      | Raw data filename, without the extension.           |
-| raw_filepath          | 'C:\Users\RBO\caiman_data' | -      | Raw data directory.                       |
-| objective_resolution  | 157.5000         | px/deg    | Scale factor to convert pixels to microns.        |
-| center_xy             | [-15.2381, 0]    | deg       | Center coordinates for each ROI in the XY plane.  |
-| size_xy               | [3.8095, 38.0952]| deg       | Size of each ROI, in units of resonant scan angle.|
-| line_period           | 4.1565e-05       | s         | Time period for resonant scanner to scan a full line (row). |
-| scan_frame_period     | 0.1041           | s         | Time period for resonant scanner to scan a full frame/image              |
-| sample_format         | 'int16'          | -         | Data type holding the nubmer of bits per sample.  |
+| raw_filename          | 'high_res'       | -        | Raw data filename, without the extension.         |
+| raw_filepath          | 'C:\Users\RBO\caiman_data'  | -         | Raw data directory.                   |
+| objective_resolution  | 157.5000         | um/deg   | Resolution of the objective in microns/degree of the scan angle.        |
+| center_xy             | [-15.2381, 0]    | deg      | Center coordinates for each ROI in the XY plane.  |
+| size_xy               | [3.8095, 38.0952]| deg      | Size of each ROI, in units of resonant scan angle.|
+| line_period           | 4.1565e-05       | s        | Time period for resonant scanner to scan a full line (row). |
+| scan_frame_period     | 0.1041           | s        | Time period for resonant scanner to scan a full frame/image              |
+| sample_format         | 'int16'          | -        | Data type holding the nubmer of bits per sample.  |
 
 :::
 
@@ -267,8 +270,9 @@ Before beginning the recording session, users have the option to split frames in
 
 - [Image.sc Forum](https://forum.image.sc/)
 
-```{toctree} ./ref.md
-```
+<!-- ```{toctree} ./ref.md -->
+<!-- :hidden: -->
+<!-- ``` -->
 
 <!---->
 <!-- .. |MBO Discussions| image:: https://img.shields.io/badge/Discussions-black?style=plastic&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Forgs%2FMillerBrainObservatory%2Fdiscussions -->
