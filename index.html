@@ -48,7 +48,7 @@
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="_static/tippy/index.e087cc48-f498-4f85-aa56-a74f661c29ba.js"></script>
+    <script defer="defer" src="_static/tippy/index.d309701c-4994-4150-9bc3-c127227736ed.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="icon" href="_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -674,7 +674,7 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
 </section>
 <section id="frame-ordering">
 <h2>Frame Ordering<a class="headerlink" href="#frame-ordering" title="Permalink to this heading">#</a></h2>
-<p>ScanImage saves the 4D data with each plane <a class="reference internal" href="ref.html#ex-deinterleave"><span class="std std-ref">De-interleave Z-Planes</span></a>, e.g:</p>
+<p>ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:</p>
 <ul class="simple">
 <li><p>frame0 = time0_plane1</p></li>
 <li><p>frame1 = time0_plane2</p></li>
@@ -683,6 +683,7 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
 <li><p>frame4 = time1_plane2</p></li>
 </ul>
 <p>… and so on.</p>
+<p>Thus a primary function of image assembly is to <a class="reference internal" href="ref.html#ex-deinterleave"><span class="std std-ref">De-interleave Z-Planes</span></a> the data.</p>
 <div class="tip admonition">
 <p class="admonition-title">Note on Frames</p>
 <p>Before beginning the recording session, users have the option to split frames in the recording across multiple <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files. This option is helpful as it requires less work in post-processing to ensure there isn’t too much computer memory being used.</p>

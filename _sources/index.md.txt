@@ -227,7 +227,7 @@ Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https
 
 ## Frame Ordering
 
-ScanImage saves the 4D data with each plane {ref}`ex_deinterleave`, e.g:
+ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:
 
 - frame0 = time0_plane1
 - frame1 = time0_plane2
@@ -236,6 +236,8 @@ ScanImage saves the 4D data with each plane {ref}`ex_deinterleave`, e.g:
 - frame4 = time1_plane2
 
 ... and so on.
+
+Thus a primary function of image assembly is to {ref}`ex_deinterleave` the data.
 
 ```{admonition} Note on Frames
 :class: tip
