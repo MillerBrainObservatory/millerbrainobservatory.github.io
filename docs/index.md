@@ -70,7 +70,6 @@ There is primary metadata, intended for use in a typical processing run. Many of
 
 | Name                  | Value            | Unit   | Description                                       |
 |-----------------------|------------------|--------|---------------------------------------------------|
-| num_pixel_xy          | [144, 1200]      | px     | Number of pixels in the *each ROI*.               |
 | tiff_length           | 2478             | px     | Height of the raw scanimage tiff.                 |
 | tiff_width            | 145              | px     | Width of the raw scanimage tiff.                  |
 | roi_width_px          | 144              | px     | Width of the region of interest (ROI).            |
