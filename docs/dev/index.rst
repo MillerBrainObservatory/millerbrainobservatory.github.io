@@ -31,6 +31,23 @@ Contents
     ver/gh_pr_naming.md
     ver/gh_branch_workflow.md
 
+Building for Pypi
+=======================
+
+From within the directory of the package you want to build/upload to pypi:
+
+.. code-block:: bash
+
+    cd package 
+
+    conda create -n build python=3.10 twine
+
+    conda activate build
+
+    pip install build
+
+    python -m build
+
 MBO Technology Stack
 =======================
 
