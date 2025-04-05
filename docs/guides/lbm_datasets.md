@@ -61,7 +61,6 @@ There are additional metadata values used internally to locate files and to calc
 
 ## Terms
 
-
 In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.
 
 | Dimension | Description |
@@ -86,7 +85,8 @@ ScanImage saves the 4D volume with each plane interleaved, e.g.
 ```{admonition} Note on Frames
 :class: tip
 
-Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files. This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
+Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files.
+This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
 
 ![ScanImage Data Log GUI](../_images/si-data-log-gui.png)
 

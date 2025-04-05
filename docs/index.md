@@ -70,7 +70,6 @@ There is primary metadata, intended for use in a typical processing run. Many of
 
 | Name                  | Value            | Unit   | Description                                       |
 |-----------------------|------------------|--------|---------------------------------------------------|
-| num_pixel_xy          | [144, 1200]      | px     | Number of pixels in the *each ROI*.               |
 | tiff_length           | 2478             | px     | Height of the raw scanimage tiff.                 |
 | tiff_width            | 145              | px     | Width of the raw scanimage tiff.                  |
 | roi_width_px          | 144              | px     | Width of the region of interest (ROI).            |
@@ -235,9 +234,7 @@ ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:
 - frame3 = time1_plane1
 - frame4 = time1_plane2
 
-... and so on.
-
-Thus a primary function of image assembly is to {ref}`ex_deinterleave` the data.
+Thus a primary function of image assembly is to {ref}`ex_deinterleave`.
 
 ```{admonition} Note on Frames
 :class: tip
@@ -271,6 +268,10 @@ Before beginning the recording session, users have the option to split frames in
 - [Interpreting Results of Calcium Denoising](https://gcamp6f.com/2022/08/23/self-supervised-denoising-of-calcium-imaging-data/)
 
 - [Image.sc Forum](https://forum.image.sc/)
+
+### MBO Servers
+
+User accounts on MBO servers.
 
 <!-- ```{toctree} ./ref.md -->
 <!-- :hidden: -->

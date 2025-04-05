@@ -59,7 +59,6 @@ html_file_suffix = ".html"
 intersphinx_mapping = {
     "lbmmat": ("https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/", None),
     "lbmpy": ("https://millerbrainobservatory.github.io/LBM-CaImAn-Python/", None),
-    "scanreader": ("https://millerbrainobservatory.github.io/scanreader/", None),
     "mbo": (
         "https://millerbrainobservatory.github.io/",
         None,
