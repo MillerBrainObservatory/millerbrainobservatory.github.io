@@ -276,5 +276,3 @@ Before beginning the recording session, users have the option to split frames in
 
 - [Image.sc Forum](https://forum.image.sc/)
 
-### MBO Servers
-
