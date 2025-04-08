@@ -76,10 +76,14 @@ html_theme_options = {
             "name": "CaImAn [python]",
             "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html",
         },
-        # {
-        #     "name": "scanreader [python]",
-        #     "url": "https://millerbrainobservatory.github.io/scanreader/index.html",
-        # },
+        {
+            "name": "Suite2p [python]",
+            "url": "https://millerbrainobservatory.github.io/LBM-Suite2p-Python/index.html",
+        },
+        {
+            "name": "utilities [python]",
+            "url": "https://millerbrainobservatory.github.io/mbo_utilities/index.html",
+        },
     ],
     "icon_links": [
         {
