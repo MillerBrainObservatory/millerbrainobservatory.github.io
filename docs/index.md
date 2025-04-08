@@ -43,10 +43,18 @@ This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um
 :::
 ::::
 
-<!-- ### Differences between the Pipelines -->
-<!-- TODO -->
-
 --------
+
+## Documentation Contents
+
+```{toctree}
+---
+maxdepth: 3
+---
+guides/index
+dev/index
+
+```
 
 (lbm_data)=
 ## Light Beads Microscopy Data
