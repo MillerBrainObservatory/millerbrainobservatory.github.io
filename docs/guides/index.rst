@@ -6,5 +6,6 @@ Guides for users analyzing microscopy data.
 maxdepth: 2
 caption: User Guides
 ---
-lbm_datasets
+Datasets <lbm_datasets>
+Servers <mbo_servers>
 ````
