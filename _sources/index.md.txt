@@ -16,23 +16,30 @@ This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um
 ::::{grid} 2
 :gutter: 2
 
-:::{grid-item-card} LBM-CaImAn-MATLAB 
-
-{bdg-link-primary-line}`To the Documentation <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`
-
+:::{grid-item-card} MBO Utilities
+{bdg-link-primary-line}`To the Documentation <https://github.com/MillerBrainObservatory/mbo_utilities.git>`
 +++
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/mbo_utilities.git "MBO Utilities Repository")
+:::
+:::{grid-item-card} LBM-Suite2p-Python
+{bdg-link-primary-line}`To the Documentation <https://github.com/MillerBrainObservatory/LBM-Suite2p-Python.git>`
++++
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-Suite2p-Python.git "LBM-Suite2p-Python Repository")
+:::
+::::
 
-[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB "Lbm-CaImAn-MATLAB Repository")
+::::{grid} 2
+:gutter: 2
 
+:::{grid-item-card} LBM-CaImAn-MATLAB 
+{bdg-link-primary-line}`To the Documentation <https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html>`
++++
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-MATLAB "LBM-CaImAn-MATLAB Repository")
 :::
 :::{grid-item-card} LBM-CaImAn-Python
-
 {bdg-link-primary-line}`To the Documentation <https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html>`
-
 +++
-
-[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-Python "Lbm-CaImAn-Python Repository")
-
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/LBM-CaImAn-Python "LBM-CaImAn-Python Repository")
 :::
 ::::
 
