@@ -12,12 +12,64 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 -----
 
-## Understanding Metadata
 
-(scanimage_metadata)=
-ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw {code}`.tiff` file. Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.
+(array_terms)=
+## Array Terminology
 
-There is primary metadata, intended for use in a typical processing run. Many of these values are derived from less-pertinent (secondary) metadata.
+Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
+
+| Dimension | Description |
+|-----------|-------------|
+| [X, Y]    | 2D plane    |
+| [X, Y, Z] | z-stack     |
+| [X, Y, T] | 2D timeseries |
+| [X, Y, Z, T] | 3D timeseries|
+
+## Frame Ordering
+
+ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:
+
+- frame0 = time0_plane1
+- frame1 = time0_plane2
+- frame2 = time0_plane3
+- frame3 = time1_plane1
+- frame4 = time1_plane2
+
+Data organized this way is generally incompatible with downstream processing libraries like suite2p, CaImAn and EXTRACT.
+
+For compatibility, we reorganize the frames as follows:
+
+- frame0 = time0_plane1
+- frame1 = time1_plane1
+- frame2 = time2_plane1
+- frame3 = time0_plane2
+- frame4 = time1_plane2
+
+Thus a primary function of image assembly is to {ref}`ex_deinterleave`.
+
+```{admonition} Note on Frames
+:class: tip
+
+Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files. This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
+
+```
+
+----
+
+## LBM Metadata
+
+The primary distinction between Light-Beads Microscopy datasets and standard 2p datasets are how the data is organized on disk.
+
+This information is stored in the [ScanImage Metadata](https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification).
+
+(metadata_overview)=
+### Overview
+
+ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw {code}`.tiff` file.
+
+Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.
+
+There is primary metadata, intended for use in a typical processing run. Many of these values are derived from less-pertinent (secondary) metadata shown below.
 
 :::{dropdown} Metadata (primary)
 :chevron: down-up
@@ -35,8 +87,6 @@ There is primary metadata, intended for use in a typical processing run. Many of
 | frame_rate            | 9.608            | Hz     | How many frames recorded / second.                |
 | fov                   | [600, 600]       | um     | Area of full field of view.                       |
 | pixel_resolution      | 1.0208           | um/px  | Each pixel corresponds to this many microns.      |
-| raw_fullfile          | 'C:\Users\RBO\caiman_data\high_res.tif' | -      | Full path to the raw data file |
-| dataset_name          | '/Y'                   | -      | For heirarchical data formats (HDF5, Zarr), the name of the dataset. |
 
 :::
 
@@ -69,14 +119,14 @@ There are additional metadata values used internally to locate files and to calc
 --------
 
 (using_metadata)=
-## Using Metadata
+### Usage
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
 
 ::::{tab-set}
 
 :::{tab-item} Python Metadata
-Python metadata is can be accessed with [mbo_utilites](), `mbo.get_metadata()`
+Python metadata is can be accessed with {func}`mbo_utilities.get_metadata()`.
 
 ```python
 objective_resolution: 157.5000
