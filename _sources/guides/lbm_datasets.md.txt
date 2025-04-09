@@ -15,7 +15,7 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 :animate: fade-in-slide-down
 :name: primary_metadata
 
-These are the critical metadata needed to interpret results:
+These are metadata you will use in downstream analysis, many of which are calculated from theh secondary metadata below.
 
 | Name                  | Value            | Unit   | Description                                       |
 |-----------------------|------------------|--------|---------------------------------------------------|
@@ -37,7 +37,7 @@ These are the critical metadata needed to interpret results:
 :animate: fade-in-slide-down
 :name: secondary_metadata
 
-There are additional metadata values used internally to locate files and to calculate the above values:
+There are additional metadata values used to obtain the primary metadata, and can also be used to store additional variables.
 
 | Name                  | Value            | Unit     | Description                                       |
 |-----------------------|------------------|----------|---------------------------------------------------|
@@ -80,7 +80,15 @@ ScanImage saves the 4D volume with each plane interleaved, e.g.
 - frame3 = time1_plane1
 - frame4 = time1_plane2
 
-... and so on.
+Pipelines generally require inputs to be organized with frames deinterleaved from z-planes:
+
+- frame0 = time0_plane1
+- frame1 = time1_plane1
+- frame2 = time2_plane1
+- frame3 = time0_plane2
+- frame4 = time1_plane2
+
+The recent exception to this is [Suite3D](https://github.com/alihaydaroglu/suite3d/tree/main)
 
 ```{admonition} Note on Frames
 :class: tip
@@ -88,7 +96,7 @@ ScanImage saves the 4D volume with each plane interleaved, e.g.
 Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files.
 This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
 
-![ScanImage Data Log GUI](../_images/si-data-log-gui.png)
+![ScanImage Data Log GUI](si-data-log-gui.png)
 
 ```
 
@@ -99,7 +107,6 @@ Each pipeline comes stocked with methods to retrieve imaging metadata.
 ::::{tab-set}
 
 :::{tab-item} Python Metadata
-Python metadata is stored in the {ref}`scanreader` class.
 
 ```python
 objective_resolution: 157.5000

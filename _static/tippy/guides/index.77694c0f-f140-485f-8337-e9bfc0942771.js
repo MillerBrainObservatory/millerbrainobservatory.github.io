@@ -1,0 +1,22 @@
+selector_to_html = {"a[href=\"#guides\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Guides<a class=\"headerlink\" href=\"#guides\" title=\"Permalink to this heading\">#</a></h1><p>Guides for users analyzing microscopy data.</p>", "a[href=\"mbo_servers.html#software\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">2.2. </span>Software<a class=\"headerlink\" href=\"#software\" title=\"Permalink to this heading\">#</a></h2><h3><span class=\"section-number\">2.2.1. </span>miniforge3<a class=\"headerlink\" href=\"#miniforge3\" title=\"Permalink to this heading\">#</a></h3><p>Each user account has its own <code class=\"docutils literal notranslate\"><span class=\"pre\">Miniforge3</span></code> installation at <code class=\"docutils literal notranslate\"><span class=\"pre\">C:/Users/miniforge3</span></code>.</p><p>This is your environment to install and reinstall as you please. <em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>", "a[href=\"lbm_datasets.html#frame-ordering\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">1.3. </span>Frame Ordering<a class=\"headerlink\" href=\"#frame-ordering\" title=\"Permalink to this heading\">#</a></h2><p>ScanImage saves the 4D volume with each plane interleaved, e.g.</p>", "a[href=\"lbm_datasets.html#terms\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">1.2. </span>Terms<a class=\"headerlink\" href=\"#terms\" title=\"Permalink to this heading\">#</a></h2><p>In its raw form, data is saved as a 3-dimensional multi-page tiff file. Each image within this tiff file represents a page of the original document.</p>", "a[href=\"mbo_servers.html#filesystem\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">2.1. </span>Filesystem<a class=\"headerlink\" href=\"#filesystem\" title=\"Permalink to this heading\">#</a></h2><p>!Note: Both workstation and compute file-systems are <em>NOT</em> backed up. Users should have a backup of all data on their own system.</p><p>The <code class=\"docutils literal notranslate\"><span class=\"pre\">D:</span></code> drive is <strong>read-only</strong> and contains</p>", "a[href=\"mbo_servers.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">2. </span>Server Guide<a class=\"headerlink\" href=\"#server-guide\" title=\"Permalink to this heading\">#</a></h1><p>As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.\nThis login will give you access to all of the resources of that server, shared with a limited number of other users.</p>", "a[href=\"lbm_datasets.html#scanimage-metadata\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">1.4. </span>ScanImage metadata<a class=\"headerlink\" href=\"#scanimage-metadata\" title=\"Permalink to this heading\">#</a></h2><p>Each pipeline comes stocked with methods to retrieve imaging metadata.</p>", "a[href=\"lbm_datasets.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">1. </span>Exploring LBM Datasets<a class=\"headerlink\" href=\"#exploring-lbm-datasets\" title=\"Permalink to this heading\">#</a></h1><p>Light-beads microscopy is a 2-photon imaging paradigm based on <a class=\"reference external\" href=\"https://docs.scanimage.org\">ScanImage</a> acquisition software.</p>", "a[href=\"lbm_datasets.html#metadata\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\"><span class=\"section-number\">1.1. </span>Metadata<a class=\"headerlink\" href=\"#metadata\" title=\"Permalink to this heading\">#</a></h2>"}
+skip_classes = ["headerlink", "sd-stretched-link"]
+
+window.onload = function () {
+    for (const [select, tip_html] of Object.entries(selector_to_html)) {
+        const links = document.querySelectorAll(` ${select}`);
+        for (const link of links) {
+            if (skip_classes.some(c => link.classList.contains(c))) {
+                continue;
+            }
+
+            tippy(link, {
+                content: tip_html,
+                allowHTML: true,
+                arrow: true,
+                placement: 'auto-start', maxWidth: 500, interactive: false,
+
+            });
+        };
+    };
+    console.log("tippy tips loaded!");
+};

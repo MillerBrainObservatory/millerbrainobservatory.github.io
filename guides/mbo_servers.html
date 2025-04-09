@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Server Guide &#8212; MBO Compute Hub 1.0.0 documentation</title>
+    <title>2. Server Guide &#8212; MBO Compute Hub 1.0.0 documentation</title>
   
   
   
@@ -48,11 +48,13 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.bcc89566-a346-43de-8bf7-f9a8e5442499.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.0753430e-02f4-4f1b-8169-ffbfbc0f91e7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../dev/index.html" />
+    <link rel="prev" title="1. Exploring LBM Datasets" href="lbm_datasets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,16 +152,16 @@
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        <no title>
+                        Guides
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../dev/index.html">
-                        Developer Guide
+                        <no title>
                       </a>
                     </li>
                 
@@ -289,7 +291,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -308,16 +310,16 @@ document.write(`
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
-                        <no title>
+                        Guides
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../dev/index.html">
-                        Developer Guide
+                        <no title>
                       </a>
                     </li>
                 
@@ -410,6 +412,19 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lbm_datasets.html">1. LBM Datasets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. MBO Servers</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -442,7 +457,10 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Server Guide</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guides</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span...</li>
   </ul>
 </nav>
 </div>
@@ -460,11 +478,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="server-guide">
-<h1>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
 <p>As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.
 This login will give you access to all of the resources of that server, shared with a limited number of other users.</p>
 <section id="filesystem">
-<h2>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
 <p>!Note: Both workstation and compute file-systems are <em>NOT</em> backed up. Users should have a backup of all data on their own system.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive is <strong>read-only</strong> and contains</p>
 <ul class="simple">
@@ -476,18 +494,18 @@ This login will give you access to all of the resources of that server, shared w
 <p>!Note: Users should not browse the internet on the compute server, browsing should be done on your local machine only.</p>
 </section>
 <section id="software">
-<h2>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
 <section id="miniforge3">
-<h3>miniforge3<a class="headerlink" href="#miniforge3" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.2.1. </span>miniforge3<a class="headerlink" href="#miniforge3" title="Permalink to this heading">#</a></h3>
 <p>Each user account has its own <code class="docutils literal notranslate"><span class="pre">Miniforge3</span></code> installation at <code class="docutils literal notranslate"><span class="pre">C:/Users/miniforge3</span></code>.</p>
 <p>This is your environment to install and reinstall as you please. <em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>
 </section>
 <section id="matlab">
-<h3>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.2.2. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
 <p>Each user account has an installation of MATLAB.</p>
 </section>
 <section id="other-software">
-<h3>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.2.3. </span>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fiji / imageJ</p></li>
 <li><p>Visual Studio Code</p></li>
@@ -507,6 +525,24 @@ This login will give you access to all of the resources of that server, shared w
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="lbm_datasets.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Exploring LBM Datasets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../dev/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -523,11 +559,11 @@ This login will give you access to all of the resources of that server, shared w
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">miniforge3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">MATLAB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.1. Filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.2. Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">2.2.1. miniforge3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.2.2. MATLAB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.2.3. Other Software</a></li>
 </ul>
 </li>
 </ul>
