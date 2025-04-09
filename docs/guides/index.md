@@ -1,4 +1,4 @@
-(guides)=
+(guides_home)=
 # Guides
 
 Guides for users analyzing microscopy data.
