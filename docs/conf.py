@@ -48,7 +48,7 @@ templates_path = ["_templates"]
 #
 # # A shorter title for the navigation bar.  Default is the same as html_title.
 html_favicon = "./_static/mbo_hub_saph.svg"
-html_theme = "pydata_sphinx_theme"
+html_theme = "sphinx_book_theme"
 html_logo = "./_static/logo_mbo_compute.svg"
 html_short_title = "MBO Hub"
 html_static_path = ["_static"]
