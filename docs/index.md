@@ -54,7 +54,6 @@ maxdepth: 3
 
 guides/lbm_data.md
 guides/mbo_servers.md
-<!-- Image Reference <ref> -->
 
 ```
 
