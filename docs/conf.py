@@ -67,24 +67,24 @@ intersphinx_mapping = {
 
 intersphinx_disabled_reftypes = ["*"]
 html_theme_options = {
-    # "external_links": [
-    #     {
-    #         "name": "CaImAn [matlab]",
-    #         "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html",
-    #     },
-    #     {
-    #         "name": "CaImAn [python]",
-    #         "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html",
-    #     },
-    #     {
-    #         "name": "Suite2p [python]",
-    #         "url": "https://millerbrainobservatory.github.io/LBM-Suite2p-Python/index.html",
-    #     },
-    #     {
-    #         "name": "utilities [python]",
-    #         "url": "https://millerbrainobservatory.github.io/mbo_utilities/index.html",
-    #     },
-    # ],
+    "external_links": [
+        {
+            "name": "CaImAn [matlab]",
+            "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html",
+        },
+        {
+            "name": "CaImAn [python]",
+            "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html",
+        },
+        {
+            "name": "Suite2p [python]",
+            "url": "https://millerbrainobservatory.github.io/LBM-Suite2p-Python/index.html",
+        },
+        {
+            "name": "utilities [python]",
+            "url": "https://millerbrainobservatory.github.io/mbo_utilities/index.html",
+        },
+    ],
     "icon_links": [
         {
             "name": "Home",
