@@ -136,7 +136,7 @@ Each pipeline comes stocked with methods to retrieve imaging metadata.
 ::::{tab-set}
 
 :::{tab-item} Python Metadata
-Python metadata is stored in the [scanreader](https://github.com/MillerBrainObservatory/scanreader/) class.
+Python metadata is can be accessed with [mbo_utilites](), `mbo.get_metadata()`
 
 ```python
 objective_resolution: 157.5000

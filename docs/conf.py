@@ -48,7 +48,7 @@ templates_path = ["_templates"]
 #
 # # A shorter title for the navigation bar.  Default is the same as html_title.
 html_favicon = "./_static/mbo_hub_saph.svg"
-html_theme = "pydata_sphinx_theme"
+html_theme = "sphinx_book_theme"
 html_logo = "./_static/logo_mbo_compute.svg"
 html_short_title = "MBO Hub"
 html_static_path = ["_static"]
@@ -67,24 +67,24 @@ intersphinx_mapping = {
 
 intersphinx_disabled_reftypes = ["*"]
 html_theme_options = {
-    "external_links": [
-        {
-            "name": "CaImAn [matlab]",
-            "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html",
-        },
-        {
-            "name": "CaImAn [python]",
-            "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html",
-        },
-        {
-            "name": "Suite2p [python]",
-            "url": "https://millerbrainobservatory.github.io/LBM-Suite2p-Python/index.html",
-        },
-        {
-            "name": "utilities [python]",
-            "url": "https://millerbrainobservatory.github.io/mbo_utilities/index.html",
-        },
-    ],
+    # "external_links": [
+    #     {
+    #         "name": "CaImAn [matlab]",
+    #         "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/index.html",
+    #     },
+    #     {
+    #         "name": "CaImAn [python]",
+    #         "url": "https://millerbrainobservatory.github.io/LBM-CaImAn-Python/index.html",
+    #     },
+    #     {
+    #         "name": "Suite2p [python]",
+    #         "url": "https://millerbrainobservatory.github.io/LBM-Suite2p-Python/index.html",
+    #     },
+    #     {
+    #         "name": "utilities [python]",
+    #         "url": "https://millerbrainobservatory.github.io/mbo_utilities/index.html",
+    #     },
+    # ],
     "icon_links": [
         {
             "name": "Home",
