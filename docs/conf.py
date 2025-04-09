@@ -97,6 +97,6 @@ html_theme_options = {
             "icon": "fa-brands fa-github",
         },
     ],
-    "navbar_persistent": ["search-button"],
+    # "navbar_persistent": ["search-button"],
     # "header_links_before_dropdown": 1,
 }
