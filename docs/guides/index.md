@@ -8,6 +8,8 @@ Guides for users analyzing microscopy data.
 maxdepth: 2
 numbered: 3
 ---
+
+LBM Data <lbm_data>
 MBO Servers <mbo_servers>
 ```
 

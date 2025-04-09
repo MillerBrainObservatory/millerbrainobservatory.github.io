@@ -53,7 +53,7 @@ maxdepth: 3
 ---
 
 guides/index
-dev/index
+ref
 
 ```
 
@@ -257,7 +257,7 @@ Thus a primary function of image assembly is to {ref}`ex_deinterleave`.
 
 Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files. This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
 
-![ScanImage Data Log GUI](./_images/si-data-log-gui.png)
+![ScanImage Data Log GUI](_images/si-data-log-gui.png)
 
 ```
 <!-- .. TODO:: Guide users to the correct spot.  Move scanreader to python.  -->
@@ -267,7 +267,7 @@ Before beginning the recording session, users have the option to split frames in
 
 ## External Resources
 
-### Software
+### Algorithms and pipelines
 
 - [flatironinstitute/CaImAn (MATLAB) github](https://github.com/flatironinstitute/CaImAn-MATLAB) | [Wiki](https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline)
 
@@ -275,7 +275,7 @@ Before beginning the recording session, users have the option to split frames in
 
 - [suite2p github](https://github.com/mouseland/suite2p) | [suite2p Docs](https://suite2p.readthedocs.io/en/latest/)
 
-### Blogs and Posts
+### Blog Posts
 
 - [What is deconvolution? (Suite2p docs)](https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what)
 
