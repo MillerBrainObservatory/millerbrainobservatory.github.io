@@ -50,7 +50,7 @@
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="_static/tippy/index.74834558-aead-4cb0-85ed-5b85a528a307.js"></script>
+    <script defer="defer" src="_static/tippy/index.2624521c-4536-4c7e-852e-d2950920a9d9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="icon" href="_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -327,8 +327,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipelines">Pipelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-contents">Documentation Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-resources">External Resources</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-pipelines">Algorithms and pipelines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blog-posts">Blog Posts</a></li>
@@ -348,10 +346,9 @@ document.write(`
   <section id="miller-brain-observatory-compute-ecosystem">
 <span id="mbo-hub"></span><h1>Miller Brain Observatory: Compute Ecosystem<a class="headerlink" href="#miller-brain-observatory-compute-ecosystem" title="Permalink to this heading">#</a></h1>
 <p>A hub for tutorials, guides and resources for computational image processing.</p>
-<div class="admonition note" id="reference-dataset">
-<p class="admonition-title">Note</p>
-<p>Reference Dataset
-All examples used throughout this tutorial will be in reference to the demo dataset referred to as the ‘high-resolution’ dataset.
+<div class="admonition-reference-dataset admonition">
+<p class="admonition-title">Reference Dataset</p>
+<p>All examples used throughout this tutorial will be in reference to the demo dataset referred to as the ‘high-resolution’ dataset.
 This dataset contains 4 ROI’s recorded at <code class="docutils literal notranslate"><span class="pre">9.6</span> <span class="pre">Hz</span></code> for <code class="docutils literal notranslate"><span class="pre">1730</span></code> over a <code class="docutils literal notranslate"><span class="pre">600x600</span> <span class="pre">um</span></code> FOV at <code class="docutils literal notranslate"><span class="pre">1um/px</span></code> resolution.</p>
 </div>
 <hr class="docutils" />
@@ -376,7 +373,7 @@ MBO Utilities</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 LBM-Suite2p-Python</div>
-<p class="sd-card-text"><a class="sd-sphinx-override sd-badge sd-outline-primary sd-text-primary reference external" href="https://millerbrainobservatory.github.io/lbm_suite2p_python/index.html"><span>To the Documentation</span></a></p>
+<p class="sd-card-text"><a class="sd-sphinx-override sd-badge sd-outline-primary sd-text-primary reference external" href="https://millerbrainobservatory.github.io/LBM-Suite2p-Python"><span>To the Documentation</span></a></p>
 </div>
 <div class="sd-card-footer docutils">
 <p class="sd-card-text"><a class="reference external" href="https://github.com/MillerBrainObservatory/LBM-Suite2p-Python.git" title="LBM-Suite2p-Python Repository"><img alt="Repository" src="https://img.shields.io/badge/Repository-black?style=flat&amp;logo=github&amp;logoColor=white&amp;logoSize=auto" /></a></p>
@@ -419,67 +416,10 @@ LBM-CaImAn-Python</div>
 <h2>Documentation Contents<a class="headerlink" href="#documentation-contents" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="guides/lbm_data.html">1. Light Beads Microscopy Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/lbm_data.html#understanding-metadata">1.1. Understanding Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/lbm_data.html#using-metadata">1.2. Using Metadata</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="guides/mbo_servers.html">2. Server Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/mbo_servers.html#filesystem">2.1. Filesystem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/mbo_servers.html#software">2.2. Software</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/mbo_servers.html#miniforge3">2.2.1. miniforge3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/mbo_servers.html#matlab">2.2.2. MATLAB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="guides/mbo_servers.html#other-software">2.2.3. Other Software</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="guides/lbm_data.html">1. Light Beads Microscopy Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/mbo_servers.html">2. Server Guide</a></li>
 </ul>
 </div>
-<hr class="docutils" />
-</section>
-<section id="terms">
-<span id="mbo-terms"></span><h2>Terms<a class="headerlink" href="#terms" title="Permalink to this heading">#</a></h2>
-<p>Light-beads microscopy is a 2-photon imaging paradigm based on <a class="reference external" href="https://docs.scanimage.org/index.html">ScanImage</a> acquisition software.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Dimension</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>[X, Y]</p></td>
-<td><p>2D plane</p></td>
-</tr>
-<tr class="row-odd"><td><p>[X, Y, Z]</p></td>
-<td><p>z-stack</p></td>
-</tr>
-<tr class="row-even"><td><p>[X, Y, T]</p></td>
-<td><p>2D timeseries</p></td>
-</tr>
-<tr class="row-odd"><td><p>[X, Y, Z, T]</p></td>
-<td><p>3D timeseries</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="frame-ordering">
-<h2>Frame Ordering<a class="headerlink" href="#frame-ordering" title="Permalink to this heading">#</a></h2>
-<p>ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:</p>
-<ul class="simple">
-<li><p>frame0 = time0_plane1</p></li>
-<li><p>frame1 = time0_plane2</p></li>
-<li><p>frame2 = time0_plane3</p></li>
-<li><p>frame3 = time1_plane1</p></li>
-<li><p>frame4 = time1_plane2</p></li>
-</ul>
-<p>Thus a primary function of image assembly is to <a class="reference internal" href="ref.html#ex-deinterleave"><span class="std std-ref">De-interleave Z-Planes</span></a>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Note on Frames</p>
-<p>Before beginning the recording session, users have the option to split frames in the recording across multiple <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files. This option is helpful as it requires less work in post-processing to ensure there isn’t too much computer memory being used.</p>
-<p><img alt="ScanImage Data Log GUI" src="_images/si-data-log-gui.png" /></p>
-</div>
-<!-- .. TODO:: Guide users to the correct spot.  Move scanreader to python.  -->
 </section>
 <hr class="docutils" />
 <section id="external-resources">
@@ -541,8 +481,6 @@ LBM-CaImAn-Python</div>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipelines">Pipelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-contents">Documentation Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-resources">External Resources</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms-and-pipelines">Algorithms and pipelines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blog-posts">Blog Posts</a></li>

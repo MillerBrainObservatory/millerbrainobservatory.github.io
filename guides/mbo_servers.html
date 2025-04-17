@@ -50,7 +50,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.84fb21d2-e788-4993-8763-86c28bb953a3.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.cda56bef-92e0-4435-9625-81367c98a6c6.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -325,11 +325,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.1. Filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.2. Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">2.2.1. miniforge3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.2.2. MATLAB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.2.3. Other Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps">2.1. First steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.2. Filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.3. Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">2.3.1. miniforge3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.3.2. MATLAB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.3.3. Other Software</a></li>
 </ul>
 </li>
 </ul>
@@ -347,8 +348,20 @@ document.write(`
 <h1><span class="section-number">2. </span>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
 <p>As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.
 This login will give you access to all of the resources of that server, shared with a limited number of other users.</p>
+<section id="first-steps">
+<h2><span class="section-number">2.1. </span>First steps<a class="headerlink" href="#first-steps" title="Permalink to this heading">#</a></h2>
+<p>The first thing you will likely want to do is setup a connection to the server with <a class="reference external" href="https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh"><code class="docutils literal notranslate"><span class="pre">ssh</span></code></a>.</p>
+<p>Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.
+The only way to access the server is via Remote Desktop Protocol. There are a few common applications, depending on your operating system:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://apps.microsoft.com/detail/9wzdncrfj3ps?hl=en-US&amp;amp;gl=US">Microsoft RDP (Windows)</a></p></li>
+<li><p><a class="reference external" href="https://remmina.org/">Remmina (Linux)</a></p></li>
+<li><p><a class="reference external" href="https://www.nomachine.com/">NoMachine (Linux, Mac, Windows)</a></p></li>
+<li><p><a class="reference external" href="https://www.helpwire.app/">HelpWire (Linux, Mac, Windows)</a></p></li>
+</ul>
+</section>
 <section id="filesystem">
-<h2><span class="section-number">2.1. </span>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
 <p>!Note: Both workstation and compute file-systems are <em>NOT</em> backed up. Users should have a backup of all data on their own system.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive is <strong>read-only</strong> and contains</p>
 <ul class="simple">
@@ -360,18 +373,18 @@ This login will give you access to all of the resources of that server, shared w
 <p>!Note: Users should not browse the internet on the compute server, browsing should be done on your local machine only.</p>
 </section>
 <section id="software">
-<h2><span class="section-number">2.2. </span>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
 <section id="miniforge3">
-<h3><span class="section-number">2.2.1. </span>miniforge3<a class="headerlink" href="#miniforge3" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1. </span>miniforge3<a class="headerlink" href="#miniforge3" title="Permalink to this heading">#</a></h3>
 <p>Each user account has its own <code class="docutils literal notranslate"><span class="pre">Miniforge3</span></code> installation at <code class="docutils literal notranslate"><span class="pre">C:/Users/miniforge3</span></code>.</p>
 <p>This is your environment to install and reinstall as you please. <em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>
 </section>
 <section id="matlab">
-<h3><span class="section-number">2.2.2. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.2. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
 <p>Each user account has an installation of MATLAB.</p>
 </section>
 <section id="other-software">
-<h3><span class="section-number">2.2.3. </span>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.3. </span>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fiji / imageJ</p></li>
 <li><p>Visual Studio Code</p></li>
@@ -416,11 +429,12 @@ This login will give you access to all of the resources of that server, shared w
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.1. Filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.2. Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">2.2.1. miniforge3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.2.2. MATLAB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.2.3. Other Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps">2.1. First steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.2. Filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.3. Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">2.3.1. miniforge3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.3.2. MATLAB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.3.3. Other Software</a></li>
 </ul>
 </li>
 </ul>

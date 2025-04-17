@@ -3,6 +3,18 @@
 As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.
 This login will give you access to all of the resources of that server, shared with a limited number of other users.
 
+## First steps
+
+The first thing you will likely want to do is setup a connection to the server with [`ssh`](https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh). 
+
+Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.
+The only way to access the server is via Remote Desktop Protocol. There are a few common applications, depending on your operating system:
+
+- [Microsoft RDP (Windows)](https://apps.microsoft.com/detail/9wzdncrfj3ps?hl=en-US&gl=US)
+- [Remmina (Linux)](https://remmina.org/)
+- [NoMachine (Linux, Mac, Windows)](https://www.nomachine.com/)
+- [HelpWire (Linux, Mac, Windows)](https://www.helpwire.app/)
+
 ## Filesystem
 
 !Note: Both workstation and compute file-systems are *NOT* backed up. Users should have a backup of all data on their own system.
