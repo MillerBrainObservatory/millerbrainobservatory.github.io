@@ -50,7 +50,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.cda56bef-92e0-4435-9625-81367c98a6c6.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.a857236d-2586-4223-8bc7-582e8db0f5df.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -325,14 +325,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps">2.1. First steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">2.1. Connecting with RDP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">2.1.1. via Windows App</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.2. Filesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.3. Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">2.3.1. miniforge3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3">2.3.1. <code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.3.2. MATLAB</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.3.3. Other Software</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">2.4. SSH Connections</a></li>
 </ul>
             </nav>
         </div>
@@ -348,36 +352,77 @@ document.write(`
 <h1><span class="section-number">2. </span>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
 <p>As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.
 This login will give you access to all of the resources of that server, shared with a limited number of other users.</p>
-<section id="first-steps">
-<h2><span class="section-number">2.1. </span>First steps<a class="headerlink" href="#first-steps" title="Permalink to this heading">#</a></h2>
-<p>The first thing you will likely want to do is setup a connection to the server with <a class="reference external" href="https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh"><code class="docutils literal notranslate"><span class="pre">ssh</span></code></a>.</p>
-<p>Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.
-The only way to access the server is via Remote Desktop Protocol. There are a few common applications, depending on your operating system:</p>
+<section id="connecting-with-rdp">
+<h2><span class="section-number">2.1. </span>Connecting with RDP<a class="headerlink" href="#connecting-with-rdp" title="Permalink to this heading">#</a></h2>
+<p>Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.</p>
+<p>Access to MBO severs are is via Microsoft Remote Desktop Protocol (RDP).</p>
+<p>There are a few common applications, depending on your operating system:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://apps.microsoft.com/detail/9wzdncrfj3ps?hl=en-US&amp;amp;gl=US">Microsoft RDP (Windows)</a></p></li>
 <li><p><a class="reference external" href="https://remmina.org/">Remmina (Linux)</a></p></li>
-<li><p><a class="reference external" href="https://www.nomachine.com/">NoMachine (Linux, Mac, Windows)</a></p></li>
 <li><p><a class="reference external" href="https://www.helpwire.app/">HelpWire (Linux, Mac, Windows)</a></p></li>
 </ul>
+<section id="via-windows-app">
+<h3><span class="section-number">2.1.1. </span>via Windows App<a class="headerlink" href="#via-windows-app" title="Permalink to this heading">#</a></h3>
+<p>You will need the following information to access the servers:</p>
+<ul class="simple">
+<li><p>Server IP address</p></li>
+<li><p>Username</p></li>
+<li><p>Password</p></li>
+</ul>
+<p>This example will use the Microsoft Remote Desktop Application, available on the Microsoft Store.</p>
+<figure class="align-default">
+<img alt="../_images/microsoft_rdp.png" src="../_images/microsoft_rdp.png" />
+</figure>
+<p>To add an MBO User Account:</p>
+<ul class="simple">
+<li><p>Add (+) -&gt; PC</p></li>
+<li><p>Enter IP address (129.85.X.XX) in <code class="docutils literal notranslate"><span class="pre">PC</span> <span class="pre">name</span></code></p></li>
+<li><p>Enter Username in <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">account</span></code></p></li>
+<li><p>Enter Password in <code class="docutils literal notranslate"><span class="pre">Password</span></code></p></li>
+<li><p>Choose an optional display name</p></li>
+</ul>
+<p>You should now be able to connect to the MBO servers!</p>
+<figure class="align-default">
+<img alt="../_images/rdp_add_account.png" src="../_images/rdp_add_account.png" />
+</figure>
+</section>
 </section>
 <section id="filesystem">
 <h2><span class="section-number">2.2. </span>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
-<p>!Note: Both workstation and compute file-systems are <em>NOT</em> backed up. Users should have a backup of all data on their own system.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive is <strong>read-only</strong> and contains</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Both workstation and compute file-systems are <em>NOT</em> backed up.</p>
+<p>Users should have their own copies of all data on MBO servers.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">D:</span></code> drive is <strong>read-only</strong> and contains:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">D:/W1_SOFT/repos</span></code>  : Data processing software</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">D:/W1_SOFT/apps</span></code>  : Applications</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">D:/W!_DATA/username</span></code>  : Raw data that users will frequenly access will be saved here.</p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">E:</span></code> drive will only contain a folder <code class="docutils literal notranslate"><span class="pre">E:/username</span></code> for each user. This is where your intermediate results should go.</p>
-<p>!Note: Users should not browse the internet on the compute server, browsing should be done on your local machine only.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">E:</span></code> drive is the user sandbox, with a directory <code class="docutils literal notranslate"><span class="pre">E:/W1_USER_DATA/username</span></code> for each user.</p>
+<p>This is where your intermediate results should go.</p>
+<div class="admonition-internet-access admonition">
+<p class="admonition-title">Internet Access</p>
+<p>Users should not browse the internet on the compute server, browsing should be done on your local machine only.
+A browser is available for Jupyter notebooks, but internet access is discouraged.</p>
+</div>
 </section>
 <section id="software">
 <h2><span class="section-number">2.3. </span>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
-<section id="miniforge3">
-<h3><span class="section-number">2.3.1. </span>miniforge3<a class="headerlink" href="#miniforge3" title="Permalink to this heading">#</a></h3>
-<p>Each user account has its own <code class="docutils literal notranslate"><span class="pre">Miniforge3</span></code> installation at <code class="docutils literal notranslate"><span class="pre">C:/Users/miniforge3</span></code>.</p>
-<p>This is your environment to install and reinstall as you please. <em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>
+<section id="conda-miniforge3">
+<h3><span class="section-number">2.3.1. </span><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)<a class="headerlink" href="#conda-miniforge3" title="Permalink to this heading">#</a></h3>
+<p>Each user account has its own <code class="docutils literal notranslate"><span class="pre">Miniforge3</span></code> flavored <code class="docutils literal notranslate"><span class="pre">conda</span></code> installation at <code class="docutils literal notranslate"><span class="pre">C:/Users/miniforge3</span></code>.</p>
+<p>This is your environment to install and reinstall as you please.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>
+</div>
+<p>The recommended method for interacting with <code class="docutils literal notranslate"><span class="pre">conda</span></code> is the <code class="docutils literal notranslate"><span class="pre">miniforge_prompt</span></code>.</p>
+<figure class="align-default">
+<img alt="../_images/miniforge_prompt.png" src="../_images/miniforge_prompt.png" />
+</figure>
 </section>
 <section id="matlab">
 <h3><span class="section-number">2.3.2. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
@@ -389,8 +434,64 @@ The only way to access the server is via Remote Desktop Protocol. There are a fe
 <li><p>Fiji / imageJ</p></li>
 <li><p>Visual Studio Code</p></li>
 <li><p>Visual Studio</p></li>
+<li><p>git bash</p></li>
+<li><p>wezterm</p></li>
 </ul>
 </section>
+</section>
+<section id="ssh-connections">
+<h2><span class="section-number">2.4. </span>SSH Connections<a class="headerlink" href="#ssh-connections" title="Permalink to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="primary-metadata">
+<summary class="sd-summary-title sd-card-header">
+TLDR<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Generate a new ssh key:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Send the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> output to an MBO administrator.</p>
+</div>
+</details><p><a class="reference external" href="https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh"><code class="docutils literal notranslate"><span class="pre">ssh</span></code></a> is a communication protocol that will allow you to access MBO servers from the command line.<br />
+You may want ssh access to install personal software, transfer files, or navigate the Windows filesystem.</p>
+<p>To establish a connection, the computer you are connecting from (the ‘client’) must have a private ssh key.</p>
+<p><a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows">This guide</a> provides an example of generating this key to authenticate github.com, but the process is the same.</p>
+<p>This process will generate 2 files:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Private key</div>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ed25519</span></code></p></li>
+<li><p class="sd-card-text">Never share this</p></li>
+<li><p class="sd-card-text">Stored in your <code class="docutils literal notranslate"><span class="pre">.ssh/</span></code> folder</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Public key</div>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ed25519.pub</span></code></p></li>
+<li><p class="sd-card-text">This is what you send to MBO</p></li>
+<li><p class="sd-card-text">Can be safely shared</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Depending on the algorithm you choose, the filename may be different.<br />
+What matters is that the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file (e.g. <code class="docutils literal notranslate"><span class="pre">ed25519.pub</span></code>) is installed on the MBO servers.</p>
+<p>All you need to do is send that file to an MBO admin.</p>
 </section>
 </section>
 
@@ -429,14 +530,18 @@ The only way to access the server is via Remote Desktop Protocol. There are a fe
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps">2.1. First steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">2.1. Connecting with RDP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">2.1.1. via Windows App</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.2. Filesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.3. Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge3">2.3.1. miniforge3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3">2.3.1. <code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.3.2. MATLAB</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.3.3. Other Software</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">2.4. SSH Connections</a></li>
 </ul>
   </nav></div>
 
