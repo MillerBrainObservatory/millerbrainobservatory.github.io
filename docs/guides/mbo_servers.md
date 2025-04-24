@@ -3,38 +3,82 @@
 As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.
 This login will give you access to all of the resources of that server, shared with a limited number of other users.
 
-## First steps
-
-The first thing you will likely want to do is setup a connection to the server with [`ssh`](https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh). 
+## Connecting with RDP
 
 Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.
-The only way to access the server is via Remote Desktop Protocol. There are a few common applications, depending on your operating system:
+
+Access to MBO severs are is via Microsoft Remote Desktop Protocol (RDP).
+
+There are a few common applications, depending on your operating system:
 
 - [Microsoft RDP (Windows)](https://apps.microsoft.com/detail/9wzdncrfj3ps?hl=en-US&gl=US)
 - [Remmina (Linux)](https://remmina.org/)
-- [NoMachine (Linux, Mac, Windows)](https://www.nomachine.com/)
 - [HelpWire (Linux, Mac, Windows)](https://www.helpwire.app/)
+
+### via Windows App
+
+You will need the following information to access the servers:
+
+- Server IP address
+- Username
+- Password
+
+This example will use the Microsoft Remote Desktop Application, available on the Microsoft Store.
+
+```{figure} ../_images/microsoft_rdp.png
+```
+
+To add an MBO User Account:
+
+- Add (+) -> PC
+- Enter IP address (129.85.X.XX) in `PC name`
+- Enter Username in `User account`
+- Enter Password in `Password`
+- Choose an optional display name
+
+You should now be able to connect to the MBO servers!
+
+```{figure} ../_images/rdp_add_account.png
+```
 
 ## Filesystem
 
-!Note: Both workstation and compute file-systems are *NOT* backed up. Users should have a backup of all data on their own system.
+``` {warning}
+Both workstation and compute file-systems are *NOT* backed up.
 
-The `D:` drive is **read-only** and contains 
+Users should have their own copies of all data on MBO servers.
+```
+
+The `D:` drive is **read-only** and contains:
 - `D:/W1_SOFT/repos`  : Data processing software
 - `D:/W1_SOFT/apps`  : Applications
 - `D:/W!_DATA/username`  : Raw data that users will frequenly access will be saved here.
 
-The `E:` drive will only contain a folder `E:/username` for each user. This is where your intermediate results should go.
+The `E:` drive is the user sandbox, with a directory `E:/W1_USER_DATA/username` for each user.
 
-!Note: Users should not browse the internet on the compute server, browsing should be done on your local machine only.
+This is where your intermediate results should go.
+
+``` {admonition} Internet Access
+Users should not browse the internet on the compute server, browsing should be done on your local machine only.
+A browser is available for Jupyter notebooks, but internet access is discouraged.
+```
 
 ## Software
 
-### miniforge3
+### `conda` (miniforge3)
 
-Each user account has its own `Miniforge3` installation at `C:/Users/miniforge3`.
+Each user account has its own `Miniforge3` flavored `conda` installation at `C:/Users/miniforge3`.
 
-This is your environment to install and reinstall as you please. *DO NOT* install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.
+This is your environment to install and reinstall as you please.
+
+``` {warning}
+*DO NOT* install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.
+```
+
+The recommended method for interacting with `conda` is the `miniforge_prompt`.
+
+```{figure} ../_images/miniforge_prompt.png
+```
 
 ### MATLAB
 
@@ -45,4 +89,53 @@ Each user account has an installation of MATLAB.
 - Fiji / imageJ
 - Visual Studio Code
 - Visual Studio
+- git bash
+- wezterm
+
+## SSH Connections
+
+:::{dropdown} TLDR
+:chevron: down-up
+:animate: fade-in-slide-down
+:name: primary_metadata
+
+Generate a new ssh key:
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Send the `.pub` output to an MBO administrator.
+
+:::
+
+[`ssh`](https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh) is a communication protocol that will allow you to access MBO servers from the command line.  
+You may want ssh access to install personal software, transfer files, or navigate the Windows filesystem.
+
+To establish a connection, the computer you are connecting from (the 'client') must have a private ssh key.
+
+[This guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows) provides an example of generating this key to authenticate github.com, but the process is the same.
+
+This process will generate 2 files: 
+
+::::{grid} 2
+
+:::{grid-item-card} Private key
+- `ed25519`
+- Never share this
+- Stored in your `.ssh/` folder
+:::
+
+:::{grid-item-card} Public key
+- `ed25519.pub`
+- This is what you send to MBO
+- Can be safely shared
+:::
+
+::::
+
+Depending on the algorithm you choose, the filename may be different.  
+What matters is that the `.pub` file (e.g. `ed25519.pub`) is installed on the MBO servers.  
+
+All you need to do is send that file to an MBO admin.
 
