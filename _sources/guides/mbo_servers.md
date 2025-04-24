@@ -1,6 +1,7 @@
 # Server Guide
 
-As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.
+As a user of MBO servers you will be given a login and a password to a Windows Server 2022 desktop.
+
 This login will give you access to all of the resources of that server, shared with a limited number of other users.
 
 ## Connecting with RDP
@@ -36,6 +37,9 @@ To add an MBO User Account:
 - Enter Password in `Password`
 - Choose an optional display name
 
+```{important}
+If initial login fails, you may need to prepend `ROCKEFELLERNT\<username>`.
+```
 You should now be able to connect to the MBO servers!
 
 ```{figure} ../_images/rdp_add_account.png

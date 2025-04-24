@@ -50,7 +50,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.a857236d-2586-4223-8bc7-582e8db0f5df.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.8f15924c-0c29-433e-af24-85906e9aadd2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -350,8 +350,8 @@ document.write(`
                   
   <section id="server-guide">
 <h1><span class="section-number">2. </span>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
-<p>As a user of MBO servers you will be given a login and a password to on a Windows Server 2022 desktop to be used with windows remote desktop.
-This login will give you access to all of the resources of that server, shared with a limited number of other users.</p>
+<p>As a user of MBO servers you will be given a login and a password to a Windows Server 2022 desktop.</p>
+<p>This login will give you access to all of the resources of that server, shared with a limited number of other users.</p>
 <section id="connecting-with-rdp">
 <h2><span class="section-number">2.1. </span>Connecting with RDP<a class="headerlink" href="#connecting-with-rdp" title="Permalink to this heading">#</a></h2>
 <p>Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.</p>
@@ -382,6 +382,10 @@ This login will give you access to all of the resources of that server, shared w
 <li><p>Enter Password in <code class="docutils literal notranslate"><span class="pre">Password</span></code></p></li>
 <li><p>Choose an optional display name</p></li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If initial login fails, you may need to prepend <code class="docutils literal notranslate"><span class="pre">ROCKEFELLERNT\&lt;username&gt;</span></code>.</p>
+</div>
 <p>You should now be able to connect to the MBO servers!</p>
 <figure class="align-default">
 <img alt="../_images/rdp_add_account.png" src="../_images/rdp_add_account.png" />
