@@ -69,6 +69,24 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 
 ## Software
 
+### Python
+
+Python is distributed for each user using [uv](https://docs.astral.sh/uv/getting-started/features/) and [miniforge3](https://github.com/conda-forge/miniforge).
+
+A default `Python 3.10` is added to the system PATH and available by default. 
+
+You can install additional versions on a per-environment basis:
+
+```{code} bash
+# uv is available to all users
+uv python install 3.11
+uv python install 3.12
+
+# or in a conda environment
+conda install -c conda-forge python=3.11
+
+```
+
 ### `conda` (miniforge3)
 
 Each user account has its own `Miniforge3` flavored `conda` installation at `C:/Users/miniforge3`.
@@ -84,10 +102,6 @@ The recommended method for interacting with `conda` is the `miniforge_prompt`.
 ```{figure} ../_images/miniforge_prompt.png
 ```
 
-### MATLAB
-
-Each user account has an installation of MATLAB.
-
 ### Other Software
 
 - Fiji / imageJ
@@ -95,6 +109,9 @@ Each user account has an installation of MATLAB.
 - Visual Studio
 - git bash
 - wezterm
+- OBS Studio
+
+Contact a server administrator to inquire about adding additional software.
 
 ## SSH Connections
 
