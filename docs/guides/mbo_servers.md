@@ -160,3 +160,19 @@ What matters is that the `.pub` file (e.g. `ed25519.pub`) is installed on the MB
 
 All you need to do is send that file to an MBO admin.
 
+## Server Hardware 
+
+:::{table} RBO-W1 Hardware Summary
+:label: hardware-summary
+:align: center
+
+| Component      | Specification                                                                      |
+| -------------- | ---------------------------------------------------------------------------------- |
+| Memory         | 1536 GB total (1509.75 GB available)                                               |
+| Processors     | 2× Intel64 Family 6 Model 143 Stepping 8 (32 cores / 64 threads each)               |
+| GPUs           | 2× NVIDIA RTX A5000 NVLINK                                          |
+| Disks          | 6× NVMe SSDs (2× Micron 7450 @ 3.58 TB, 4× Samsung MZ7L37T6HBLA @ 7.15 TB)         |
+| Disk Interface | NVMe PCIe                                                                              |
+
+:::
+
