@@ -40,9 +40,21 @@ To add an MBO User Account:
 ```{important}
 If initial login fails, you may need to prepend `ROCKEFELLERNT\<username>`.
 ```
+
 You should now be able to connect to the MBO servers!
 
 ```{figure} ../_images/rdp_add_account.png
+```
+
+## Logging out
+
+```{warning}
+If you don't properly sign-out, you will use more login-sessions than you are afforded and your account will need to be logged out forcefully.
+```
+
+To make sure you don't use more login-sessions than you are afforded, save your work and sign-out immediately after your session:
+
+```{figure} ../_images/rdg_sign_out.png
 ```
 
 ## Filesystem
@@ -112,6 +124,33 @@ The recommended method for interacting with `conda` is the `miniforge_prompt`.
 - OBS Studio
 
 Contact a server administrator to inquire about adding additional software.
+
+## Connecting to Network Servers
+
+Other computers on the rockefeller network are hidden from view in the file-explorer, but still accessable:
+
+```{figure} ../_images/rdp_access_other_server.png
+```
+
+You will be prompted for username/password credentials the first time you connect.
+
+If you access this location often, you can map it to a drive letter:
+
+```{figure} ../_images/rdp_map_drive.png
+```
+
+From `This PC`:
+1. Map Network Drive (top file ribbon)
+2. Click "Next"
+3. Choose a custom network location
+4. Enter share location `\\server\folder_name`
+5. Give drive a name 
+6. Click "Finish"
+
+You now have access to this network location to transfer data to/from MBO servers.
+
+```{figure} ../_images/rdp_map_drive_res.png
+```
 
 ## SSH Connections
 
