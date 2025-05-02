@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Server Guide &#8212; MBO Compute Hub 1.0.0 documentation</title>
+    <title>Server Guide &#8212; MBO Compute Hub 1.0.0 documentation</title>
   
   
   
@@ -50,12 +50,12 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.8f15924c-0c29-433e-af24-85906e9aadd2.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.e9f3f78b-cdba-4101-a5db-3aed356e3d81.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="1. Light Beads Microscopy Data" href="lbm_data.html" />
+    <link rel="prev" title="Light Beads Microscopy Data" href="lbm_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,8 +175,8 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lbm_data.html">1. Light Beads Microscopy Data</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Server Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lbm_data.html">Light Beads Microscopy Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Server Guide</a></li>
 </ul>
 
     </div>
@@ -325,18 +325,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">2.1. Connecting with RDP</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">2.1.1. via Windows App</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">Connecting with RDP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">via Windows App</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.2. Filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.3. Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3">2.3.1. <code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.3.2. MATLAB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.3.3. Other Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3"><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">2.4. SSH Connections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-network-servers">Connecting to Network Servers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">SSH Connections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-hardware">Server Hardware</a></li>
 </ul>
             </nav>
         </div>
@@ -349,11 +352,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="server-guide">
-<h1><span class="section-number">2. </span>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
+<h1>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
 <p>As a user of MBO servers you will be given a login and a password to a Windows Server 2022 desktop.</p>
 <p>This login will give you access to all of the resources of that server, shared with a limited number of other users.</p>
 <section id="connecting-with-rdp">
-<h2><span class="section-number">2.1. </span>Connecting with RDP<a class="headerlink" href="#connecting-with-rdp" title="Permalink to this heading">#</a></h2>
+<h2>Connecting with RDP<a class="headerlink" href="#connecting-with-rdp" title="Permalink to this heading">#</a></h2>
 <p>Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.</p>
 <p>Access to MBO severs are is via Microsoft Remote Desktop Protocol (RDP).</p>
 <p>There are a few common applications, depending on your operating system:</p>
@@ -363,7 +366,7 @@ document.write(`
 <li><p><a class="reference external" href="https://www.helpwire.app/">HelpWire (Linux, Mac, Windows)</a></p></li>
 </ul>
 <section id="via-windows-app">
-<h3><span class="section-number">2.1.1. </span>via Windows App<a class="headerlink" href="#via-windows-app" title="Permalink to this heading">#</a></h3>
+<h3>via Windows App<a class="headerlink" href="#via-windows-app" title="Permalink to this heading">#</a></h3>
 <p>You will need the following information to access the servers:</p>
 <ul class="simple">
 <li><p>Server IP address</p></li>
@@ -392,8 +395,19 @@ document.write(`
 </figure>
 </section>
 </section>
+<section id="logging-out">
+<h2>Logging out<a class="headerlink" href="#logging-out" title="Permalink to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you don’t properly sign-out, you will use more login-sessions than you are afforded and your account will need to be logged out forcefully.</p>
+</div>
+<p>To make sure you don’t use more login-sessions than you are afforded, save your work and sign-out immediately after your session:</p>
+<figure class="align-default">
+<img alt="_images/rdg_sign_out.png" src="_images/rdg_sign_out.png" />
+</figure>
+</section>
 <section id="filesystem">
-<h2><span class="section-number">2.2. </span>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
+<h2>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Both workstation and compute file-systems are <em>NOT</em> backed up.</p>
@@ -414,9 +428,23 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 </div>
 </section>
 <section id="software">
-<h2><span class="section-number">2.3. </span>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
+<section id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h3>
+<p>Python is distributed for each user using <a class="reference external" href="https://docs.astral.sh/uv/getting-started/features/">uv</a> and <a class="reference external" href="https://github.com/conda-forge/miniforge">miniforge3</a>.</p>
+<p>A default <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.10</span></code> is added to the system PATH and available by default.</p>
+<p>You can install additional versions on a per-environment basis:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># uv is available to all users</span>
+uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.11
+uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.12
+
+<span class="c1"># or in a conda environment</span>
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+</pre></div>
+</div>
+</section>
 <section id="conda-miniforge3">
-<h3><span class="section-number">2.3.1. </span><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)<a class="headerlink" href="#conda-miniforge3" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)<a class="headerlink" href="#conda-miniforge3" title="Permalink to this heading">#</a></h3>
 <p>Each user account has its own <code class="docutils literal notranslate"><span class="pre">Miniforge3</span></code> flavored <code class="docutils literal notranslate"><span class="pre">conda</span></code> installation at <code class="docutils literal notranslate"><span class="pre">C:/Users/miniforge3</span></code>.</p>
 <p>This is your environment to install and reinstall as you please.</p>
 <div class="admonition warning">
@@ -428,23 +456,46 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 <img alt="../_images/miniforge_prompt.png" src="../_images/miniforge_prompt.png" />
 </figure>
 </section>
-<section id="matlab">
-<h3><span class="section-number">2.3.2. </span>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
-<p>Each user account has an installation of MATLAB.</p>
-</section>
 <section id="other-software">
-<h3><span class="section-number">2.3.3. </span>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
+<h3>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fiji / imageJ</p></li>
 <li><p>Visual Studio Code</p></li>
 <li><p>Visual Studio</p></li>
 <li><p>git bash</p></li>
 <li><p>wezterm</p></li>
+<li><p>OBS Studio</p></li>
 </ul>
+<p>Contact a server administrator to inquire about adding additional software.</p>
 </section>
+</section>
+<section id="connecting-to-network-servers">
+<h2>Connecting to Network Servers<a class="headerlink" href="#connecting-to-network-servers" title="Permalink to this heading">#</a></h2>
+<p>Other computers on the rockefeller network are hidden from view in the file-explorer, but still accessable:</p>
+<figure class="align-default">
+<img alt="../_images/rdp_access_other_server.png" src="../_images/rdp_access_other_server.png" />
+</figure>
+<p>You will be prompted for username/password credentials the first time you connect.</p>
+<p>If you access this location often, you can map it to a drive letter:</p>
+<figure class="align-default">
+<img alt="../_images/rdp_map_drive.png" src="../_images/rdp_map_drive.png" />
+</figure>
+<p>From <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">PC</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Map Network Drive (top file ribbon)</p></li>
+<li><p>Click “Next”</p></li>
+<li><p>Choose a custom network location</p></li>
+<li><p>Enter share location <code class="docutils literal notranslate"><span class="pre">\\server\folder_name</span></code></p></li>
+<li><p>Give drive a name</p></li>
+<li><p>Click “Finish”</p></li>
+</ol>
+<p>You now have access to this network location to transfer data to/from MBO servers.</p>
+<figure class="align-default">
+<img alt="../_images/rdp_map_drive_res.png" src="../_images/rdp_map_drive_res.png" />
+</figure>
 </section>
 <section id="ssh-connections">
-<h2><span class="section-number">2.4. </span>SSH Connections<a class="headerlink" href="#ssh-connections" title="Permalink to this heading">#</a></h2>
+<h2>SSH Connections<a class="headerlink" href="#ssh-connections" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="primary-metadata">
 <summary class="sd-summary-title sd-card-header">
 TLDR<div class="sd-summary-down docutils">
@@ -497,6 +548,34 @@ Public key</div>
 What matters is that the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file (e.g. <code class="docutils literal notranslate"><span class="pre">ed25519.pub</span></code>) is installed on the MBO servers.</p>
 <p>All you need to do is send that file to an MBO admin.</p>
 </section>
+<section id="server-hardware">
+<h2>Server Hardware<a class="headerlink" href="#server-hardware" title="Permalink to this heading">#</a></h2>
+<table class="table table-center" id="id1">
+<caption><span class="caption-text">RBO-W1 Hardware Summary</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Specification</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Memory</p></td>
+<td><p>1536 GB total (1509.75 GB available)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Processors</p></td>
+<td><p>2× Intel64 Family 6 Model 143 Stepping 8 (32 cores / 64 threads each)</p></td>
+</tr>
+<tr class="row-even"><td><p>GPUs</p></td>
+<td><p>2× NVIDIA RTX A5000 NVLINK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Disks</p></td>
+<td><p>6× NVMe SSDs (2× Micron 7450 &#64; 3.58 TB, 4× Samsung MZ7L37T6HBLA &#64; 7.15 TB)</p></td>
+</tr>
+<tr class="row-even"><td><p>Disk Interface</p></td>
+<td><p>NVMe PCIe</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
 
@@ -516,7 +595,7 @@ What matters is that the <code class="docutils literal notranslate"><span class=
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Light Beads Microscopy Data</p>
+        <p class="prev-next-title">Light Beads Microscopy Data</p>
       </div>
     </a>
 </div>
@@ -534,18 +613,21 @@ What matters is that the <code class="docutils literal notranslate"><span class=
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">2.1. Connecting with RDP</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">2.1.1. via Windows App</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">Connecting with RDP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">via Windows App</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">2.2. Filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">2.3. Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3">2.3.1. <code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">2.3.2. MATLAB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">2.3.3. Other Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3"><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">2.4. SSH Connections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-network-servers">Connecting to Network Servers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">SSH Connections</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-hardware">Server Hardware</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Guides &#8212; MBO Compute Hub 1.0.0 documentation</title>
+    <title>Suite2p: beyond 10,000 neurons with standard two-photon microscopy &#8212; MBO Compute Hub 1.0.0 documentation</title>
   
   
   
@@ -50,8 +50,8 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/index.8381b869-ecb3-460d-9d7a-71de11f3d107.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/index';</script>
+    <script defer="defer" src="../_static/tippy/guides/publication.a6e8df6b-9645-4b87-b2fb-9f4e776496fc.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/publication';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -174,8 +174,8 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lbm_data.html">1. Light Beads Microscopy Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mbo_servers.html">2. Server Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lbm_data.html">Light Beads Microscopy Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mbo_servers.html">Server Guide</a></li>
 </ul>
 
     </div>
@@ -230,7 +230,7 @@
       
       
       
-      <li><a href="../_sources/guides/index.md" target="_blank"
+      <li><a href="../_sources/guides/publication.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +301,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -312,11 +314,29 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Guides</h1>
+    <h1>Suite2p: beyond 10,000 neurons with standard two-photon microscopy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#claims">Claims:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registration">Registration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-detection">ROI Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvolution">Deconvolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuropil">Neuropil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suite2p-classifier">Suite2p classifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction-and-deconvolution">Extraction and Deconvolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-vs-cnmf">Benchmark vs CNMF</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -326,26 +346,128 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="guides">
-<span id="guides-home"></span><h1>Guides<a class="headerlink" href="#guides" title="Permalink to this heading">#</a></h1>
-<p>Guides for users analyzing microscopy data.</p>
-<div class="toctree-wrapper compound">
+  <section id="suite2p-beyond-10-000-neurons-with-standard-two-photon-microscopy">
+<h1>Suite2p: beyond 10,000 neurons with standard two-photon microscopy<a class="headerlink" href="#suite2p-beyond-10-000-neurons-with-standard-two-photon-microscopy" title="Permalink to this heading">#</a></h1>
+<p>Some main takeaways from the publication.</p>
+<section id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>image registration</p></li>
+<li><p>region-of-interest (ROI) detection;</p></li>
+<li><p>ROI labelling and quality control;</p></li>
+<li><p>activity extraction with neuropil correction and spike deconvolution.</p></li>
+</ol>
+</section>
+<section id="claims">
+<h2>Claims:<a class="headerlink" href="#claims" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Suite2p does not assume that cell activity is indepenedent of neuropil</p></li>
+<li><p>Finds 2x as many neurons as CNMF</p></li>
+<li><p>Preferrale to algorithms based on greedy segmentation of neighboring pixels</p></li>
+</ul>
+</section>
+<section id="registration">
+<h2>Registration<a class="headerlink" href="#registration" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Many techniques find the maximum correlative peak between reference and target.</p></li>
+<li><p>Disadvantage that it relies on low-frequencys: neuropil, small graduents of pixel fluctuation</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lbm_data.html">1. LBM Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lbm_data.html#array-terminology">1.1. Array Terminology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lbm_data.html#frame-ordering">1.2. Frame Ordering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lbm_data.html#lbm-metadata">1.3. LBM Metadata</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="mbo_servers.html">2. MBO Servers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mbo_servers.html#connecting-with-rdp">2.1. Connecting with RDP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mbo_servers.html#filesystem">2.2. Filesystem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mbo_servers.html#software">2.3. Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mbo_servers.html#ssh-connections">2.4. SSH Connections</a></li>
+<li><p>High frequency is essential for registration, i.e. edges, activity</p></li>
 </ul>
 </li>
 </ul>
-</div>
+</section>
+<section id="roi-detection">
+<h2>ROI Detection<a class="headerlink" href="#roi-detection" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="deconvolution">
+<h2>Deconvolution<a class="headerlink" href="#deconvolution" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Core is a model that assumes <em>the signal of an individual pixel is the sum of signals originating in distinct active compartments</em> (soma, dendrite, spine) and more diffuse contamination from neuropil</p></li>
+<li><p>CNMF extraction significantly comprimised by subsampling (why?)</p></li>
+</ul>
+<section id="neuropil">
+<h3>Neuropil<a class="headerlink" href="#neuropil" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>produces contamination from average activity of out-of-focus dentrides/axons</p></li>
+<li><p>2p scopes have PSF one magnitude wider in Z vs X/Y</p></li>
+<li><p>So, single plane is really a weighted average of a volume extenting 10’s of micron</p></li>
+</ul>
+<p>(a) Example cell (blue) and neuropil areas (red-shaded annuli) superimposed on the variance image (white), for an
+imaging session in superficial V1. The neuropil signal is defined as the signal inside the red-shaded annuli but not in
+any detected ROIs.</p>
+<ul class="simple">
+<li><p>The neuropil signal is highly correlated (related) to the signal recorded from neurons (somata).</p></li>
+<li><p>The neuropil signal varies slowly across space (it changes gradually over distance).</p></li>
+<li><p>Sometimes, when the neuropil signal gets very large, it reflects periods of high network activity (when neurons are firing a lot).</p></li>
+</ul>
+<p>This is modeled through <strong>spatial basis functions</strong></p>
+<p>Spatial Basis Functions:</p>
+<ul class="simple">
+<li><p>Imagine dividing the whole image into small overlapping “tiles” (like tiles on a floor).</p></li>
+<li><p>Each tile represents a smooth, predictable pattern of how the neuropil signal changes across space.</p></li>
+<li><p>These tiles are modeled using “raised cosines” (smooth, circular patterns) that are sized based on the average size of a neuron.</p></li>
+</ul>
+<p>ROI Signals:</p>
+<ul class="simple">
+<li><p>Each neuron has its own unique activity pattern over time.</p></li>
+<li><p>Each pixel in an ROI contributes to the same timecourse (signal over time) for that neuron, scaled by how strongly that pixel is part of the neuron.</p></li>
+</ul>
+<p>Fitting the model:</p>
+<p>The recorded signal at each pixel is the sum of three things:</p>
+<ul class="simple">
+<li><p>The neuron activity (signals from the ROIs).</p></li>
+<li><p>The neuropil signal (from the overlapping tiles).</p></li>
+<li><p>Measurement noise (random errors in the recording).</p></li>
+</ul>
+<p>Super res mean image:</p>
+<ul class="simple">
+<li><p>brain constantly in motion, generating continuous x/y offsets</p></li>
+<li><p>same as registration</p></li>
+<li><p>instead of shifting frame, bin frames by their x/y offset &#64;subpixel resolution</p></li>
+<li><p>get mean-image for each XY bin, combine into super image</p></li>
+</ul>
+</section>
+<section id="suite2p-classifier">
+<h3>Suite2p classifier<a class="headerlink" href="#suite2p-classifier" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>labels cells as cell/noncell based on statistics</p></li>
+<li><p>activity dependent: skewness, variance, corr with surrounding px</p></li>
+<li><p>anatomy dependent: area, aspect ratio</p></li>
+<li><p>quality metric: posterior probability tht each ROI == soma</p></li>
+</ul>
+</section>
+</section>
+<section id="extraction-and-deconvolution">
+<h2>Extraction and Deconvolution<a class="headerlink" href="#extraction-and-deconvolution" title="Permalink to this heading">#</a></h2>
+<p>Get final flourescent signal.</p>
+<p>Skipping lots of math.</p>
+<ul class="simple">
+<li><p>Remove neuropil contamination</p></li>
+<li><p>(sometimes useful) estimate spike train underlying the calcium trace</p></li>
+<li><p>Recommendation: unconstrained non-negative deconvolution using exponential kernels</p></li>
+</ul>
+</section>
+<section id="benchmark-vs-cnmf">
+<h2>Benchmark vs CNMF<a class="headerlink" href="#benchmark-vs-cnmf" title="Permalink to this heading">#</a></h2>
+<p><strong>Dataset: <code class="docutils literal notranslate"><span class="pre">[5000x512x512]</span></code></strong> with 64GB RAM</p>
+<ul class="simple">
+<li><p>Single CNMF optimization: 8 minutes</p></li>
+<li><p>Single Suite2p optimization: 7 seconds</p></li>
+<li><p>Large difference due to difference extraction algorithm / sparse matrix</p>
+<ul>
+<li><p>SVD Low rank approximation</p></li>
+<li><p>CNMF can’t use this approx, invalidates the positivity constraints CNMF imposes on calcium dynamics</p></li>
+</ul>
+</li>
+</ul>
+<p>CNMF uses a <em>single global neuropil signal</em> model</p>
+<ul class="simple">
+<li><p>Suite2p with this “single neuropil” model == lots of false ROI’s</p></li>
+<li><p>Estimate that CaImAn does the same</p></li>
+</ul>
+<p>Essentially, a global neuropil means that all pixels recieve the same contribution of contamination.</p>
+</section>
 </section>
 
 
@@ -365,6 +487,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#claims">Claims:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registration">Registration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-detection">ROI Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvolution">Deconvolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuropil">Neuropil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suite2p-classifier">Suite2p classifier</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction-and-deconvolution">Extraction and Deconvolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-vs-cnmf">Benchmark vs CNMF</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
