@@ -42,6 +42,16 @@ This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um
 :::
 ::::
 
+::::{grid} 1
+:gutter: 2
+
+:::{grid-item-card} LBM-EXTRACT-MATLAB
+{bdg-link-primary-line}`To the User Guide <https://github.com/MillerBrainObservatory/EXTRACT-public/blob/master/mbo_notebooks/README.md>`
++++
+[![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/EXTRACT-public "LBM-EXTRACT Repository")
+:::
+::::
+
 -----
 
 ## Documentation Contents
