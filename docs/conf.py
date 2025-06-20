@@ -22,7 +22,6 @@ extensions = [
     "numpydoc",
     "sphinx.ext.mathjax",
     "sphinx_design",
-    "sphinx_inline_tabs",
     "myst_parser",
     "sphinx_tippy",
 ]

@@ -202,7 +202,7 @@ All you need to do is send that file to an MBO admin.
 ## Server Hardware 
 
 :::{table} RBO-W1 Hardware Summary
-:label: hardware-summary
+:name: hardware-summary
 :align: center
 
 | Component      | Specification                                                                      |
