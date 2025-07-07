@@ -33,10 +33,12 @@ To add an MBO User Account:
 - Enter Password in `Password`
 - Choose an optional display name
 
-You should now be able to connect to the MBO servers!
+```{figure} ../_images/rdp_certif.png
 
-```{figure} ../_images/rdp_add_account.png
+Accept the certificate notification popup to continue connecting to your MBO server.
 ```
+
+You should now be able to connect to the MBO servers!
 
 ## Logging out
 
@@ -51,6 +53,10 @@ To make sure you don't use more login-sessions than you are afforded, save your 
 
 ## Filesystem
 
+Each server has an `ID` that prepends the computer name. For example, a compute workstation will have W followed by a number.
+An aquisition system will have C followed by a number.
+Each directory for this system will have this ID prepended to the directory name.
+
 ``` {warning}
 Both workstation and compute file-systems are *NOT* backed up.
 
@@ -58,11 +64,11 @@ Users should have their own copies of all data on MBO servers.
 ```
 
 The `D:` drive is **read-only** and contains:
-- `D:/W1_SOFT/repos`  : Data processing software
-- `D:/W1_SOFT/apps`  : Applications
-- `D:/W!_DATA/username`  : Raw data that users will frequenly access will be saved here.
+- `D:/ID_SOFT/repos`  : Data processing software
+- `D:/ID_SOFT/apps`  : Applications
+- `D:/ID_DATA/username`  : Raw data that users will frequenly access will be saved here.
 
-The `E:` drive is the user sandbox, with a directory `E:/W1_USER_DATA/username` for each user.
+The `E:` drive is the user sandbox, with a directory `E:/ID_USER_DATA/username` for each user.
 
 This is where your intermediate results should go.
 
@@ -122,6 +128,13 @@ Contact a server administrator to inquire about adding additional software.
 Computers on the Rockefeller network (with network discoverability turned on) can be accessed as follows:
 
 ```{figure} ../_images/rdp_access_other_server.png
+```
+
+```{warning}
+
+MBO servers are not on the rockefeller domain, so you will not be able to map them to a drive on another system.
+
+You can, however, map a drive on the MBO server e.g. your labs directory that IS on the rockefeller network.
 ```
 
 You will be prompted for username/password credentials the first time you connect.
