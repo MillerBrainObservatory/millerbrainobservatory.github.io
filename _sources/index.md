@@ -64,7 +64,6 @@ maxdepth: 1
 guides/lbm_data.md
 guides/mbo_servers.md
 guides/hpc.md
-Suite2p Notes <publication>
 
 ```
 
