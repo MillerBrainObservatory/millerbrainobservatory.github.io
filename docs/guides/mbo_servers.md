@@ -6,9 +6,7 @@ This login will give you access to all of the resources of that server, shared w
 
 ## Connecting with RDP
 
-Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.
-
-Access to MBO severs are is via Microsoft Remote Desktop Protocol (RDP).
+MBO processing servers are accessible via Microsoft Remote Desktop Protocol (RDP).
 
 There are a few common applications, depending on your operating system:
 
@@ -36,10 +34,6 @@ To add an MBO User Account:
 - Enter Username in `User account`
 - Enter Password in `Password`
 - Choose an optional display name
-
-```{important}
-If initial login fails, you may need to prepend `ROCKEFELLERNT\<username>`.
-```
 
 You should now be able to connect to the MBO servers!
 
@@ -127,7 +121,7 @@ Contact a server administrator to inquire about adding additional software.
 
 ## Connecting to Network Servers
 
-Other computers on the rockefeller network are hidden from view in the file-explorer, but still accessable:
+Computers on the Rockefeller network (with network discoverability turned on) can be accessed as follows:
 
 ```{figure} ../_images/rdp_access_other_server.png
 ```
