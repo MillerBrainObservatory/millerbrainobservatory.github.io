@@ -10,7 +10,7 @@ MBO processing servers are accessible via Microsoft Remote Desktop Protocol (RDP
 
 There are a few common applications, depending on your operating system:
 
-- [Microsoft RDP (Windows)](https://apps.microsoft.com/detail/9wzdncrfj3ps?hl=en-US&gl=US)
+- [Remote Desktop Connection (Windows)](https://aka.ms/RDSetup)
 - [Remmina (Linux)](https://remmina.org/)
 - [HelpWire (Linux, Mac, Windows)](https://www.helpwire.app/)
 
@@ -22,15 +22,13 @@ You will need the following information to access the servers:
 - Username
 - Password
 
-This example will use the Microsoft Remote Desktop Application, available on the Microsoft Store.
-
-```{figure} ../_images/microsoft_rdp.png
+```{figure} ../_images/rdp_base.png
 ```
 
 To add an MBO User Account:
 
 - Add (+) -> PC
-- Enter IP address (129.85.X.XX) in `PC name`
+- Enter IP address (XXX.XX.X.XX) in `PC name`
 - Enter Username in `User account`
 - Enter Password in `Password`
 - Choose an optional display name
