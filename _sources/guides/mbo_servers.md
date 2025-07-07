@@ -6,13 +6,11 @@ This login will give you access to all of the resources of that server, shared w
 
 ## Connecting with RDP
 
-Unlike a personal desktop, MBO servers will not be accessible from any computer on the Rockefeller network.
-
-Access to MBO severs are is via Microsoft Remote Desktop Protocol (RDP).
+MBO processing servers are accessible via Microsoft Remote Desktop Protocol (RDP).
 
 There are a few common applications, depending on your operating system:
 
-- [Microsoft RDP (Windows)](https://apps.microsoft.com/detail/9wzdncrfj3ps?hl=en-US&gl=US)
+- [Remote Desktop Connection (Windows)](https://aka.ms/RDSetup)
 - [Remmina (Linux)](https://remmina.org/)
 - [HelpWire (Linux, Mac, Windows)](https://www.helpwire.app/)
 
@@ -24,27 +22,23 @@ You will need the following information to access the servers:
 - Username
 - Password
 
-This example will use the Microsoft Remote Desktop Application, available on the Microsoft Store.
-
-```{figure} ../_images/microsoft_rdp.png
+```{figure} ../_images/rdp_base.png
 ```
 
 To add an MBO User Account:
 
 - Add (+) -> PC
-- Enter IP address (129.85.X.XX) in `PC name`
+- Enter IP address (XXX.XX.X.XX) in `PC name`
 - Enter Username in `User account`
 - Enter Password in `Password`
 - Choose an optional display name
 
-```{important}
-If initial login fails, you may need to prepend `ROCKEFELLERNT\<username>`.
+```{figure} ../_images/rdp_certif.png
+
+Accept the certificate notification popup to continue connecting to your MBO server.
 ```
 
 You should now be able to connect to the MBO servers!
-
-```{figure} ../_images/rdp_add_account.png
-```
 
 ## Logging out
 
@@ -59,6 +53,10 @@ To make sure you don't use more login-sessions than you are afforded, save your 
 
 ## Filesystem
 
+Each server has an `ID` that prepends the computer name. For example, a compute workstation will have W followed by a number.
+An aquisition system will have C followed by a number.
+Each directory for this system will have this ID prepended to the directory name.
+
 ``` {warning}
 Both workstation and compute file-systems are *NOT* backed up.
 
@@ -66,11 +64,11 @@ Users should have their own copies of all data on MBO servers.
 ```
 
 The `D:` drive is **read-only** and contains:
-- `D:/W1_SOFT/repos`  : Data processing software
-- `D:/W1_SOFT/apps`  : Applications
-- `D:/W!_DATA/username`  : Raw data that users will frequenly access will be saved here.
+- `D:/ID_SOFT/repos`  : Data processing software
+- `D:/ID_SOFT/apps`  : Applications
+- `D:/ID_DATA/username`  : Raw data that users will frequenly access will be saved here.
 
-The `E:` drive is the user sandbox, with a directory `E:/W1_USER_DATA/username` for each user.
+The `E:` drive is the user sandbox, with a directory `E:/ID_USER_DATA/username` for each user.
 
 This is where your intermediate results should go.
 
@@ -127,9 +125,16 @@ Contact a server administrator to inquire about adding additional software.
 
 ## Connecting to Network Servers
 
-Other computers on the rockefeller network are hidden from view in the file-explorer, but still accessable:
+Computers on the Rockefeller network (with network discoverability turned on) can be accessed as follows:
 
 ```{figure} ../_images/rdp_access_other_server.png
+```
+
+```{warning}
+
+MBO servers are not on the rockefeller domain, so you will not be able to map them to a drive on another system.
+
+You can, however, map a drive on the MBO server e.g. your labs directory that IS on the rockefeller network.
 ```
 
 You will be prompted for username/password credentials the first time you connect.

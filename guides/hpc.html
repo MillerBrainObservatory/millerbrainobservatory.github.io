@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Suite2p: beyond 10,000 neurons with standard two-photon microscopy &#8212; MBO Compute Hub 1.0.0 documentation</title>
+    <title>Working on HPC &#8212; MBO Compute Hub 1.0.0 documentation</title>
   
   
   
@@ -48,8 +48,8 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/publication.713f289e-8b06-47c2-bc55-369466bfa93b.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/publication';</script>
+    <script defer="defer" src="../_static/tippy/guides/hpc.45608a8a-82fe-4b95-9298-a78e5afd2411.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/hpc';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -228,7 +228,7 @@
       
       
       
-      <li><a href="../_sources/guides/publication.md" target="_blank"
+      <li><a href="../_sources/guides/hpc.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +312,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Suite2p: beyond 10,000 neurons with standard two-photon microscopy</h1>
+    <h1>Working on HPC</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -322,17 +322,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#claims">Claims:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registration">Registration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-detection">ROI Detection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvolution">Deconvolution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuropil">Neuropil</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suite2p-classifier">Suite2p classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-cluster">Accessing the cluster</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfering-data">Transfering Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsync"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction-and-deconvolution">Extraction and Deconvolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-vs-cnmf">Benchmark vs CNMF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-shell-commands-for-directory-management-on-hpc">Basic Shell Commands for Directory Management on HPC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-configuration">SSH Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup-guidelines">Cleanup Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
 </ul>
             </nav>
         </div>
@@ -344,127 +344,106 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="suite2p-beyond-10-000-neurons-with-standard-two-photon-microscopy">
-<h1>Suite2p: beyond 10,000 neurons with standard two-photon microscopy<a class="headerlink" href="#suite2p-beyond-10-000-neurons-with-standard-two-photon-microscopy" title="Permalink to this heading">#</a></h1>
-<p>Some main takeaways from the publication.</p>
-<section id="steps">
-<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>image registration</p></li>
-<li><p>region-of-interest (ROI) detection;</p></li>
-<li><p>ROI labelling and quality control;</p></li>
-<li><p>activity extraction with neuropil correction and spike deconvolution.</p></li>
-</ol>
+  <section id="working-on-hpc">
+<h1>Working on HPC<a class="headerlink" href="#working-on-hpc" title="Permalink to this heading">#</a></h1>
+<p>This guide explains how to transfer data from a from an MBO workstation to the Rockefeller HPC.</p>
+<p>See the <a class="reference external" href="https://hpc.rockefeller.edu/">Rockefeller HPC documentation</a>, specifically the <a class="reference external" href="https://hpc.rockefeller.edu/guides/">user guides</a> for more information.</p>
+<section id="accessing-the-cluster">
+<h2>Accessing the cluster<a class="headerlink" href="#accessing-the-cluster" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If working on or transfering data from an mbo server, an admin can help you set this up.</p>
+</div>
+<p>Each user will be given scratch space on the cluster.</p>
+<p>Whenever you log-in to the cluster, you will be prompted for a password. Enter your RUNet password.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -l user login05-hpc.rockefeller.edu
+user@login05-hpc.rockefeller.edu&#39;s password:
+&lt;enter RUNet password here&gt;
+
+user at login05 in ~
+$
+
+</pre></div>
+</div>
+<p>You can set up a ssh keypair to authenticate without needing a password <a class="reference external" href="https://hpc.rockefeller.edu/guides/ssh_beginners/">with ssh</a>. See details <a class="reference internal" href="#ssh-config"><span class="std std-ref">below</span></a>.</p>
 </section>
-<section id="claims">
-<h2>Claims:<a class="headerlink" href="#claims" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Suite2p does not assume that cell activity is indepenedent of neuropil</p></li>
-<li><p>Finds 2x as many neurons as CNMF</p></li>
-<li><p>Preferrale to algorithms based on greedy segmentation of neighboring pixels</p></li>
-</ul>
+<section id="directory-structure">
+<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this heading">#</a></h2>
+<p>Users who wish to work on the HPC will be given a directory in the <a class="reference external" href="https://hpc.rockefeller.edu/guides/glossary/?h=scratch#scratch-space">mbo scratch space</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/lustre/fs4/mbo/scratch/&lt;USERNAME&gt;
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;USERNAME&gt;</span></code> with your HPC username.</p>
+<p>If the target subdirectory does not exist, log into HPC and create it first:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-l<span class="w"> </span>user<span class="w"> </span>login05-hpc.rockefeller.edu
+mkdir<span class="w"> </span>-p<span class="w"> </span>/lustre/fs4/mbo/scratch/&lt;USERNAME&gt;/light_sheet/IsoView-test-data
+</pre></div>
+</div>
 </section>
-<section id="registration">
-<h2>Registration<a class="headerlink" href="#registration" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Many techniques find the maximum correlative peak between reference and target.</p></li>
-<li><p>Disadvantage that it relies on low-frequencys: neuropil, small graduents of pixel fluctuation</p>
-<ul>
-<li><p>High frequency is essential for registration, i.e. edges, activity</p></li>
-</ul>
-</li>
-</ul>
+<section id="transfering-data">
+<h2>Transfering Data<a class="headerlink" href="#transfering-data" title="Permalink to this heading">#</a></h2>
+<p>Transfering data should be done on the data-transfer node.</p>
+<p>The commands are the same, just replace <code class="docutils literal notranslate"><span class="pre">login05</span></code> with <code class="docutils literal notranslate"><span class="pre">dtn02</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-l<span class="w"> </span>user<span class="w"> </span>dtn02-hpc.rockefeller.edu
+</pre></div>
+</div>
+<section id="rsync">
+<h3><code class="docutils literal notranslate"><span class="pre">rsync</span></code><a class="headerlink" href="#rsync" title="Permalink to this heading">#</a></h3>
+<p>This will <strong>copy</strong> the <code class="docutils literal notranslate"><span class="pre">E://ID_USER_DATA//data</span></code> directory and all of its contents.</p>
+<p>Open <strong>Git Bash</strong> or <strong>Windows Terminal</strong>, and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--info<span class="o">=</span>progress2<span class="w"> </span>//e//ID_USER_DATA//data<span class="w"> </span>hpc://lustre//fs4//mbo//scratch//&lt;USERNAME&gt;//
+</pre></div>
+</div>
 </section>
-<section id="roi-detection">
-<h2>ROI Detection<a class="headerlink" href="#roi-detection" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="deconvolution">
-<h2>Deconvolution<a class="headerlink" href="#deconvolution" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3><code class="docutils literal notranslate"><span class="pre">rsync</span></code><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Core is a model that assumes <em>the signal of an individual pixel is the sum of signals originating in distinct active compartments</em> (soma, dendrite, spine) and more diffuse contamination from neuropil</p></li>
-<li><p>CNMF extraction significantly comprimised by subsampling (why?)</p></li>
-</ul>
-<section id="neuropil">
-<h3>Neuropil<a class="headerlink" href="#neuropil" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>produces contamination from average activity of out-of-focus dentrides/axons</p></li>
-<li><p>2p scopes have PSF one magnitude wider in Z vs X/Y</p></li>
-<li><p>So, single plane is really a weighted average of a volume extenting 10’s of micron</p></li>
-</ul>
-<p>(a) Example cell (blue) and neuropil areas (red-shaded annuli) superimposed on the variance image (white), for an
-imaging session in superficial V1. The neuropil signal is defined as the signal inside the red-shaded annuli but not in
-any detected ROIs.</p>
-<ul class="simple">
-<li><p>The neuropil signal is highly correlated (related) to the signal recorded from neurons (somata).</p></li>
-<li><p>The neuropil signal varies slowly across space (it changes gradually over distance).</p></li>
-<li><p>Sometimes, when the neuropil signal gets very large, it reflects periods of high network activity (when neurons are firing a lot).</p></li>
-</ul>
-<p>This is modeled through <strong>spatial basis functions</strong></p>
-<p>Spatial Basis Functions:</p>
-<ul class="simple">
-<li><p>Imagine dividing the whole image into small overlapping “tiles” (like tiles on a floor).</p></li>
-<li><p>Each tile represents a smooth, predictable pattern of how the neuropil signal changes across space.</p></li>
-<li><p>These tiles are modeled using “raised cosines” (smooth, circular patterns) that are sized based on the average size of a neuron.</p></li>
-</ul>
-<p>ROI Signals:</p>
-<ul class="simple">
-<li><p>Each neuron has its own unique activity pattern over time.</p></li>
-<li><p>Each pixel in an ROI contributes to the same timecourse (signal over time) for that neuron, scaled by how strongly that pixel is part of the neuron.</p></li>
-</ul>
-<p>Fitting the model:</p>
-<p>The recorded signal at each pixel is the sum of three things:</p>
-<ul class="simple">
-<li><p>The neuron activity (signals from the ROIs).</p></li>
-<li><p>The neuropil signal (from the overlapping tiles).</p></li>
-<li><p>Measurement noise (random errors in the recording).</p></li>
-</ul>
-<p>Super res mean image:</p>
-<ul class="simple">
-<li><p>brain constantly in motion, generating continuous x/y offsets</p></li>
-<li><p>same as registration</p></li>
-<li><p>instead of shifting frame, bin frames by their x/y offset &#64;subpixel resolution</p></li>
-<li><p>get mean-image for each XY bin, combine into super image</p></li>
-</ul>
-</section>
-<section id="suite2p-classifier">
-<h3>Suite2p classifier<a class="headerlink" href="#suite2p-classifier" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>labels cells as cell/noncell based on statistics</p></li>
-<li><p>activity dependent: skewness, variance, corr with surrounding px</p></li>
-<li><p>anatomy dependent: area, aspect ratio</p></li>
-<li><p>quality metric: posterior probability tht each ROI == soma</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code> — Archive mode (preserves timestamps, permissions, symbolic links)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> — Verbose output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--info=progress2</span></code> — Displays progress information during transfer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//c//...</span></code> — Escaped Windows path (note the use of double slashes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hpc:</span></code> — SSH alias pointing to the HPC login node</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/lustre/fs4/mbo/scratch/...</span></code> — Full destination path on HPC</p></li>
 </ul>
 </section>
 </section>
-<section id="extraction-and-deconvolution">
-<h2>Extraction and Deconvolution<a class="headerlink" href="#extraction-and-deconvolution" title="Permalink to this heading">#</a></h2>
-<p>Get final flourescent signal.</p>
-<p>Skipping lots of math.</p>
+<section id="basic-shell-commands-for-directory-management-on-hpc">
+<h2>Basic Shell Commands for Directory Management on HPC<a class="headerlink" href="#basic-shell-commands-for-directory-management-on-hpc" title="Permalink to this heading">#</a></h2>
+<p>After connecting with <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">hpc</span></code>, use the following commands:</p>
 <ul class="simple">
-<li><p>Remove neuropil contamination</p></li>
-<li><p>(sometimes useful) estimate spike train underlying the calcium trace</p></li>
-<li><p>Recommendation: unconstrained non-negative deconvolution using exponential kernels</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/lustre/fs4/mbo/scratch/&lt;USERNAME&gt;</span></code> — Change to your scratch directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lh</span></code> — List directory contents with sizes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;name&gt;</span></code> — Create a new directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">&lt;src&gt;</span> <span class="pre">&lt;dest&gt;</span></code> — Move or rename files and directories</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">&lt;src&gt;</span> <span class="pre">&lt;dest&gt;</span></code> — Copy directories recursively</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">&lt;dir&gt;</span></code> — Remove a directory (use with caution)</p></li>
 </ul>
 </section>
-<section id="benchmark-vs-cnmf">
-<h2>Benchmark vs CNMF<a class="headerlink" href="#benchmark-vs-cnmf" title="Permalink to this heading">#</a></h2>
-<p><strong>Dataset: <code class="docutils literal notranslate"><span class="pre">[5000x512x512]</span></code></strong> with 64GB RAM</p>
+<section id="ssh-configuration">
+<span id="ssh-config"></span><h2>SSH Configuration<a class="headerlink" href="#ssh-configuration" title="Permalink to this heading">#</a></h2>
+<p>To simplify command usage, you may define a host alias in your <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> file on Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Host<span class="w"> </span>hpc
+<span class="w">  </span>HostName<span class="w"> </span>login05-hpc.rockefeller.edu
+<span class="w">  </span>User<span class="w"> </span>&lt;USERNAME&gt;
+
+Host<span class="w"> </span>hpc-transfer
+<span class="w">  </span>HostName<span class="w"> </span>dtn02-hpc.rockefeller.edu
+<span class="w">  </span>User<span class="w"> </span>&lt;USERNAME&gt;
+</pre></div>
+</div>
+<p>This allows you to use <code class="docutils literal notranslate"><span class="pre">hpc:</span></code> instead of typing the full hostname each time.</p>
+</section>
+<section id="cleanup-guidelines">
+<h2>Cleanup Guidelines<a class="headerlink" href="#cleanup-guidelines" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Single CNMF optimization: 8 minutes</p></li>
-<li><p>Single Suite2p optimization: 7 seconds</p></li>
-<li><p>Large difference due to difference extraction algorithm / sparse matrix</p>
-<ul>
-<li><p>SVD Low rank approximation</p></li>
-<li><p>CNMF can’t use this approx, invalidates the positivity constraints CNMF imposes on calcium dynamics</p></li>
+<li><p>Store temporary or working files in your scratch directory.</p></li>
+<li><p>Avoid placing large files in your home directory.</p></li>
+<li><p>Delete unused data when no longer needed to conserve shared storage.</p></li>
 </ul>
-</li>
-</ul>
-<p>CNMF uses a <em>single global neuropil signal</em> model</p>
-<ul class="simple">
-<li><p>Suite2p with this “single neuropil” model == lots of false ROI’s</p></li>
-<li><p>Estimate that CaImAn does the same</p></li>
-</ul>
-<p>Essentially, a global neuropil means that all pixels recieve the same contribution of contamination.</p>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading">#</a></h2>
+<p>For assistance, contact: <code class="docutils literal notranslate"><span class="pre">it_hpc&#64;rockefeller.edu</span></code></p>
 </section>
 </section>
 
@@ -494,17 +473,17 @@ any detected ROIs.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#claims">Claims:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registration">Registration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-detection">ROI Detection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvolution">Deconvolution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuropil">Neuropil</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suite2p-classifier">Suite2p classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-cluster">Accessing the cluster</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfering-data">Transfering Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsync"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction-and-deconvolution">Extraction and Deconvolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-vs-cnmf">Benchmark vs CNMF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-shell-commands-for-directory-management-on-hpc">Basic Shell Commands for Directory Management on HPC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-configuration">SSH Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup-guidelines">Cleanup Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
 </ul>
   </nav></div>
 
