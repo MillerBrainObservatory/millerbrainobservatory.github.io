@@ -14,14 +14,10 @@ Each user will be given scratch space on the cluster.
 
 Whenever you log-in to the cluster, you will be prompted for a password. Enter your RUNet password.
 
-``` bash
+```none
 ssh -l user login05-hpc.rockefeller.edu
 user@login05-hpc.rockefeller.edu's password:
 <enter RUNet password here>
-
-user at login05 in ~
-$
-
 ```
 
 You can set up a ssh keypair to authenticate without needing a password [with ssh](https://hpc.rockefeller.edu/guides/ssh_beginners/). See details {ref}`below <ssh_config>`.
@@ -61,10 +57,8 @@ This will **copy** the `E://ID_USER_DATA//data` directory and all of its content
 Open **Git Bash** or **Windows Terminal**, and run:
 
 ``` bash
-rsync -av --info=progress2 //e//ID_USER_DATA//data hpc://lustre//fs4//mbo//scratch//<USERNAME>//
+rsync -av --info=progress2 /e/ID_USER_DATA/data hpc:/lustre/fs4/mbo/scratch/user
 ```
-
-### `rsync`
 
 - `-a` — Archive mode (preserves timestamps, permissions, symbolic links)
 - `-v` — Verbose output
@@ -83,6 +77,15 @@ After connecting with `ssh hpc`, use the following commands:
 - `mv <src> <dest>` — Move or rename files and directories
 - `cp -r <src> <dest>` — Copy directories recursively
 - `rm -r <dir>` — Remove a directory (use with caution)
+
+### SCP
+
+If you don't have `git bash`, you can use the command prompt or powershell.
+These don't have native access to `rsync`, you'll need to use `scp` as an alternative:
+
+``` bash
+scp -r "E:\ID_USER_DATA\data" user@dtn02-hpc.rockefeller.edu:/lustre/fs4/mbo/scratch/user/
+```
 
 (ssh_config)=
 ## SSH Configuration

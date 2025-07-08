@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/hpc.24287551-9f09-41f4-ad0e-fb4a40002c21.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/hpc.a3d27f5a-ab0b-42ff-a403-bfa58c3fffcf.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/hpc';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -328,10 +328,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfering-data">Transfering Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsync"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-shell-commands-for-directory-management-on-hpc">Basic Shell Commands for Directory Management on HPC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-shell-commands-for-directory-management-on-hpc">Basic Shell Commands for Directory Management on HPC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scp">SCP</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-configuration">SSH Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup-guidelines">Cleanup Guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
@@ -358,13 +360,9 @@ document.write(`
 </div>
 <p>Each user will be given scratch space on the cluster.</p>
 <p>Whenever you log-in to the cluster, you will be prompted for a password. Enter your RUNet password.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -l user login05-hpc.rockefeller.edu
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ssh -l user login05-hpc.rockefeller.edu
 user@login05-hpc.rockefeller.edu&#39;s password:
 &lt;enter RUNet password here&gt;
-
-user at login05 in ~
-$
-
 </pre></div>
 </div>
 <p>You can set up a ssh keypair to authenticate without needing a password <a class="reference external" href="https://hpc.rockefeller.edu/guides/ssh_beginners/">with ssh</a>. See details <a class="reference internal" href="#ssh-config"><span class="std std-ref">below</span></a>.</p>
@@ -393,12 +391,9 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>/lustre/fs4/mbo/scratch/&
 <h3><code class="docutils literal notranslate"><span class="pre">rsync</span></code><a class="headerlink" href="#rsync" title="Permalink to this heading">#</a></h3>
 <p>This will <strong>copy</strong> the <code class="docutils literal notranslate"><span class="pre">E://ID_USER_DATA//data</span></code> directory and all of its contents.</p>
 <p>Open <strong>Git Bash</strong> or <strong>Windows Terminal</strong>, and run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--info<span class="o">=</span>progress2<span class="w"> </span>//e//ID_USER_DATA//data<span class="w"> </span>hpc://lustre//fs4//mbo//scratch//&lt;USERNAME&gt;//
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>-av<span class="w"> </span>--info<span class="o">=</span>progress2<span class="w"> </span>/e/ID_USER_DATA/data<span class="w"> </span>hpc:/lustre/fs4/mbo/scratch/user
 </pre></div>
 </div>
-</section>
-<section id="id1">
-<h3><code class="docutils literal notranslate"><span class="pre">rsync</span></code><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code> — Archive mode (preserves timestamps, permissions, symbolic links)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> — Verbose output</p></li>
@@ -420,6 +415,14 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>/lustre/fs4/mbo/scratch/&
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">&lt;src&gt;</span> <span class="pre">&lt;dest&gt;</span></code> — Copy directories recursively</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">&lt;dir&gt;</span></code> — Remove a directory (use with caution)</p></li>
 </ul>
+<section id="scp">
+<h3>SCP<a class="headerlink" href="#scp" title="Permalink to this heading">#</a></h3>
+<p>If you don’t have <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>, you can use the command prompt or powershell.
+These don’t have native access to <code class="docutils literal notranslate"><span class="pre">rsync</span></code>, you’ll need to use <code class="docutils literal notranslate"><span class="pre">scp</span></code> as an alternative:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;E:\ID_USER_DATA\data&quot;</span><span class="w"> </span>user@dtn02-hpc.rockefeller.edu:/lustre/fs4/mbo/scratch/user/
+</pre></div>
+</div>
+</section>
 </section>
 <section id="ssh-configuration">
 <span id="ssh-config"></span><h2>SSH Configuration<a class="headerlink" href="#ssh-configuration" title="Permalink to this heading">#</a></h2>
@@ -488,10 +491,12 @@ Host<span class="w"> </span>hpc-transfer
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfering-data">Transfering Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rsync"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-shell-commands-for-directory-management-on-hpc">Basic Shell Commands for Directory Management on HPC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-shell-commands-for-directory-management-on-hpc">Basic Shell Commands for Directory Management on HPC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scp">SCP</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-configuration">SSH Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup-guidelines">Cleanup Guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
