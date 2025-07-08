@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/lbm_data.4d3d40e3-c840-4ab0-a21b-693845589c79.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/lbm_data.8f95aac6-9980-426e-a721-9a5e14f2bebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/lbm_data';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -349,6 +349,12 @@ document.write(`
 <p>ScanImage <a class="reference external" href="https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html">Multi Region Of Interest (mROI)</a> outputs raw <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files made up of individual <code class="docutils literal notranslate"><span class="pre">Regions</span> <span class="pre">of</span> <span class="pre">Interest</span> <span class="pre">(ROI's)</span></code>.</p>
 <p>In its raw form, data is saved as a 3-dimensional <a class="reference internal" href="../ref.html#multipage-tiff"><span class="std std-ref">multi-page tiff file</span></a> with each ROI stacked vertically relative to the fast-galvo scan direction.</p>
 <p>Each 2D image within this tiff file represents a page of the original document.</p>
+<figure class="align-default" id="id1">
+<img alt="../_images/ex_deinterleave.svg" src="../_images/ex_deinterleave.svg" /><figcaption>
+<p><span class="caption-text">Raw data are stored first by z-plane, for each timepoint (1) before being deinterleaved (2).
+This example shows a session with 2 ROI’s shown vertically stacked with a black bar of ~14 pixels in between.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.</p>
 <hr class="docutils" />
 <section id="array-terminology">
