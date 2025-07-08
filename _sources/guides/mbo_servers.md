@@ -162,7 +162,7 @@ You now have access to this network location to transfer data to/from MBO server
 :::{dropdown} TLDR
 :chevron: down-up
 :animate: fade-in-slide-down
-:name: primary_metadata
+:name: ssh-dropdown
 
 Generate a new ssh key:
 
