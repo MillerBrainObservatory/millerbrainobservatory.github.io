@@ -8,10 +8,14 @@ In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <mu
 
 Each 2D image within this tiff file represents a page of the original document.
 
+```{figure} ../_images/ex_deinterleave.svg
+Raw data are stored first by z-plane, for each timepoint (1) before being deinterleaved (2).
+This example shows a session with 2 ROI's shown vertically stacked with a black bar of ~14 pixels in between.
+```
+
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
 -----
-
 
 (array_terms)=
 ## Array Terminology
