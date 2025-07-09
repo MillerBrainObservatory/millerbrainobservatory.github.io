@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/lbm_data.62207836-99d2-49a7-ad17-3e7782a5c6f3.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/lbm_data.7bda5fab-7da2-4f0a-85ac-394a395dd8f3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/lbm_data';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -178,6 +178,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mbo_servers.html">Server Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hpc.html">Working on HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">Image Ref</a></li>
 </ul>
 
     </div>
@@ -326,13 +327,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lbm-metadata">LBM Metadata</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data">Raw Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -348,6 +352,8 @@ document.write(`
 <h1>Light Beads Microscopy<a class="headerlink" href="#light-beads-microscopy" title="Permalink to this heading">#</a></h1>
 <p>This guide describes the data aquired on the <a class="reference external" href="https://mbo.rockefeller.edu/tools/#opt-lbm">optimized</a> or <a class="reference external" href="https://mbo.rockefeller.edu/tools/#high-res">high-res</a> light-beads microscopy (LBM) module.</p>
 <p>Current LBM data is aquired with ScanImage aquisition software.</p>
+<section id="raw-data">
+<h2>Raw Data<a class="headerlink" href="#raw-data" title="Permalink to this heading">#</a></h2>
 <p>ScanImage <a class="reference external" href="https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html">Multi Region Of Interest (mROI)</a> outputs raw <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files made up of individual <code class="docutils literal notranslate"><span class="pre">Regions</span> <span class="pre">of</span> <span class="pre">Interest</span> <span class="pre">(ROI's)</span></code>.</p>
 <p>In its raw form, data is saved as a 3-dimensional <a class="reference internal" href="../ref.html#multipage-tiff"><span class="std std-ref">multi-page tiff file</span></a> with each ROI stacked vertically relative to the fast-galvo scan direction.</p>
 <p>Each 2D image within this tiff file represents a page of the original document.</p>
@@ -358,9 +364,8 @@ This example shows a session with 2 ROI’s shown vertically stacked with a blac
 </figcaption>
 </figure>
 <p>The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.</p>
-<hr class="docutils" />
 <section id="frame-ordering">
-<h2>Frame Ordering<a class="headerlink" href="#frame-ordering" title="Permalink to this heading">#</a></h2>
+<h3>Frame Ordering<a class="headerlink" href="#frame-ordering" title="Permalink to this heading">#</a></h3>
 <p>ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:</p>
 <ul class="simple">
 <li><p>frame0 = time0_plane1</p></li>
@@ -385,12 +390,12 @@ This example shows a session with 2 ROI’s shown vertically stacked with a blac
 </div>
 </section>
 <hr class="docutils" />
-<section id="lbm-metadata">
-<h2>LBM Metadata<a class="headerlink" href="#lbm-metadata" title="Permalink to this heading">#</a></h2>
+<section id="metadata">
+<h3>Metadata<a class="headerlink" href="#metadata" title="Permalink to this heading">#</a></h3>
 <p>The primary distinction between Light-Beads Microscopy datasets and standard 2p datasets are how the data is organized on disk.</p>
 <p>This information is stored in the <a class="reference external" href="https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification">ScanImage Metadata</a>.</p>
 <section id="overview">
-<span id="metadata-overview"></span><h3>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h3>
+<span id="metadata-overview"></span><h4>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h4>
 <p>ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw <code class="code docutils literal notranslate"><span class="pre">.tiff</span></code> file.</p>
 <p>Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.</p>
 <p>There is primary metadata, intended for use in a typical processing run. Many of these values are derived from less-pertinent (secondary) metadata shown below.</p>
@@ -527,7 +532,7 @@ Internally, each pipeline checks for these metadata attributes and adjusts the f
 <hr class="docutils" />
 </section>
 <section id="usage">
-<span id="using-metadata"></span><h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
+<span id="using-metadata"></span><h4>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h4>
 <p>Each pipeline comes stocked with methods to retrieve imaging metadata.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
@@ -591,7 +596,7 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="array-terminology">
-<span id="array-terms"></span><h2>Array Terminology<a class="headerlink" href="#array-terminology" title="Permalink to this heading">#</a></h2>
+<span id="array-terms"></span><h3>Array Terminology<a class="headerlink" href="#array-terminology" title="Permalink to this heading">#</a></h3>
 <p>Light-beads microscopy is a 2-photon imaging paradigm based on <a class="reference external" href="https://docs.scanimage.org/index.html">ScanImage</a> acquisition software.</p>
 <table class="table">
 <thead>
@@ -614,6 +619,7 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 </section>
 
@@ -661,13 +667,16 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lbm-metadata">LBM Metadata</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data">Raw Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
