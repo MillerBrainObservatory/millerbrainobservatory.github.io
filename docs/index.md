@@ -64,7 +64,7 @@ maxdepth: 1
 guides/lbm_data.md
 guides/mbo_servers.md
 guides/hpc.md
-index <ref.md>
+glossary.md
 ```
 
 -----

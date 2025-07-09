@@ -1,6 +1,8 @@
-# Light Beads Microscopy Data
+# Light Beads Microscopy
 
-Current Light Beads Microscopy (LBM) data is aquired with ScanImage aquisition software.
+This guide describes the data aquired on the [optimized](https://mbo.rockefeller.edu/tools/#opt-lbm) or [high-res](https://mbo.rockefeller.edu/tools/#high-res) light-beads microscopy (LBM) module.
+
+Current LBM data is aquired with ScanImage aquisition software.
 
 ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
 
@@ -18,17 +20,6 @@ The location of each ROI is stored as a pixel coordinate used internally by the 
 
 -----
 
-(array_terms)=
-## Array Terminology
-
-Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
-
-| Dimension | Description |
-|-----------|-------------|
-| [X, Y]    | 2D plane    |
-| [X, Y, Z] | z-stack     |
-| [X, Y, T] | 2D timeseries |
-| [X, Y, Z, T] | 3D timeseries|
 
 ## Frame Ordering
 
@@ -193,30 +184,15 @@ MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainob
 
 ::::
 
-```{glossary}
+(array_terms)=
+## Array Terminology
 
-region-of-interest
-  A set of 1 or more 2D planes which are stitched together to form the full image.
+Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
 
-num_pixel_xy
-  The number of pixels [X, Y] in each {term}`region-of-interest`.
+| Dimension | Description |
+|-----------|-------------|
+| [X, Y]    | 2D plane    |
+| [X, Y, Z] | z-stack     |
+| [X, Y, T] | 2D timeseries |
+| [X, Y, Z, T] | 3D timeseries|
 
-roi_width_px
-  The size of the {term}`region-of-interest` on its shortest dimension.
-
-roi_height_px
-  The size of the {term}`region-of-interest` on its longest dimension.
-
-Field-of-view
-  The total size (um) of the raw stitched image with no trimming operations.
-
-image-length
-  The number of pixels on the long axis of the raw {code}`.tiff` file.
-
-image-width
-  The number of pixels on the short, slow-galvo axis of the raw {code}`.tiff` file.
-
-pixel-resolution
-  The size, in micron, of each pixel.
-
-```
