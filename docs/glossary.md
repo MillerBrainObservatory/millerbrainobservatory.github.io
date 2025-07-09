@@ -23,9 +23,6 @@ image-length
 image-width
   The number of pixels on the short, slow-galvo axis of the raw {code}`.tiff` file.
 
-pixel-resolution
-  The size, in micron, of each pixel.
-
 skewness 
   How often do you get an outlier in the pixel activity across time, good for calcium indicators because theyre flat relative to a few events over the course of a recording. 
 

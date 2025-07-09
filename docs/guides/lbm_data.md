@@ -4,6 +4,8 @@ This guide describes the data aquired on the [optimized](https://mbo.rockefeller
 
 Current LBM data is aquired with ScanImage aquisition software.
 
+## Raw Data
+
 ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
 
 In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>` with each ROI stacked vertically relative to the fast-galvo scan direction.
@@ -18,10 +20,7 @@ This example shows a session with 2 ROI's shown vertically stacked with a black 
 
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
------
-
-
-## Frame Ordering
+### Frame Ordering
 
 ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:
 
@@ -52,14 +51,14 @@ Before beginning the recording session, users have the option to split frames in
 
 ----
 
-## LBM Metadata
+### Metadata
 
 The primary distinction between Light-Beads Microscopy datasets and standard 2p datasets are how the data is organized on disk.
 
 This information is stored in the [ScanImage Metadata](https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification).
 
 (metadata_overview)=
-### Overview
+#### Overview
 
 ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw {code}`.tiff` file.
 
@@ -115,7 +114,7 @@ There are additional metadata values used internally to locate files and to calc
 --------
 
 (using_metadata)=
-### Usage
+#### Usage
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
 
@@ -185,7 +184,7 @@ MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainob
 ::::
 
 (array_terms)=
-## Array Terminology
+### Array Terminology
 
 Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
 
