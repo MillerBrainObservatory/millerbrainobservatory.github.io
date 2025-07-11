@@ -130,32 +130,7 @@ Computers on the Rockefeller network (with network discoverability turned on) ca
 ```{figure} ../_images/rdp_access_other_server.png
 ```
 
-```{warning}
-
-MBO servers are not on the rockefeller domain, so you will not be able to map them to a drive on another system.
-
-You can, however, map a drive on the MBO server e.g. your labs directory that IS on the rockefeller network.
-```
-
 You will be prompted for username/password credentials the first time you connect.
-
-If you access this location often, you can map it to a drive letter:
-
-```{figure} ../_images/rdp_map_drive.png
-```
-
-From `This PC`:
-1. Map Network Drive (top file ribbon)
-2. Click "Next"
-3. Choose a custom network location
-4. Enter share location `\\server\folder_name`
-5. Give drive a name 
-6. Click "Finish"
-
-You now have access to this network location to transfer data to/from MBO servers.
-
-```{figure} ../_images/rdp_map_drive_res.png
-```
 
 ## SSH Connections
 

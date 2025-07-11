@@ -41,6 +41,7 @@ mkdir -p /lustre/fs4/mbo/scratch/<USERNAME>/light_sheet/IsoView-test-data
 
 ## Transfering Data 
 
+
 Transfering data should be done on the data-transfer node.
 
 The commands are the same, just replace `login05` with `dtn02`:
@@ -48,6 +49,44 @@ The commands are the same, just replace `login05` with `dtn02`:
 ``` bash
 ssh -l user dtn02-hpc.rockefeller.edu
 
+```
+
+### File Transfer Protocols
+
+| Protocol  | Time Taken (min) | Transfer Rate (MiB/s)  |
+|-----------|------------------|------------------------|
+| sftp      | 123.6            | ~136.5                 |
+| rsync     | ~110             | ~154                   |
+| scp       | ~115             | ~147                   |
+| smbclient | ~180–200         | ~254.6                 |
+
+### `smbclient`
+
+```{tip}
+`smbclient` is the fastest and recommended method to transfer data to HPC.
+
+Note that this is an unencrypted method of data transfer.
+```
+
+```
+[<HPC_USER>@dtn02-hpc <HPC_USER>]$ smbclient '//XXX.XX.X.XX/folder_to_transfer' -U <LOCAL_USER>
+Enter SAMBA\<HPC_USER>'s password:
+Try "help" to get a list of possible commands.
+smb: \>
+```
+
+Replace `<HPC_USER>` with your HPC username and `<LOCAL_USER>` with your local username.
+
+Now you are ready to transfer files.
+
+Use `recurse ON` to also transfer files in subdirectories.
+Use `prompt OFF` to avoid needing to enter `Y` for each transfered file.
+Use `mget /path/to/file` to trasnfer the files, or a [wildcard](https://www.malikbrowne.com/blog/a-beginners-guide-glob-patterns/) like `*` which grabs everything.
+
+```bash
+smb: \> recurse ON
+smb: \> prompt OFF
+smb: \> mget *
 ```
 
 ### `rsync` 
