@@ -45,10 +45,7 @@ You should now be able to connect to the MBO servers!
 If you don't properly sign-out, you will use more login-sessions than you are afforded and your account will need to be logged out forcefully.
 ```
 
-To make sure you don't use more login-sessions than you are afforded, save your work and sign-out immediately after your session:
-
-```{figure} ../_images/rdp_sign_out.png
-```
+To sign out, Windows Menu -> Username -> Sign Out
 
 ## Filesystem
 
