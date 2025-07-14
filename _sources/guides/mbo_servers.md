@@ -143,7 +143,6 @@ Send the `.pub` output to an MBO administrator.
 :::
 
 [`ssh`](https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh) is a communication protocol that will allow you to access MBO servers from the command line.  
-You may want ssh access to install personal software, transfer files, or navigate the Windows filesystem.
 
 To establish a connection, the computer you are connecting from (the 'client') must have a private ssh key.
 
