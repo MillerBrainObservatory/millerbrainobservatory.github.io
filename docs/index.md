@@ -3,11 +3,6 @@
 
 A hub for tutorials, guides and resources for computational image processing.
 
-```{admonition} Reference Dataset
-All examples used throughout this tutorial will be in reference to the demo dataset referred to as the 'high-resolution' dataset.
-This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
-```
-
 -----
 
 ## Pipelines

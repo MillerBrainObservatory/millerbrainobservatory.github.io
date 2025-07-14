@@ -4,6 +4,11 @@ This guide describes the data aquired on the [optimized](https://mbo.rockefeller
 
 Current LBM data is aquired with ScanImage aquisition software.
 
+```{admonition} Reference Dataset
+All examples used throughout this tutorial will be in reference to the demo dataset referred to as the 'high-resolution' dataset.
+This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
+```
+
 ## Raw Data
 
 ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
