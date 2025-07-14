@@ -34,7 +34,6 @@ To add an MBO User Account:
 - Choose an optional display name
 
 ```{figure} ../_images/rdp_certif.png
-
 Accept the certificate notification popup to continue connecting to your MBO server.
 ```
 
@@ -53,8 +52,8 @@ To make sure you don't use more login-sessions than you are afforded, save your 
 
 ## Filesystem
 
-Each server has an `ID` that prepends the computer name. For example, a compute workstation will have W followed by a number.
-An aquisition system will have C followed by a number.
+Each server has an `ID` that prepends the computer name.
+
 Each directory for this system will have this ID prepended to the directory name.
 
 ``` {warning}
@@ -125,7 +124,7 @@ Contact a server administrator to inquire about adding additional software.
 
 ## Connecting to Network Servers
 
-Computers on the Rockefeller network (with network discoverability turned on) can be accessed as follows:
+Computers on the Rockefeller network (with network discoverability turned on) can be accessed via SMB as `\\server-name` or `\\ip-address`.
 
 ```{figure} ../_images/rdp_access_other_server.png
 ```
@@ -177,21 +176,21 @@ This process will generate 2 files:
 Depending on the algorithm you choose, the filename may be different.  
 What matters is that the `.pub` file (e.g. `ed25519.pub`) is installed on the MBO servers.  
 
-All you need to do is send that file to an MBO admin.
+Talk to an MBO admin to add your ssh-key to the server.
 
-## Server Hardware 
-
-:::{table} RBO-W1 Hardware Summary
-:name: hardware-summary
-:align: center
-
-| Component      | Specification                                                                      |
-| -------------- | ---------------------------------------------------------------------------------- |
-| Memory         | 1536 GB total (1509.75 GB available)                                               |
-| Processors     | 2× Intel64 Family 6 Model 143 Stepping 8 (32 cores / 64 threads each)               |
-| GPUs           | 2× NVIDIA RTX A5000 NVLINK                                          |
-| Disks          | 6× NVMe SSDs (2× Micron 7450 @ 3.58 TB, 4× Samsung MZ7L37T6HBLA @ 7.15 TB)         |
-| Disk Interface | NVMe PCIe                                                                              |
-
-:::
+<!-- ## Server Hardware  -->
+<!---->
+<!-- :::{table} MBO Hardware Summary -->
+<!-- :name: hardware-summary -->
+<!-- :align: center -->
+<!---->
+<!-- | Component      | Specification                                                                      | -->
+<!-- | -------------- | ---------------------------------------------------------------------------------- | -->
+<!-- | Memory         | 1536 GB total (1509.75 GB available)                                               | -->
+<!-- | Processors     | 2× Intel64 Family 6 Model 143 Stepping 8 (32 cores / 64 threads each)               | -->
+<!-- | GPUs           | 2× NVIDIA RTX A5000 NVLINK                                          | -->
+<!-- | Disks          | 6× NVMe SSDs (2× Micron 7450 @ 3.58 TB, 4× Samsung MZ7L37T6HBLA @ 7.15 TB)         | -->
+<!-- | Disk Interface | NVMe PCIe                                                                              | -->
+<!---->
+<!-- ::: -->
 
