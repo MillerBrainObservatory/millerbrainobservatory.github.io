@@ -67,7 +67,7 @@ The `E:` drive is the user sandbox, with a directory `E:/ID_USER_DATA/username` 
 This is where your intermediate results should go.
 
 ``` {admonition} Internet Access
-Users should not browse the internet on the compute server, browsing should be done on your local machine only.
+Users are strongly discouraged to browse the internet on the compute server, browsing should be done on your local machine only.
 A browser is available for Jupyter notebooks, but internet access is discouraged.
 ```
 
