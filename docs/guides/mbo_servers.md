@@ -108,6 +108,7 @@ The recommended method for interacting with `conda` is the `miniforge_prompt`.
 
 ### Other Software
 
+- MATLAB
 - Fiji / ImageJ
 - Visual Studio Code
 - git bash
