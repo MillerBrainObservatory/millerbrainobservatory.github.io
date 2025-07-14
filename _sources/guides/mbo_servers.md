@@ -1,8 +1,6 @@
 # Server Guide
 
-As a user of MBO servers you will be given a login and a password to a Windows Server 2022 desktop.
-
-This login will give you access to all of the resources of that server, shared with a limited number of other users.
+As a user of MBO servers, you will be given a login to MBO servers, which will give you access to the server.
 
 ## Connecting with RDP
 
