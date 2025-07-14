@@ -1,6 +1,6 @@
 # Working on HPC
 
-This guide explains how to transfer data from a from an MBO workstation to the Rockefeller HPC.
+This guide explains how to transfer data from a MBO workstation to your labs HPC space.
 
 See the [Rockefeller HPC documentation](https://hpc.rockefeller.edu/), specifically the [user guides](https://hpc.rockefeller.edu/guides/) for more information.
 
@@ -10,9 +10,7 @@ See the [Rockefeller HPC documentation](https://hpc.rockefeller.edu/), specifica
 If working on or transfering data from an mbo server, an admin can help you set this up.
 ```
 
-Each user will be given scratch space on the cluster.
-
-Whenever you log-in to the cluster, you will be prompted for a password. Enter your RUNet password.
+Login to the cluster is via RUNet credentials:
 
 ```none
 ssh -l user login05-hpc.rockefeller.edu
@@ -22,33 +20,12 @@ user@login05-hpc.rockefeller.edu's password:
 
 You can set up a ssh keypair to authenticate without needing a password [with ssh](https://hpc.rockefeller.edu/guides/ssh_beginners/). See details {ref}`below <ssh_config>`.
 
-## Directory Structure
-
-Users who wish to work on the HPC will be given a directory in the [mbo scratch space](https://hpc.rockefeller.edu/guides/glossary/?h=scratch#scratch-space):
-
-``` bash
-cd /lustre/fs4/mbo/scratch/<USERNAME>
-```
-
-Replace `<USERNAME>` with your HPC username.
-
-If the target subdirectory does not exist, log into HPC and create it first:
-
-``` bash
-ssh -l user login05-hpc.rockefeller.edu
-mkdir -p /lustre/fs4/mbo/scratch/<USERNAME>/light_sheet/IsoView-test-data
-```
-
 ## Transfering Data 
-
-
-Transfering data should be done on the data-transfer node.
 
 The commands are the same, just replace `login05` with `dtn02`:
 
 ``` bash
 ssh -l user dtn02-hpc.rockefeller.edu
-
 ```
 
 ### File Transfer Protocols

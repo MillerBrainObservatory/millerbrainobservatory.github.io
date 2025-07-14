@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/hpc.ddc13f7a-324b-4174-98cf-6141a05924b0.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/hpc.0dc2d9c0-e59e-496e-8f30-1d4edee254cd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/hpc';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -328,7 +328,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-cluster">Accessing the cluster</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfering-data">Transfering Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-transfer-protocols">File Transfer Protocols</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smbclient"><code class="docutils literal notranslate"><span class="pre">smbclient</span></code></a></li>
@@ -355,7 +354,7 @@ document.write(`
                   
   <section id="working-on-hpc">
 <h1>Working on HPC<a class="headerlink" href="#working-on-hpc" title="Permalink to this heading">#</a></h1>
-<p>This guide explains how to transfer data from a from an MBO workstation to the Rockefeller HPC.</p>
+<p>This guide explains how to transfer data from a MBO workstation to your labs HPC space.</p>
 <p>See the <a class="reference external" href="https://hpc.rockefeller.edu/">Rockefeller HPC documentation</a>, specifically the <a class="reference external" href="https://hpc.rockefeller.edu/guides/">user guides</a> for more information.</p>
 <section id="accessing-the-cluster">
 <h2>Accessing the cluster<a class="headerlink" href="#accessing-the-cluster" title="Permalink to this heading">#</a></h2>
@@ -363,8 +362,7 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>If working on or transfering data from an mbo server, an admin can help you set this up.</p>
 </div>
-<p>Each user will be given scratch space on the cluster.</p>
-<p>Whenever you log-in to the cluster, you will be prompted for a password. Enter your RUNet password.</p>
+<p>Login to the cluster is via RUNet credentials:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ssh -l user login05-hpc.rockefeller.edu
 user@login05-hpc.rockefeller.edu&#39;s password:
 &lt;enter RUNet password here&gt;
@@ -372,22 +370,8 @@ user@login05-hpc.rockefeller.edu&#39;s password:
 </div>
 <p>You can set up a ssh keypair to authenticate without needing a password <a class="reference external" href="https://hpc.rockefeller.edu/guides/ssh_beginners/">with ssh</a>. See details <a class="reference internal" href="#ssh-config"><span class="std std-ref">below</span></a>.</p>
 </section>
-<section id="directory-structure">
-<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this heading">#</a></h2>
-<p>Users who wish to work on the HPC will be given a directory in the <a class="reference external" href="https://hpc.rockefeller.edu/guides/glossary/?h=scratch#scratch-space">mbo scratch space</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/lustre/fs4/mbo/scratch/&lt;USERNAME&gt;
-</pre></div>
-</div>
-<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;USERNAME&gt;</span></code> with your HPC username.</p>
-<p>If the target subdirectory does not exist, log into HPC and create it first:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-l<span class="w"> </span>user<span class="w"> </span>login05-hpc.rockefeller.edu
-mkdir<span class="w"> </span>-p<span class="w"> </span>/lustre/fs4/mbo/scratch/&lt;USERNAME&gt;/light_sheet/IsoView-test-data
-</pre></div>
-</div>
-</section>
 <section id="transfering-data">
 <h2>Transfering Data<a class="headerlink" href="#transfering-data" title="Permalink to this heading">#</a></h2>
-<p>Transfering data should be done on the data-transfer node.</p>
 <p>The commands are the same, just replace <code class="docutils literal notranslate"><span class="pre">login05</span></code> with <code class="docutils literal notranslate"><span class="pre">dtn02</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-l<span class="w"> </span>user<span class="w"> </span>dtn02-hpc.rockefeller.edu
 </pre></div>
@@ -555,7 +539,6 @@ Host<span class="w"> </span>hpc-transfer
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-cluster">Accessing the cluster</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfering-data">Transfering Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-transfer-protocols">File Transfer Protocols</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smbclient"><code class="docutils literal notranslate"><span class="pre">smbclient</span></code></a></li>
@@ -583,7 +566,7 @@ Host<span class="w"> </span>hpc-transfer
   <div class="footer-item">
     
 <p class="component-author">
-By Flynn OConnell
+By Miller Brain Observatory
 </p>
 
   </div>
