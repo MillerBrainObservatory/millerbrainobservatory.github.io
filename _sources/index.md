@@ -41,7 +41,7 @@ A hub for tutorials, guides and resources for computational image processing.
 :gutter: 2
 
 :::{grid-item-card} LBM-EXTRACT-MATLAB
-{bdg-link-primary-line}`To the User Guide <https://github.com/MillerBrainObservatory/EXTRACT-public/blob/master/mbo_notebooks/README.md>`
+{bdg-link-primary-line}`To the User Guide <https://github.com/MillerBrainObservatory/EXTRACT-public/blob/master/mbo_demo/README.md>`
 +++
 [![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/EXTRACT-public "LBM-EXTRACT Repository")
 :::
