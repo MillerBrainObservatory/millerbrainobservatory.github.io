@@ -108,14 +108,12 @@ The recommended method for interacting with `conda` is the `miniforge_prompt`.
 
 ### Other Software
 
-- Fiji / imageJ
+- Fiji / ImageJ
 - Visual Studio Code
-- Visual Studio
 - git bash
 - wezterm
-- OBS Studio
 
-Contact a server administrator to inquire about adding additional software.
+Contact a server administrator to inquire about adding additional software. Please do not install software without consulting an MBO admin.
 
 ## Connecting to Network Servers
 
