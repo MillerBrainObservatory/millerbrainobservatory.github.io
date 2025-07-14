@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/hpc.0dc2d9c0-e59e-496e-8f30-1d4edee254cd.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/hpc.5b49165c-d5c0-4d2e-b6c6-88a02cdbf0be.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/hpc';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -372,7 +372,7 @@ user@login05-hpc.rockefeller.edu&#39;s password:
 </section>
 <section id="transfering-data">
 <h2>Transfering Data<a class="headerlink" href="#transfering-data" title="Permalink to this heading">#</a></h2>
-<p>The commands are the same, just replace <code class="docutils literal notranslate"><span class="pre">login05</span></code> with <code class="docutils literal notranslate"><span class="pre">dtn02</span></code>:</p>
+<p>HPC recommends using the data-transfer node <code class="docutils literal notranslate"><span class="pre">dtn-02</span></code>. Use the following to do so:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-l<span class="w"> </span>user<span class="w"> </span>dtn02-hpc.rockefeller.edu
 </pre></div>
 </div>
@@ -381,26 +381,21 @@ user@login05-hpc.rockefeller.edu&#39;s password:
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Protocol</p></th>
-<th class="head"><p>Time Taken (min)</p></th>
-<th class="head"><p>Transfer Rate (MiB/s)</p></th>
+<th class="head"><p>Transfer Rate (MB/s)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>sftp</p></td>
-<td><p>123.6</p></td>
-<td><p>~136.5</p></td>
+<td><p>~150</p></td>
 </tr>
 <tr class="row-odd"><td><p>rsync</p></td>
-<td><p>~110</p></td>
-<td><p>~154</p></td>
+<td><p>~150</p></td>
 </tr>
 <tr class="row-even"><td><p>scp</p></td>
-<td><p>~115</p></td>
-<td><p>~147</p></td>
+<td><p>~150</p></td>
 </tr>
 <tr class="row-odd"><td><p>smbclient</p></td>
-<td><p>~180–200</p></td>
-<td><p>~254.6</p></td>
+<td><p>~250</p></td>
 </tr>
 </tbody>
 </table>
@@ -412,6 +407,7 @@ user@login05-hpc.rockefeller.edu&#39;s password:
 <p><code class="docutils literal notranslate"><span class="pre">smbclient</span></code> is the fastest and recommended method to transfer data to HPC.</p>
 <p>Note that this is an unencrypted method of data transfer.</p>
 </div>
+<p>The command to transfer data via <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[&lt;HPC_USER&gt;@dtn02-hpc &lt;HPC_USER&gt;]$ smbclient &#39;//XXX.XX.X.XX/folder_to_transfer&#39; -U &lt;LOCAL_USER&gt;
 Enter SAMBA\&lt;HPC_USER&gt;&#39;s password:
 Try &quot;help&quot; to get a list of possible commands.
@@ -461,7 +457,7 @@ smb:<span class="w"> </span><span class="se">\&gt;</span><span class="w"> </span
 <h3>SCP<a class="headerlink" href="#scp" title="Permalink to this heading">#</a></h3>
 <p>If you don’t have <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">bash</span></code>, you can use the command prompt or powershell.
 These don’t have native access to <code class="docutils literal notranslate"><span class="pre">rsync</span></code>, you’ll need to use <code class="docutils literal notranslate"><span class="pre">scp</span></code> as an alternative:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;E:\ID_USER_DATA\data&quot;</span><span class="w"> </span>user@dtn02-hpc.rockefeller.edu:/lustre/fs4/mbo/scratch/user/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;E:\ID_USER_DATA\data&quot;</span><span class="w"> </span>user@dtn02-hpc.rockefeller.edu:&lt;path/to/lab/hpc/space&gt;
 </pre></div>
 </div>
 </section>
