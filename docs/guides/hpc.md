@@ -122,11 +122,6 @@ Host hpc-transfer
 
 This allows you to use `hpc:` instead of typing the full hostname each time.
 
-## Cleanup Guidelines
-
-- Store temporary or working files in your scratch directory.
-- Avoid placing large files in your home directory.
-- Delete unused data when no longer needed to conserve shared storage.
 
 ## Support
 

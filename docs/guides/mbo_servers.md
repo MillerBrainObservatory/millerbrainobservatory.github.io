@@ -171,6 +171,14 @@ What matters is that the `.pub` file (e.g. `ed25519.pub`) is installed on the MB
 
 Talk to an MBO admin to add your ssh-key to the server.
 
+## Cleanup Guidelines
+
+- Store raw and processed data in your allocated user space `ID_USER_DATA`.
+- Delete unused data when no longer needed to conserve shared storage.
+- Do not browse the internet on the MBO servers.
+- Do not install software on your own, consult with the MBO admins with a request.
+- Log out from Windows after each session.
+
 <!-- ## Server Hardware  -->
 <!---->
 <!-- :::{table} MBO Hardware Summary -->
