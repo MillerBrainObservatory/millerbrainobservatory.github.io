@@ -9,7 +9,7 @@
 project = "MBO Compute Hub"
 copyright = "2024, Elizabeth R. Miller Brain Observatory | The Rockefeller University. All Rights Reserved"
 
-author = "Flynn OConnell"
+author = "Miller Brain Observatory"
 release = "1.0.0"
 
 extensions = [
