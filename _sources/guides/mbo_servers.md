@@ -171,7 +171,7 @@ What matters is that the `.pub` file (e.g. `ed25519.pub`) is installed on the MB
 
 Talk to an MBO admin to add your ssh-key to the server.
 
-## Cleanup Guidelines
+## Guidelines
 
 - Store raw and processed data in your allocated user space `ID_USER_DATA`.
 - Delete unused data when no longer needed to conserve shared storage.
