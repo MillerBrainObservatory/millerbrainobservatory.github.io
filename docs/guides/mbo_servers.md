@@ -1,6 +1,6 @@
 # Server Guide
 
-As a user of MBO servers, you will be given a login to MBO servers, which will give you access to the server.
+As a user of MBO servers, you will be given a login to MBO servers, which will give you access to the servers.
 
 ## Connecting with RDP
 
