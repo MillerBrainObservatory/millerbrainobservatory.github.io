@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.c14bf78e-7b29-42d4-85aa-c4ed161124fe.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.c1eb6d35-535b-4d59-9fb3-ef73907f2f1a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -341,7 +341,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-network-servers">Connecting to Network Servers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">SSH Connections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-hardware">Server Hardware</a></li>
 </ul>
             </nav>
         </div>
@@ -407,9 +406,8 @@ document.write(`
 </section>
 <section id="filesystem">
 <h2>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
-<p>Each server has an <code class="docutils literal notranslate"><span class="pre">ID</span></code> that prepends the computer name. For example, a compute workstation will have W followed by a number.
-An aquisition system will have C followed by a number.
-Each directory for this system will have this ID prepended to the directory name.</p>
+<p>Each server has an <code class="docutils literal notranslate"><span class="pre">ID</span></code> that prepends the computer name.</p>
+<p>Each directory for this system will have this ID prepended to the directory name.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Both workstation and compute file-systems are <em>NOT</em> backed up.</p>
@@ -473,7 +471,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </section>
 <section id="connecting-to-network-servers">
 <h2>Connecting to Network Servers<a class="headerlink" href="#connecting-to-network-servers" title="Permalink to this heading">#</a></h2>
-<p>Computers on the Rockefeller network (with network discoverability turned on) can be accessed as follows:</p>
+<p>Computers on the Rockefeller network (with network discoverability turned on) can be accessed via SMB as <code class="docutils literal notranslate"><span class="pre">\\server-name</span></code> or <code class="docutils literal notranslate"><span class="pre">\\ip-address</span></code>.</p>
 <figure class="align-default">
 <img alt="../_images/rdp_access_other_server.png" src="../_images/rdp_access_other_server.png" />
 </figure>
@@ -531,35 +529,22 @@ Public key</div>
 </div>
 <p>Depending on the algorithm you choose, the filename may be different.<br />
 What matters is that the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file (e.g. <code class="docutils literal notranslate"><span class="pre">ed25519.pub</span></code>) is installed on the MBO servers.</p>
-<p>All you need to do is send that file to an MBO admin.</p>
-</section>
-<section id="server-hardware">
-<h2>Server Hardware<a class="headerlink" href="#server-hardware" title="Permalink to this heading">#</a></h2>
-<table class="table table-center" id="hardware-summary">
-<caption><span class="caption-text">RBO-W1 Hardware Summary</span><a class="headerlink" href="#hardware-summary" title="Permalink to this table">#</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>Component</p></th>
-<th class="head"><p>Specification</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Memory</p></td>
-<td><p>1536 GB total (1509.75 GB available)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Processors</p></td>
-<td><p>2× Intel64 Family 6 Model 143 Stepping 8 (32 cores / 64 threads each)</p></td>
-</tr>
-<tr class="row-even"><td><p>GPUs</p></td>
-<td><p>2× NVIDIA RTX A5000 NVLINK</p></td>
-</tr>
-<tr class="row-odd"><td><p>Disks</p></td>
-<td><p>6× NVMe SSDs (2× Micron 7450 &#64; 3.58 TB, 4× Samsung MZ7L37T6HBLA &#64; 7.15 TB)</p></td>
-</tr>
-<tr class="row-even"><td><p>Disk Interface</p></td>
-<td><p>NVMe PCIe</p></td>
-</tr>
-</tbody>
-</table>
+<p>Talk to an MBO admin to add your ssh-key to the server.</p>
+<!-- ## Server Hardware  -->
+<!---->
+<!-- :::{table} MBO Hardware Summary -->
+<!-- :name: hardware-summary -->
+<!-- :align: center -->
+<!---->
+<!-- | Component      | Specification                                                                      | -->
+<!-- | -------------- | ---------------------------------------------------------------------------------- | -->
+<!-- | Memory         | 1536 GB total (1509.75 GB available)                                               | -->
+<!-- | Processors     | 2× Intel64 Family 6 Model 143 Stepping 8 (32 cores / 64 threads each)               | -->
+<!-- | GPUs           | 2× NVIDIA RTX A5000 NVLINK                                          | -->
+<!-- | Disks          | 6× NVMe SSDs (2× Micron 7450 @ 3.58 TB, 4× Samsung MZ7L37T6HBLA @ 7.15 TB)         | -->
+<!-- | Disk Interface | NVMe PCIe                                                                              | -->
+<!---->
+<!-- ::: -->
 </section>
 </section>
 
@@ -621,7 +606,6 @@ What matters is that the <code class="docutils literal notranslate"><span class=
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-network-servers">Connecting to Network Servers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">SSH Connections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#server-hardware">Server Hardware</a></li>
 </ul>
   </nav></div>
 
