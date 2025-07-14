@@ -22,7 +22,7 @@ You can set up a ssh keypair to authenticate without needing a password [with ss
 
 ## Transfering Data 
 
-The commands are the same, just replace `login05` with `dtn02`:
+HPC recommends using the data-transfer node `dtn-02`. Use the following to do so:
 
 ``` bash
 ssh -l user dtn02-hpc.rockefeller.edu
@@ -30,12 +30,12 @@ ssh -l user dtn02-hpc.rockefeller.edu
 
 ### File Transfer Protocols
 
-| Protocol  | Time Taken (min) | Transfer Rate (MiB/s)  |
-|-----------|------------------|------------------------|
-| sftp      | 123.6            | ~136.5                 |
-| rsync     | ~110             | ~154                   |
-| scp       | ~115             | ~147                   |
-| smbclient | ~180–200         | ~254.6                 |
+| Protocol  | Transfer Rate (MB/s)  |
+|-----------|------------------|
+| sftp      | ~150                 |
+| rsync     | ~150                   |
+| scp       |  ~150                   |
+| smbclient |  ~250                 |
 
 ### `smbclient`
 
@@ -44,6 +44,8 @@ ssh -l user dtn02-hpc.rockefeller.edu
 
 Note that this is an unencrypted method of data transfer.
 ```
+
+The command to transfer data via `smbclient` is as follows:
 
 ```
 [<HPC_USER>@dtn02-hpc <HPC_USER>]$ smbclient '//XXX.XX.X.XX/folder_to_transfer' -U <LOCAL_USER>
@@ -100,7 +102,7 @@ If you don't have `git bash`, you can use the command prompt or powershell.
 These don't have native access to `rsync`, you'll need to use `scp` as an alternative:
 
 ``` bash
-scp -r "E:\ID_USER_DATA\data" user@dtn02-hpc.rockefeller.edu:/lustre/fs4/mbo/scratch/user/
+scp -r "E:\ID_USER_DATA\data" user@dtn02-hpc.rockefeller.edu:<path/to/lab/hpc/space>
 ```
 
 (ssh_config)=
