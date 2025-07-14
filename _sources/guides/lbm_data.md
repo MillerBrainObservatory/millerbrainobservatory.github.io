@@ -4,9 +4,19 @@ This guide describes the data aquired on the [optimized](https://mbo.rockefeller
 
 Current LBM data is aquired with ScanImage aquisition software.
 
-```{admonition} Reference Dataset
-All examples used throughout this tutorial will be in reference to the demo dataset referred to as the 'high-resolution' dataset.
-This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
+```{admonition} Example Dataset
+:class: dropdown
+
+Example dataset collected by Kevin Barber with Dr. Alipasha Vaziri @ Rockefeller University.
+
+| Field        | Value                   |
+|--------------|-------------------------|
+| Animal       | mk301                   |
+| Date         | 2025-03-01              |
+| Virus        | jGCaMP8s                |
+| Framerate    | 17 Hz                   |
+| FOV          | 900 µm × 900 µm         |
+| Resolution   | 2 µm × 2 µm × 16 µm     |
 ```
 
 ## Raw Data
@@ -17,11 +27,6 @@ In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <mu
 
 Each 2D image within this tiff file represents a page of the original document.
 
-```{figure} ../_images/ex_deinterleave_nobg.svg
-
-Raw data are stored first by z-plane, for each timepoint (1) before being deinterleaved (2).
-This example shows a session with 2 ROI's shown vertically stacked with a black bar of ~14 pixels in between.
-```
 
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
@@ -45,7 +50,10 @@ For compatibility, we reorganize the frames as follows:
 - frame3 = time0_plane2
 - frame4 = time1_plane2
 
-Thus a primary function of image assembly is to {ref}`ex_deinterleave`.
+```{figure} ../_images/ex_deinterleave_nobg.svg
+Raw data are stored first by z-plane, for each timepoint (1) before being deinterleaved (2).
+This example shows a session with 2 ROI's shown vertically stacked with a black bar of ~14 pixels in between.
+```
 
 ```{admonition} Note on Frames
 :class: tip
@@ -151,37 +159,26 @@ sample_format: 'int16'
 MATLAB metadata can be retrieved with the [get_metadata()](https://millerbrainobservatory.github.io/LBM-CaImAn-MATLAB/api/utility.html#get_metadata) utility funciton.
 
 ```MATLAB
-
-   >> get_metadata(fullfile(extract_path, "MH184_both_6mm_FOV_150_600um_depth_410mW_9min_no_stimuli_00001_00001.tiff"))
-
-    ans =
-
-      metadata contents:
-             tiff_length = 2478
-             tiff_width = 145
-             roi_width_px = 144
-             roi_height_px = 600
-             num_rois = 4
-             num_frames = 1730
-             num_planes = 30  % stored in scanimage as channels 
-             num_files = 1
-             frame_rate = 9.60806
-             fov = [600;600]
-             pixel_resolution = 1.02083
-             sample_format = int16
-             raw_filename = high_res
-             raw_filepath = C:\Users\RBO\caiman_data
-             raw_fullfile = C:\Users\RBO\caiman_data\high_res.tif
-             dataset_name = /Y
-             trim_pixels = [6;6;17;0]
-             % below used internally
-             num_pixel_xy = [144;600]
-             center_xy = [-1.428571429;0]
-             line_period = 4.15652e-05
-             scan_frame_period = 0.104079
-             size_xy = [0.9523809524;3.80952381]
-             objective_resolution = 157.5
-             num_lines_between_scanfields = 24
+num_planes: 14
+num_rois: 2
+num_frames: 381
+frame_rate: 17.0670
+fov: [896 896]
+pixel_resolution: 2
+sample_format: 'int16'
+roi_width_px: 224
+roi_height_px: 448
+tiff_length: 912
+tiff_width: 224
+raw_filename: "file.tif"
+raw_filepath: "D:\Demo"
+raw_fullfile: "D:\Demo\file.tif"
+num_lines_between_scanfields: 16
+center_xy: [2×1 double]
+line_period: 6.3139e-05
+scan_frame_period: 0.0586
+size_xy: [2×1 double]
+objective_resolution: 61
 ```
 
 :::

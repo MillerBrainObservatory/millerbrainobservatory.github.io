@@ -1,7 +1,7 @@
 (mbo_hub)=
 # Miller Brain Observatory: Compute Ecosystem
 
-A hub for tutorials, guides and resources for computational image processing.
+A hub for tutorials, guides and resources to process MBO datasets.
 
 -----
 
