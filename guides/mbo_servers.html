@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.a36d67b9-77de-42ec-a054-e3d8391c2db9.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.bc89cc47-18f0-4c79-8909-08ef40db0442.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -335,7 +335,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3"><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
 </ul>
 </li>
@@ -428,25 +427,21 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 <h2>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
 <section id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h3>
-<p>Python is distributed for each user using <a class="reference external" href="https://docs.astral.sh/uv/getting-started/features/">uv</a> and <a class="reference external" href="https://github.com/conda-forge/miniforge">miniforge3</a>.</p>
-<p>A default <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.10</span></code> is added to the system PATH and available by default.</p>
-<p>You can install additional versions on a per-environment basis:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># uv is available to all users</span>
-uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.11
-uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.12
+<p>Each user has access to <a class="reference external" href="https://docs.astral.sh/uv/getting-started/features/">uv</a> and <a class="reference external" href="https://github.com/conda-forge/miniforge">miniforge3</a> for managing python installations and environments.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>USER@SERVER<span class="w"> </span>MINGW64<span class="w"> </span>~/repos
+$<span class="w"> </span>which<span class="w"> </span>uv
+/c/Users/USER/.local/bin/uv
 
-<span class="c1"># or in a conda environment</span>
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+USER@SERVER<span class="w"> </span>MINGW64<span class="w"> </span>~/repos
+$<span class="w"> </span>which<span class="w"> </span>conda
+/c/Users/USER/miniforge3/Scripts/conda
 </pre></div>
 </div>
-</section>
-<section id="conda-miniforge3">
-<h3><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)<a class="headerlink" href="#conda-miniforge3" title="Permalink to this heading">#</a></h3>
-<p>Each user account has its own <code class="docutils literal notranslate"><span class="pre">Miniforge3</span></code> flavored <code class="docutils literal notranslate"><span class="pre">conda</span></code> installation at <code class="docutils literal notranslate"><span class="pre">C:/Users/miniforge3</span></code>.</p>
-<p>This is your environment to install and reinstall as you please.</p>
+<p>There are important differences to consider depending on whether you use <code class="docutils literal notranslate"><span class="pre">uv</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> to manage environments.</p>
+<p>See the mbo <a class="reference external" href="https://millerbrainobservatory.github.io/mbo_utilities/venvs.html">guide on virtual environments</a> to learn more.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">conda</span></code>, <em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>
 </div>
 <p>The recommended method for interacting with <code class="docutils literal notranslate"><span class="pre">conda</span></code> is the <code class="docutils literal notranslate"><span class="pre">miniforge_prompt</span></code>.</p>
 <figure class="align-default">
@@ -605,7 +600,6 @@ What matters is that the <code class="docutils literal notranslate"><span class=
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-miniforge3"><code class="docutils literal notranslate"><span class="pre">conda</span></code> (miniforge3)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
 </ul>
 </li>
