@@ -25,3 +25,11 @@ MultiPage Tiff
 De-interleave Z-Planes
 :::
 
+
+:::{figure} ./_images/miniforge_prompt.png
+:alt: miniforge_prompt
+:name: miniforge_prompt
+
+Miniforge Prompt
+:::
+

@@ -95,10 +95,9 @@ See the mbo [guide on virtual environments](https://millerbrainobservatory.githu
 For `conda`, *DO NOT* install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.
 ```
 
-The recommended method for interacting with `conda` is the `miniforge_prompt`.
+The recommended method for interacting with `conda` is the `miniforge_prompt` (other terminals will work but consistent behavior is not guaranteed).
 
-```{figure} ../_images/miniforge_prompt.png
-```
+`UV` should be accessible from any terminal you choose.
 
 ### Other Software
 
