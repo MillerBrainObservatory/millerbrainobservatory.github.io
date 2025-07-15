@@ -75,30 +75,24 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 
 ### Python
 
-Python is distributed for each user using [uv](https://docs.astral.sh/uv/getting-started/features/) and [miniforge3](https://github.com/conda-forge/miniforge).
+Each user has access to [uv](https://docs.astral.sh/uv/getting-started/features/) and [miniforge3](https://github.com/conda-forge/miniforge) for managing python installations and environments.
 
-A default `Python 3.10` is added to the system PATH and available by default. 
+``` bash
+USER@SERVER MINGW64 ~/repos
+$ which uv
+/c/Users/USER/.local/bin/uv
 
-You can install additional versions on a per-environment basis:
-
-```{code} bash
-# uv is available to all users
-uv python install 3.11
-uv python install 3.12
-
-# or in a conda environment
-conda install -c conda-forge python=3.11
-
+USER@SERVER MINGW64 ~/repos
+$ which conda
+/c/Users/USER/miniforge3/Scripts/conda
 ```
 
-### `conda` (miniforge3)
+There are important differences to consider depending on whether you use `uv` or `conda` to manage environments.
 
-Each user account has its own `Miniforge3` flavored `conda` installation at `C:/Users/miniforge3`.
-
-This is your environment to install and reinstall as you please.
+See the mbo [guide on virtual environments](https://millerbrainobservatory.github.io/mbo_utilities/venvs.html) to learn more.
 
 ``` {warning}
-*DO NOT* install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.
+For `conda`, *DO NOT* install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.
 ```
 
 The recommended method for interacting with `conda` is the `miniforge_prompt`.
