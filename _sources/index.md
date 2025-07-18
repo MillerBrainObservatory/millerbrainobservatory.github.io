@@ -67,21 +67,20 @@ ref.md
 
 ## External Resources
 
-### Algorithms and pipelines
+### Microscopy and Imaging
 
-- [flatironinstitute/CaImAn (MATLAB) github](https://github.com/flatironinstitute/CaImAn-MATLAB) | [Wiki](https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline)
+- [iBiology Microscopy Series](https://www.ibiology.org/online-biology-courses/microscopy-series/)
 
-- [flatironinstitute/CaImAn (python) github](https://github.com/flatironinstitute/CaImAn)| [caimain Docs](https://caiman.readthedocs.io/en/latest/)
+- [Janelia & EMBL BioImaging Seminar Series](https://www.janelia.org/content/oig-embl)
 
-- [suite2p github](https://github.com/mouseland/suite2p) | [suite2p Docs](https://suite2p.readthedocs.io/en/latest/)
+- [Thorlabs Insights](https://youtube.com/playlist?list=PLN3i-H51ZELhQeV81RI-IP8DB9B_eJaA_&si=5AvK3lnmKB1Jxb1X)
 
-### Blog Posts
+### Blog Posts and Forums
 
-- [What is deconvolution? (Suite2p docs)](https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what)
+- [What is "spike" deconvolution? (Suite2p docs)](https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what)
 
 - [Why your two-photon images are noisier than you expect](https://gcamp6f.com/2024/04/24/why-your-two-photon-images-are-noisier-than-you-expect/)
 
 - [Interpreting Results of Calcium Denoising](https://gcamp6f.com/2022/08/23/self-supervised-denoising-of-calcium-imaging-data/)
 
-- [Image.sc Forum](https://forum.image.sc/)
-
+- [Scientific Image Forum, image.sc](https://forum.image.sc/)
