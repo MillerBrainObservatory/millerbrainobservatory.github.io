@@ -1,12 +1,7 @@
 (mbo_hub)=
 # Miller Brain Observatory: Compute Ecosystem
 
-A hub for tutorials, guides and resources for computational image processing.
-
-```{admonition} Reference Dataset
-All examples used throughout this tutorial will be in reference to the demo dataset referred to as the 'high-resolution' dataset.
-This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um` FOV at `1um/px` resolution.
-```
+A hub for tutorials, guides and resources to process MBO datasets.
 
 -----
 
@@ -46,7 +41,7 @@ This dataset contains 4 ROI's recorded at `9.6 Hz` for `1730` over a `600x600 um
 :gutter: 2
 
 :::{grid-item-card} LBM-EXTRACT-MATLAB
-{bdg-link-primary-line}`To the User Guide <https://github.com/MillerBrainObservatory/EXTRACT-public/blob/master/mbo_notebooks/README.md>`
+{bdg-link-primary-line}`To the User Guide <https://github.com/MillerBrainObservatory/EXTRACT-public/blob/master/mbo_demo/README.md>`
 +++
 [![Repository](https://img.shields.io/badge/Repository-black?style=flat&logo=github&logoColor=white&logoSize=auto)](https://github.com/MillerBrainObservatory/EXTRACT-public "LBM-EXTRACT Repository")
 :::
@@ -63,29 +58,29 @@ maxdepth: 1
 
 guides/lbm_data.md
 guides/mbo_servers.md
-Suite2p Notes <publication>
-
+guides/hpc.md
+glossary.md
+ref.md
 ```
 
 -----
 
 ## External Resources
 
-### Algorithms and pipelines
+### Microscopy and Imaging
 
-- [flatironinstitute/CaImAn (MATLAB) github](https://github.com/flatironinstitute/CaImAn-MATLAB) | [Wiki](https://github.com/flatironinstitute/CaImAn-MATLAB/wiki/Complete-analysis-pipeline)
+- [iBiology Microscopy Series](https://www.ibiology.org/online-biology-courses/microscopy-series/)
 
-- [flatironinstitute/CaImAn (python) github](https://github.com/flatironinstitute/CaImAn)| [caimain Docs](https://caiman.readthedocs.io/en/latest/)
+- [Janelia & EMBL BioImaging Seminar Series](https://www.janelia.org/content/oig-embl)
 
-- [suite2p github](https://github.com/mouseland/suite2p) | [suite2p Docs](https://suite2p.readthedocs.io/en/latest/)
+- [Thorlabs Insights](https://youtube.com/playlist?list=PLN3i-H51ZELhQeV81RI-IP8DB9B_eJaA_&si=5AvK3lnmKB1Jxb1X)
 
-### Blog Posts
+### Blog Posts and Forums
 
-- [What is deconvolution? (Suite2p docs)](https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what)
+- [What is "spike" deconvolution? (Suite2p docs)](https://suite2p.readthedocs.io/en/latest/FAQ.html#deconvolution-means-what)
 
 - [Why your two-photon images are noisier than you expect](https://gcamp6f.com/2024/04/24/why-your-two-photon-images-are-noisier-than-you-expect/)
 
 - [Interpreting Results of Calcium Denoising](https://gcamp6f.com/2022/08/23/self-supervised-denoising-of-calcium-imaging-data/)
 
-- [Image.sc Forum](https://forum.image.sc/)
-
+- [Scientific Image Forum, image.sc](https://forum.image.sc/)
