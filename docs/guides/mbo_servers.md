@@ -4,11 +4,11 @@ As a user of MBO servers, you will be given a login to MBO servers, which will g
 
 ## Guidelines
 
+- *Log out from Windows after each session.*
 - Store raw and processed data in your allocated user space `ID_USER_DATA`.
 - Delete unused data when no longer needed to conserve shared storage.
 - Do not browse the internet on the MBO servers.
 - Do not install software on your own. Consult with the MBO admins with a request.
-- *Log out from Windows after each session.*
 
 ## Connecting with RDP
 
@@ -168,6 +168,8 @@ The recommended method for interacting with `conda` is the `miniforge_prompt` (o
 - MATLAB
 - Fiji / ImageJ
 - Visual Studio Code
+- Pycharm
+- Irfanview (photo/video viewer)
 - git bash
 - wezterm
 
