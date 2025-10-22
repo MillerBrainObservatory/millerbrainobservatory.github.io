@@ -2,6 +2,14 @@
 
 As a user of MBO servers, you will be given a login to MBO servers, which will give you access to the servers.
 
+## Guidelines
+
+- Store raw and processed data in your allocated user space `ID_USER_DATA`.
+- Delete unused data when no longer needed to conserve shared storage.
+- Do not browse the internet on the MBO servers.
+- Do not install software on your own. Consult with the MBO admins with a request.
+- *Log out from Windows after each session.*
+
 ## Connecting with RDP
 
 MBO processing servers are accessible via Microsoft Remote Desktop Protocol (RDP).
@@ -37,10 +45,66 @@ Accept the certificate notification popup to continue connecting to your MBO ser
 
 You should now be able to connect to the MBO servers!
 
+## Development Environment
+
+### Python Setup
+
+We recommend using **uv** for managing Python environments and dependencies.
+
+Alternative tools like Conda or `venv` also work, but are not covered here.  
+See the [venv documentation](https://millerbrainobservatory.github.io/mbo_utilities/venvs.html) for details.
+
+---
+
+### Organize Your Code
+
+Keep all related analysis projects in a single directory for consistency.  
+For example:
+
+```bash
+cd "C://Users//MBO-User//projects"
+```
+
+You can also choose another folder such as `C://Users//MBO-User//code`.
+
+---
+
+### Create a Project Environment
+
+You can set up your environment in two ways:
+
+#### Option 1 – Basic Virtual Environment
+```bash
+uv venv --python 3.12.9
+```
+This creates a `.venv` folder that contains all dependencies.  
+Install packages as you normally would:
+```bash
+uv pip install mbo_utilities
+```
+
+#### Option 2 – Managed Project with pyproject.toml
+```bash
+uv init --python 3.12.9
+```
+This also creates a `.venv` but includes a **`pyproject.toml`** file that tracks dependencies.  
+To add packages:
+```bash
+uv add mbo_utilities
+```
+The exact version is saved to `pyproject.toml`, allowing your environment to be rebuilt later.  
+To reset your setup, delete `.venv` and run:
+```bash
+uv sync
+```
+This restores the environment exactly as defined in `pyproject.toml`.
+
 ## Logging out
 
 ```{warning}
+
 If you don't properly sign-out, you will use more login-sessions than you are afforded and your account will need to be logged out forcefully.
+
 ```
 
 To sign out, Windows Menu -> Username -> Sign Out
@@ -164,13 +228,6 @@ What matters is that the `.pub` file (e.g. `ed25519.pub`) is installed on the MB
 
 Talk to an MBO admin to add your ssh-key to the server.
 
-## Guidelines
-
-- Store raw and processed data in your allocated user space `ID_USER_DATA`.
-- Delete unused data when no longer needed to conserve shared storage.
-- Do not browse the internet on the MBO servers.
-- Do not install software on your own. Consult with the MBO admins with a request.
-- Log out from Windows after each session.
 
 <!-- ## Server Hardware  -->
 <!---->
