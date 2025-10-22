@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.b1ba2514-3065-4ff9-915d-b95f2ba0b73f.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.f034f3a8-0961-4c34-af61-72201c72fa2f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -327,8 +327,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">Connecting with RDP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">via Windows App</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">Python Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-basic-virtual-environment">Option 1 – Basic Virtual Environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml">Option 2 – Managed Project with pyproject.toml</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
@@ -340,7 +351,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-network-servers">Connecting to Network Servers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">SSH Connections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
 </ul>
             </nav>
         </div>
@@ -355,6 +365,16 @@ document.write(`
   <section id="server-guide">
 <h1>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
 <p>As a user of MBO servers, you will be given a login to MBO servers, which will give you access to the servers.</p>
+<section id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Log out from Windows after each session.</em></p></li>
+<li><p>Store raw and processed data in your allocated user space <code class="docutils literal notranslate"><span class="pre">ID_USER_DATA</span></code>.</p></li>
+<li><p>Delete unused data when no longer needed to conserve shared storage.</p></li>
+<li><p>Do not browse the internet on the MBO servers.</p></li>
+<li><p>Do not install software on your own. Consult with the MBO admins with a request.</p></li>
+</ul>
+</section>
 <section id="connecting-with-rdp">
 <h2>Connecting with RDP<a class="headerlink" href="#connecting-with-rdp" title="Permalink to this heading">#</a></h2>
 <p>MBO processing servers are accessible via Microsoft Remote Desktop Protocol (RDP).</p>
@@ -390,6 +410,58 @@ document.write(`
 </figcaption>
 </figure>
 <p>You should now be able to connect to the MBO servers!</p>
+</section>
+</section>
+<section id="development-environment">
+<h2>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading">#</a></h2>
+<section id="python-setup">
+<h3>Python Setup<a class="headerlink" href="#python-setup" title="Permalink to this heading">#</a></h3>
+<p>We recommend using <strong>uv</strong> for managing Python environments and dependencies.</p>
+<p>Alternative tools like Conda or <code class="docutils literal notranslate"><span class="pre">venv</span></code> also work, but are not covered here.<br />
+See the <a class="reference external" href="https://millerbrainobservatory.github.io/mbo_utilities/venvs.html">venv documentation</a> for details.</p>
+</section>
+<hr class="docutils" />
+<section id="organize-your-code">
+<h3>Organize Your Code<a class="headerlink" href="#organize-your-code" title="Permalink to this heading">#</a></h3>
+<p>Keep all related analysis projects in a single directory for consistency.<br />
+For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;C://Users//MBO-User//projects&quot;</span>
+</pre></div>
+</div>
+<p>You can also choose another folder such as <code class="docutils literal notranslate"><span class="pre">C://Users//MBO-User//code</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="create-a-project-environment">
+<h3>Create a Project Environment<a class="headerlink" href="#create-a-project-environment" title="Permalink to this heading">#</a></h3>
+<p>You can set up your environment in two ways:</p>
+<section id="option-1-basic-virtual-environment">
+<h4>Option 1 – Basic Virtual Environment<a class="headerlink" href="#option-1-basic-virtual-environment" title="Permalink to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.9
+</pre></div>
+</div>
+<p>This creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder that contains all dependencies.<br />
+Install packages as you normally would:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mbo_utilities
+</pre></div>
+</div>
+</section>
+<section id="option-2-managed-project-with-pyproject-toml">
+<h4>Option 2 – Managed Project with pyproject.toml<a class="headerlink" href="#option-2-managed-project-with-pyproject-toml" title="Permalink to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>init<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.9
+</pre></div>
+</div>
+<p>This also creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> but includes a <strong><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></strong> file that tracks dependencies.<br />
+To add packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>mbo_utilities
+</pre></div>
+</div>
+<p>The exact version is saved to <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, allowing your environment to be rebuilt later.<br />
+To reset your setup, delete <code class="docutils literal notranslate"><span class="pre">.venv</span></code> and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync
+</pre></div>
+</div>
+<p>This restores the environment exactly as defined in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+</section>
 </section>
 </section>
 <section id="logging-out">
@@ -452,6 +524,8 @@ $<span class="w"> </span>which<span class="w"> </span>conda
 <li><p>MATLAB</p></li>
 <li><p>Fiji / ImageJ</p></li>
 <li><p>Visual Studio Code</p></li>
+<li><p>Pycharm</p></li>
+<li><p>Irfanview (photo/video viewer)</p></li>
 <li><p>git bash</p></li>
 <li><p>wezterm</p></li>
 </ul>
@@ -518,16 +592,6 @@ Public key</div>
 <p>Depending on the algorithm you choose, the filename may be different.<br />
 What matters is that the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> file (e.g. <code class="docutils literal notranslate"><span class="pre">ed25519.pub</span></code>) is installed on the MBO servers.</p>
 <p>Talk to an MBO admin to add your ssh-key to the server.</p>
-</section>
-<section id="guidelines">
-<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Store raw and processed data in your allocated user space <code class="docutils literal notranslate"><span class="pre">ID_USER_DATA</span></code>.</p></li>
-<li><p>Delete unused data when no longer needed to conserve shared storage.</p></li>
-<li><p>Do not browse the internet on the MBO servers.</p></li>
-<li><p>Do not install software on your own. Consult with the MBO admins with a request.</p></li>
-<li><p>Log out from Windows after each session.</p></li>
-</ul>
 <!-- ## Server Hardware  -->
 <!---->
 <!-- :::{table} MBO Hardware Summary -->
@@ -590,8 +654,19 @@ What matters is that the <code class="docutils literal notranslate"><span class=
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">Connecting with RDP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">via Windows App</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">Python Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-basic-virtual-environment">Option 1 – Basic Virtual Environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml">Option 2 – Managed Project with pyproject.toml</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
@@ -603,7 +678,6 @@ What matters is that the <code class="docutils literal notranslate"><span class=
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-network-servers">Connecting to Network Servers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-connections">SSH Connections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
 </ul>
   </nav></div>
 
