@@ -47,15 +47,6 @@ You should now be able to connect to the MBO servers!
 
 ## Development Environment
 
-### Python Setup
-
-We recommend using **uv** for managing Python environments and dependencies.
-
-Alternative tools like Conda or `venv` also work, but are not covered here.  
-See the [venv documentation](https://millerbrainobservatory.github.io/mbo_utilities/venvs.html) for details.
-
----
-
 ### Organize Your Code
 
 Keep all related analysis projects in a single directory for consistency.  
@@ -69,7 +60,53 @@ You can also choose another folder such as `C://Users//MBO-User//code`.
 
 ---
 
+### Terminal
+
+We recommend `Windows Terminal` (which should be pinned to taskbar).
+You can also use VSCode or Pycharms integrated terminals.
+
+If there is a terminal you'd like to try, please contact an administrator on slack.
+
+```{warning}
+
+On Windows, when copy-pasting a filepath into the terminal, you may have to change forward slashes ('/') to either double forward ('//') or single back ('\') slashes.
+
+This is also why all python examples with filepaths as strings use r"path/to/file", to allow the single slash.
+
+```
+
+```bash
+PS C:\Users\MBO-Delta\projects> cd .\my_project\
+PS C:\Users\MBO-Delta\projects\my_project> ls
+
+
+    Directory: C:\Users\MBO-Delta\projects\my_project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/21/2025  11:59 AM                .venv
+-a----        10/21/2025  11:59 AM            109 .gitignore
+-a----        10/21/2025  11:59 AM              7 .python-version
+-a----        10/21/2025  11:59 AM             88 main.py
+-a----        10/21/2025  12:00 PM            220 pyproject.toml
+-a----        10/21/2025  11:59 AM              0 README.md
+-a----        10/21/2025  12:00 PM         645708 uv.lock
+
+
+PS C:\Users\MBO-Delta\projects\my_project>
+
+```
+
+---
+
 ### Create a Project Environment
+
+We recommend using **uv** for managing Python environments and dependencies.
+
+Alternative tools like Conda or `venv` also work, but are not covered here.
+
+See the [venv documentation](https://millerbrainobservatory.github.io/mbo_utilities/venvs.html) for details.
 
 You can set up your environment in two ways:
 
@@ -151,15 +188,45 @@ uv sync
 
 This restores the environment exactly as defined in `pyproject.toml`.
 
-## VS Code
+### VS Code
 
 Most IDE's like VSCode and Pycharm will automatically detect environments when you open a folder that contains a `.venv` directory, which happens when you run `uv venv --python 3.12.9`.
 
-If you keep your code next to this folder, it will be easy to distinguish which environment is needed to run the code. There are two general strategies:
+If your environment isn't being detected automatically, you can:
 
-1. Keep all of your code and notebooks in a single place in your home directory, named projects or code or a session C://Users//MBO-User//, Cntrl + Shift + P -> Preferences: Open User Settings -> Python: Venv Path -> Enter: `D://W1_SOFT//envs`
+1. Run `code .` from a terminal already inside your project
 
-Or, enter the path manually with Cntl + Shift + P -> Python: Select Interpreter -> Enter interpreter path -> Browse -> Navigate to `D://W1_SOFT//envs`
+2. Enter the path manually with Cntl + Shift + P -> Python: Select Interpreter -> Enter interpreter path -> Browse -> Navigate to `C://Users//MBO-User//projects`
+
+Option 2 is also useful for using an environment stored elsewhere, e.g. `D://W1_SOFT//envs`, where we plan to keep stable environments in the future.
+
+### Jupyter
+
+Jupyter is easist to set up on the terminal.
+
+Set a password for this jupyter session:
+
+``` bash
+
+uv run jupyter server password
+
+```
+
+From within `my_project`:
+
+``` bash
+
+uv run jupyter lab
+
+```
+
+### Pycharm
+
+Pycharm is particularly useful for it's debugger, which when used properly will make even the most complicated analysis easy to manage. Pycharm is available to all MBO Server Users.
+
+If you don't know how to use a debugger and have a need for it, we can get you started and set up a debugging environment.
+
+Tutorial documentation coming soon.
 
 ## Logging out
 
@@ -178,6 +245,7 @@ Each server has an `ID` that prepends the computer name.
 Each directory for this system will have this ID prepended to the directory name.
 
 ``` {warning}
+
 Both workstation and compute file-systems are *NOT* backed up.
 
 Users should have their own copies of all data on MBO servers.
@@ -193,21 +261,23 @@ The `E:` drive is the user sandbox, with a directory `E:/ID_USER_DATA/username` 
 This is where your intermediate results should go.
 
 ``` {admonition} Internet Access
+
 Users are strongly discouraged to browse the internet on the compute server, browsing should be done on your local machine only.
 A browser is available for Jupyter notebooks, but internet access is discouraged.
+
 ```
 
 ### Other Software
 
 - MATLAB
 - Fiji / ImageJ
-- Visual Studio Code
-- Pycharm
 - Irfanview (photo/video viewer)
 - git bash
 - wezterm
 
-Contact a server administrator to inquire about adding additional software. Please do not install software without consulting an MBO admin.
+Contact a server administrator to inquire about adding additional software.
+
+Please do not install software without consulting an MBO admin.
 
 ## Connecting to Network Servers
 
@@ -263,7 +333,6 @@ Depending on the algorithm you choose, the filename may be different.
 What matters is that the `.pub` file (e.g. `ed25519.pub`) is installed on the MBO servers.  
 
 Talk to an MBO admin to add your ssh-key to the server.
-
 
 <!-- ## Server Hardware  -->
 <!---->
