@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.2d80b4b7-6f2f-481d-a3cd-6e27d7ffdcdd.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.75ccf6cd-d5e9-4c49-8596-50a7593f9d7f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -439,8 +439,9 @@ For example:</p>
 </pre></div>
 </div>
 <p>This creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder that contains all dependencies.</p>
+<p>Make sure to incldue the python version, otherwise it will default to <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3.13</span></code>.</p>
 <p>Install packages as you need them:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mbo_utilities
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mbo_utilities<span class="w"> </span>lbm_suite2p_python<span class="w"> </span>napari
 </pre></div>
 </div>
 </section>
