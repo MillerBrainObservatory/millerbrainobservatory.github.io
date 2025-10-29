@@ -73,19 +73,21 @@ You can also choose another folder such as `C://Users//MBO-User//code`.
 
 You can set up your environment in two ways:
 
-#### Option 1 – Standard `pip` 
+#### Option 1 – Standard `pip`
 
 ```bash
 uv venv --python 3.12.9
 ```
 
-This creates a `.venv` folder that contains all dependencies.  
+This creates a `.venv` folder that contains all dependencies.
+
+Make sure to incldue the python version, otherwise it will default to `python 3.13`.
 
 Install packages as you need them:
 
 ```bash
 
-uv pip install mbo_utilities
+uv pip install mbo_utilities lbm_suite2p_python napari
 
 ```
 
