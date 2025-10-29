@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.75ccf6cd-d5e9-4c49-8596-50a7593f9d7f.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.427ef199-a100-453e-911b-5f0a472de90b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -333,16 +333,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">Python Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal">Terminal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-standard-pip">Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml-recommended">Option 2 – Managed Project with pyproject.toml (Recommended)</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">Pycharm</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
@@ -413,13 +415,6 @@ document.write(`
 </section>
 <section id="development-environment">
 <h2>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading">#</a></h2>
-<section id="python-setup">
-<h3>Python Setup<a class="headerlink" href="#python-setup" title="Permalink to this heading">#</a></h3>
-<p>We recommend using <strong>uv</strong> for managing Python environments and dependencies.</p>
-<p>Alternative tools like Conda or <code class="docutils literal notranslate"><span class="pre">venv</span></code> also work, but are not covered here.<br />
-See the <a class="reference external" href="https://millerbrainobservatory.github.io/mbo_utilities/venvs.html">venv documentation</a> for details.</p>
-</section>
-<hr class="docutils" />
 <section id="organize-your-code">
 <h3>Organize Your Code<a class="headerlink" href="#organize-your-code" title="Permalink to this heading">#</a></h3>
 <p>Keep all related analysis projects in a single directory for consistency.<br />
@@ -430,8 +425,44 @@ For example:</p>
 <p>You can also choose another folder such as <code class="docutils literal notranslate"><span class="pre">C://Users//MBO-User//code</span></code>.</p>
 </section>
 <hr class="docutils" />
+<section id="terminal">
+<h3>Terminal<a class="headerlink" href="#terminal" title="Permalink to this heading">#</a></h3>
+<p>We recommend <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Terminal</span></code> (which should be pinned to taskbar).
+You can also use VSCode or Pycharms integrated terminals.</p>
+<p>If there is a terminal you’d like to try, please contact an administrator on slack.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On Windows, when copy-pasting a filepath into the terminal, you may have to change forward slashes (‘/’) to either double forward (‘//’) or single back (‘’) slashes.</p>
+<p>This is also why all python examples with filepaths as strings use r”path/to/file”, to allow the single slash.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects&gt;<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>.<span class="se">\m</span>y_project<span class="se">\</span>
+PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects<span class="se">\m</span>y_project&gt;<span class="w"> </span>ls
+
+
+<span class="w">    </span>Directory:<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects<span class="se">\m</span>y_project
+
+
+Mode<span class="w">                 </span>LastWriteTime<span class="w">         </span>Length<span class="w"> </span>Name
+----<span class="w">                 </span>-------------<span class="w">         </span>------<span class="w"> </span>----
+d-----<span class="w">        </span><span class="m">10</span>/21/2025<span class="w">  </span><span class="m">11</span>:59<span class="w"> </span>AM<span class="w">                </span>.venv
+-a----<span class="w">        </span><span class="m">10</span>/21/2025<span class="w">  </span><span class="m">11</span>:59<span class="w"> </span>AM<span class="w">            </span><span class="m">109</span><span class="w"> </span>.gitignore
+-a----<span class="w">        </span><span class="m">10</span>/21/2025<span class="w">  </span><span class="m">11</span>:59<span class="w"> </span>AM<span class="w">              </span><span class="m">7</span><span class="w"> </span>.python-version
+-a----<span class="w">        </span><span class="m">10</span>/21/2025<span class="w">  </span><span class="m">11</span>:59<span class="w"> </span>AM<span class="w">             </span><span class="m">88</span><span class="w"> </span>main.py
+-a----<span class="w">        </span><span class="m">10</span>/21/2025<span class="w">  </span><span class="m">12</span>:00<span class="w"> </span>PM<span class="w">            </span><span class="m">220</span><span class="w"> </span>pyproject.toml
+-a----<span class="w">        </span><span class="m">10</span>/21/2025<span class="w">  </span><span class="m">11</span>:59<span class="w"> </span>AM<span class="w">              </span><span class="m">0</span><span class="w"> </span>README.md
+-a----<span class="w">        </span><span class="m">10</span>/21/2025<span class="w">  </span><span class="m">12</span>:00<span class="w"> </span>PM<span class="w">         </span><span class="m">645708</span><span class="w"> </span>uv.lock
+
+
+PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects<span class="se">\m</span>y_project&gt;
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
 <section id="create-a-project-environment">
 <h3>Create a Project Environment<a class="headerlink" href="#create-a-project-environment" title="Permalink to this heading">#</a></h3>
+<p>We recommend using <strong>uv</strong> for managing Python environments and dependencies.</p>
+<p>Alternative tools like Conda or <code class="docutils literal notranslate"><span class="pre">venv</span></code> also work, but are not covered here.</p>
+<p>See the <a class="reference external" href="https://millerbrainobservatory.github.io/mbo_utilities/venvs.html">venv documentation</a> for details.</p>
 <p>You can set up your environment in two ways:</p>
 <section id="option-1-standard-pip">
 <h4>Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#option-1-standard-pip" title="Permalink to this heading">#</a></h4>
@@ -492,15 +523,34 @@ uv<span class="w"> </span>sync
 <p>This restores the environment exactly as defined in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
 </section>
 </section>
-</section>
 <section id="vs-code">
-<h2>VS Code<a class="headerlink" href="#vs-code" title="Permalink to this heading">#</a></h2>
+<h3>VS Code<a class="headerlink" href="#vs-code" title="Permalink to this heading">#</a></h3>
 <p>Most IDE’s like VSCode and Pycharm will automatically detect environments when you open a folder that contains a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> directory, which happens when you run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">venv</span> <span class="pre">--python</span> <span class="pre">3.12.9</span></code>.</p>
-<p>If you keep your code next to this folder, it will be easy to distinguish which environment is needed to run the code. There are two general strategies:</p>
+<p>If your environment isn’t being detected automatically, you can:</p>
 <ol class="arabic simple">
-<li><p>Keep all of your code and notebooks in a single place in your home directory, named projects or code or a session C://Users//MBO-User//, Cntrl + Shift + P -&gt; Preferences: Open User Settings -&gt; Python: Venv Path -&gt; Enter: <code class="docutils literal notranslate"><span class="pre">D://W1_SOFT//envs</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code> from a terminal already inside your project</p></li>
+<li><p>Enter the path manually with Cntl + Shift + P -&gt; Python: Select Interpreter -&gt; Enter interpreter path -&gt; Browse -&gt; Navigate to <code class="docutils literal notranslate"><span class="pre">C://Users//MBO-User//projects</span></code></p></li>
 </ol>
-<p>Or, enter the path manually with Cntl + Shift + P -&gt; Python: Select Interpreter -&gt; Enter interpreter path -&gt; Browse -&gt; Navigate to <code class="docutils literal notranslate"><span class="pre">D://W1_SOFT//envs</span></code></p>
+<p>Option 2 is also useful for using an environment stored elsewhere, e.g. <code class="docutils literal notranslate"><span class="pre">D://W1_SOFT//envs</span></code>, where we plan to keep stable environments in the future.</p>
+</section>
+<section id="jupyter">
+<h3>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h3>
+<p>Jupyter is easist to set up on the terminal.</p>
+<p>Set a password for this jupyter session:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>jupyter<span class="w"> </span>server<span class="w"> </span>password
+</pre></div>
+</div>
+<p>From within <code class="docutils literal notranslate"><span class="pre">my_project</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+</section>
+<section id="pycharm">
+<h3>Pycharm<a class="headerlink" href="#pycharm" title="Permalink to this heading">#</a></h3>
+<p>Pycharm is particularly useful for it’s debugger, which when used properly will make even the most complicated analysis easy to manage. Pycharm is available to all MBO Server Users.</p>
+<p>If you don’t know how to use a debugger and have a need for it, we can get you started and set up a debugging environment.</p>
+<p>Tutorial documentation coming soon.</p>
+</section>
 </section>
 <section id="logging-out">
 <h2>Logging out<a class="headerlink" href="#logging-out" title="Permalink to this heading">#</a></h2>
@@ -537,13 +587,12 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 <ul class="simple">
 <li><p>MATLAB</p></li>
 <li><p>Fiji / ImageJ</p></li>
-<li><p>Visual Studio Code</p></li>
-<li><p>Pycharm</p></li>
 <li><p>Irfanview (photo/video viewer)</p></li>
 <li><p>git bash</p></li>
 <li><p>wezterm</p></li>
 </ul>
-<p>Contact a server administrator to inquire about adding additional software. Please do not install software without consulting an MBO admin.</p>
+<p>Contact a server administrator to inquire about adding additional software.</p>
+<p>Please do not install software without consulting an MBO admin.</p>
 </section>
 </section>
 <section id="connecting-to-network-servers">
@@ -674,16 +723,18 @@ What matters is that the <code class="docutils literal notranslate"><span class=
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">Python Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal">Terminal</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-standard-pip">Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml-recommended">Option 2 – Managed Project with pyproject.toml (Recommended)</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">Pycharm</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
