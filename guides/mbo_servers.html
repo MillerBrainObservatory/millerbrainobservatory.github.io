@@ -48,7 +48,7 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.f034f3a8-0961-4c34-af61-72201c72fa2f.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.2d80b4b7-6f2f-481d-a3cd-6e27d7ffdcdd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -336,16 +336,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">Python Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-basic-virtual-environment">Option 1 – Basic Virtual Environment</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml">Option 2 – Managed Project with pyproject.toml</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-standard-pip">Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml-recommended">Option 2 – Managed Project with pyproject.toml (Recommended)</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
 </ul>
 </li>
@@ -434,35 +433,73 @@ For example:</p>
 <section id="create-a-project-environment">
 <h3>Create a Project Environment<a class="headerlink" href="#create-a-project-environment" title="Permalink to this heading">#</a></h3>
 <p>You can set up your environment in two ways:</p>
-<section id="option-1-basic-virtual-environment">
-<h4>Option 1 – Basic Virtual Environment<a class="headerlink" href="#option-1-basic-virtual-environment" title="Permalink to this heading">#</a></h4>
+<section id="option-1-standard-pip">
+<h4>Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#option-1-standard-pip" title="Permalink to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.9
 </pre></div>
 </div>
-<p>This creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder that contains all dependencies.<br />
-Install packages as you normally would:</p>
+<p>This creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder that contains all dependencies.</p>
+<p>Install packages as you need them:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mbo_utilities
 </pre></div>
 </div>
 </section>
-<section id="option-2-managed-project-with-pyproject-toml">
-<h4>Option 2 – Managed Project with pyproject.toml<a class="headerlink" href="#option-2-managed-project-with-pyproject-toml" title="Permalink to this heading">#</a></h4>
+<section id="option-2-managed-project-with-pyproject-toml-recommended">
+<h4>Option 2 – Managed Project with pyproject.toml (Recommended)<a class="headerlink" href="#option-2-managed-project-with-pyproject-toml-recommended" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">init</span></code> will set up a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and a <code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> to initialize a “project”.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.venv</span></code>: This is where your environment lives, created during <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">init</span></code> and <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">venv</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>: file that stores your dependencies e.g. “numpy==2.0.0”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> : file that stores exact versions and branches of your current dependency tree. This file allows your current environment as it stands to be usable on any platform.</p></li>
+</ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>init<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.9
 </pre></div>
 </div>
-<p>This also creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> but includes a <strong><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></strong> file that tracks dependencies.<br />
-To add packages:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>mbo_utilities
+<p>With <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;PACKAGE&gt;</span></code>, if you ever break your environment, that package will be lost.</p>
+<p>It is much more forgiving to instead <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">add</span> <span class="pre">&lt;PACKAGE&gt;</span></code>, which makes sure the package fits with the rest of your environment and adds the proper version to <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>mbo_utilities<span class="w"> </span>lbm_suite2p_python<span class="w"> </span>napari
 </pre></div>
 </div>
-<p>The exact version is saved to <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, allowing your environment to be rebuilt later.<br />
-To reset your setup, delete <code class="docutils literal notranslate"><span class="pre">.venv</span></code> and run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync
+<p>Creating a new project is as simple as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects&gt;<span class="w"> </span>mkdir<span class="w"> </span>test_project
+
+
+<span class="w">    </span>Directory:<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects
+
+
+Mode<span class="w">                 </span>LastWriteTime<span class="w">         </span>Length<span class="w"> </span>Name
+----<span class="w">                 </span>-------------<span class="w">         </span>------<span class="w"> </span>----
+d-----<span class="w">        </span><span class="m">10</span>/28/2025<span class="w">   </span><span class="m">9</span>:19<span class="w"> </span>PM<span class="w">                </span>test_project
+
+PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-User<span class="se">\p</span>rojects&gt;<span class="w"> </span>uv<span class="w"> </span>init
+Initialized<span class="w"> </span>project<span class="w"> </span><span class="sb">`</span>projects<span class="sb">`</span>
+
+PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects&gt;<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>mbo_utilities<span class="w"> </span>lbm_suite2p_python
+Using<span class="w"> </span>CPython<span class="w"> </span><span class="m">3</span>.13.5
+Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
+Resolved<span class="w"> </span><span class="m">276</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span>.26s
+<span class="w">      </span>Built<span class="w"> </span>scanimage-tiff-reader<span class="o">==</span><span class="m">1</span>.4.1.4
+Prepared<span class="w"> </span><span class="m">50</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">15</span>.52s
+Installed<span class="w"> </span><span class="m">254</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">5</span>.48s
+</pre></div>
+</div>
+<p>Because of the uv cache, you can delete your environment and reset nearly instantly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-r<span class="w"> </span>.venv
+uv<span class="w"> </span>sync
 </pre></div>
 </div>
 <p>This restores the environment exactly as defined in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
 </section>
 </section>
+</section>
+<section id="vs-code">
+<h2>VS Code<a class="headerlink" href="#vs-code" title="Permalink to this heading">#</a></h2>
+<p>Most IDE’s like VSCode and Pycharm will automatically detect environments when you open a folder that contains a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> directory, which happens when you run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">venv</span> <span class="pre">--python</span> <span class="pre">3.12.9</span></code>.</p>
+<p>If you keep your code next to this folder, it will be easy to distinguish which environment is needed to run the code. There are two general strategies:</p>
+<ol class="arabic simple">
+<li><p>Keep all of your code and notebooks in a single place in your home directory, named projects or code or a session C://Users//MBO-User//, Cntrl + Shift + P -&gt; Preferences: Open User Settings -&gt; Python: Venv Path -&gt; Enter: <code class="docutils literal notranslate"><span class="pre">D://W1_SOFT//envs</span></code></p></li>
+</ol>
+<p>Or, enter the path manually with Cntl + Shift + P -&gt; Python: Select Interpreter -&gt; Enter interpreter path -&gt; Browse -&gt; Navigate to <code class="docutils literal notranslate"><span class="pre">D://W1_SOFT//envs</span></code></p>
 </section>
 <section id="logging-out">
 <h2>Logging out<a class="headerlink" href="#logging-out" title="Permalink to this heading">#</a></h2>
@@ -494,30 +531,6 @@ To reset your setup, delete <code class="docutils literal notranslate"><span cla
 <p>Users are strongly discouraged to browse the internet on the compute server, browsing should be done on your local machine only.
 A browser is available for Jupyter notebooks, but internet access is discouraged.</p>
 </div>
-</section>
-<section id="software">
-<h2>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
-<section id="python">
-<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h3>
-<p>Each user has access to <a class="reference external" href="https://docs.astral.sh/uv/getting-started/features/">uv</a> and <a class="reference external" href="https://github.com/conda-forge/miniforge">miniforge3</a> for managing python installations and environments.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>USER@SERVER<span class="w"> </span>MINGW64<span class="w"> </span>~/repos
-$<span class="w"> </span>which<span class="w"> </span>uv
-/c/Users/USER/.local/bin/uv
-
-USER@SERVER<span class="w"> </span>MINGW64<span class="w"> </span>~/repos
-$<span class="w"> </span>which<span class="w"> </span>conda
-/c/Users/USER/miniforge3/Scripts/conda
-</pre></div>
-</div>
-<p>There are important differences to consider depending on whether you use <code class="docutils literal notranslate"><span class="pre">uv</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> to manage environments.</p>
-<p>See the mbo <a class="reference external" href="https://millerbrainobservatory.github.io/mbo_utilities/venvs.html">guide on virtual environments</a> to learn more.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">conda</span></code>, <em>DO NOT</em> install any software in the base environment as that will cause conflicts between all installed environments and require a reinstallation of miniforge3.</p>
-</div>
-<p>The recommended method for interacting with <code class="docutils literal notranslate"><span class="pre">conda</span></code> is the <code class="docutils literal notranslate"><span class="pre">miniforge_prompt</span></code> (other terminals will work but consistent behavior is not guaranteed).</p>
-<p><code class="docutils literal notranslate"><span class="pre">UV</span></code> should be accessible from any terminal you choose.</p>
-</section>
 <section id="other-software">
 <h3>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -663,16 +676,15 @@ What matters is that the <code class="docutils literal notranslate"><span class=
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-setup">Python Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-basic-virtual-environment">Option 1 – Basic Virtual Environment</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml">Option 2 – Managed Project with pyproject.toml</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-standard-pip">Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml-recommended">Option 2 – Managed Project with pyproject.toml (Recommended)</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-out">Logging out</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem">Filesystem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-software">Other Software</a></li>
 </ul>
 </li>
