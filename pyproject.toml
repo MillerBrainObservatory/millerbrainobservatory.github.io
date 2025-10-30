@@ -1,0 +1,22 @@
+[project]
+name = "millerbrainobservatory-github-io"
+version = "0.1.0"
+description = "Source code for MBO Hub"
+readme = "README.md"
+requires-python = ">=3.12.7, <3.12.10"
+keywords = ["Pipeline", "Numpy", "Microscopy", "ScanImage", "Suite2p", "tiff"]
+urls = {homepage = "https://github.com/MillerBrainObservatory/millerbrainobservatory"}
+# scripts = {lsp="lbm_suite2p_python.__main__:main"}
+classifiers=[
+	"Development Status :: 3 - Alpha",
+	"Intended Audience :: Science/Research",
+	"Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "lbm_suite2p_python",
+    "mbo_utilities",
+]
+
+[tool.uv.sources]
+mbo_utilities = { path = "../mbo_utilities"}
+lbm_suite2p_python = { path = "../LBM-Suite2p-Python"}
