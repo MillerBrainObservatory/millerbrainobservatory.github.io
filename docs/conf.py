@@ -23,6 +23,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx_design",
     "myst_parser",
+    "myst_nb",  # Jupyter notebook rendering
     "sphinx_tippy",
 ]
 
@@ -30,10 +31,14 @@ exclude_patterns = ["Thumbs.db", ".DS_Store", ".git", "exclude",]
 myst_enable_extensions = ["colon_fence", "html_image"]
 sphinx_tabs_disable_tab_closing = True
 
+# Notebook execution configuration
+nb_execution_mode = "off"  # Don't execute notebooks during build (use cached outputs)
+
 source_suffix = {
     ".rst": "restructuredtext",
     ".ipynb": "myst-nb",
     ".myst": "myst-nb",
+    ".md": "myst-nb",
 }
 
 images_config = {"default_show_title": True}

@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Source code for MBO Hub"
 readme = "README.md"
 requires-python = ">=3.12.7, <3.12.10"
-keywords = ["Pipeline", "Numpy", "Microscopy", "ScanImage", "Suite2p", "tiff"]
+keywords = ["Microscopy", "ScanImage", "Suite2p", "tiff"]
 urls = {homepage = "https://github.com/MillerBrainObservatory/millerbrainobservatory"}
 # scripts = {lsp="lbm_suite2p_python.__main__:main"}
 classifiers=[

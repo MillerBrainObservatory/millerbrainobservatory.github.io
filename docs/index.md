@@ -59,6 +59,8 @@ maxdepth: 1
 guides/lbm_data.md
 guides/mbo_servers.md
 guides/hpc.md
+guides/venvs.md
+notebooks/convert_tiff_to_volumetric_zarr
 glossary.md
 ref.md
 ```
