@@ -45,6 +45,23 @@ Accept the certificate notification popup to continue connecting to your MBO ser
 
 You should now be able to connect to the MBO servers!
 
+### via Browser
+
+Note: You may need to disconnect from a VPN tunnel to connect from the rockefeller vpn website.
+
+1. Open a browser and navigate to: [https://vpn.rockefeller.edu/](https://vpn.rockefeller.edu/)
+2. Login with your VPN Username and Password
+3. Accept the 2-Factor Authentication prompt
+4. Scroll down to **HTML5 Access Sessions** and expand it
+5. In the **Remote Desktop Session to Hostname or IP** box, enter:
+
+```
+RBO-W1.rockefeller.edu
+```
+
+6. Click **Launch**
+7. Enter your MBO username (e.g., `MBO-Delta`) and password
+
 ## Development Environment
 
 ### Organize Your Code
@@ -102,91 +119,25 @@ PS C:\Users\MBO-Delta\projects\my_project>
 
 ### Create a Project Environment
 
-We recommend using **uv** for managing Python environments and dependencies.
+We recommend using **uv** for managing Python environments. See the {ref}`Virtual Environments Guide <managing_uv>` for detailed instructions.
 
-Alternative tools like Conda or `venv` also work, but are not covered here.
-
-See the [venv documentation](https://millerbrainobservatory.github.io/mbo_utilities/venvs.html) for details.
-
-You can set up your environment in two ways:
-
-#### Option 1 – Standard `pip`
+**Quick start** (recommended):
 
 ```bash
-uv venv --python 3.12.9
-```
-
-This creates a `.venv` folder that contains all dependencies.
-
-Make sure to incldue the python version, otherwise it will default to `python 3.13`.
-
-Install packages as you need them:
-
-```bash
-
-uv pip install mbo_utilities lbm_suite2p_python napari
-
-```
-
-#### Option 2 – Managed Project with pyproject.toml (Recommended)
-
-`uv init` will set up a `.venv` folder, a `pyproject.toml` and a `uv.lock` to initialize a "project".
-
-1. `.venv`: This is where your environment lives, created during `uv init` and `uv venv`.
-2. `pyproject.toml`: file that stores your dependencies e.g. "numpy==2.0.0"
-3. `uv.lock` : file that stores exact versions and branches of your current dependency tree. This file allows your current environment as it stands to be usable on any platform.
-
-```bash
-
+mkdir my_project
+cd my_project
 uv init --python 3.12.9
-
+uv add mbo_utilities lbm_suite2p_python
 ```
 
-With `uv pip install <PACKAGE>`, if you ever break your environment, that package will be lost.
+This creates a `.venv` folder, `pyproject.toml`, and `uv.lock` for reproducible environments.
 
-It is much more forgiving to instead `uv add <PACKAGE>`, which makes sure the package fits with the rest of your environment and adds the proper version to `pyproject.toml`.
-
-```bash
-
-uv add mbo_utilities lbm_suite2p_python napari
-
-```
-
-Creating a new project is as simple as:
-
-```bash
-
-PS C:\Users\MBO-Delta\projects> mkdir test_project
-
-
-    Directory: C:\Users\MBO-Delta\projects
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----        10/28/2025   9:19 PM                test_project
-
-PS C:\Users\MBO-User\projects> uv init
-Initialized project `projects`
-
-PS C:\Users\MBO-Delta\projects> uv add mbo_utilities lbm_suite2p_python
-Using CPython 3.13.5
-Creating virtual environment at: .venv
-Resolved 276 packages in 1.26s
-      Built scanimage-tiff-reader==1.4.1.4
-Prepared 50 packages in 15.52s
-Installed 254 packages in 5.48s
-
-```
-
-Because of the uv cache, you can delete your environment and reset nearly instantly:
+To restore an environment:
 
 ```bash
 rm -r .venv
 uv sync
 ```
-
-This restores the environment exactly as defined in `pyproject.toml`.
 
 ### VS Code
 

@@ -1,6 +1,8 @@
 sphinx>=6.1.3
 docutils>=0.19
 nbsphinx
+myst-nb>=1.0.0
+ipykernel
 sphinx_gallery
 sphinx-togglebutton
 pydata_sphinx_theme
