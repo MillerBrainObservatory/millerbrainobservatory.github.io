@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="dark">
+<html lang="en" data-content_root="../" data-theme="dark">
 
   <head>
     <meta charset="utf-8" />
@@ -14,41 +14,46 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f92f2087" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=902d9fbd"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+    <script src="../_static/documentation_options.js?v=f9c1cefe"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/mbo_servers.abee1c6c-10a5-47df-88ff-075544900daf.js"></script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_servers.5759bd8e-96f6-4aba-931d-e11f99f27d83.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_servers';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,6 +62,7 @@
     <link rel="prev" title="Light Beads Microscopy" href="lbm_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -64,32 +70,16 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -97,7 +87,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -105,16 +94,25 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -129,6 +127,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -140,11 +140,11 @@
     
     
     <img src="../_static/logo_mbo_compute.svg" class="logo__image only-dark" alt="MBO Compute Hub 1.0.0 documentation - Home"/>
-    <script>document.write(`<img src="../_static/logo_mbo_compute.svg" class="logo__image only-light" alt="MBO Compute Hub 1.0.0 documentation - Home"/>`);</script>
+    <img src="../_static/logo_mbo_compute.svg" class="logo__image only-light pst-js-only" alt="MBO Compute Hub 1.0.0 documentation - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><ul class="navbar-icon-links navbar-nav"
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -155,7 +155,7 @@
           
           
           
-          <a href="https://millerbrainobservatory.github.io/" title="Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa fa-home fa-lg" aria-hidden="true"></i></span>
+          <a href="https://millerbrainobservatory.github.io/" title="Home" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-home fa-lg" aria-hidden="true"></i>
             <span class="sr-only">Home</span></a>
         </li>
         <li class="nav-item">
@@ -167,16 +167,24 @@
           
           
           
-          <a href="https://github.com/MillerBrainObservatory/" title="MBO Github" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+          <a href="https://github.com/MillerBrainObservatory/" title="MBO Github" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
             <span class="sr-only">MBO Github</span></a>
         </li>
 </ul></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lbm_data.html">Light Beads Microscopy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Server Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hpc.html">Working on HPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="venvs.html">Virtual Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref.html">Image Ref</a></li>
 </ul>
@@ -187,14 +195,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +216,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -286,27 +299,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -330,16 +335,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">Connecting with RDP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">via Windows App</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-browser">via Browser</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal">Terminal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-standard-pip">Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml-recommended">Option 2 – Managed Project with pyproject.toml (Recommended)</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">Pycharm</a></li>
@@ -361,13 +363,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="server-guide">
-<h1>Server Guide<a class="headerlink" href="#server-guide" title="Permalink to this heading">#</a></h1>
+<h1>Server Guide<a class="headerlink" href="#server-guide" title="Link to this heading">#</a></h1>
 <p>As a user of MBO servers, you will be given a login to MBO servers, which will give you access to the servers.</p>
 <section id="guidelines">
-<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">#</a></h2>
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em>Log out from Windows after each session.</em></p></li>
 <li><p>Store raw and processed data in your allocated user space <code class="docutils literal notranslate"><span class="pre">ID_USER_DATA</span></code>.</p></li>
@@ -377,7 +379,7 @@ document.write(`
 </ul>
 </section>
 <section id="connecting-with-rdp">
-<h2>Connecting with RDP<a class="headerlink" href="#connecting-with-rdp" title="Permalink to this heading">#</a></h2>
+<h2>Connecting with RDP<a class="headerlink" href="#connecting-with-rdp" title="Link to this heading">#</a></h2>
 <p>MBO processing servers are accessible via Microsoft Remote Desktop Protocol (RDP).</p>
 <p>There are a few common applications, depending on your operating system:</p>
 <ul class="simple">
@@ -386,7 +388,7 @@ document.write(`
 <li><p><a class="reference external" href="https://www.helpwire.app/">HelpWire (Linux, Mac, Windows)</a></p></li>
 </ul>
 <section id="via-windows-app">
-<h3>via Windows App<a class="headerlink" href="#via-windows-app" title="Permalink to this heading">#</a></h3>
+<h3>via Windows App<a class="headerlink" href="#via-windows-app" title="Link to this heading">#</a></h3>
 <p>You will need the following information to access the servers:</p>
 <ul class="simple">
 <li><p>Server IP address</p></li>
@@ -407,16 +409,34 @@ document.write(`
 <figure class="align-default" id="id1">
 <img alt="../_images/rdp_certif.png" src="../_images/rdp_certif.png" />
 <figcaption>
-<p><span class="caption-text">Accept the certificate notification popup to continue connecting to your MBO server.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Accept the certificate notification popup to continue connecting to your MBO server.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>You should now be able to connect to the MBO servers!</p>
 </section>
+<section id="via-browser">
+<h3>via Browser<a class="headerlink" href="#via-browser" title="Link to this heading">#</a></h3>
+<p>Note: You may need to disconnect from a VPN tunnel to connect from the rockefeller vpn website.</p>
+<ol class="arabic simple">
+<li><p>Open a browser and navigate to: <a class="reference external" href="https://vpn.rockefeller.edu/">https://vpn.rockefeller.edu/</a></p></li>
+<li><p>Login with your VPN Username and Password</p></li>
+<li><p>Accept the 2-Factor Authentication prompt</p></li>
+<li><p>Scroll down to <strong>HTML5 Access Sessions</strong> and expand it</p></li>
+<li><p>In the <strong>Remote Desktop Session to Hostname or IP</strong> box, enter:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RBO</span><span class="o">-</span><span class="n">W1</span><span class="o">.</span><span class="n">rockefeller</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Click <strong>Launch</strong></p></li>
+<li><p>Enter your MBO username (e.g., <code class="docutils literal notranslate"><span class="pre">MBO-Delta</span></code>) and password</p></li>
+</ol>
+</section>
 </section>
 <section id="development-environment">
-<h2>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading">#</a></h2>
+<h2>Development Environment<a class="headerlink" href="#development-environment" title="Link to this heading">#</a></h2>
 <section id="organize-your-code">
-<h3>Organize Your Code<a class="headerlink" href="#organize-your-code" title="Permalink to this heading">#</a></h3>
+<h3>Organize Your Code<a class="headerlink" href="#organize-your-code" title="Link to this heading">#</a></h3>
 <p>Keep all related analysis projects in a single directory for consistency.<br />
 For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;C://Users//MBO-User//projects&quot;</span>
@@ -426,7 +446,7 @@ For example:</p>
 </section>
 <hr class="docutils" />
 <section id="terminal">
-<h3>Terminal<a class="headerlink" href="#terminal" title="Permalink to this heading">#</a></h3>
+<h3>Terminal<a class="headerlink" href="#terminal" title="Link to this heading">#</a></h3>
 <p>We recommend <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Terminal</span></code> (which should be pinned to taskbar).
 You can also use VSCode or Pycharms integrated terminals.</p>
 <p>If there is a terminal you’d like to try, please contact an administrator on slack.</p>
@@ -459,72 +479,24 @@ PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</s
 </section>
 <hr class="docutils" />
 <section id="create-a-project-environment">
-<h3>Create a Project Environment<a class="headerlink" href="#create-a-project-environment" title="Permalink to this heading">#</a></h3>
-<p>We recommend using <strong>uv</strong> for managing Python environments and dependencies.</p>
-<p>Alternative tools like Conda or <code class="docutils literal notranslate"><span class="pre">venv</span></code> also work, but are not covered here.</p>
-<p>See the <a class="reference external" href="https://millerbrainobservatory.github.io/mbo_utilities/venvs.html">venv documentation</a> for details.</p>
-<p>You can set up your environment in two ways:</p>
-<section id="option-1-standard-pip">
-<h4>Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#option-1-standard-pip" title="Permalink to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.9
+<h3>Create a Project Environment<a class="headerlink" href="#create-a-project-environment" title="Link to this heading">#</a></h3>
+<p>We recommend using <strong>uv</strong> for managing Python environments. See the <a class="reference internal" href="venvs.html#managing-uv"><span class="std std-ref">Virtual Environments Guide</span></a> for detailed instructions.</p>
+<p><strong>Quick start</strong> (recommended):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>my_project
+<span class="nb">cd</span><span class="w"> </span>my_project
+uv<span class="w"> </span>init<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.9
+uv<span class="w"> </span>add<span class="w"> </span>mbo_utilities<span class="w"> </span>lbm_suite2p_python
 </pre></div>
 </div>
-<p>This creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder that contains all dependencies.</p>
-<p>Make sure to incldue the python version, otherwise it will default to <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3.13</span></code>.</p>
-<p>Install packages as you need them:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mbo_utilities<span class="w"> </span>lbm_suite2p_python<span class="w"> </span>napari
-</pre></div>
-</div>
-</section>
-<section id="option-2-managed-project-with-pyproject-toml-recommended">
-<h4>Option 2 – Managed Project with pyproject.toml (Recommended)<a class="headerlink" href="#option-2-managed-project-with-pyproject-toml-recommended" title="Permalink to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">init</span></code> will set up a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder, a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and a <code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> to initialize a “project”.</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.venv</span></code>: This is where your environment lives, created during <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">init</span></code> and <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">venv</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>: file that stores your dependencies e.g. “numpy==2.0.0”</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> : file that stores exact versions and branches of your current dependency tree. This file allows your current environment as it stands to be usable on any platform.</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>init<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.9
-</pre></div>
-</div>
-<p>With <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;PACKAGE&gt;</span></code>, if you ever break your environment, that package will be lost.</p>
-<p>It is much more forgiving to instead <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">add</span> <span class="pre">&lt;PACKAGE&gt;</span></code>, which makes sure the package fits with the rest of your environment and adds the proper version to <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>mbo_utilities<span class="w"> </span>lbm_suite2p_python<span class="w"> </span>napari
-</pre></div>
-</div>
-<p>Creating a new project is as simple as:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects&gt;<span class="w"> </span>mkdir<span class="w"> </span>test_project
-
-
-<span class="w">    </span>Directory:<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects
-
-
-Mode<span class="w">                 </span>LastWriteTime<span class="w">         </span>Length<span class="w"> </span>Name
-----<span class="w">                 </span>-------------<span class="w">         </span>------<span class="w"> </span>----
-d-----<span class="w">        </span><span class="m">10</span>/28/2025<span class="w">   </span><span class="m">9</span>:19<span class="w"> </span>PM<span class="w">                </span>test_project
-
-PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-User<span class="se">\p</span>rojects&gt;<span class="w"> </span>uv<span class="w"> </span>init
-Initialized<span class="w"> </span>project<span class="w"> </span><span class="sb">`</span>projects<span class="sb">`</span>
-
-PS<span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\M</span>BO-Delta<span class="se">\p</span>rojects&gt;<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>mbo_utilities<span class="w"> </span>lbm_suite2p_python
-Using<span class="w"> </span>CPython<span class="w"> </span><span class="m">3</span>.13.5
-Creating<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>at:<span class="w"> </span>.venv
-Resolved<span class="w"> </span><span class="m">276</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span>.26s
-<span class="w">      </span>Built<span class="w"> </span>scanimage-tiff-reader<span class="o">==</span><span class="m">1</span>.4.1.4
-Prepared<span class="w"> </span><span class="m">50</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">15</span>.52s
-Installed<span class="w"> </span><span class="m">254</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">5</span>.48s
-</pre></div>
-</div>
-<p>Because of the uv cache, you can delete your environment and reset nearly instantly:</p>
+<p>This creates a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder, <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, and <code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> for reproducible environments.</p>
+<p>To restore an environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-r<span class="w"> </span>.venv
 uv<span class="w"> </span>sync
 </pre></div>
 </div>
-<p>This restores the environment exactly as defined in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
-</section>
 </section>
 <section id="vs-code">
-<h3>VS Code<a class="headerlink" href="#vs-code" title="Permalink to this heading">#</a></h3>
+<h3>VS Code<a class="headerlink" href="#vs-code" title="Link to this heading">#</a></h3>
 <p>Most IDE’s like VSCode and Pycharm will automatically detect environments when you open a folder that contains a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> directory, which happens when you run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">venv</span> <span class="pre">--python</span> <span class="pre">3.12.9</span></code>.</p>
 <p>If your environment isn’t being detected automatically, you can:</p>
 <ol class="arabic simple">
@@ -534,7 +506,7 @@ uv<span class="w"> </span>sync
 <p>Option 2 is also useful for using an environment stored elsewhere, e.g. <code class="docutils literal notranslate"><span class="pre">D://W1_SOFT//envs</span></code>, where we plan to keep stable environments in the future.</p>
 </section>
 <section id="jupyter">
-<h3>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h3>
+<h3>Jupyter<a class="headerlink" href="#jupyter" title="Link to this heading">#</a></h3>
 <p>Jupyter is easist to set up on the terminal.</p>
 <p>Set a password for this jupyter session:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>jupyter<span class="w"> </span>server<span class="w"> </span>password
@@ -546,14 +518,14 @@ uv<span class="w"> </span>sync
 </div>
 </section>
 <section id="pycharm">
-<h3>Pycharm<a class="headerlink" href="#pycharm" title="Permalink to this heading">#</a></h3>
+<h3>Pycharm<a class="headerlink" href="#pycharm" title="Link to this heading">#</a></h3>
 <p>Pycharm is particularly useful for it’s debugger, which when used properly will make even the most complicated analysis easy to manage. Pycharm is available to all MBO Server Users.</p>
 <p>If you don’t know how to use a debugger and have a need for it, we can get you started and set up a debugging environment.</p>
 <p>Tutorial documentation coming soon.</p>
 </section>
 </section>
 <section id="logging-out">
-<h2>Logging out<a class="headerlink" href="#logging-out" title="Permalink to this heading">#</a></h2>
+<h2>Logging out<a class="headerlink" href="#logging-out" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you don’t properly sign-out, you will use more login-sessions than you are afforded and your account will need to be logged out forcefully.</p>
@@ -561,7 +533,7 @@ uv<span class="w"> </span>sync
 <p>To sign out, Windows Menu -&gt; Username -&gt; Sign Out</p>
 </section>
 <section id="filesystem">
-<h2>Filesystem<a class="headerlink" href="#filesystem" title="Permalink to this heading">#</a></h2>
+<h2>Filesystem<a class="headerlink" href="#filesystem" title="Link to this heading">#</a></h2>
 <p>Each server has an <code class="docutils literal notranslate"><span class="pre">ID</span></code> that prepends the computer name.</p>
 <p>Each directory for this system will have this ID prepended to the directory name.</p>
 <div class="admonition warning">
@@ -583,7 +555,7 @@ uv<span class="w"> </span>sync
 A browser is available for Jupyter notebooks, but internet access is discouraged.</p>
 </div>
 <section id="other-software">
-<h3>Other Software<a class="headerlink" href="#other-software" title="Permalink to this heading">#</a></h3>
+<h3>Other Software<a class="headerlink" href="#other-software" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>MATLAB</p></li>
 <li><p>Fiji / ImageJ</p></li>
@@ -596,7 +568,7 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 </section>
 </section>
 <section id="connecting-to-network-servers">
-<h2>Connecting to Network Servers<a class="headerlink" href="#connecting-to-network-servers" title="Permalink to this heading">#</a></h2>
+<h2>Connecting to Network Servers<a class="headerlink" href="#connecting-to-network-servers" title="Link to this heading">#</a></h2>
 <p>Computers on the Rockefeller network (with network discoverability turned on) can be accessed via SMB as <code class="docutils literal notranslate"><span class="pre">\\server-name</span></code> or <code class="docutils literal notranslate"><span class="pre">\\ip-address</span></code>.</p>
 <figure class="align-default">
 <img alt="../_images/rdp_access_other_server.png" src="../_images/rdp_access_other_server.png" />
@@ -604,14 +576,10 @@ A browser is available for Jupyter notebooks, but internet access is discouraged
 <p>You will be prompted for username/password credentials the first time you connect.</p>
 </section>
 <section id="ssh-connections">
-<h2>SSH Connections<a class="headerlink" href="#ssh-connections" title="Permalink to this heading">#</a></h2>
+<h2>SSH Connections<a class="headerlink" href="#ssh-connections" title="Link to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="ssh-dropdown">
 <summary class="sd-summary-title sd-card-header">
-TLDR<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">TLDR</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Generate a new ssh key:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
 </pre></div>
@@ -681,7 +649,7 @@ What matters is that the <code class="docutils literal notranslate"><span class=
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -709,7 +677,9 @@ What matters is that the <code class="docutils literal notranslate"><span class=
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -720,16 +690,13 @@ What matters is that the <code class="docutils literal notranslate"><span class=
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-rdp">Connecting with RDP</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-windows-app">via Windows App</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#via-browser">via Browser</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organize-your-code">Organize Your Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal">Terminal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-standard-pip">Option 1 – Standard <code class="docutils literal notranslate"><span class="pre">pip</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-managed-project-with-pyproject-toml-recommended">Option 2 – Managed Project with pyproject.toml (Recommended)</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project-environment">Create a Project Environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code">VS Code</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">Pycharm</a></li>
@@ -786,8 +753,8 @@ What matters is that the <code class="docutils literal notranslate"><span class=
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,0 +1,22 @@
+selector_to_html = {"a[href=\"#external-resources\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">External Resources<a class=\"headerlink\" href=\"#external-resources\" title=\"Link to this heading\">#</a></h2><h3>Microscopy and Imaging<a class=\"headerlink\" href=\"#microscopy-and-imaging\" title=\"Link to this heading\">#</a></h3>", "a[href=\"#documentation-contents\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Documentation Contents<a class=\"headerlink\" href=\"#documentation-contents\" title=\"Link to this heading\">#</a></h2>", "a[href=\"glossary.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Glossary<a class=\"headerlink\" href=\"#glossary\" title=\"Link to this heading\">#</a></h1>", "a[href=\"#microscopy-and-imaging\"]": "<h3 class=\"tippy-header\" style=\"margin-top: 0;\">Microscopy and Imaging<a class=\"headerlink\" href=\"#microscopy-and-imaging\" title=\"Link to this heading\">#</a></h3>", "a[href=\"guides/lbm_data.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Light Beads Microscopy<a class=\"headerlink\" href=\"#light-beads-microscopy\" title=\"Link to this heading\">#</a></h1><p>This guide describes the data aquired on the <a class=\"reference external\" href=\"https://mbo.rockefeller.edu/tools/#opt-lbm\">optimized</a> or <a class=\"reference external\" href=\"https://mbo.rockefeller.edu/tools/#high-res\">high-res</a> light-beads microscopy (LBM) module.</p><p>Current LBM data is aquired with ScanImage aquisition software.</p>", "a[href=\"#miller-brain-observatory-compute-ecosystem\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Miller Brain Observatory: Compute Ecosystem<a class=\"headerlink\" href=\"#miller-brain-observatory-compute-ecosystem\" title=\"Link to this heading\">#</a></h1><p>A hub for tutorials, guides and resources to process MBO datasets.</p>", "a[href=\"guides/mbo_servers.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Server Guide<a class=\"headerlink\" href=\"#server-guide\" title=\"Link to this heading\">#</a></h1><p>As a user of MBO servers, you will be given a login to MBO servers, which will give you access to the servers.</p>", "a[href=\"#blog-posts-and-forums\"]": "<h3 class=\"tippy-header\" style=\"margin-top: 0;\">Blog Posts and Forums<a class=\"headerlink\" href=\"#blog-posts-and-forums\" title=\"Link to this heading\">#</a></h3>", "a[href=\"#pipelines-and-tools\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Pipelines and Tools<a class=\"headerlink\" href=\"#pipelines-and-tools\" title=\"Link to this heading\">#</a></h2>", "a[href=\"guides/venvs.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Virtual Environments<a class=\"headerlink\" href=\"#virtual-environments\" title=\"Link to this heading\">#</a></h1><p>This guide covers managing python environments with <a class=\"reference external\" href=\"https://docs.astral.sh/uv/\">UV</a> and <a class=\"reference external\" href=\"https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html\">conda</a>.</p>", "a[href=\"ref.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Image Ref<a class=\"headerlink\" href=\"#image-ref\" title=\"Link to this heading\">#</a></h1><p>A place to put rendered content to allow tooltips to render images within the tooltip.</p>", "a[href=\"guides/hpc.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Working on HPC<a class=\"headerlink\" href=\"#working-on-hpc\" title=\"Link to this heading\">#</a></h1><p>This guide explains how to transfer data from a MBO workstation to your labs HPC space.</p><p>See the <a class=\"reference external\" href=\"https://hpc.rockefeller.edu/\">Rockefeller HPC documentation</a>, specifically the <a class=\"reference external\" href=\"https://hpc.rockefeller.edu/guides/\">user guides</a> for more information.</p>"}
+skip_classes = ["headerlink", "sd-stretched-link"]
+
+window.onload = function () {
+    for (const [select, tip_html] of Object.entries(selector_to_html)) {
+        const links = document.querySelectorAll(` ${select}`);
+        for (const link of links) {
+            if (skip_classes.some(c => link.classList.contains(c))) {
+                continue;
+            }
+
+            tippy(link, {
+                content: tip_html,
+                allowHTML: true,
+                arrow: true,
+                placement: 'auto-start', maxWidth: 500, interactive: false,
+
+            });
+        };
+    };
+    console.log("tippy tips loaded!");
+};

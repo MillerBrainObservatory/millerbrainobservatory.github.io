@@ -5,15 +5,11 @@ This guide covers managing python environments with [UV](https://docs.astral.sh/
 :::{admonition} TLDR
 :class: dropdown
 
-Install and learn about `uv` and substitute `pip install <PACKAGE>` with `uv pip install <PACKAGE>` for a drop-in `pip` replacement.
-
-Keep all code in a single directory. This is where your environemnt lives. 
+Install [uv](https://docs.astral.sh/uv/) and use it as a drop-in `pip` replacement.
 
 ```bash
-
 uv venv --python 3.12.9
 uv pip install <package>
-
 ```
 
 :::
@@ -26,11 +22,14 @@ uv pip install <package>
   - **UV**
   - **Conda**
 * - Create environment
-  - `uv venv myenv --python=3.11`
-  - `conda create -n myenv -c conda-forge python=3.11`
+  - `uv venv --python=3.12.9`
+  - `conda create -n myenv -c conda-forge python=3.12`
+* - Create project
+  - `uv init --python 3.12.9`
+  - N/A**
 * - Activate
-  - `source .venv/bin/activate`  
-    `source .venv/Scripts/activate`
+  - `source .venv/bin/activate`
+    `.venv/Scripts/activate`
   - `conda activate myenv`
 * - Install package
   - `uv pip install <package>`
@@ -40,76 +39,43 @@ uv pip install <package>
   - (edit `environment.yml` or reinstall)
 * - Sync with pyproject.toml
   - `uv sync --all-extras`
-  - ✖️ Not supported
+  - N/A**
 * - Upgrade packages
-  - `uv lock --upgrade`  
+  - `uv lock --upgrade`
     `uv sync --upgrade-package <pkg>`
   - `conda update <package>`
 ```
 
+*\*Conda manages environments in the home directory (`~/miniforge3/envs/`), while `uv` environments are typically next to the code that uses them.*
+
+*\*\*Project-based features require `uv init`. See {ref}`uv venv vs uv init <uv-venv-vs-init>` for details.*
+
+---
+
 (managing_uv)=
-## Managing environments: `UV`
+## Managing environments: `uv`
 
-[uv](https://docs.astral.sh/uv/) is a complete drop-in replacement for `pip`.  
-If you know `pip`, you already know `uv`.
-
-You just prefix commands:
+[uv](https://docs.astral.sh/uv/) is a drop-in replacement for `pip`. You just prefix commands:
 
 ```bash
-pip install .   # old
-uv pip install . # new
+pip install numpy   # old
+uv pip install numpy # new
 ```
 
-Using `uv` has a key advantage: packages are cached globally, so you can quickly recreate them without worrying about contaminating your base environment.
-
 ``` {tip}
-With UV, re-creating your environment is much faster than with `conda` thanks to it's [dependency caching](https://docs.astral.sh/uv/concepts/cache/#dependency-caching).
-
-This makes deleting your environment an appropriate solution if you run into environemnt conflicts.
+With `uv`, re-creating your environment is fast thanks to [dependency caching](https://docs.astral.sh/uv/concepts/cache/#dependency-caching).
+Deleting and recreating your environment is a valid solution for conflicts.
 ```
 
 ### Create an environment
 
-By default, `uv venv` will create a folder `.venv` which is used as your environemnt.
-
-This folder will be placed in your current working directory:
-
 ```bash
-USER@SERVER ~/repos/mypackage
-$ uv venv
-Using CPython 3.11.12
-Creating virtual environment at: .venv
+uv venv --python 3.12.9
 ```
 
-You can specify a name for the environment:
+This creates a `.venv` folder in your current directory. Most IDEs (VSCode, PyCharm) will detect it automatically.
 
-```bash
-USER@SERVER ~/repos/mypackage
-$ uv venv myenv
-Using CPython 3.11.12
-Creating virtual environment at: myenv
-```
-
-You can also indicate which python to use:
-
-```bash
-USER@SERVER ~/repos/mypackage
-$ uv venv myenv --python=39  # or 310, 311, 312, 313
-Using CPython 3.9.22
-Creating virtual environment at: myenv
-```
-
-```{warning}
-`uv venv` will create a folder in your current directory named `.venv`, which is a python standard and will be automatically chosen by many development environments e.g. `VSCode`.
-
-To distinguish between environments, name the environment by substituting <VENV-NAME> with the name you wish to assign to that virtual environment.
-
-Some IDE's may struggle to locate named environments (e.g. some versions of Pycharm).
-```
-
-### Activate the environment (optional, good practice)
-
-If you named your environment, replace `.venv` below with the name of your environment:
+### Activate the environment
 
 ::::{tab-set}
 :::{tab-item} Linux/macOS
@@ -123,174 +89,130 @@ source .venv/bin/activate
 :::{tab-item} Windows
 
 ```bash
-source .venv/Scripts/activate
+.venv/Scripts/activate
 ```
 
 :::
 ::::
 
-If you don't activate the environment, but you are running code from a directory that has a `.venv` folder, it will still be used automatically in most cases.
+```{note}
+Activation is optional. If a `.venv` folder exists in your working directory, most tools will use it automatically.
+```
 
-### Install python packages
+### Create a project
+
+For reproducible environments, initialize a project with `uv init`:
 
 ```bash
-uv pip install <PACKAGE>
+mkdir my_project
+cd my_project
+uv init --python 3.12.9
+uv add mbo_utilities lbm_suite2p_python
 ```
 
-This works just like pip.
+This creates:
+- `.venv/` — your environment
+- `pyproject.toml` — your dependencies
+- `uv.lock` — exact versions for reproducibility
 
-You can install packages from the filesystem just as you can with `pip`:
+To restore an environment from these files:
 
 ```bash
-uv pip install .
+rm -r .venv
+uv sync
 ```
 
-Or use higher-level `uv` features like `sync`:
+(uv-venv-vs-init)=
+### `uv venv` vs `uv init`
 
-```bash
-uv sync --all-extras
-```
-The `--all-extras` get's all extra dependencies, like [notebook, gui], if the repository has any.
+| Command | What it creates | Use case |
+|---------|-----------------|----------|
+| `uv venv` | `.venv/` only | Quick setup for experimentation or one-off scripts. |
+| `uv init` | `.venv/` + `pyproject.toml` + `uv.lock` | Reproducible projects. Required for `uv add` and `uv sync`. |
 
-(uv_cheatsheet)=
-```{list-table} Most helpful UV Commands
-:header-rows: 1
-:name: uv-commands
+**`uv venv`** creates just the virtual environment folder. Install packages with `uv pip install`, but they aren't tracked anywhere—if your environment breaks, you lose your package list.
 
-* - **Command**
-  - **Description**
-* - `uv venv`, `uv venv .myvenv`
-  - Create an env, optionally name it myenv (not recommended)
-* - `uv sync` / `uv lock --upgrade`
-  - Update your environment based on the current most up to date packages
-* - `uv add <package>` / `uv remove <package>`
-  - Add/remove packages (updates `pyproject.toml`, `uv.lock`, and your env)
-* - `uv sync --upgrade-package <pkg>` / `uv lock --upgrade`
-  - Upgrade single/all packages
-```
+**`uv init`** creates a full project structure:
+- **`pyproject.toml`** — declares your dependencies (e.g., `mbo_utilities>=2.0`)
+- **`uv.lock`** — locks exact versions for reproducibility across machines
+- **`.venv/`** — the environment itself
+
+With `uv init`, you can use `uv add <package>` which automatically resolves compatible versions and updates both files. To recreate the exact environment later: `uv sync`.
 
 ---
 
 ## Managing environments: `conda`
 
-### Create an environment
-
-For more ways to create an environment (such as from a `environment.yml` file), see [Creating an Environment with Commands](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands).
-
 ``` bash
-conda create -n myenv -c conda-forge python=3.xx
+conda create -n myenv -c conda-forge python=3.12
+conda activate myenv
+conda install <package>
 ```
-
-### Activate the environment
-
 
 ```{warning}
-Don't forget to activate your environment!
-
-If you do, it will be installed in the [base conda environment](https://www.anaconda.com/docs/tools/working-with-conda/environments#why-shouldn%E2%80%99t-i-work-in-the-base-environment%3F).
+Always activate your environment before installing packages. Otherwise packages install to the base environment, which often leads to conflicts.
 ```
 
-Unlike {ref}`uv <managing_uv>`,
-which will look for a folder in your current directory,
-`conda` will default to installing packages into the base environment which is shared across all user environments and often leads to package conflicts.
+For more details, see [conda: Managing Packages](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html).
 
-The only fix is to reinstall `conda`.
+---
+
+## Mixing `conda` and `uv`
+
+`uv` will fallback to a conda environment if no `.venv` folder is found:
+
+```bash
+$ uv pip list | grep numpy
+Using Python 3.12.6 environment at: /home/USER/miniforge3
+numpy  2.0.0
+```
+
+We recommend disabling automatic conda activation:
 
 ``` bash
-conda activate myenv
+conda config --set auto_activate_base false
 ```
 
-### Install python packages
+You can still use `conda activate myenv` when needed.
 
-For details about installing python packages with conda, see conda docs on [Managing Packages](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#managing-packages).
+---
 
-``` bash
-conda install <package1> <package2>
-```
+## Why `uv` over `conda`?
+
+- Most Python libraries now ship prebuilt wheels — conda's main advantage (system binaries) is less relevant.
+- `uv` is faster and caches dependencies.
+- The conda maintainers themselves are moving toward venv-based tools (pixi).
+
+If you **must** use conda, use `miniforge3`. Avoid mixing `pip install` and `conda install` after initial setup.
 
 ---
 
 ## Virtual environment options
 
-You could learn the in's and out's for all of the virtual environments below.
-Don't do this (use [UV](https://docs.astral.sh/uv/getting-started/), the community is finally settling on a standard).
-
-There are generally three camps:
-
-1. Tools that handle only Python packages (venv, pyenv)
-2. Tools that handle python packages AND system dependencies like ffmpeg, opencv, cuda (mamba, conda)
-3. Tools built on top of the above to make them easier to use, faster, etc. (UV, pixi, which uses UV under the hood).
+There are many tools available. We recommend `uv` as the community is converging on it.
 
 ::::{grid}
 :::{grid-item-card} System + Python
  conda,
- miniconda,
  miniforge,
- anaconda,
  mamba,
- micromamba,
  pixi
 :::
 
 :::{grid-item-card} Python-only
  pip,
- pip-tools,
- pipx,
- venv / pyvenv,
+ venv,
  virtualenv,
- pipenv,
  poetry,
- twine,
- hatch,
- asdf,
  uv
 :::
 ::::
 
 ---
 
-## Why not `conda`?
-
-- `pip` (and UV) can build most system packages you need from source.
-- Most Python libraries now ship prebuilt wheels (binaries).
-- The main selling point for `conda` (handling system binaries) is much less relevant today.
-- The `conda` maintainers have moved toward venv-based setups (pixi and uv).
-
-If you **must** use conda, **only** use `miniforge3`.
-Many recommended setup steps for miniconda/anaconda are mimicking the defaults of `miniforge3`.
-
-If you already know conda, that's fine — just **avoid mixing** `pip install` and `conda install` after your initial setup unless you have to.
-
----
-
-## Mixing `conda` and `uv`
-
-`uv` will automatically fallback to using a conda environment if no `.venv` folder is found:
-
-```bash
-USER at pop-os in ~/repos/work/mbo_utilities (master●)
-$ uv pip list | grep imgui
-Using Python 3.12.6 environment at: /home/USER/miniforge3
-imgui-bundle              1.6.2
-```
-
-So even if you're using conda, `uv` will work all the same.
-
-We recommend turning off automatic environment activation for `conda` in this case:
-
-``` bash
-conda config --set auto_activate_base false
-```
-
-You can still call `conda activate myenv`, but only if `conda` is called explicitly.
-
 ## Debugging environments
 
-Most bugs and frustration in Python come from mismanaging virtual environments.
+Most Python issues come from environment mismanagement. Check terminal output for the Python path being used.
 
-No matter what command you're running, check the terminal outputs for a filepath that points to python.
-
-For jupyterlab:
-
-```{figure} ./_images/venv_jlab.png
+```{figure} ../_images/venv_jlab.png
 ```
