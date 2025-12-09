@@ -22,8 +22,7 @@ extensions = [
     "numpydoc",
     "sphinx.ext.mathjax",
     "sphinx_design",
-    "myst_parser",
-    "myst_nb",  # Jupyter notebook rendering
+    "myst_nb",  # Jupyter notebook rendering (includes myst_parser)
     "sphinx_tippy",
 ]
 
