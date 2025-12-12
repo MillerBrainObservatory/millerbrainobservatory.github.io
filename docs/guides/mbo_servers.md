@@ -49,14 +49,14 @@ You should now be able to connect to the MBO servers!
 
 Note: You may need to disconnect from a VPN tunnel to connect from the rockefeller vpn website.
 
-1. Open a browser and navigate to: [https://vpn.rockefeller.edu/](https://vpn.rockefeller.edu/)
+1. Open a browser and navigate to [https://vpn.rockefeller.edu/](https://vpn.rockefeller.edu/)
 2. Login with your VPN Username and Password
 3. Accept the 2-Factor Authentication prompt
 4. Scroll down to **HTML5 Access Sessions** and expand it
 5. In the **Remote Desktop Session to Hostname or IP** box, enter:
 
 ```
-RBO-W1.rockefeller.edu
+SERVER_NAME.rockefeller.edu
 ```
 
 6. Click **Launch**
