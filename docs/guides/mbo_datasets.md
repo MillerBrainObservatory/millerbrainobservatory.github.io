@@ -161,7 +161,7 @@ Non-LBM, non-piezo acquisitions for simpler imaging scenarios.
 | 2D Time Series | TYX | Single-plane functional imaging |
 | 2D Projection | YX | Structural imaging, max projections |
 
-### Frame Organization
+### Data Format
 
 Standard acquisitions are straightforward:
 - Each frame is a single 2D scan
