@@ -338,73 +338,101 @@ div.admonition.seealso > .admonition-title { color: #89ddff !important; }
 }
 
 .sd-card:hover {
-  border-color: #bb86fc !important;
+  border-color: #555 !important;
 }
 
-.sd-card-header {
-  background-color: #2d2d2d !important;
-  border-bottom: 1px solid #333 !important;
-  padding: 8px 12px !important;
-  font-size: 0.9rem !important;
-  font-weight: 600 !important;
-  color: #fff !important;
+/* Remove header/footer styling - we don't use them */
+.sd-card-header,
+.sd-card-footer {
+  display: none !important;
 }
 
 .sd-card-body {
   background-color: #1e1e1e !important;
-  padding: 8px 12px !important;
-  color: #e0e0e0 !important;
+  padding: 12px 16px !important;
+  color: #b0b0b0 !important;
   font-size: 0.85rem !important;
 }
 
-.sd-card-footer {
-  background-color: #252525 !important;
-  border-top: 1px solid #333 !important;
-  padding: 6px 12px !important;
+/* Tool cards - custom layout */
+.tool-card {
+  border: 1px solid #333 !important;
 }
 
-.sd-card-title {
-  color: #fff !important;
-  font-weight: 600 !important;
-  font-size: 0.95rem !important;
-  margin-bottom: 4px !important;
+.tool-card:hover {
+  border-color: #666 !important;
 }
 
-/* Card badges */
-.sd-badge {
-  font-size: 0.75rem !important;
-  padding: 3px 8px !important;
-  border-radius: 3px !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
+/* Featured cards - emphasized */
+.tool-card.featured {
+  border-color: #bb86fc !important;
+  border-width: 1px !important;
 }
 
-.sd-bg-primary, .sd-outline-primary {
-  background-color: transparent !important;
-  border: 1px solid #bb86fc !important;
+.tool-card.featured:hover {
+  border-color: #d4a5ff !important;
+}
+
+.tool-card.featured .card-title {
   color: #bb86fc !important;
 }
 
-.sd-bg-primary:hover, .sd-outline-primary:hover {
-  background-color: #bb86fc !important;
-  color: #121212 !important;
+/* Card header row - title | badges */
+.card-header-row {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 8px !important;
+  gap: 10px !important;
 }
 
-/* Shields.io badges in footer */
-.sd-card-footer a {
-  margin-right: 6px !important;
-  display: inline-block !important;
+.card-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
 }
 
-.sd-card-footer img {
-  height: 20px !important;
-  border-radius: 3px !important;
-  opacity: 0.9 !important;
-  transition: opacity 0.2s ease !important;
+.card-sep {
+  color: #555 !important;
+  font-weight: 300 !important;
 }
 
-.sd-card-footer img:hover {
-  opacity: 1 !important;
+.card-badges {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.card-badges a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-color: #2d2d2d !important;
+  border-radius: 4px !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.card-badges a:hover {
+  background-color: #404040 !important;
+}
+
+.card-badges svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: #e0e0e0 !important;
+}
+
+/* Icon-only badges (no shields.io images) */
+.card-badges .icon-docs::before {
+  content: "📄";
+  font-size: 14px;
+}
+
+.card-badges .icon-github::before {
+  content: "";
 }
 
 /* Grid spacing */
@@ -416,11 +444,66 @@ div.admonition.seealso > .admonition-title { color: #89ddff !important; }
   padding: 6px !important;
 }
 
-/* Remove default card shadows and extra spacing */
+/* Remove default card shadows */
 .sd-shadow-sm, .sd-shadow-md, .sd-shadow-lg {
   box-shadow: none !important;
 }
 
-.sd-card-img-top {
-  border-radius: 4px 4px 0 0 !important;
+/* Grid captions - figure caption style */
+.grid-caption {
+  text-align: center !important;
+  font-size: 0.8rem !important;
+  color: #888 !important;
+  font-style: italic !important;
+  margin: 0.5em 0 1.5em 0 !important;
+  padding: 0 !important;
+}
+
+/* Index page - center main headings */
+.bd-article-container h1,
+.bd-content h1 {
+  text-align: center !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+#mbo-compute-hub > h1,
+h1:first-of-type {
+  text-align: center !important;
+  border-bottom: none !important;
+}
+
+/* Center h2 headers on index */
+#pipelines-and-tools > h2,
+#external-resources > h2,
+h2#pipelines-and-tools,
+h2#external-resources,
+section#pipelines-and-tools > h2,
+section#external-resources > h2 {
+  text-align: center !important;
+}
+
+.tagline {
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  color: #888 !important;
+  margin: 0 0 2em 0 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.nav-links {
+  text-align: center !important;
+  margin-bottom: 0.5em !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.nav-links a {
+  color: #bb86fc !important;
+  text-decoration: none !important;
+}
+
+.nav-links a:hover {
+  text-decoration: underline !important;
 }
