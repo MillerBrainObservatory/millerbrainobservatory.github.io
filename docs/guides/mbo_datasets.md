@@ -1,8 +1,55 @@
-# Light Beads Microscopy
+# MBO Datasets
 
-This guide describes the data aquired on the [optimized](https://mbo.rockefeller.edu/tools/#opt-lbm) or [high-res](https://mbo.rockefeller.edu/tools/#high-res) light-beads microscopy (LBM) module.
+This guide describes data acquired at the Miller Brain Observatory using [ScanImage](https://docs.scanimage.org/index.html) and light-sheet microscopy systems.
 
-Current LBM data is aquired with ScanImage aquisition software.
+## Acquisition Types
+
+The MBO supports several imaging modalities, each with distinct data organization:
+
+| Acquisition Type | Dimensions | Z-Strategy | Frame Averaging |
+|------------------|------------|------------|-----------------|
+| [Optimized LBM](#optimized-lbm) | TZYX | Interleaved z-planes as channels | No |
+| [Piezo Stack](#piezo-stack) | TZYX | Sequential z-slices via piezo | Optional |
+| [Standard 2P](#standard-2p) | TYX or YX | Single plane or projection | Optional |
+| [IsoView Light-Sheet](#isoview-light-sheet) | TZYX | Simultaneous multi-view | No |
+
+---
+
+(array_terms)=
+## Array Terminology
+
+All MBO datasets are stored as multi-dimensional arrays with consistent dimension ordering:
+
+| Dimension | Description |
+|-----------|-------------|
+| [Y, X]    | Single 2D plane |
+| [Z, Y, X] | Single volume (z-stack) |
+| [T, Y, X] | 2D timeseries |
+| [T, Z, Y, X] | Volumetric timeseries |
+
+```{admonition} Frame Definition
+:class: tip
+
+A **frame** represents a single 2D raster scan of the field of view, saved as one TIFF page with shape `(height, width)`.
+```
+
+### ScanImage Hierarchy
+
+For ScanImage acquisitions, data is organized hierarchically:
+
+| Term | Definition |
+|------|------------|
+| Frame | One 2D scan (one TIFF page) |
+| Slice | One z-position (may contain multiple frames if `framesPerSlice > 1`) |
+| Volume | One complete z-stack (all slices) |
+| Timepoint | One volume acquisition in a time series |
+
+---
+
+(optimized-lbm)=
+## Optimized LBM
+
+Data acquired on the [optimized](https://mbo.rockefeller.edu/tools/#opt-lbm) or [high-res](https://mbo.rockefeller.edu/tools/#high-res) light-beads microscopy (LBM) modules.
 
 ```{admonition} Example Dataset
 :class: dropdown
@@ -15,22 +62,21 @@ Example dataset collected by Kevin Barber with Dr. Alipasha Vaziri @ Rockefeller
 | Date         | 2025-03-01              |
 | Virus        | jGCaMP8s                |
 | Framerate    | 17 Hz                   |
-| FOV          | 900 µm × 900 µm         |
-| Resolution   | 2 µm × 2 µm × 16 µm     |
+| FOV          | 900 um x 900 um         |
+| Resolution   | 2 um x 2 um x 16 um     |
 ```
 
-## Raw Data
+### Raw Data
 
 ScanImage [Multi Region Of Interest (mROI)](https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html) outputs raw `.tiff` files made up of individual `Regions of Interest (ROI's)`.
 
 In its raw form, data is saved as a 3-dimensional {ref}`multi-page tiff file <multipage_tiff>` with each ROI stacked vertically relative to the fast-galvo scan direction.
 
-Each 2D image within this tiff file represents a page of the original document.
-
-
 The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.
 
 ### Frame Ordering
+
+LBM saves z-planes interleaved as channels. There is no frame averaging because the piezo is not used.
 
 ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:
 
@@ -42,7 +88,7 @@ ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:
 
 Data organized this way is generally incompatible with downstream processing libraries like suite2p, CaImAn and EXTRACT.
 
-For compatibility, we reorganize the frames as follows:
+For compatibility, we reorganize (de-interleave) the frames as follows:
 
 - frame0 = time0_plane1
 - frame1 = time1_plane1
@@ -55,29 +101,99 @@ Raw data are stored first by z-plane, for each timepoint (1) before being deinte
 This example shows a session with 2 ROI's shown vertically stacked with a black bar of ~14 pixels in between.
 ```
 
-```{admonition} Note on Frames
+```{admonition} Splitting Frames Across Files
 :class: tip
 
 Before beginning the recording session, users have the option to split frames in the recording across multiple `.tiff` files. This option is helpful as it requires less work in post-processing to ensure there isn't too much computer memory being used.
-
 ```
 
-----
+---
 
-### Metadata
+(piezo-stack)=
+## Piezo Stack
 
-The primary distinction between Light-Beads Microscopy datasets and standard 2p datasets are how the data is organized on disk.
+Piezo acquisitions use a {term}`piezo actuator<piezo>` to sequentially move through z-positions, creating volumetric data.
 
-This information is stored in the [ScanImage Metadata](https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification).
+### Frame Organization
+
+Unlike LBM where z-planes are interleaved, piezo stacks acquire all frames at one z-position before moving to the next slice:
+
+```
+slice0_frame0 -> slice0_frame1 -> ... -> slice0_frameN ->
+slice1_frame0 -> slice1_frame1 -> ... -> slice1_frameN ->
+...
+sliceZ_frame0 -> sliceZ_frame1 -> ... -> sliceZ_frameN
+```
+
+### Key Metadata
+
+| Parameter | Description |
+|-----------|-------------|
+| `si.hStackManager.numSlices` | Number of z-positions in the stack |
+| `si.hStackManager.framesPerSlice` | Number of frames acquired at each z-position |
+| `si.hStackManager.logAverageFactor` | If > 1, frames are averaged during acquisition |
+
+### Frame Averaging
+
+When `si.hStackManager.framesPerSlice > 1` and `si.hStackManager.logAverageFactor == 1`:
+
+- Multiple frames exist per z-slice in the raw data
+- These can optionally be averaged together during preprocessing
+- Averaging improves SNR at the cost of temporal resolution
+
+```{admonition} When to Average
+:class: tip
+
+Frame averaging is useful for structural imaging or when temporal resolution is less critical. For fast calcium dynamics, consider keeping individual frames or using fewer `framesPerSlice`.
+```
+
+---
+
+(standard-2p)=
+## Standard 2P
+
+Non-LBM, non-piezo acquisitions for simpler imaging scenarios.
+
+### Data Formats
+
+| Type | Dimensions | Use Case |
+|------|------------|----------|
+| 2D Time Series | TYX | Single-plane functional imaging |
+| 2D Projection | YX | Structural imaging, max projections |
+
+### Frame Organization
+
+Standard acquisitions are straightforward:
+- Each frame is a single 2D scan
+- Frames are stored sequentially in time order
+- No de-interleaving required
+
+---
+
+(isoview-light-sheet)=
+## IsoView Light-Sheet
+
+IsoView is a multi-view light-sheet microscopy system for high-speed volumetric imaging.
+
+```{admonition} Coming Soon
+:class: note
+
+Detailed documentation for IsoView data organization is in development. Contact the MBO team for current protocols.
+```
+
+---
+
+(scanimage-metadata)=
+## ScanImage Metadata
+
+The primary distinction between MBO datasets is how data is organized on disk. This information is stored in the [ScanImage Metadata](https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification).
 
 (metadata_overview)=
-#### Overview
+### Overview
 
-ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw {code}`.tiff` file.
+ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw `.tiff` file.
 
 Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.
-
-There is primary metadata, intended for use in a typical processing run. Many of these values are derived from less-pertinent (secondary) metadata shown below.
 
 :::{dropdown} Metadata (primary)
 :chevron: down-up
@@ -118,6 +234,23 @@ There are additional metadata values used internally to locate files and to calc
 
 :::
 
+:::{dropdown} Piezo Stack Metadata
+:chevron: down-up
+:animate: fade-in-slide-down
+:name: piezo_metadata
+
+Additional metadata specific to piezo acquisitions:
+
+| Name                           | Description                                       |
+|--------------------------------|---------------------------------------------------|
+| si.hStackManager.numSlices     | Number of z-slices in the volume                  |
+| si.hStackManager.framesPerSlice| Frames acquired at each z-position                |
+| si.hStackManager.logAverageFactor | If > 1, hardware averaging is enabled          |
+| si.hStackManager.zs            | Z-positions in microns                            |
+| si.hStackManager.stackZStepSize| Step size between z-slices (um)                   |
+
+:::
+
 (scanner_note)=
 > **Note:**
 > With multi-ROI tiffs, the size of your tiff given by `image_size` will be different from the number of pixels in x and y.
@@ -127,7 +260,7 @@ There are additional metadata values used internally to locate files and to calc
 --------
 
 (using_metadata)=
-#### Usage
+### Usage
 
 Each pipeline comes stocked with methods to retrieve imaging metadata.
 
@@ -174,26 +307,13 @@ raw_filename: "file.tif"
 raw_filepath: "D:\Demo"
 raw_fullfile: "D:\Demo\file.tif"
 num_lines_between_scanfields: 16
-center_xy: [2×1 double]
+center_xy: [2x1 double]
 line_period: 6.3139e-05
 scan_frame_period: 0.0586
-size_xy: [2×1 double]
+size_xy: [2x1 double]
 objective_resolution: 61
 ```
 
 :::
 
 ::::
-
-(array_terms)=
-### Array Terminology
-
-Light-beads microscopy is a 2-photon imaging paradigm based on [ScanImage](https://docs.scanimage.org/index.html) acquisition software.
-
-| Dimension | Description |
-|-----------|-------------|
-| [X, Y]    | 2D plane    |
-| [X, Y, Z] | z-stack     |
-| [X, Y, T] | 2D timeseries |
-| [X, Y, Z, T] | 3D timeseries|
-

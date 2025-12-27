@@ -2,6 +2,33 @@
 
 ```{glossary}
 
+frame
+  A single 2D raster scan of the field of view, saved as one TIFF page with shape (height, width). The fundamental unit of acquired image data.
+
+slice
+  One z-position in a volumetric acquisition. May contain multiple frames if `framesPerSlice > 1`.
+
+volume
+  One complete z-stack containing all slices. Represents a single 3D snapshot of the sample.
+
+timepoint
+  One volume acquisition in a time series. For 2D acquisitions, equivalent to one frame.
+
+piezo
+  A piezoelectric actuator used to rapidly move the objective or sample stage along the z-axis. Enables fast volumetric imaging by sequentially stepping through z-positions. In ScanImage, controlled via `si.hStackManager` parameters.
+
+framesPerSlice
+  ScanImage parameter (`si.hStackManager.framesPerSlice`) specifying how many 2D frames are acquired at each z-position before moving to the next slice. When > 1, enables optional frame averaging for improved SNR.
+
+logAverageFactor
+  ScanImage parameter (`si.hStackManager.logAverageFactor`) controlling hardware-level frame averaging. When > 1, frames are averaged during acquisition rather than saved individually.
+
+de-interleave
+  The process of reorganizing raw LBM data from z-interleaved format (z1t1, z2t1, z3t1, z1t2...) to plane-sequential format (z1t1, z1t2, z1t3, z2t1...) for compatibility with downstream processing pipelines.
+
+multipage_tiff
+  A TIFF file containing multiple 2D images (pages) stored sequentially. Standard format for ScanImage acquisitions where each frame is saved as a separate page.
+
 region-of-interest
   A set of 1 or more 2D planes which are stitched together to form the full image.
 

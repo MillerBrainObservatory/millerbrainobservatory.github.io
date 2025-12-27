@@ -71,7 +71,7 @@ Start a discussion or ask questions about tool parameters and usage.
 maxdepth: 1
 ---
 
-guides/lbm_data.md
+guides/mbo_datasets.md
 guides/mbo_servers.md
 guides/hpc.md
 guides/venvs.md
