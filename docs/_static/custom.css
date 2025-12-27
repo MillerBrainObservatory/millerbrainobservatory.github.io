@@ -52,10 +52,63 @@ span.label {
     all: unset;
 }
 
+/* ========================================
+   TIPPY TOOLTIPS - MATERIAL DARK
+   ======================================== */
+
 .tippy-box {
-    background-color:var(--pst-color-surface);
-    color:var(--pst-color-text-base);
-    border: 1px solid var(--pst-color-border);
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #333 !important;
+  border-radius: 4px !important;
+  font-size: 0.8rem !important;
+  line-height: 1.4 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.tippy-box[data-theme~='material'] {
+  background-color: #1e1e1e !important;
+}
+
+.tippy-content {
+  padding: 6px 10px !important;
+}
+
+/* Arrow styling */
+.tippy-arrow {
+  color: #1e1e1e !important;
+}
+
+.tippy-box[data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: #1e1e1e !important;
+}
+
+.tippy-box[data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: #1e1e1e !important;
+}
+
+.tippy-box[data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: #1e1e1e !important;
+}
+
+.tippy-box[data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: #1e1e1e !important;
+}
+
+/* Disable links in tippy - they're not interactive anyway */
+.tippy-content a {
+  color: #e0e0e0 !important;
+  text-decoration: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* Code in tippy */
+.tippy-content code {
+  background-color: #2d2d2d !important;
+  color: #82aaff !important;
+  font-size: 0.75rem !important;
+  padding: 1px 4px !important;
 }
 
 .toctree-l2 {
