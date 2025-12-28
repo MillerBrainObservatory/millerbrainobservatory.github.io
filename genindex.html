@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f92f2087" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=b262a277" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -177,10 +177,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="guides/lbm_data.html">Light Beads Microscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/mbo_datasets.html">MBO Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guides/mbo_servers.html">Server Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/hpc.html">Working on HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guides/venvs.html">Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/hpc.html">Working on HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.html">Image Ref</a></li>
 </ul>
@@ -290,11 +290,14 @@
  | <a href="#D"><strong>D</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#V"><strong>V</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -308,10 +311,12 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="glossary.html#term-deconvolution"><strong>deconvolution</strong></a>
+      <li><a href="glossary.html#term-de-interleave"><strong>de-interleave</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="glossary.html#term-deconvolution"><strong>deconvolution</strong></a>
+</li>
       <li><a href="glossary.html#term-Delta-F-over-F0"><strong>Delta F over F0</strong></a>
 </li>
   </ul></td>
@@ -322,8 +327,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-Field-of-view"><strong>Field-of-view</strong></a>
 </li>
+      <li><a href="glossary.html#term-frame"><strong>frame</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="glossary.html#term-framesPerSlice"><strong>framesPerSlice</strong></a>
+</li>
       <li><a href="glossary.html#term-functional-segmentation"><strong>functional segmentation</strong></a>
 </li>
   </ul></td>
@@ -341,16 +350,26 @@
   </ul></td>
 </tr></table>
 
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="glossary.html#term-logAverageFactor"><strong>logAverageFactor</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-max_proj"><strong>max_proj</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-mean_img"><strong>mean_img</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-meanImgE"><strong>meanImgE</strong></a>
+</li>
+      <li><a href="glossary.html#term-multipage_tiff"><strong>multipage_tiff</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -369,6 +388,10 @@
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="glossary.html#term-piezo"><strong>piezo</strong></a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-pixel-resolution"><strong>pixel-resolution</strong></a>
 </li>
@@ -402,7 +425,25 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-skewness"><strong>skewness</strong></a>
 </li>
+      <li><a href="glossary.html#term-slice"><strong>slice</strong></a>
+</li>
       <li><a href="glossary.html#term-source-extraction"><strong>source-extraction</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="glossary.html#term-timepoint"><strong>timepoint</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="glossary.html#term-volume"><strong>volume</strong></a>
 </li>
   </ul></td>
 </tr></table>

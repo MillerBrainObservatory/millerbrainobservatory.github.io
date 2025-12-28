@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Light Beads Microscopy &#8212; MBO Compute Hub 1.0.0 documentation</title>
+    <title>MBO Datasets &#8212; MBO Compute Hub 1.0.0 documentation</title>
   
   
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f92f2087" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b262a277" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -53,13 +53,13 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/guides/lbm_data.0d58e8c4-907d-4c3f-8183-7c3585df37b4.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/lbm_data';</script>
+    <script defer="defer" src="../_static/tippy/guides/mbo_datasets.bff2540e-3d8f-486e-b988-667c40da892d.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/mbo_datasets';</script>
     <link rel="icon" href="../_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Server Guide" href="mbo_servers.html" />
-    <link rel="prev" title="Miller Brain Observatory: Compute Ecosystem" href="../index.html" />
+    <link rel="prev" title="MBO Compute Hub" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -181,10 +181,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Light Beads Microscopy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MBO Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mbo_servers.html">Server Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hpc.html">Working on HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="venvs.html">Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hpc.html">Working on HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ref.html">Image Ref</a></li>
 </ul>
@@ -246,7 +246,7 @@
       
       
       
-      <li><a href="../_sources/guides/lbm_data.md" target="_blank"
+      <li><a href="../_sources/guides/mbo_datasets.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +322,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Light Beads Microscopy</h1>
+    <h1>MBO Datasets</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -332,14 +332,31 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data">Raw Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acquisition-types">Acquisition Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-hierarchy">ScanImage Hierarchy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimized-lbm">Optimized LBM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data">Raw Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piezo-stack">Piezo Stack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-organization">Frame Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metadata">Key Metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-averaging">Frame Averaging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-2p">Standard 2P</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formats">Data Formats</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-format">Data Format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isoview-light-sheet">IsoView Light-Sheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-metadata">ScanImage Metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 </ul>
 </li>
 </ul>
@@ -353,10 +370,106 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="light-beads-microscopy">
-<h1>Light Beads Microscopy<a class="headerlink" href="#light-beads-microscopy" title="Link to this heading">#</a></h1>
-<p>This guide describes the data aquired on the <a class="reference external" href="https://mbo.rockefeller.edu/tools/#opt-lbm">optimized</a> or <a class="reference external" href="https://mbo.rockefeller.edu/tools/#high-res">high-res</a> light-beads microscopy (LBM) module.</p>
-<p>Current LBM data is aquired with ScanImage aquisition software.</p>
+  <section id="mbo-datasets">
+<h1>MBO Datasets<a class="headerlink" href="#mbo-datasets" title="Link to this heading">#</a></h1>
+<p>This guide describes data acquired at the Miller Brain Observatory using <a class="reference external" href="https://docs.scanimage.org/index.html">ScanImage</a> and light-sheet microscopy systems.</p>
+<section id="acquisition-types">
+<h2>Acquisition Types<a class="headerlink" href="#acquisition-types" title="Link to this heading">#</a></h2>
+<p>The MBO supports several imaging modalities, each with distinct data organization:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Acquisition Type</p></th>
+<th class="head"><p>Dimensions</p></th>
+<th class="head"><p>Z-Strategy</p></th>
+<th class="head"><p>Frame Averaging</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#optimized-lbm">Optimized LBM</a></p></td>
+<td><p>TZYX</p></td>
+<td><p>Interleaved z-planes as channels</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#piezo-stack">Piezo Stack</a></p></td>
+<td><p>TZYX</p></td>
+<td><p>Sequential z-slices via piezo</p></td>
+<td><p>Optional</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#standard-2p">Standard 2P</a></p></td>
+<td><p>TYX or YX</p></td>
+<td><p>Single plane or projection</p></td>
+<td><p>Optional</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#isoview-light-sheet">IsoView Light-Sheet</a></p></td>
+<td><p>TZYX</p></td>
+<td><p>Simultaneous multi-view</p></td>
+<td><p>No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+<section id="array-terminology">
+<span id="array-terms"></span><h2>Array Terminology<a class="headerlink" href="#array-terminology" title="Link to this heading">#</a></h2>
+<p>All MBO datasets are stored as multi-dimensional arrays with consistent dimension ordering:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dimension</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>[Y, X]</p></td>
+<td><p>Single 2D plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>[Z, Y, X]</p></td>
+<td><p>Single volume (z-stack)</p></td>
+</tr>
+<tr class="row-even"><td><p>[T, Y, X]</p></td>
+<td><p>2D timeseries</p></td>
+</tr>
+<tr class="row-odd"><td><p>[T, Z, Y, X]</p></td>
+<td><p>Volumetric timeseries</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Frame Definition</p>
+<p>A <strong>frame</strong> represents a single 2D raster scan of the field of view, saved as one TIFF page with shape <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width)</span></code>.</p>
+</div>
+<section id="scanimage-hierarchy">
+<h3>ScanImage Hierarchy<a class="headerlink" href="#scanimage-hierarchy" title="Link to this heading">#</a></h3>
+<p>For ScanImage acquisitions, data is organized hierarchically:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Frame</p></td>
+<td><p>One 2D scan (one TIFF page)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Slice</p></td>
+<td><p>One z-position (may contain multiple frames if <code class="docutils literal notranslate"><span class="pre">framesPerSlice</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>Volume</p></td>
+<td><p>One complete z-stack (all slices)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Timepoint</p></td>
+<td><p>One volume acquisition in a time series</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="optimized-lbm">
+<span id="id1"></span><h2>Optimized LBM<a class="headerlink" href="#optimized-lbm" title="Link to this heading">#</a></h2>
+<p>Data acquired on the <a class="reference external" href="https://mbo.rockefeller.edu/tools/#opt-lbm">optimized</a> or <a class="reference external" href="https://mbo.rockefeller.edu/tools/#high-res">high-res</a> light-beads microscopy (LBM) modules.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Example Dataset</p>
 <p>Example dataset collected by Kevin Barber with Dr. Alipasha Vaziri &#64; Rockefeller University.</p>
@@ -380,23 +493,24 @@
 <td><p>17 Hz</p></td>
 </tr>
 <tr class="row-even"><td><p>FOV</p></td>
-<td><p>900 µm × 900 µm</p></td>
+<td><p>900 um x 900 um</p></td>
 </tr>
 <tr class="row-odd"><td><p>Resolution</p></td>
-<td><p>2 µm × 2 µm × 16 µm</p></td>
+<td><p>2 um x 2 um x 16 um</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <section id="raw-data">
-<h2>Raw Data<a class="headerlink" href="#raw-data" title="Link to this heading">#</a></h2>
+<h3>Raw Data<a class="headerlink" href="#raw-data" title="Link to this heading">#</a></h3>
 <p>ScanImage <a class="reference external" href="https://docs.scanimage.org/Premium+Features/Multiple+Region+of+Interest+(MROI).html">Multi Region Of Interest (mROI)</a> outputs raw <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files made up of individual <code class="docutils literal notranslate"><span class="pre">Regions</span> <span class="pre">of</span> <span class="pre">Interest</span> <span class="pre">(ROI's)</span></code>.</p>
 <p>In its raw form, data is saved as a 3-dimensional <a class="reference internal" href="../ref.html#multipage-tiff"><span class="std std-ref">multi-page tiff file</span></a> with each ROI stacked vertically relative to the fast-galvo scan direction.</p>
-<p>Each 2D image within this tiff file represents a page of the original document.</p>
 <p>The location of each ROI is stored as a pixel coordinate used internally by the respective pipeline to orient each strip.</p>
+</section>
 <section id="frame-ordering">
 <h3>Frame Ordering<a class="headerlink" href="#frame-ordering" title="Link to this heading">#</a></h3>
+<p>LBM saves z-planes interleaved as channels. There is no frame averaging because the piezo is not used.</p>
 <p>ScanImage saves raw tiffs with each z-depth and timepoint interleaved [zT]:</p>
 <ul class="simple">
 <li><p>frame0 = time0_plane1</p></li>
@@ -406,7 +520,7 @@
 <li><p>frame4 = time1_plane2</p></li>
 </ul>
 <p>Data organized this way is generally incompatible with downstream processing libraries like suite2p, CaImAn and EXTRACT.</p>
-<p>For compatibility, we reorganize the frames as follows:</p>
+<p>For compatibility, we reorganize (de-interleave) the frames as follows:</p>
 <ul class="simple">
 <li><p>frame0 = time0_plane1</p></li>
 <li><p>frame1 = time1_plane1</p></li>
@@ -414,28 +528,122 @@
 <li><p>frame3 = time0_plane2</p></li>
 <li><p>frame4 = time1_plane2</p></li>
 </ul>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id6">
 <img alt="../_images/ex_deinterleave_nobg.svg" src="../_images/ex_deinterleave_nobg.svg" />
 <figcaption>
 <p><span class="caption-text">Raw data are stored first by z-plane, for each timepoint (1) before being deinterleaved (2).
-This example shows a session with 2 ROI’s shown vertically stacked with a black bar of ~14 pixels in between.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+This example shows a session with 2 ROI’s shown vertically stacked with a black bar of ~14 pixels in between.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
-<p class="admonition-title">Note on Frames</p>
+<p class="admonition-title">Splitting Frames Across Files</p>
 <p>Before beginning the recording session, users have the option to split frames in the recording across multiple <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> files. This option is helpful as it requires less work in post-processing to ensure there isn’t too much computer memory being used.</p>
 </div>
-</section>
 <hr class="docutils" />
-<section id="metadata">
-<h3>Metadata<a class="headerlink" href="#metadata" title="Link to this heading">#</a></h3>
-<p>The primary distinction between Light-Beads Microscopy datasets and standard 2p datasets are how the data is organized on disk.</p>
-<p>This information is stored in the <a class="reference external" href="https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification">ScanImage Metadata</a>.</p>
+</section>
+</section>
+<section id="piezo-stack">
+<span id="id2"></span><h2>Piezo Stack<a class="headerlink" href="#piezo-stack" title="Link to this heading">#</a></h2>
+<p>Piezo acquisitions use a <a class="reference internal" href="../glossary.html#term-piezo"><span class="xref std std-term">piezo actuator</span></a> to sequentially move through z-positions, creating volumetric data.</p>
+<section id="frame-organization">
+<h3>Frame Organization<a class="headerlink" href="#frame-organization" title="Link to this heading">#</a></h3>
+<p>Unlike LBM where z-planes are interleaved, piezo stacks acquire all frames at one z-position before moving to the next slice:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">slice0_frame0</span> <span class="o">-&gt;</span> <span class="n">slice0_frame1</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="o">-&gt;</span> <span class="n">slice0_frameN</span> <span class="o">-&gt;</span>
+<span class="n">slice1_frame0</span> <span class="o">-&gt;</span> <span class="n">slice1_frame1</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="o">-&gt;</span> <span class="n">slice1_frameN</span> <span class="o">-&gt;</span>
+<span class="o">...</span>
+<span class="n">sliceZ_frame0</span> <span class="o">-&gt;</span> <span class="n">sliceZ_frame1</span> <span class="o">-&gt;</span> <span class="o">...</span> <span class="o">-&gt;</span> <span class="n">sliceZ_frameN</span>
+</pre></div>
+</div>
+</section>
+<section id="key-metadata">
+<h3>Key Metadata<a class="headerlink" href="#key-metadata" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">si.hStackManager.numSlices</span></code></p></td>
+<td><p>Number of z-positions in the stack</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">si.hStackManager.framesPerSlice</span></code></p></td>
+<td><p>Number of frames acquired at each z-position</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">si.hStackManager.logAverageFactor</span></code></p></td>
+<td><p>If &gt; 1, frames are averaged during acquisition</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="frame-averaging">
+<h3>Frame Averaging<a class="headerlink" href="#frame-averaging" title="Link to this heading">#</a></h3>
+<p>When <code class="docutils literal notranslate"><span class="pre">si.hStackManager.framesPerSlice</span> <span class="pre">&gt;</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">si.hStackManager.logAverageFactor</span> <span class="pre">==</span> <span class="pre">1</span></code>:</p>
+<ul class="simple">
+<li><p>Multiple frames exist per z-slice in the raw data</p></li>
+<li><p>These can optionally be averaged together during preprocessing</p></li>
+<li><p>Averaging improves SNR at the cost of temporal resolution</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">When to Average</p>
+<p>Frame averaging is useful for structural imaging or when temporal resolution is less critical. For fast calcium dynamics, consider keeping individual frames or using fewer <code class="docutils literal notranslate"><span class="pre">framesPerSlice</span></code>.</p>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="standard-2p">
+<span id="id3"></span><h2>Standard 2P<a class="headerlink" href="#standard-2p" title="Link to this heading">#</a></h2>
+<p>Non-LBM, non-piezo acquisitions for simpler imaging scenarios.</p>
+<section id="data-formats">
+<h3>Data Formats<a class="headerlink" href="#data-formats" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Dimensions</p></th>
+<th class="head"><p>Use Case</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2D Time Series</p></td>
+<td><p>TYX</p></td>
+<td><p>Single-plane functional imaging</p></td>
+</tr>
+<tr class="row-odd"><td><p>2D Projection</p></td>
+<td><p>YX</p></td>
+<td><p>Structural imaging, max projections</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-format">
+<h3>Data Format<a class="headerlink" href="#data-format" title="Link to this heading">#</a></h3>
+<p>Standard acquisitions are straightforward:</p>
+<ul class="simple">
+<li><p>Each frame is a single 2D scan</p></li>
+<li><p>Frames are stored sequentially in time order</p></li>
+<li><p>No de-interleaving required</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+</section>
+<section id="isoview-light-sheet">
+<span id="id4"></span><h2>IsoView Light-Sheet<a class="headerlink" href="#isoview-light-sheet" title="Link to this heading">#</a></h2>
+<p>IsoView is a multi-view light-sheet microscopy system for high-speed volumetric imaging.</p>
+<div class="note admonition">
+<p class="admonition-title">Coming Soon</p>
+<p>Detailed documentation for IsoView data organization is in development. Contact the MBO team for current protocols.</p>
+</div>
+<hr class="docutils" />
+</section>
+<section id="scanimage-metadata">
+<span id="id5"></span><h2>ScanImage Metadata<a class="headerlink" href="#scanimage-metadata" title="Link to this heading">#</a></h2>
+<p>The primary distinction between MBO datasets is how data is organized on disk. This information is stored in the <a class="reference external" href="https://docs.scanimage.org/Appendix/ScanImage%2BBigTiff%2BSpecification.html#scanimage-bigtiff-specification">ScanImage Metadata</a>.</p>
 <section id="overview">
-<span id="metadata-overview"></span><h4>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h4>
-<p>ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw <code class="code docutils literal notranslate"><span class="pre">.tiff</span></code> file.</p>
+<span id="metadata-overview"></span><h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<p>ScanImage stores metadata about image size, frame rate, resolution, and regions of interest within the raw <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> file.</p>
 <p>Each pipeline handles this metadata for you, and provides an interface to use these values throughout the pipeline.</p>
-<p>There is primary metadata, intended for use in a typical processing run. Many of these values are derived from less-pertinent (secondary) metadata shown below.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="primary-metadata">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Metadata (primary)</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -554,6 +762,36 @@ This example shows a session with 2 ROI’s shown vertically stacked with a blac
 </table>
 </div>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="piezo-metadata">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Piezo Stack Metadata</span><span class="sd-summary-state-marker sd-summary-chevron-down"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.22 8.22a.749.749 0 0 0 0 1.06l6.25 6.25a.749.749 0 0 0 1.06 0l6.25-6.25a.749.749 0 1 0-1.06-1.06L12 13.939 6.28 8.22a.749.749 0 0 0-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Additional metadata specific to piezo acquisitions:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Name</p></th>
+<th class="head"><p class="sd-card-text">Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text">si.hStackManager.numSlices</p></td>
+<td><p class="sd-card-text">Number of z-slices in the volume</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">si.hStackManager.framesPerSlice</p></td>
+<td><p class="sd-card-text">Frames acquired at each z-position</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">si.hStackManager.logAverageFactor</p></td>
+<td><p class="sd-card-text">If &gt; 1, hardware averaging is enabled</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text">si.hStackManager.zs</p></td>
+<td><p class="sd-card-text">Z-positions in microns</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text">si.hStackManager.stackZStepSize</p></td>
+<td><p class="sd-card-text">Step size between z-slices (um)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </details><blockquote id="scanner-note">
 <div><p><strong>Note:</strong>
 With multi-ROI tiffs, the size of your tiff given by <code class="docutils literal notranslate"><span class="pre">image_size</span></code> will be different from the number of pixels in x and y.
@@ -563,7 +801,7 @@ Internally, each pipeline checks for these metadata attributes and adjusts the f
 <hr class="docutils" />
 </section>
 <section id="usage">
-<span id="using-metadata"></span><h4>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h4>
+<span id="using-metadata"></span><h3>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h3>
 <p>Each pipeline comes stocked with methods to retrieve imaging metadata.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
@@ -605,41 +843,14 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
 <span class="n">raw_filepath</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;D:\Demo&quot;</span>
 <span class="n">raw_fullfile</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;D:\Demo\file.tif&quot;</span>
 <span class="n">num_lines_between_scanfields</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
-<span class="n">center_xy</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">double</span><span class="p">]</span>
+<span class="n">center_xy</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>2<span class="n">x1</span><span class="w"> </span><span class="nb">double</span><span class="p">]</span>
 <span class="n">line_period</span><span class="p">:</span><span class="w"> </span><span class="mf">6.3139e-05</span>
 <span class="n">scan_frame_period</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0586</span>
-<span class="n">size_xy</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span>×<span class="mi">1</span><span class="w"> </span><span class="nb">double</span><span class="p">]</span>
+<span class="n">size_xy</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>2<span class="n">x1</span><span class="w"> </span><span class="nb">double</span><span class="p">]</span>
 <span class="n">objective_resolution</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span>
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-</section>
-<section id="array-terminology">
-<span id="array-terms"></span><h3>Array Terminology<a class="headerlink" href="#array-terminology" title="Link to this heading">#</a></h3>
-<p>Light-beads microscopy is a 2-photon imaging paradigm based on <a class="reference external" href="https://docs.scanimage.org/index.html">ScanImage</a> acquisition software.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Dimension</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>[X, Y]</p></td>
-<td><p>2D plane</p></td>
-</tr>
-<tr class="row-odd"><td><p>[X, Y, Z]</p></td>
-<td><p>z-stack</p></td>
-</tr>
-<tr class="row-even"><td><p>[X, Y, T]</p></td>
-<td><p>2D timeseries</p></td>
-</tr>
-<tr class="row-odd"><td><p>[X, Y, Z, T]</p></td>
-<td><p>3D timeseries</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </section>
 </section>
@@ -662,7 +873,7 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Miller Brain Observatory: Compute Ecosystem</p>
+        <p class="prev-next-title">MBO Compute Hub</p>
       </div>
     </a>
     <a class="right-next"
@@ -691,14 +902,31 @@ MATLAB Metadata</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data">Raw Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata">Metadata</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acquisition-types">Acquisition Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-hierarchy">ScanImage Hierarchy</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-terminology">Array Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimized-lbm">Optimized LBM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data">Raw Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-ordering">Frame Ordering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piezo-stack">Piezo Stack</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-organization">Frame Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-metadata">Key Metadata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frame-averaging">Frame Averaging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-2p">Standard 2P</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-formats">Data Formats</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-format">Data Format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isoview-light-sheet">IsoView Light-Sheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scanimage-metadata">ScanImage Metadata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
 </ul>
 </li>
 </ul>

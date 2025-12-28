@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.min.css?v=6e7d0de0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/pointer.css?v=c97663ff" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=f92f2087" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=b262a277" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -53,13 +53,13 @@
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="_static/tippy/glossary.4b640920-9b07-49c6-a811-15bfc79462e6.js"></script>
+    <script defer="defer" src="_static/tippy/glossary.c248729a-b33c-41a6-b071-b1514be4ce41.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'glossary';</script>
     <link rel="icon" href="_static/mbo_hub_saph.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Image Ref" href="ref.html" />
-    <link rel="prev" title="Virtual Environments" href="guides/venvs.html" />
+    <link rel="prev" title="Working on HPC" href="guides/hpc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -181,10 +181,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="guides/lbm_data.html">Light Beads Microscopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/mbo_datasets.html">MBO Datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guides/mbo_servers.html">Server Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guides/hpc.html">Working on HPC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guides/venvs.html">Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guides/hpc.html">Working on HPC</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.html">Image Ref</a></li>
 </ul>
@@ -337,6 +337,24 @@
   <section id="glossary">
 <h1>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h1>
 <dl class="simple glossary">
+<dt id="term-frame">frame<a class="headerlink" href="#term-frame" title="Link to this term">#</a></dt><dd><p>A single 2D raster scan of the field of view, saved as one TIFF page with shape (height, width). The fundamental unit of acquired image data.</p>
+</dd>
+<dt id="term-slice">slice<a class="headerlink" href="#term-slice" title="Link to this term">#</a></dt><dd><p>One z-position in a volumetric acquisition. May contain multiple frames if <code class="docutils literal notranslate"><span class="pre">framesPerSlice</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>.</p>
+</dd>
+<dt id="term-volume">volume<a class="headerlink" href="#term-volume" title="Link to this term">#</a></dt><dd><p>One complete z-stack containing all slices. Represents a single 3D snapshot of the sample.</p>
+</dd>
+<dt id="term-timepoint">timepoint<a class="headerlink" href="#term-timepoint" title="Link to this term">#</a></dt><dd><p>One volume acquisition in a time series. For 2D acquisitions, equivalent to one frame.</p>
+</dd>
+<dt id="term-piezo">piezo<a class="headerlink" href="#term-piezo" title="Link to this term">#</a></dt><dd><p>A piezoelectric actuator used to rapidly move the objective or sample stage along the z-axis. Enables fast volumetric imaging by sequentially stepping through z-positions. In ScanImage, controlled via <code class="docutils literal notranslate"><span class="pre">si.hStackManager</span></code> parameters.</p>
+</dd>
+<dt id="term-framesPerSlice">framesPerSlice<a class="headerlink" href="#term-framesPerSlice" title="Link to this term">#</a></dt><dd><p>ScanImage parameter (<code class="docutils literal notranslate"><span class="pre">si.hStackManager.framesPerSlice</span></code>) specifying how many 2D frames are acquired at each z-position before moving to the next slice. When &gt; 1, enables optional frame averaging for improved SNR.</p>
+</dd>
+<dt id="term-logAverageFactor">logAverageFactor<a class="headerlink" href="#term-logAverageFactor" title="Link to this term">#</a></dt><dd><p>ScanImage parameter (<code class="docutils literal notranslate"><span class="pre">si.hStackManager.logAverageFactor</span></code>) controlling hardware-level frame averaging. When &gt; 1, frames are averaged during acquisition rather than saved individually.</p>
+</dd>
+<dt id="term-de-interleave">de-interleave<a class="headerlink" href="#term-de-interleave" title="Link to this term">#</a></dt><dd><p>The process of reorganizing raw LBM data from z-interleaved format (z1t1, z2t1, z3t1, z1t2…) to plane-sequential format (z1t1, z1t2, z1t3, z2t1…) for compatibility with downstream processing pipelines.</p>
+</dd>
+<dt id="term-multipage_tiff">multipage_tiff<a class="headerlink" href="#term-multipage_tiff" title="Link to this term">#</a></dt><dd><p>A TIFF file containing multiple 2D images (pages) stored sequentially. Standard format for ScanImage acquisitions where each frame is saved as a separate page.</p>
+</dd>
 <dt id="term-region-of-interest">region-of-interest<a class="headerlink" href="#term-region-of-interest" title="Link to this term">#</a></dt><dd><p>A set of 1 or more 2D planes which are stitched together to form the full image.</p>
 </dd>
 <dt id="term-num_pixel_xy">num_pixel_xy<a class="headerlink" href="#term-num_pixel_xy" title="Link to this term">#</a></dt><dd><p>The number of pixels [X, Y] in each <a class="reference internal" href="#term-region-of-interest"><span class="xref std std-term">region-of-interest</span></a>.</p>
@@ -397,12 +415,12 @@ This is a common normalization used in calcium imaging and neural activity recor
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="guides/venvs.html"
+       href="guides/hpc.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Virtual Environments</p>
+        <p class="prev-next-title">Working on HPC</p>
       </div>
     </a>
     <a class="right-next"
