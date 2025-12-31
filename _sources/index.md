@@ -17,7 +17,8 @@
 :gutter: 2
 
 :::{grid-item-card}
-:class-card: tool-card featured
+:class-card: tool-card featured clickable
+:link: https://millerbrainobservatory.github.io/mbo_utilities/index.html
 
 <div class="card-header-row">
 <span class="card-title">MBO Utilities</span>
@@ -37,7 +38,8 @@ I/O utilities, interactive GUI, and processing pipelines for MBO calcium imaging
 :::
 
 :::{grid-item-card}
-:class-card: tool-card featured
+:class-card: tool-card featured clickable
+:link: https://millerbrainobservatory.github.io/LBM-Suite2p-Python
 
 <div class="card-header-row">
 <span class="card-title">LBM-Suite2p-Python</span>
