@@ -365,16 +365,41 @@ div.admonition.seealso > .admonition-title { color: #89ddff !important; }
 
 /* Featured cards - emphasized */
 .tool-card.featured {
-  border-color: #bb86fc !important;
+  border-color: #0f76f0 !important;
   border-width: 1px !important;
 }
 
 .tool-card.featured:hover {
-  border-color: #d4a5ff !important;
+  border-color: #3d94f6 !important;
 }
 
 .tool-card.featured .card-title {
-  color: #bb86fc !important;
+  color: #0f76f0 !important;
+}
+
+/* Clickable cards */
+.tool-card.clickable {
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+.tool-card.clickable .card-link {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 1 !important;
+}
+
+.tool-card.clickable .card-badges {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.tool-card.clickable .card-badges a {
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 /* Card header row - title | badges */
@@ -500,7 +525,7 @@ section#external-resources > h2 {
 }
 
 .nav-links a {
-  color: #bb86fc !important;
+  color: #0f76f0 !important;
   text-decoration: none !important;
 }
 
